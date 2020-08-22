@@ -45,6 +45,10 @@ int main()
 		std::cout << "result : " << "a : " << a << std::endl;
 	}
 	
+	//
+	// End
+	//
+	lua_close( lua_state_obj );
 
 	return 0;
 }
