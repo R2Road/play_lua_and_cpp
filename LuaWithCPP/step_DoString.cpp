@@ -6,44 +6,67 @@ int step_DoString()
 {
 	lua_State* lua_state_obj = luaL_newstate();
 
-	//
-	// Current Command
-	//
-	const std::string command = "a = 7 + 11";
-	std::cout << "lua command : " << command.c_str() << std::endl;
+
+	std::string command;
 
 	//
-	// Do String
+	// Test 1
 	//
-	const int result = luaL_dostring( lua_state_obj, command.c_str() );
-	if( result != LUA_OK )
 	{
-		const auto error_message = lua_tostring( lua_state_obj, -1 );
-		std::cout << error_message << std::endl;
+		//
+		// Command x 1
+		//
+		command = "a = 7 + 11";
+		std::cout << "Lua Command : " << command.c_str() << std::endl;
+
+		//
+		// Do String
+		//
+		const int result = luaL_dostring( lua_state_obj, command.c_str() );
+		if( result != LUA_OK )
+		{
+			const auto error_message = lua_tostring( lua_state_obj, -1 );
+
+			std::cout << "Command Failed " << std::endl;
+			std::cout << error_message << std::endl;
+		}
+		else
+		{
+			std::cout << "Command Success" << std::endl;
+		}
 	}
 
-	//
-	// Get
-	//
-	lua_getglobal( lua_state_obj, "a" );
+	std::cout << std::endl;
+
 
 	//
-	// -1 : is last value
+	// Test 2
 	//
-	if( lua_isnumber( lua_state_obj, -1 ) )
 	{
-		const auto a = static_cast<int>( lua_tonumber( lua_state_obj, -1 ) );
-		std::cout << "result : " << "a : " << a << std::endl;
+		//
+		// Command x 2
+		//
+		std::string command = "a = 7 + ";
+		std::cout << "Lua Command : " << command.c_str() << std::endl;
+
+		//
+		// Do String
+		//
+		const int result = luaL_dostring( lua_state_obj, command.c_str() );
+		if( result != LUA_OK )
+		{
+			const auto error_message = lua_tostring( lua_state_obj, -1 );
+
+			std::cout << "Command Failed " << std::endl;
+			std::cout << error_message << std::endl;
+		}
+		else
+		{
+			std::cout << "Command Success" << std::endl;
+		}
 	}
 
-	//
-	// 1
-	//
-	if( lua_isnumber( lua_state_obj, 1 ) )
-	{
-		const auto a = static_cast<int>( lua_tonumber( lua_state_obj, -1 ) );
-		std::cout << "result : " << "a : " << a << std::endl;
-	}
+
 
 	lua_close( lua_state_obj );
 
