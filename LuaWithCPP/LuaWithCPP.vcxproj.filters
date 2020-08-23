@@ -43,11 +43,11 @@
     <ClCompile Include="step_OpenLibs.cpp">
       <Filter>step</Filter>
     </ClCompile>
-    <ClCompile Include="LuaWithCPP.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="step_helper.cpp" />
     <ClCompile Include="step_DoFile.cpp">
       <Filter>step</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
 </Project>
