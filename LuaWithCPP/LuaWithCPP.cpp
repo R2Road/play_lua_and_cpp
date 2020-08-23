@@ -1,54 +1,56 @@
 ﻿#include "pch.h"
-#include <iostream>
 
-extern "C"
-{
-#include "Lua54/include/lua.h"
-#include "Lua54/include/lauxlib.h"
-#include "Lua54/include/lualib.h"
-}
+#include <conio.h>
+#include <iostream>
+#include <sstream>
+#include <utility>
+#include <Windows.h>
 
 #ifdef _WIN32
 #pragma comment( lib, "lua54/liblua54.a" )
 #endif
 
+#include "step_LuaState.h"
+
+std::string MakeMenuString()
+{
+	std::stringstream ss;
+	ss << "+ Menu" << std::endl;
+	ss << "1 : step_LuaState" << std::endl;
+
+	ss << std::endl << "Press Number" << std::endl;
+
+	return std::string( ss.str() );
+}
+
+void ShowMenu()
+{
+	static std::string menu_string( std::move( MakeMenuString() ) );
+	std::cout << menu_string;
+}
+
 int main()
 {
-	//
-	// Make Lua State
-	//
-	lua_State* lua_state_obj = luaL_newstate();
-
-	//
-	// Current Command
-	//
-	const std::string command = "a = 7 + 11";
-	std::cout << "lua command" << command.c_str() << std::endl;
-
-	//
-	// Do Command
-	//
-	const int result = luaL_dostring( lua_state_obj, command.c_str() );
-	if( result != LUA_OK )
+	int input = 0;
+	while( true )
 	{
-		const auto error_message = lua_tostring( lua_state_obj, -1 );
-		std::cout << error_message << std::endl;
+		ShowMenu();
+
+		input = _getch();
+		system( "cls" );
+
+		switch( input )
+		{
+		case '1':
+			step_LuaState();
+			break;
+		}
+
+		std::cout << std::endl << "Press Any Key" << std::endl;
+		_getch();
+		system( "cls" );
 	}
 
-	//
-	// Get
-	//
-	lua_getglobal( lua_state_obj, "a" );
-	if( lua_isnumber( lua_state_obj, -1 ) )
-	{
-		const auto a = static_cast<int>( lua_tonumber( lua_state_obj, -1 ) );
-		std::cout << "result : " << "a : " << a << std::endl;
-	}
-	
-	//
-	// End
-	//
-	lua_close( lua_state_obj );
 
 	return 0;
 }

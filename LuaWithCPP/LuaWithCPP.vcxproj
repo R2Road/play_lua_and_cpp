@@ -158,6 +158,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
+    <ClInclude Include="step_LuaState.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LuaWithCPP.cpp" />
