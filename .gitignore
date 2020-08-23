@@ -34,3 +34,4 @@
 LuaWithCPP/Debug/*
 LuaWithCPP/.vs/*
 LuaWithCPP/Release/*
+LuaWithCPP/x64/*
