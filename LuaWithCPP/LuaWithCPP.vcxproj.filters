@@ -20,6 +20,12 @@
     <ClInclude Include="step_DoString.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
+    <ClInclude Include="step_GetGlobal.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="step_IsNumber.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -32,6 +38,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="step_DoString.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="step_GetGlobal.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="step_IsNumber.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

@@ -159,6 +159,8 @@
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="step_DoString.h" />
+    <ClInclude Include="step_GetGlobal.h" />
+    <ClInclude Include="step_IsNumber.h" />
     <ClInclude Include="step_LuaState.h" />
   </ItemGroup>
   <ItemGroup>
@@ -170,6 +172,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="step_DoString.cpp" />
+    <ClCompile Include="step_GetGlobal.cpp" />
+    <ClCompile Include="step_IsNumber.cpp" />
     <ClCompile Include="step_LuaState.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
