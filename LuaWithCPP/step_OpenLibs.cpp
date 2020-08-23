@@ -1,5 +1,6 @@
 ﻿#include "pch.h"
 
+#include "step_helper.h"
 #include "step_OpenLibs.h"
 
 
@@ -24,18 +25,7 @@ void step_OpenLibs()
 	// Test 1
 	//
 	{
-		const int result = luaL_dostring( lua_state_obj, command.c_str() );
-		if( result != LUA_OK )
-		{
-			const auto error_message = lua_tostring( lua_state_obj, -1 );
-
-			std::cout << "Command Failed " << std::endl;
-			std::cout << error_message << std::endl;
-		}
-		else
-		{
-			std::cout << "Command Success" << std::endl;
-		}
+		step_helper::DoString( lua_state_obj, command.c_str() );
 	}
 
 	std::cout << std::endl;
@@ -49,18 +39,7 @@ void step_OpenLibs()
 	// Test 2
 	//
 	{
-		const int result = luaL_dostring( lua_state_obj, command.c_str() );
-		if( result != LUA_OK )
-		{
-			const auto error_message = lua_tostring( lua_state_obj, -1 );
-
-			std::cout << "Command Failed " << std::endl;
-			std::cout << error_message << std::endl;
-		}
-		else
-		{
-			std::cout << "Command Success" << std::endl;
-		}
+		step_helper::DoString( lua_state_obj, command.c_str() );
 
 		lua_getglobal( lua_state_obj, "a" );
 
