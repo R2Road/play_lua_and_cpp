@@ -1,56 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="소스 파일">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="헤더 파일">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="step">
+      <UniqueIdentifier>{969087ae-f173-470e-b691-2e752d41c9dd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pch.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="step_LuaState.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
     <ClInclude Include="step_DoString.h">
-      <Filter>소스 파일</Filter>
+      <Filter>step</Filter>
     </ClInclude>
     <ClInclude Include="step_GetGlobal.h">
-      <Filter>소스 파일</Filter>
+      <Filter>step</Filter>
     </ClInclude>
     <ClInclude Include="step_IsNumber.h">
-      <Filter>소스 파일</Filter>
+      <Filter>step</Filter>
+    </ClInclude>
+    <ClInclude Include="step_LuaState.h">
+      <Filter>step</Filter>
     </ClInclude>
     <ClInclude Include="step_OpenLibs.h">
-      <Filter>소스 파일</Filter>
+      <Filter>step</Filter>
     </ClInclude>
+    <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pch.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="LuaWithCPP.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="step_LuaState.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="step_DoString.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>step</Filter>
     </ClCompile>
     <ClCompile Include="step_GetGlobal.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>step</Filter>
     </ClCompile>
     <ClCompile Include="step_IsNumber.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>step</Filter>
+    </ClCompile>
+    <ClCompile Include="step_LuaState.cpp">
+      <Filter>step</Filter>
     </ClCompile>
     <ClCompile Include="step_OpenLibs.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>step</Filter>
     </ClCompile>
+    <ClCompile Include="LuaWithCPP.cpp" />
+    <ClCompile Include="pch.cpp" />
   </ItemGroup>
 </Project>
