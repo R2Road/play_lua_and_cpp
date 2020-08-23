@@ -11,8 +11,8 @@
 #endif
 
 #include "step_LuaState.h"
-#include "step_GetGlobal.h"
 #include "step_DoString.h"
+#include "step_GetGlobal.h"
 #include "step_IsNumber.h"
 
 std::string MakeMenuString()
@@ -20,8 +20,8 @@ std::string MakeMenuString()
 	std::stringstream ss;
 	ss << "+ Menu" << std::endl;
 	ss << "1 : step_LuaState" << std::endl;
-	ss << "2 : step_GetGlobal" << std::endl;
-	ss << "3 : step_DoString" << std::endl;
+	ss << "2 : step_DoString" << std::endl;
+	ss << "3 : step_GetGlobal" << std::endl;
 	ss << "4 : step_IsNumber" << std::endl;
 
 	ss << std::endl << "Press Number" << std::endl;
@@ -51,10 +51,10 @@ int main()
 			step_LuaState();
 			break;
 		case '2':
-			step_GetGlobal();
+			step_DoString();
 			break;
 		case '3':
-			step_DoString();
+			step_GetGlobal();
 			break;
 		case '4':
 			step_IsNumber();
