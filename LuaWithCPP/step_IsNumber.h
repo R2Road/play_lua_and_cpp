@@ -1,1 +1,3 @@
-﻿void step_IsNumber();
+﻿#pragma once
+
+void step_IsNumber();

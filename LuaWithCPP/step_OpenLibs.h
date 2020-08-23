@@ -1,1 +1,3 @@
-﻿void step_OpenLibs();
+﻿#pragma once
+
+void step_OpenLibs();

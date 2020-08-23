@@ -1,1 +1,3 @@
-﻿void step_GetGlobal();
+﻿#pragma once
+
+void step_GetGlobal();
