@@ -1,1 +1,1 @@
-﻿int step_DoString();
+﻿void step_DoString();

@@ -4,7 +4,7 @@
 
 #include "step_IsNumber.h"
 
-int step_IsNumber()
+void step_IsNumber()
 {
 	lua_State* lua_state_obj = luaL_newstate();
 
@@ -24,7 +24,7 @@ int step_IsNumber()
 	{
 		const auto error_message = lua_tostring( lua_state_obj, -1 );
 		std::cout << error_message << std::endl;
-		return 0;
+		return;
 	}
 
 	//
@@ -69,6 +69,4 @@ int step_IsNumber()
 
 
 	lua_close( lua_state_obj );
-
-	return 0;
 }

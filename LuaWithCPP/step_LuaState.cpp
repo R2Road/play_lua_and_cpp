@@ -12,7 +12,7 @@ extern "C"
 #include "Lua54/include/lualib.h"
 }
 
-int step_LuaState()
+void step_LuaState()
 {
 	//
 	// Make Lua State
@@ -25,6 +25,4 @@ int step_LuaState()
 	//
 	lua_close( lua_state_obj );
 	std::cout << "Close lua_State" << std::endl;
-
-	return 0;
 }

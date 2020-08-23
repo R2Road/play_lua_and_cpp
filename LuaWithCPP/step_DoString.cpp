@@ -4,7 +4,7 @@
 
 #include "step_DoString.h"
 
-int step_DoString()
+void step_DoString()
 {
 	lua_State* lua_state_obj = luaL_newstate();
 
@@ -71,6 +71,4 @@ int step_DoString()
 
 
 	lua_close( lua_state_obj );
-
-	return 0;
 }

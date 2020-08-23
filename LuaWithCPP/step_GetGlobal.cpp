@@ -45,7 +45,7 @@ void PrintType( const char* name, int type )
 	}
 }
 
-int step_GetGlobal()
+void step_GetGlobal()
 {
 	lua_State* lua_state_obj = luaL_newstate();
 
@@ -100,6 +100,4 @@ int step_GetGlobal()
 
 
 	lua_close( lua_state_obj );
-
-	return 0;
 }

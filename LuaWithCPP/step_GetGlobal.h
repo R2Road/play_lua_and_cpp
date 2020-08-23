@@ -1,1 +1,1 @@
-﻿int step_GetGlobal();
+﻿void step_GetGlobal();

@@ -1,1 +1,1 @@
-﻿int step_IsNumber();
+﻿void step_IsNumber();

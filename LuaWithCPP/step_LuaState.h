@@ -1,1 +1,1 @@
-﻿int step_LuaState();
+﻿void step_LuaState();
