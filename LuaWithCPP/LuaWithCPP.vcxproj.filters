@@ -23,6 +23,9 @@
     </ClInclude>
     <ClInclude Include="pch.h" />
     <ClInclude Include="step_helper.h" />
+    <ClInclude Include="step_DoFile.h">
+      <Filter>step</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="step_DoString.cpp">
@@ -43,5 +46,8 @@
     <ClCompile Include="LuaWithCPP.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="step_helper.cpp" />
+    <ClCompile Include="step_DoFile.cpp">
+      <Filter>step</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
