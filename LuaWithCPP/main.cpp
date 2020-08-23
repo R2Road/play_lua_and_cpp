@@ -1,4 +1,10 @@
-﻿#include "pch.h"
+﻿//
+// # ref
+// - https://www.lua.org/manual/5.4/manual.html
+// - http://lua-users.org/wiki/MathLibraryTutorial
+//
+
+#include "pch.h"
 
 #include <conio.h>
 #include <iostream>
