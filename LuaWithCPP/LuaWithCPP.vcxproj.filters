@@ -26,6 +26,9 @@
     <ClInclude Include="step_IsNumber.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
+    <ClInclude Include="step_OpenLibs.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -44,6 +47,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="step_IsNumber.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="step_OpenLibs.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

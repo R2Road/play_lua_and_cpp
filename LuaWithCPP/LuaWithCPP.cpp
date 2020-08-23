@@ -14,6 +14,7 @@
 #include "step_DoString.h"
 #include "step_GetGlobal.h"
 #include "step_IsNumber.h"
+#include "step_OpenLibs.h"
 
 std::string MakeMenuString()
 {
@@ -23,6 +24,7 @@ std::string MakeMenuString()
 	ss << "2 : step_DoString" << std::endl;
 	ss << "3 : step_GetGlobal" << std::endl;
 	ss << "4 : step_IsNumber" << std::endl;
+	ss << "5 : step_OpenLibs" << std::endl;
 
 	ss << std::endl << "Press Number" << std::endl;
 
@@ -58,6 +60,9 @@ int main()
 			break;
 		case '4':
 			step_IsNumber();
+			break;
+		case '5':
+			step_OpenLibs();
 			break;
 
 		case 27: // ESC
