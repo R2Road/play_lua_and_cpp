@@ -1,6 +1,8 @@
 ﻿#pragma once
 
 #include "pch.h"
+#include "step_LuaState.h"
+
 #include <iostream>
 
 extern "C"

@@ -2,6 +2,8 @@
 
 #include "pch.h"
 
+#include "step_GetGlobal.h"
+
 int step_GetGlobal()
 {
 	lua_State* lua_state_obj = luaL_newstate();

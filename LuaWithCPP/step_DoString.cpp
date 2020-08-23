@@ -2,6 +2,8 @@
 
 #include "pch.h"
 
+#include "step_DoString.h"
+
 int step_DoString()
 {
 	lua_State* lua_state_obj = luaL_newstate();
