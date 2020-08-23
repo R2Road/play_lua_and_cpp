@@ -11,12 +11,14 @@
 #endif
 
 #include "step_LuaState.h"
+#include "step_DoString.h"
 
 std::string MakeMenuString()
 {
 	std::stringstream ss;
 	ss << "+ Menu" << std::endl;
 	ss << "1 : step_LuaState" << std::endl;
+	ss << "2 : step_DoString" << std::endl;
 
 	ss << std::endl << "Press Number" << std::endl;
 
@@ -44,6 +46,12 @@ int main()
 		case '1':
 			step_LuaState();
 			break;
+		case '2':
+			step_DoString();
+			break;
+
+		case 27: // ESC
+			return 0;
 		}
 
 		std::cout << std::endl << "Press Any Key" << std::endl;
