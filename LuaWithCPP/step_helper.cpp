@@ -23,6 +23,47 @@ namespace step_helper
 		}
 	}
 
+	void PrintType( const char* name, int type )
+	{
+		switch( type )
+		{
+		case LUA_TNIL:
+			std::cout << name << " is nil" << std::endl;
+			break;
+		case LUA_TBOOLEAN:
+			std::cout << name << " is boolean" << std::endl;
+			break;
+		case LUA_TLIGHTUSERDATA:
+			std::cout << name << " is light userdata" << std::endl;
+			break;
+		case LUA_TNUMBER:
+			std::cout << name << " is number" << std::endl;
+			break;
+		case LUA_TSTRING:
+			std::cout << name << " is string" << std::endl;
+			break;
+		case LUA_TTABLE:
+			std::cout << name << " is table" << std::endl;
+			break;
+		case LUA_TFUNCTION:
+			std::cout << name << " is function" << std::endl;
+			break;
+		case LUA_TUSERDATA:
+			std::cout << name << " is userdata" << std::endl;
+			break;
+		case LUA_TTHREAD:
+			std::cout << name << " is thread" << std::endl;
+			break;
+		case LUA_NUMTYPES:
+			std::cout << name << " is numtypes" << std::endl;
+			break;
+
+		default:
+			std::cout << name << " is undefined" << std::endl;
+			break;
+		}
+	}
+
 	bool DoString( lua_State* lua_state_obj, const char* command_string )
 	{
 		const int result = luaL_dostring( lua_state_obj, command_string );

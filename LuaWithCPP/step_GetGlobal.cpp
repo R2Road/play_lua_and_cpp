@@ -1,47 +1,7 @@
 ﻿#include "pch.h"
 
+#include "step_helper.h"
 #include "step_GetGlobal.h"
-
-void PrintType( const char* name, int type )
-{
-	switch( type )
-	{
-	case LUA_TNIL:
-		std::cout << name << " is nil" << std::endl;
-		break;
-	case LUA_TBOOLEAN:
-		std::cout << name << " is boolean" << std::endl;
-		break;
-	case LUA_TLIGHTUSERDATA:
-		std::cout << name << " is light userdata" << std::endl;
-		break;
-	case LUA_TNUMBER:
-		std::cout << name << " is number" << std::endl;
-		break;
-	case LUA_TSTRING:
-		std::cout << name << " is string" << std::endl;
-		break;
-	case LUA_TTABLE	:
-		std::cout << name << " is table" << std::endl;
-		break;
-	case LUA_TFUNCTION:
-		std::cout << name << " is function" << std::endl;
-		break;
-	case LUA_TUSERDATA:
-		std::cout << name << " is userdata" << std::endl;
-		break;
-	case LUA_TTHREAD:
-		std::cout << name << " is thread" << std::endl;
-		break;
-	case LUA_NUMTYPES:
-		std::cout << name << " is numtypes" << std::endl;
-		break;
-
-	default:
-		std::cout << name << " is undefined" << std::endl;
-		break;
-	}
-}
 
 void step_GetGlobal()
 {
@@ -58,7 +18,7 @@ void step_GetGlobal()
 		// Push Variable "a"
 		//
 		const int type = lua_getglobal( lua_state_obj, "a" );
-		PrintType( "a", type );
+		step_helper::PrintType( "a", type );
 	}
 
 	std::cout << std::endl;
@@ -92,7 +52,7 @@ void step_GetGlobal()
 		// Push Variable "a"
 		//
 		const int type = lua_getglobal( lua_state_obj, "b" );
-		PrintType( "b", type );
+		step_helper::PrintType( "b", type );
 	}
 
 
