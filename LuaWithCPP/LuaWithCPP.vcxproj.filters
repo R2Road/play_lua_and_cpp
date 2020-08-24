@@ -26,6 +26,9 @@
     <ClInclude Include="step_DoFile.h">
       <Filter>step</Filter>
     </ClInclude>
+    <ClInclude Include="step_GetTable.h">
+      <Filter>step</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="step_DoString.cpp">
@@ -49,5 +52,8 @@
       <Filter>step</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="step_GetTable.cpp">
+      <Filter>step</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

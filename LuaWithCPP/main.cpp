@@ -22,6 +22,7 @@
 #include "step_IsNumber.h"
 #include "step_OpenLibs.h"
 #include "step_DoFile.h"
+#include "step_GetTable.h"
 
 std::string MakeMenuString()
 {
@@ -33,6 +34,7 @@ std::string MakeMenuString()
 	ss << "4 : step_IsNumber" << std::endl;
 	ss << "5 : step_OpenLibs" << std::endl;
 	ss << "6 : step_DoFile" << std::endl;
+	ss << "7 : step_GetTable" << std::endl;
 
 	ss << std::endl << "Press Number" << std::endl;
 
@@ -74,6 +76,9 @@ int main()
 			break;
 		case '6':
 			step_DoFile();
+			break;
+		case '7':
+			step_GetTable();
 			break;
 
 		case 27: // ESC

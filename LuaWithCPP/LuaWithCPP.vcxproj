@@ -161,6 +161,7 @@
     <ClInclude Include="step_DoFile.h" />
     <ClInclude Include="step_DoString.h" />
     <ClInclude Include="step_GetGlobal.h" />
+    <ClInclude Include="step_GetTable.h" />
     <ClInclude Include="step_helper.h" />
     <ClInclude Include="step_IsNumber.h" />
     <ClInclude Include="step_LuaState.h" />
@@ -177,6 +178,7 @@
     <ClCompile Include="step_DoFile.cpp" />
     <ClCompile Include="step_DoString.cpp" />
     <ClCompile Include="step_GetGlobal.cpp" />
+    <ClCompile Include="step_GetTable.cpp" />
     <ClCompile Include="step_helper.cpp" />
     <ClCompile Include="step_IsNumber.cpp" />
     <ClCompile Include="step_LuaState.cpp" />
