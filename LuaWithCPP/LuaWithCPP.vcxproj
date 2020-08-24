@@ -167,6 +167,7 @@
     <ClInclude Include="step_LuaState.h" />
     <ClInclude Include="step_OpenLibs.h" />
     <ClInclude Include="step_PCall.h" />
+    <ClInclude Include="step_PCall_02.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -185,6 +186,7 @@
     <ClCompile Include="step_LuaState.cpp" />
     <ClCompile Include="step_OpenLibs.cpp" />
     <ClCompile Include="step_PCall.cpp" />
+    <ClCompile Include="step_PCall_02.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

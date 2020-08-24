@@ -24,6 +24,7 @@
 #include "step_DoFile.h"
 #include "step_GetTable.h"
 #include "step_PCall.h"
+#include "step_PCall_02.h"
 
 std::string MakeMenuString()
 {
@@ -37,6 +38,7 @@ std::string MakeMenuString()
 	ss << "6 : step_DoFile" << std::endl;
 	ss << "7 : step_GetTable" << std::endl;
 	ss << "8 : step_PCall" << std::endl;
+	ss << "9 : step_PCall_02" << std::endl;
 
 	ss << std::endl << "Press Number" << std::endl;
 
@@ -84,6 +86,9 @@ int main()
 			break;
 		case '8':
 			step_PCall();
+			break;
+		case '9':
+			step_PCall_02();
 			break;
 
 		case 27: // ESC
