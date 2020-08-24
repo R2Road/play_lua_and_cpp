@@ -56,8 +56,6 @@ void step_PCall_02()
 			const int age = lua_tointeger( lua_state_obj, -1 );
 			std::cout << "age : " << age << std::endl;
 			lua_pop( lua_state_obj, 1 );
-
-			lua_pop( lua_state_obj, 1 );
 		}
 		
 	}
