@@ -58,6 +58,8 @@ void ShowMenu()
 
 int main()
 {
+	system( "mode con lines=50 cols=120" );
+
 	int input = 0;
 	while( true )
 	{
