@@ -1,7 +1,8 @@
 ﻿#include "pch.h"
-#include "step_LuaState.h"
 
 #include <iostream>
+
+#include "step_LuaState.h"
 
 extern "C"
 {
@@ -10,17 +11,20 @@ extern "C"
 #include "Lua54/include/lualib.h"
 }
 
-void step_LuaState()
+namespace step
 {
-	//
-	// Make Lua State
-	//
-	lua_State* lua_state_obj = luaL_newstate();
-	std::cout << "Make lua_State" << std::endl;
+	void LuaState()
+	{
+		//
+		// Make Lua State
+		//
+		lua_State* lua_state_obj = luaL_newstate();
+		std::cout << "Make lua_State" << std::endl;
 
-	//
-	// End
-	//
-	lua_close( lua_state_obj );
-	std::cout << "Close lua_State" << std::endl;
+		//
+		// End
+		//
+		lua_close( lua_state_obj );
+		std::cout << "Close lua_State" << std::endl;
+	}
 }

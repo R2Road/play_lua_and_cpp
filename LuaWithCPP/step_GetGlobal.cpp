@@ -3,59 +3,62 @@
 #include "step_helper.h"
 #include "step_GetGlobal.h"
 
-void step_GetGlobal()
+namespace step
 {
-	lua_State* lua_state_obj = luaL_newstate();
-
-
-	//
-	// Test 1
-	//
+	void GetGlobal()
 	{
-		std::cout << "lua_getglobal a" << std::endl;
+		lua_State* lua_state_obj = luaL_newstate();
+
 
 		//
-		// Push Variable "a"
+		// Test 1
 		//
-		const int type = lua_getglobal( lua_state_obj, "a" );
-		step_helper::PrintType( "a", type );
-	}
-
-	std::cout << std::endl;
-
-	//
-	// Test 2
-	//
-	{
-		const std::string command = "b = 7";
-		std::cout << "Command : " << command.c_str() << std::endl;
-
-		//
-		// Do String
-		//
-		const int result = luaL_dostring( lua_state_obj, command.c_str() );
-		if( result != LUA_OK )
 		{
-			const auto error_message = lua_tostring( lua_state_obj, -1 );
+			std::cout << "lua_getglobal a" << std::endl;
 
-			std::cout << "Command Failed " << std::endl;
-			std::cout << error_message << std::endl;
-		}
-		else
-		{
-			std::cout << "Command Success" << std::endl;
+			//
+			// Push Variable "a"
+			//
+			const int type = lua_getglobal( lua_state_obj, "a" );
+			step_helper::PrintType( "a", type );
 		}
 
-		std::cout << "lua_getglobal b" << std::endl;
+		std::cout << std::endl;
 
 		//
-		// Push Variable "a"
+		// Test 2
 		//
-		const int type = lua_getglobal( lua_state_obj, "b" );
-		step_helper::PrintType( "b", type );
+		{
+			const std::string command = "b = 7";
+			std::cout << "Command : " << command.c_str() << std::endl;
+
+			//
+			// Do String
+			//
+			const int result = luaL_dostring( lua_state_obj, command.c_str() );
+			if( result != LUA_OK )
+			{
+				const auto error_message = lua_tostring( lua_state_obj, -1 );
+
+				std::cout << "Command Failed " << std::endl;
+				std::cout << error_message << std::endl;
+			}
+			else
+			{
+				std::cout << "Command Success" << std::endl;
+			}
+
+			std::cout << "lua_getglobal b" << std::endl;
+
+			//
+			// Push Variable "a"
+			//
+			const int type = lua_getglobal( lua_state_obj, "b" );
+			step_helper::PrintType( "b", type );
+		}
+
+
+
+		lua_close( lua_state_obj );
 	}
-
-
-
-	lua_close( lua_state_obj );
 }

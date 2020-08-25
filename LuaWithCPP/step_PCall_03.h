@@ -1,3 +1,6 @@
 ﻿#pragma once
 
-void step_PCall_03();
+namespace step
+{
+	void PCall_03();
+}

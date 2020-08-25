@@ -1,3 +1,6 @@
 ﻿#pragma once
 
-void step_OpenLibs();
+namespace step
+{
+	void OpenLibs();
+}

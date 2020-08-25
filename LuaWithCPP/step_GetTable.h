@@ -1,3 +1,6 @@
 ﻿#pragma once
 
-void step_GetTable();
+namespace step
+{
+	void GetTable();
+}

@@ -1,3 +1,6 @@
 ﻿#pragma once
 
-void step_IsNumber();
+namespace step
+{
+	void IsNumber();
+}

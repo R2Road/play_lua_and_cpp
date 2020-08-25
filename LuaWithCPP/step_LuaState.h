@@ -1,3 +1,6 @@
 ﻿#pragma once
 
-void step_LuaState();
+namespace step
+{
+	void LuaState();
+}

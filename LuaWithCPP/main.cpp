@@ -66,34 +66,34 @@ int main()
 		switch( input )
 		{
 		case '1':
-			step_LuaState();
+			step::LuaState();
 			break;
 		case '2':
-			step_DoString();
+			step::DoString();
 			break;
 		case '3':
-			step_GetGlobal();
+			step::GetGlobal();
 			break;
 		case '4':
-			step_IsNumber();
+			step::IsNumber();
 			break;
 		case '5':
-			step_OpenLibs();
+			step::OpenLibs();
 			break;
 		case '6':
-			step_DoFile();
+			step::DoFile();
 			break;
 		case '7':
-			step_GetTable();
+			step::GetTable();
 			break;
 		case '8':
-			step_PCall();
+			step::PCall();
 			break;
 		case '9':
-			step_PCall_02();
+			step::PCall_02();
 			break;
 		case '-':
-			step_PCall_03();
+			step::PCall_03();
 			break;
 
 		case 27: // ESC

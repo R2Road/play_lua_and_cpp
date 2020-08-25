@@ -1,3 +1,6 @@
 ﻿#pragma once
 
-void step_DoFile();
+namespace step
+{
+	void DoFile();
+}

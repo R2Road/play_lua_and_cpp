@@ -1,3 +1,6 @@
 ﻿#pragma once
 
-void step_GetGlobal();
+namespace step
+{
+	void GetGlobal();
+}

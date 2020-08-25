@@ -4,76 +4,79 @@
 #include "step_PCall.h"
 
 
-void step_PCall()
+namespace step
 {
-	lua_State* lua_state_obj = luaL_newstate();
-
-
-
-	std::cout << "Call : luaL_openlibs" << std::endl;
-	luaL_openlibs( lua_state_obj );
-
-	std::cout << std::endl;
-
-	if( !step_helper::LuaErrorCheck( lua_state_obj, luaL_dofile( lua_state_obj, "Resources/step_PCall_01.lua" ), "luaL_dofile" ) )
+	void PCall()
 	{
-		return;
-	}
+		lua_State* lua_state_obj = luaL_newstate();
 
-	std::cout << std::endl;
 
-	//
-	// Test x 0
-	//
-	{
-		std::cout << "# Test 0 : Call With Arg x 1" << std::endl;
 
-		lua_getglobal( lua_state_obj, "TestFunction" );
-		if( lua_isfunction( lua_state_obj, -1 ) )
+		std::cout << "Call : luaL_openlibs" << std::endl;
+		luaL_openlibs( lua_state_obj );
+
+		std::cout << std::endl;
+
+		if( !step_helper::LuaErrorCheck( lua_state_obj, luaL_dofile( lua_state_obj, "Resources/step_PCall_01.lua" ), "luaL_dofile" ) )
 		{
-			std::cout << "TestFunction is Function" << std::endl;
+			return;
+		}
 
-			lua_pushnumber( lua_state_obj, 123 );
+		std::cout << std::endl;
 
-			if( step_helper::LuaErrorCheck( lua_state_obj, lua_pcall( lua_state_obj, 2, 1, 0 ), "lua_pcall" ) )
+		//
+		// Test x 0
+		//
+		{
+			std::cout << "# Test 0 : Call With Arg x 1" << std::endl;
+
+			lua_getglobal( lua_state_obj, "TestFunction" );
+			if( lua_isfunction( lua_state_obj, -1 ) )
 			{
-				std::cout << "Result : TestFunction : " << static_cast<float>( lua_tonumber( lua_state_obj, -1 ) ) << std::endl;
+				std::cout << "TestFunction is Function" << std::endl;
+
+				lua_pushnumber( lua_state_obj, 123 );
+
+				if( step_helper::LuaErrorCheck( lua_state_obj, lua_pcall( lua_state_obj, 2, 1, 0 ), "lua_pcall" ) )
+				{
+					std::cout << "Result : TestFunction : " << static_cast<float>( lua_tonumber( lua_state_obj, -1 ) ) << std::endl;
+				}
+			}
+			else
+			{
+				std::cout << "Is Not Function" << std::endl;
 			}
 		}
-		else
+
+		std::cout << std::endl;
+
+		//
+		// Test x 1
+		//
 		{
-			std::cout << "Is Not Function" << std::endl;
-		}
-	}
+			std::cout << "# Test 1 : Call With Arg x 2" << std::endl;
 
-	std::cout << std::endl;
-
-	//
-	// Test x 1
-	//
-	{
-		std::cout << "# Test 1 : Call With Arg x 2" << std::endl;
-
-		lua_getglobal( lua_state_obj, "TestFunction" );
-		if( lua_isfunction( lua_state_obj, -1 ) )
-		{
-			std::cout << "TestFunction is Function" << std::endl;
-
-			lua_pushnumber( lua_state_obj, 123 );
-			lua_pushnumber( lua_state_obj, 456 );
-
-			if( step_helper::LuaErrorCheck( lua_state_obj, lua_pcall( lua_state_obj, 2, 1, 0 ), "lua_pcall" ) )
+			lua_getglobal( lua_state_obj, "TestFunction" );
+			if( lua_isfunction( lua_state_obj, -1 ) )
 			{
-				std::cout << "Result : TestFunction : " << static_cast<float>( lua_tonumber( lua_state_obj, -1 ) ) << std::endl;
+				std::cout << "TestFunction is Function" << std::endl;
+
+				lua_pushnumber( lua_state_obj, 123 );
+				lua_pushnumber( lua_state_obj, 456 );
+
+				if( step_helper::LuaErrorCheck( lua_state_obj, lua_pcall( lua_state_obj, 2, 1, 0 ), "lua_pcall" ) )
+				{
+					std::cout << "Result : TestFunction : " << static_cast<float>( lua_tonumber( lua_state_obj, -1 ) ) << std::endl;
+				}
+			}
+			else
+			{
+				std::cout << "Is Not Function" << std::endl;
 			}
 		}
-		else
-		{
-			std::cout << "Is Not Function" << std::endl;
-		}
+
+
+
+		lua_close( lua_state_obj );
 	}
-
-
-
-	lua_close( lua_state_obj );
 }
