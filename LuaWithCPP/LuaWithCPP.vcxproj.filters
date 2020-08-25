@@ -35,10 +35,10 @@
     <ClInclude Include="step_PCall_03.h">
       <Filter>step</Filter>
     </ClInclude>
-    <ClInclude Include="step_PCall_04.h">
+    <ClInclude Include="step_PCall_01.h">
       <Filter>step</Filter>
     </ClInclude>
-    <ClInclude Include="step_PCall_01.h">
+    <ClInclude Include="step_PCall_04_CallCPPFunction.h">
       <Filter>step</Filter>
     </ClInclude>
   </ItemGroup>
@@ -73,10 +73,10 @@
     <ClCompile Include="step_PCall_03.cpp">
       <Filter>step</Filter>
     </ClCompile>
-    <ClCompile Include="step_PCall_04.cpp">
+    <ClCompile Include="step_PCall_01.cpp">
       <Filter>step</Filter>
     </ClCompile>
-    <ClCompile Include="step_PCall_01.cpp">
+    <ClCompile Include="step_PCall_04_CallCPPFunction.cpp">
       <Filter>step</Filter>
     </ClCompile>
   </ItemGroup>

@@ -26,7 +26,7 @@
 #include "step_PCall_01.h"
 #include "step_PCall_02.h"
 #include "step_PCall_03.h"
-#include "step_PCall_04.h"
+#include "step_PCall_04_CallCPPFunction.h"
 
 std::string MakeMenuString()
 {
