@@ -39,14 +39,14 @@ namespace step
 		std::cout << "Call : luaL_openlibs" << std::endl;
 		luaL_openlibs( lua_state_obj );
 
-		std::cout << std::endl;
+		std::cout << std::endl << std::endl;
 
 		if( !step_helper::LuaErrorCheck( lua_state_obj, luaL_dofile( lua_state_obj, "Resources/step_PCall_04.lua" ), "luaL_dofile" ) )
 		{
 			return;
 		}
 
-		std::cout << std::endl;		
+		std::cout << std::endl << std::endl;
 
 		//
 		// Test x 0
@@ -75,6 +75,7 @@ namespace step
 
 			lua_register( lua_state_obj, "CPPFunction1", CPPFunction1 );
 			std::cout << "lua_register : CPPFunction1" << std::endl;
+			std::cout << std::endl;
 
 			lua_getglobal( lua_state_obj, "CallCPPFunction1" );
 			lua_pushnumber( lua_state_obj, 123 );
@@ -98,6 +99,7 @@ namespace step
 
 			lua_register( lua_state_obj, "CPPFunction2", CPPFunction2 );
 			std::cout << "lua_register : CPPFunction2" << std::endl;
+			std::cout << std::endl;
 
 			lua_getglobal( lua_state_obj, "CallCPPFunction2" );
 			lua_pushnumber( lua_state_obj, 123 );
