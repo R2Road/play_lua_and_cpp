@@ -23,7 +23,7 @@
 #include "step_OpenLibs.h"
 #include "step_DoFile.h"
 #include "step_GetTable.h"
-#include "step_PCall.h"
+#include "step_PCall_01.h"
 #include "step_PCall_02.h"
 #include "step_PCall_03.h"
 #include "step_PCall_04.h"
@@ -39,7 +39,7 @@ std::string MakeMenuString()
 	ss << "5 : step_OpenLibs" << std::endl;
 	ss << "6 : step_DoFile" << std::endl;
 	ss << "7 : step_GetTable" << std::endl;
-	ss << "8 : step_PCall" << std::endl;
+	ss << "8 : step_PCall_01" << std::endl;
 	ss << "9 : step_PCall_02" << std::endl;
 	ss << "- : step_PCall_03" << std::endl;
 
@@ -90,7 +90,7 @@ int main()
 			step::GetTable();
 			break;
 		case '8':
-			step::PCall();
+			step::PCall_01();
 			break;
 		case '9':
 			step::PCall_02();

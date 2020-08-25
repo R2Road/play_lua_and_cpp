@@ -29,9 +29,6 @@
     <ClInclude Include="step_GetTable.h">
       <Filter>step</Filter>
     </ClInclude>
-    <ClInclude Include="step_PCall.h">
-      <Filter>step</Filter>
-    </ClInclude>
     <ClInclude Include="step_PCall_02.h">
       <Filter>step</Filter>
     </ClInclude>
@@ -39,6 +36,9 @@
       <Filter>step</Filter>
     </ClInclude>
     <ClInclude Include="step_PCall_04.h">
+      <Filter>step</Filter>
+    </ClInclude>
+    <ClInclude Include="step_PCall_01.h">
       <Filter>step</Filter>
     </ClInclude>
   </ItemGroup>
@@ -67,9 +67,6 @@
     <ClCompile Include="step_GetTable.cpp">
       <Filter>step</Filter>
     </ClCompile>
-    <ClCompile Include="step_PCall.cpp">
-      <Filter>step</Filter>
-    </ClCompile>
     <ClCompile Include="step_PCall_02.cpp">
       <Filter>step</Filter>
     </ClCompile>
@@ -77,6 +74,9 @@
       <Filter>step</Filter>
     </ClCompile>
     <ClCompile Include="step_PCall_04.cpp">
+      <Filter>step</Filter>
+    </ClCompile>
+    <ClCompile Include="step_PCall_01.cpp">
       <Filter>step</Filter>
     </ClCompile>
   </ItemGroup>

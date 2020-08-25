@@ -1,12 +1,12 @@
 ﻿#include "pch.h"
 
 #include "step_helper.h"
-#include "step_PCall.h"
+#include "step_PCall_01.h"
 
 
 namespace step
 {
-	void PCall()
+	void PCall_01()
 	{
 		lua_State* lua_state_obj = luaL_newstate();
 

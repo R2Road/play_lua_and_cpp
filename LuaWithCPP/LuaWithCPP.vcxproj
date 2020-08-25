@@ -166,7 +166,7 @@
     <ClInclude Include="step_IsNumber.h" />
     <ClInclude Include="step_LuaState.h" />
     <ClInclude Include="step_OpenLibs.h" />
-    <ClInclude Include="step_PCall.h" />
+    <ClInclude Include="step_PCall_01.h" />
     <ClInclude Include="step_PCall_02.h" />
     <ClInclude Include="step_PCall_03.h" />
     <ClInclude Include="step_PCall_04.h" />
@@ -187,7 +187,7 @@
     <ClCompile Include="step_IsNumber.cpp" />
     <ClCompile Include="step_LuaState.cpp" />
     <ClCompile Include="step_OpenLibs.cpp" />
-    <ClCompile Include="step_PCall.cpp" />
+    <ClCompile Include="step_PCall_01.cpp" />
     <ClCompile Include="step_PCall_02.cpp" />
     <ClCompile Include="step_PCall_03.cpp" />
     <ClCompile Include="step_PCall_04.cpp" />
