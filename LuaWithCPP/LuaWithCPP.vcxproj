@@ -169,6 +169,7 @@
     <ClInclude Include="step_PCall.h" />
     <ClInclude Include="step_PCall_02.h" />
     <ClInclude Include="step_PCall_03.h" />
+    <ClInclude Include="step_PCall_04.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -189,6 +190,7 @@
     <ClCompile Include="step_PCall.cpp" />
     <ClCompile Include="step_PCall_02.cpp" />
     <ClCompile Include="step_PCall_03.cpp" />
+    <ClCompile Include="step_PCall_04.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
