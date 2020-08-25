@@ -55,7 +55,7 @@ namespace step
 
 				lua_pushstring( lua_state_obj, "age" );
 				lua_gettable( lua_state_obj, -2 );
-				const int age = lua_tointeger( lua_state_obj, -1 );
+				const int age = (int)lua_tointeger( lua_state_obj, -1 );
 				std::cout << "age : " << age << std::endl;
 				lua_pop( lua_state_obj, 1 );
 			}
@@ -84,7 +84,7 @@ namespace step
 
 				lua_pushstring( lua_state_obj, "age" );
 				lua_gettable( lua_state_obj, -2 );
-				const int age = lua_tointeger( lua_state_obj, -1 );
+				const int age = (int)lua_tointeger( lua_state_obj, -1 );
 				std::cout << "age : " << age << std::endl;
 				lua_pop( lua_state_obj, 1 );
 			}
