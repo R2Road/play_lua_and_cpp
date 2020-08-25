@@ -39,11 +39,13 @@ std::string MakeMenuString()
 	ss << "5 : step_OpenLibs" << std::endl;
 	ss << "6 : step_DoFile" << std::endl;
 	ss << "7 : step_GetTable" << std::endl;
-	ss << "8 : step_PCall_01" << std::endl;
-	ss << "9 : step_PCall_02" << std::endl;
-	ss << "- : step_PCall_03" << std::endl;
 
-	ss << "Q : step_PCall_04_CallCPPFunction" << std::endl;
+	ss << std::endl;
+
+	ss << "Q : step_PCall_01" << std::endl;
+	ss << "W : step_PCall_02" << std::endl;
+	ss << "E : step_PCall_03" << std::endl;
+	ss << "R : step_PCall_04_CallCPPFunction" << std::endl;
 
 	ss << std::endl << "Press Number" << std::endl;
 
@@ -91,16 +93,17 @@ int main()
 		case '7':
 			step::GetTable();
 			break;
-		case '8':
+
+		case 'q':
 			step::PCall_01();
 			break;
-		case '9':
+		case 'w':
 			step::PCall_02();
 			break;
-		case '-':
+		case 'e':
 			step::PCall_03();
 			break;
-		case 'q':
+		case 'r':
 			step::PCall_04_CallCPPFunction();
 			break;
 
