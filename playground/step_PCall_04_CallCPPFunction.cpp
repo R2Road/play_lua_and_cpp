@@ -41,7 +41,7 @@ namespace step
 
 		std::cout << std::endl << std::endl;
 
-		if( !step_helper::LuaErrorCheck( lua_state_obj, luaL_dofile( lua_state_obj, "Resources/step_PCall_04.lua" ), "luaL_dofile" ) )
+		if( !step_helper::LuaErrorCheck( lua_state_obj, luaL_dofile( lua_state_obj, "resources/step_PCall_04.lua" ), "luaL_dofile" ) )
 		{
 			return;
 		}

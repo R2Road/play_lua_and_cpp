@@ -22,7 +22,7 @@ namespace step
 		{
 			std::cout << "# Test 0" << std::endl;
 
-			const int result = luaL_dofile( lua_state_obj, "Resources/step_DoFile_00.lua" );
+			const int result = luaL_dofile( lua_state_obj, "resources/step_DoFile_00.lua" );
 			if( result != LUA_OK )
 			{
 				const auto error_message = lua_tostring( lua_state_obj, -1 );
@@ -52,7 +52,7 @@ namespace step
 		{
 			std::cout << "# Test 1" << std::endl;
 
-			const int result = luaL_dofile( lua_state_obj, "Resources/step_DoFile_01.lua" );
+			const int result = luaL_dofile( lua_state_obj, "resources/step_DoFile_01.lua" );
 			if( result != LUA_OK )
 			{
 				const auto error_message = lua_tostring( lua_state_obj, -1 );
@@ -82,7 +82,7 @@ namespace step
 		{
 			std::cout << "# Test 2" << std::endl;
 
-			const int result = luaL_dofile( lua_state_obj, "Resources/step_DoFile_02.lua" );
+			const int result = luaL_dofile( lua_state_obj, "resources/step_DoFile_02.lua" );
 			if( result != LUA_OK )
 			{
 				const auto error_message = lua_tostring( lua_state_obj, -1 );
