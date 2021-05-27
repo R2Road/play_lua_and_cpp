@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.852
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LuaWithCPP", "LuaWithCPP.vcxproj", "{501980AC-76E7-48C1-8E69-1424BE9B869B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua_and_cpp_playground", "lua_and_cpp_playground.vcxproj", "{501980AC-76E7-48C1-8E69-1424BE9B869B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
