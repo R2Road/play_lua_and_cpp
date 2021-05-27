@@ -31,7 +31,7 @@
 *.out
 *.app
 
-LuaWithCPP/Debug/*
-LuaWithCPP/.vs/*
-LuaWithCPP/Release/*
-LuaWithCPP/x64/*
+playground/Debug/*
+playground/.vs/*
+playground/Release/*
+playground/x64/*
