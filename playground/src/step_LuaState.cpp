@@ -6,9 +6,9 @@
 
 extern "C"
 {
-#include "../Lua54/include/lua.h"
-#include "../Lua54/include/lauxlib.h"
-#include "../Lua54/include/lualib.h"
+#include "lua.h"
+#include "lauxlib.h"
+#include "lualib.h"
 }
 
 namespace step

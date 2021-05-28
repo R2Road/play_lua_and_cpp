@@ -12,10 +12,6 @@
 #include <utility>
 #include <Windows.h>
 
-#ifdef _WIN32
-#pragma comment( lib, "lua54/liblua54.a" )
-#endif
-
 #include "step_LuaState.h"
 #include "step_DoString.h"
 #include "step_GetGlobal.h"
