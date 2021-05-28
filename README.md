@@ -15,4 +15,4 @@
   - Visual Studio Community 2017 15.9.27
 
 - external library
-  - ...
+  - lua 5.4.2
