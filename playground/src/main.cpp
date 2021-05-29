@@ -27,23 +27,23 @@
 std::string MakeMenuString()
 {
 	std::stringstream ss;
-	ss << "+ Menu" << std::endl;
-	ss << "1 : step_LuaState" << std::endl;
-	ss << "2 : step_DoString" << std::endl;
-	ss << "3 : step_GetGlobal" << std::endl;
-	ss << "4 : step_IsNumber" << std::endl;
-	ss << "5 : step_OpenLibs" << std::endl;
-	ss << "6 : step_DoFile" << std::endl;
-	ss << "7 : step_GetTable" << std::endl;
+	ss << "+ Menu" << r2::linefeed;
+	ss << "1 : step_LuaState" << r2::linefeed;
+	ss << "2 : step_DoString" << r2::linefeed;
+	ss << "3 : step_GetGlobal" << r2::linefeed;
+	ss << "4 : step_IsNumber" << r2::linefeed;
+	ss << "5 : step_OpenLibs" << r2::linefeed;
+	ss << "6 : step_DoFile" << r2::linefeed;
+	ss << "7 : step_GetTable" << r2::linefeed;
 
-	ss << std::endl;
+	ss << r2::linefeed;
 
-	ss << "Q : step_PCall_01" << std::endl;
-	ss << "W : step_PCall_02" << std::endl;
-	ss << "E : step_PCall_03" << std::endl;
-	ss << "R : step_PCall_04_CallCPPFunction" << std::endl;
+	ss << "Q : step_PCall_01" << r2::linefeed;
+	ss << "W : step_PCall_02" << r2::linefeed;
+	ss << "E : step_PCall_03" << r2::linefeed;
+	ss << "R : step_PCall_04_CallCPPFunction" << r2::linefeed;
 
-	ss << std::endl << "Press Number" << std::endl;
+	ss << std::endl << "Press Number" << r2::linefeed;
 
 	return std::string( ss.str() );
 }
@@ -107,7 +107,7 @@ int main()
 			return 0;
 		}
 
-		std::cout << std::endl << "Press Any Key" << std::endl;
+		std::cout << std::endl << "Press Any Key" << r2::linefeed;
 		_getch();
 		system( "cls" );
 	}
