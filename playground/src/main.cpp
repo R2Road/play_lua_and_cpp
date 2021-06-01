@@ -5,113 +5,48 @@
 //
 
 #include "pch.h"
-
-#include <conio.h>
-#include <iostream>
-#include <sstream>
-#include <utility>
 #include <Windows.h>
 
-#include "step_LuaState.h"
-#include "step_DoString.h"
-#include "step_GetGlobal.h"
-#include "step_IsNumber.h"
-#include "step_OpenLibs.h"
-#include "step_DoFile.h"
-#include "step_GetTable.h"
-#include "step_PCall_01.h"
-#include "step_PCall_02.h"
-#include "step_PCall_03.h"
-#include "step_PCall_04_CallCPPFunction.h"
+//#if defined( DEBUG ) || defined( _DEBUG )
+//	#include <vld.h>
+//#endif
 
-std::string MakeMenuString()
-{
-	std::stringstream ss;
-	ss << "+ Menu" << r2::linefeed;
-	ss << "1 : step_LuaState" << r2::linefeed;
-	ss << "2 : step_DoString" << r2::linefeed;
-	ss << "3 : step_GetGlobal" << r2::linefeed;
-	ss << "4 : step_IsNumber" << r2::linefeed;
-	ss << "5 : step_OpenLibs" << r2::linefeed;
-	ss << "6 : step_DoFile" << r2::linefeed;
-	ss << "7 : step_GetTable" << r2::linefeed;
-
-	ss << r2::linefeed;
-
-	ss << "Q : step_PCall_01" << r2::linefeed;
-	ss << "W : step_PCall_02" << r2::linefeed;
-	ss << "E : step_PCall_03" << r2::linefeed;
-	ss << "R : step_PCall_04_CallCPPFunction" << r2::linefeed;
-
-	ss << std::endl << "Press Number" << r2::linefeed;
-
-	return std::string( ss.str() );
-}
-
-void ShowMenu()
-{
-	static std::string menu_string( std::move( MakeMenuString() ) );
-	std::cout << menu_string;
-}
+#include "r2_Director.h"
+#include "r2_RootMenu.h"
 
 int main()
 {
-	system( "mode con lines=50 cols=120" );
+	//
+	// Environment : Title
+	//
+	SetConsoleTitle( TEXT( "fmod_playground" ) );
 
-	int input = 0;
-	while( true )
+	//
+	// Environment : Size
+	//
+	system( "mode con lines=60 cols=120" );
+
+	//
+	// Environment : Position
+	//
 	{
-		ShowMenu();
-
-		input = _getch();
-		system( "cls" );
-
-		switch( input )
-		{
-		case '1':
-			step::LuaState();
-			break;
-		case '2':
-			step::DoString();
-			break;
-		case '3':
-			step::GetGlobal();
-			break;
-		case '4':
-			step::IsNumber();
-			break;
-		case '5':
-			step::OpenLibs();
-			break;
-		case '6':
-			step::DoFile();
-			break;
-		case '7':
-			step::GetTable();
-			break;
-
-		case 'q':
-			step::PCall_01();
-			break;
-		case 'w':
-			step::PCall_02();
-			break;
-		case 'e':
-			step::PCall_03();
-			break;
-		case 'r':
-			step::PCall_04_CallCPPFunction();
-			break;
-
-		case 27: // ESC
-			return 0;
-		}
-
-		std::cout << std::endl << "Press Any Key" << r2::linefeed;
-		_getch();
-		system( "cls" );
+		HWND hWnd = GetConsoleWindow();
+		RECT rectClient;
+		GetClientRect( hWnd, &rectClient );
+		MoveWindow( hWnd, 0, 0, rectClient.right - rectClient.left, rectClient.bottom - rectClient.top, TRUE );
 	}
 
+	//
+	// Setup
+	//
+	r2::Director director;
+	director.Setup( r2::RootMenu::Create( director ) );
+
+	//
+	// Process
+	//
+	director.Update();
 
 	return 0;
 }
+
