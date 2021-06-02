@@ -19,7 +19,7 @@ int main()
 	//
 	// Environment : Title
 	//
-	SetConsoleTitle( TEXT( "fmod_playground" ) );
+	SetConsoleTitle( TEXT( "lua_and_cpp_playground" ) );
 
 	//
 	// Environment : Size
