@@ -21,9 +21,7 @@ namespace r2
 		int input = 0;
 		while( true )
 		{
-			mMenu->ShowTitle();
-			mMenu->ShowDescription();
-			mMenu->ShowItem();
+			mMenu->ShowMenu();
 			input = _getch();
 
 			system( "cls" );
