@@ -7,17 +7,17 @@
 #include "base/r2_Director.h"
 #include "base/r2_eTestResult.h"
 
-#include "step_LuaState.h"
-#include "step_DoString.h"
-#include "step_GetGlobal.h"
-#include "step_IsNumber.h"
-#include "step_OpenLibs.h"
-#include "step_DoFile.h"
-#include "step_GetTable.h"
-#include "step_PCall_01.h"
-#include "step_PCall_02.h"
-#include "step_PCall_03.h"
-#include "step_PCall_04_CallCPPFunction.h"
+#include "step/step_LuaState.h"
+#include "step/step_DoString.h"
+#include "step/step_GetGlobal.h"
+#include "step/step_IsNumber.h"
+#include "step/step_OpenLibs.h"
+#include "step/step_DoFile.h"
+#include "step/step_GetTable.h"
+#include "step/step_PCall_01.h"
+#include "step/step_PCall_02.h"
+#include "step/step_PCall_03.h"
+#include "step/step_PCall_04_CallCPPFunction.h"
 
 namespace
 {

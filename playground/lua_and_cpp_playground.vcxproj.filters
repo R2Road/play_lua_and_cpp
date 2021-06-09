@@ -14,39 +14,6 @@
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pch.cpp" />
-    <ClCompile Include="src\step_DoFile.cpp">
-      <Filter>step</Filter>
-    </ClCompile>
-    <ClCompile Include="src\step_DoString.cpp">
-      <Filter>step</Filter>
-    </ClCompile>
-    <ClCompile Include="src\step_GetGlobal.cpp">
-      <Filter>step</Filter>
-    </ClCompile>
-    <ClCompile Include="src\step_GetTable.cpp">
-      <Filter>step</Filter>
-    </ClCompile>
-    <ClCompile Include="src\step_IsNumber.cpp">
-      <Filter>step</Filter>
-    </ClCompile>
-    <ClCompile Include="src\step_LuaState.cpp">
-      <Filter>step</Filter>
-    </ClCompile>
-    <ClCompile Include="src\step_OpenLibs.cpp">
-      <Filter>step</Filter>
-    </ClCompile>
-    <ClCompile Include="src\step_PCall_01.cpp">
-      <Filter>step</Filter>
-    </ClCompile>
-    <ClCompile Include="src\step_PCall_02.cpp">
-      <Filter>step</Filter>
-    </ClCompile>
-    <ClCompile Include="src\step_PCall_03.cpp">
-      <Filter>step</Filter>
-    </ClCompile>
-    <ClCompile Include="src\step_PCall_04_CallCPPFunction.cpp">
-      <Filter>step</Filter>
-    </ClCompile>
     <ClCompile Include="src\step_helper.cpp" />
     <ClCompile Include="src\base\r2_Director.cpp">
       <Filter>base</Filter>
@@ -60,42 +27,42 @@
     <ClCompile Include="src\menu\r2_RootMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\step\step_DoString.cpp">
+      <Filter>step</Filter>
+    </ClCompile>
+    <ClCompile Include="src\step\step_GetGlobal.cpp">
+      <Filter>step</Filter>
+    </ClCompile>
+    <ClCompile Include="src\step\step_GetTable.cpp">
+      <Filter>step</Filter>
+    </ClCompile>
+    <ClCompile Include="src\step\step_IsNumber.cpp">
+      <Filter>step</Filter>
+    </ClCompile>
+    <ClCompile Include="src\step\step_LuaState.cpp">
+      <Filter>step</Filter>
+    </ClCompile>
+    <ClCompile Include="src\step\step_OpenLibs.cpp">
+      <Filter>step</Filter>
+    </ClCompile>
+    <ClCompile Include="src\step\step_PCall_01.cpp">
+      <Filter>step</Filter>
+    </ClCompile>
+    <ClCompile Include="src\step\step_PCall_02.cpp">
+      <Filter>step</Filter>
+    </ClCompile>
+    <ClCompile Include="src\step\step_PCall_03.cpp">
+      <Filter>step</Filter>
+    </ClCompile>
+    <ClCompile Include="src\step\step_PCall_04_CallCPPFunction.cpp">
+      <Filter>step</Filter>
+    </ClCompile>
+    <ClCompile Include="src\step\step_DoFile.cpp">
+      <Filter>step</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
-    <ClInclude Include="src\step_DoFile.h">
-      <Filter>step</Filter>
-    </ClInclude>
-    <ClInclude Include="src\step_DoString.h">
-      <Filter>step</Filter>
-    </ClInclude>
-    <ClInclude Include="src\step_GetGlobal.h">
-      <Filter>step</Filter>
-    </ClInclude>
-    <ClInclude Include="src\step_GetTable.h">
-      <Filter>step</Filter>
-    </ClInclude>
-    <ClInclude Include="src\step_IsNumber.h">
-      <Filter>step</Filter>
-    </ClInclude>
-    <ClInclude Include="src\step_LuaState.h">
-      <Filter>step</Filter>
-    </ClInclude>
-    <ClInclude Include="src\step_OpenLibs.h">
-      <Filter>step</Filter>
-    </ClInclude>
-    <ClInclude Include="src\step_PCall_01.h">
-      <Filter>step</Filter>
-    </ClInclude>
-    <ClInclude Include="src\step_PCall_02.h">
-      <Filter>step</Filter>
-    </ClInclude>
-    <ClInclude Include="src\step_PCall_03.h">
-      <Filter>step</Filter>
-    </ClInclude>
-    <ClInclude Include="src\step_PCall_04_CallCPPFunction.h">
-      <Filter>step</Filter>
-    </ClInclude>
     <ClInclude Include="src\step_helper.h" />
     <ClInclude Include="src\base\r2_Assert.h">
       <Filter>base</Filter>
@@ -120,6 +87,39 @@
     </ClInclude>
     <ClInclude Include="src\menu\r2_RootMenu.h">
       <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\step\step_DoFile.h">
+      <Filter>step</Filter>
+    </ClInclude>
+    <ClInclude Include="src\step\step_DoString.h">
+      <Filter>step</Filter>
+    </ClInclude>
+    <ClInclude Include="src\step\step_GetGlobal.h">
+      <Filter>step</Filter>
+    </ClInclude>
+    <ClInclude Include="src\step\step_GetTable.h">
+      <Filter>step</Filter>
+    </ClInclude>
+    <ClInclude Include="src\step\step_IsNumber.h">
+      <Filter>step</Filter>
+    </ClInclude>
+    <ClInclude Include="src\step\step_LuaState.h">
+      <Filter>step</Filter>
+    </ClInclude>
+    <ClInclude Include="src\step\step_OpenLibs.h">
+      <Filter>step</Filter>
+    </ClInclude>
+    <ClInclude Include="src\step\step_PCall_01.h">
+      <Filter>step</Filter>
+    </ClInclude>
+    <ClInclude Include="src\step\step_PCall_02.h">
+      <Filter>step</Filter>
+    </ClInclude>
+    <ClInclude Include="src\step\step_PCall_03.h">
+      <Filter>step</Filter>
+    </ClInclude>
+    <ClInclude Include="src\step\step_PCall_04_CallCPPFunction.h">
+      <Filter>step</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

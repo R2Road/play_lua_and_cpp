@@ -30,18 +30,18 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\step_DoFile.cpp" />
-    <ClCompile Include="src\step_DoString.cpp" />
-    <ClCompile Include="src\step_GetGlobal.cpp" />
-    <ClCompile Include="src\step_GetTable.cpp" />
+    <ClCompile Include="src\step\step_DoFile.cpp" />
+    <ClCompile Include="src\step\step_DoString.cpp" />
+    <ClCompile Include="src\step\step_GetGlobal.cpp" />
+    <ClCompile Include="src\step\step_GetTable.cpp" />
+    <ClCompile Include="src\step\step_IsNumber.cpp" />
+    <ClCompile Include="src\step\step_LuaState.cpp" />
+    <ClCompile Include="src\step\step_OpenLibs.cpp" />
+    <ClCompile Include="src\step\step_PCall_01.cpp" />
+    <ClCompile Include="src\step\step_PCall_02.cpp" />
+    <ClCompile Include="src\step\step_PCall_03.cpp" />
+    <ClCompile Include="src\step\step_PCall_04_CallCPPFunction.cpp" />
     <ClCompile Include="src\step_helper.cpp" />
-    <ClCompile Include="src\step_IsNumber.cpp" />
-    <ClCompile Include="src\step_LuaState.cpp" />
-    <ClCompile Include="src\step_OpenLibs.cpp" />
-    <ClCompile Include="src\step_PCall_01.cpp" />
-    <ClCompile Include="src\step_PCall_02.cpp" />
-    <ClCompile Include="src\step_PCall_03.cpp" />
-    <ClCompile Include="src\step_PCall_04_CallCPPFunction.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\base\r2_Assert.h" />
@@ -53,18 +53,18 @@
     <ClInclude Include="src\base\r2_Singleton.h" />
     <ClInclude Include="src\menu\r2_RootMenu.h" />
     <ClInclude Include="src\pch.h" />
-    <ClInclude Include="src\step_DoFile.h" />
-    <ClInclude Include="src\step_DoString.h" />
-    <ClInclude Include="src\step_GetGlobal.h" />
-    <ClInclude Include="src\step_GetTable.h" />
+    <ClInclude Include="src\step\step_DoFile.h" />
+    <ClInclude Include="src\step\step_DoString.h" />
+    <ClInclude Include="src\step\step_GetGlobal.h" />
+    <ClInclude Include="src\step\step_GetTable.h" />
+    <ClInclude Include="src\step\step_IsNumber.h" />
+    <ClInclude Include="src\step\step_LuaState.h" />
+    <ClInclude Include="src\step\step_OpenLibs.h" />
+    <ClInclude Include="src\step\step_PCall_01.h" />
+    <ClInclude Include="src\step\step_PCall_02.h" />
+    <ClInclude Include="src\step\step_PCall_03.h" />
+    <ClInclude Include="src\step\step_PCall_04_CallCPPFunction.h" />
     <ClInclude Include="src\step_helper.h" />
-    <ClInclude Include="src\step_IsNumber.h" />
-    <ClInclude Include="src\step_LuaState.h" />
-    <ClInclude Include="src\step_OpenLibs.h" />
-    <ClInclude Include="src\step_PCall_01.h" />
-    <ClInclude Include="src\step_PCall_02.h" />
-    <ClInclude Include="src\step_PCall_03.h" />
-    <ClInclude Include="src\step_PCall_04_CallCPPFunction.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
