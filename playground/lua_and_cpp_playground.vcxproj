@@ -19,17 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\base\r2_Director.cpp" />
+    <ClCompile Include="src\base\r2_FrameManager.cpp" />
+    <ClCompile Include="src\base\r2_Menu.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\menu\r2_RootMenu.cpp" />
     <ClCompile Include="src\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\r2_Director.cpp" />
-    <ClCompile Include="src\r2_FrameManager.cpp" />
-    <ClCompile Include="src\r2_Menu.cpp" />
-    <ClCompile Include="src\r2_RootMenu.cpp" />
     <ClCompile Include="src\step_DoFile.cpp" />
     <ClCompile Include="src\step_DoString.cpp" />
     <ClCompile Include="src\step_GetGlobal.cpp" />
@@ -44,15 +44,15 @@
     <ClCompile Include="src\step_PCall_04_CallCPPFunction.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\base\r2_Assert.h" />
+    <ClInclude Include="src\base\r2_Director.h" />
+    <ClInclude Include="src\base\r2_eTestResult.h" />
+    <ClInclude Include="src\base\r2_FrameManager.h" />
+    <ClInclude Include="src\base\r2_iTest.h" />
+    <ClInclude Include="src\base\r2_Menu.h" />
+    <ClInclude Include="src\base\r2_Singleton.h" />
+    <ClInclude Include="src\menu\r2_RootMenu.h" />
     <ClInclude Include="src\pch.h" />
-    <ClInclude Include="src\r2_Assert.h" />
-    <ClInclude Include="src\r2_Director.h" />
-    <ClInclude Include="src\r2_eTestResult.h" />
-    <ClInclude Include="src\r2_FrameManager.h" />
-    <ClInclude Include="src\r2_iTest.h" />
-    <ClInclude Include="src\r2_Menu.h" />
-    <ClInclude Include="src\r2_RootMenu.h" />
-    <ClInclude Include="src\r2_Singleton.h" />
     <ClInclude Include="src\step_DoFile.h" />
     <ClInclude Include="src\step_DoString.h" />
     <ClInclude Include="src\step_GetGlobal.h" />
@@ -140,7 +140,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>lua\x86\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\src;lua\x86\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -161,7 +161,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>lua\x64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\src;lua\x64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -184,7 +184,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>lua\x86\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\src;lua\x86\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -209,7 +209,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>lua\x64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\src;lua\x64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>

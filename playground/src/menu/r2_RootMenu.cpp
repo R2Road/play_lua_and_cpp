@@ -4,8 +4,8 @@
 #include <conio.h>
 #include <sstream>
 
-#include "r2_Director.h"
-#include "r2_eTestResult.h"
+#include "base/r2_Director.h"
+#include "base/r2_eTestResult.h"
 
 #include "step_LuaState.h"
 #include "step_DoString.h"

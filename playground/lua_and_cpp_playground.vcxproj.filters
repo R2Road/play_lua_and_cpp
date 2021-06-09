@@ -48,16 +48,16 @@
       <Filter>step</Filter>
     </ClCompile>
     <ClCompile Include="src\step_helper.cpp" />
-    <ClCompile Include="src\r2_Director.cpp">
+    <ClCompile Include="src\base\r2_Director.cpp">
       <Filter>base</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2_Menu.cpp">
+    <ClCompile Include="src\base\r2_FrameManager.cpp">
       <Filter>base</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2_FrameManager.cpp">
+    <ClCompile Include="src\base\r2_Menu.cpp">
       <Filter>base</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2_RootMenu.cpp">
+    <ClCompile Include="src\menu\r2_RootMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
   </ItemGroup>
@@ -97,28 +97,28 @@
       <Filter>step</Filter>
     </ClInclude>
     <ClInclude Include="src\step_helper.h" />
-    <ClInclude Include="src\r2_Assert.h">
+    <ClInclude Include="src\base\r2_Assert.h">
       <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_Director.h">
+    <ClInclude Include="src\base\r2_Director.h">
       <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_eTestResult.h">
+    <ClInclude Include="src\base\r2_eTestResult.h">
       <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_iTest.h">
+    <ClInclude Include="src\base\r2_FrameManager.h">
       <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_Menu.h">
+    <ClInclude Include="src\base\r2_iTest.h">
       <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_Singleton.h">
+    <ClInclude Include="src\base\r2_Menu.h">
       <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_FrameManager.h">
+    <ClInclude Include="src\base\r2_Singleton.h">
       <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2_RootMenu.h">
+    <ClInclude Include="src\menu\r2_RootMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
   </ItemGroup>
