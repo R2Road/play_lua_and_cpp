@@ -1,8 +1,7 @@
 ﻿#include "pch.h"
-
-#include <iostream>
-
 #include "step_LuaState.h"
+
+#include "base/r2_eTestResult.h"
 
 extern "C"
 {
@@ -11,20 +10,55 @@ extern "C"
 #include "lualib.h"
 }
 
-namespace step
+namespace lua_state_test
 {
-	void LuaState()
+	r2::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
-		//
-		// Make Lua State
-		//
-		lua_State* lua_state_obj = luaL_newstate();
-		std::cout << "Make lua_State" << std::endl;
+		return []()->const char*
+		{
+			return "Lua State";
+		};
+	}
+	r2::iTest::DoFunc Basic::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-		//
-		// End
-		//
-		lua_close( lua_state_obj );
-		std::cout << "Close lua_State" << std::endl;
+			std::cout << r2::split;
+
+			lua_State* lua_state_obj = nullptr;
+
+			std::cout << r2::tab << "+ Variable" << std::endl;
+			std::cout << r2::tab2 << "lua_State* lua_state_obj = nullptr;" << std::endl;
+
+			std::cout << r2::split;
+
+			{
+				//
+				// Make Lua State
+				//
+				lua_state_obj = luaL_newstate();
+
+				std::cout << r2::tab << "+ Make lua_State" << std::endl;
+				std::cout << r2::tab2 << "lua_State* lua_state_obj = luaL_newstate();" << std::endl;
+			}
+
+			std::cout << r2::split;
+
+			{
+				//
+				// End
+				//
+				lua_close( lua_state_obj );
+
+				std::cout << r2::tab << " + Close lua_State" << std::endl;
+				std::cout << r2::tab2 << "lua_close( lua_state_obj );" << std::endl;
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
 	}
 }

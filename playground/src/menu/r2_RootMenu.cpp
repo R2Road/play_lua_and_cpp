@@ -63,8 +63,10 @@ namespace r2
 		) );
 
 		{
+			ret->AddChild( '1', lua_state_test::Basic::GetInstance() );
+
 			ret->AddChild(
-				'1'
+				'2'
 				, []()->const char* { return "All"; }
 				, []()->eTestResult
 				{
@@ -79,9 +81,6 @@ namespace r2
 
 						switch( input )
 						{
-						case '1':
-							step::LuaState();
-							break;
 						case '2':
 							step::DoString();
 							break;
