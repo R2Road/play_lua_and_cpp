@@ -29,7 +29,7 @@ namespace lua_state_test
 
 			lua_State* lua_state_obj = nullptr;
 
-			std::cout << r2::tab << "+ Variable" << r2::linefeed << r2::linefeed;
+			std::cout << r2::tab << "+ Variable" << r2::linefeed2;
 			std::cout << r2::tab2 << "lua_State* lua_state_obj = nullptr;" << r2::linefeed;
 
 			std::cout << r2::split;
@@ -40,7 +40,7 @@ namespace lua_state_test
 				//
 				lua_state_obj = luaL_newstate();
 
-				std::cout << r2::tab << "+ Make lua_State" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << "+ Make lua_State" << r2::linefeed2;
 				std::cout << r2::tab2 << "lua_state_obj = luaL_newstate();" << r2::linefeed;
 			}
 
@@ -52,7 +52,7 @@ namespace lua_state_test
 				//
 				lua_close( lua_state_obj );
 
-				std::cout << r2::tab << " + Close lua_State" << r2::linefeed << r2::linefeed;
+				std::cout << r2::tab << " + Close lua_State" << r2::linefeed2;
 				std::cout << r2::tab2 << "lua_close( lua_state_obj );" << r2::linefeed;
 			}
 
