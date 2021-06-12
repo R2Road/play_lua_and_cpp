@@ -30,9 +30,6 @@
     <ClCompile Include="src\test\step_DoFile.cpp">
       <Filter>test</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\step_DoString.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\step_GetGlobal.cpp">
       <Filter>test</Filter>
     </ClCompile>
@@ -58,6 +55,9 @@
       <Filter>test</Filter>
     </ClCompile>
     <ClCompile Include="src\test\lua_state_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\lua_dostring_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
   </ItemGroup>
@@ -91,9 +91,6 @@
     <ClInclude Include="src\test\step_DoFile.h">
       <Filter>test</Filter>
     </ClInclude>
-    <ClInclude Include="src\test\step_DoString.h">
-      <Filter>test</Filter>
-    </ClInclude>
     <ClInclude Include="src\test\step_GetGlobal.h">
       <Filter>test</Filter>
     </ClInclude>
@@ -119,6 +116,9 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\test\lua_state_test.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\lua_dostring_test.h">
       <Filter>test</Filter>
     </ClInclude>
   </ItemGroup>
