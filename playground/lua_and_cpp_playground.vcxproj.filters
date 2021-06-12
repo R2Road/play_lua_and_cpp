@@ -42,9 +42,6 @@
     <ClCompile Include="src\test\step_IsNumber.cpp">
       <Filter>test</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\step_LuaState.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\step_OpenLibs.cpp">
       <Filter>test</Filter>
     </ClCompile>
@@ -58,6 +55,9 @@
       <Filter>test</Filter>
     </ClCompile>
     <ClCompile Include="src\test\step_PCall_04_CallCPPFunction.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\lua_state_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
   </ItemGroup>
@@ -103,9 +103,6 @@
     <ClInclude Include="src\test\step_IsNumber.h">
       <Filter>test</Filter>
     </ClInclude>
-    <ClInclude Include="src\test\step_LuaState.h">
-      <Filter>test</Filter>
-    </ClInclude>
     <ClInclude Include="src\test\step_OpenLibs.h">
       <Filter>test</Filter>
     </ClInclude>
@@ -119,6 +116,9 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\test\step_PCall_04_CallCPPFunction.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\lua_state_test.h">
       <Filter>test</Filter>
     </ClInclude>
   </ItemGroup>

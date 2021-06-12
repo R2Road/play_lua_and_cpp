@@ -7,7 +7,7 @@
 #include "base/r2_Director.h"
 #include "base/r2_eTestResult.h"
 
-#include "test/step_LuaState.h"
+#include "test/lua_state_test.h"
 #include "test/step_DoString.h"
 #include "test/step_GetGlobal.h"
 #include "test/step_IsNumber.h"
