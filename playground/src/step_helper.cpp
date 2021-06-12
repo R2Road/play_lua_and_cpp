@@ -10,14 +10,14 @@ namespace step_helper
 		{
 			const auto error_message = lua_tostring( lua_state_obj, -1 );
 
-			std::cout << process_name << " Failed " << std::endl;
-			std::cout << error_message << std::endl;
+			std::cout << process_name << " Failed " << r2::linefeed;
+			std::cout << error_message << r2::linefeed;
 
 			return false;
 		}
 		else
 		{
-			std::cout << process_name << " Success" << std::endl;
+			std::cout << process_name << " Success" << r2::linefeed;
 
 			return true;
 		}
@@ -28,38 +28,38 @@ namespace step_helper
 		switch( type )
 		{
 		case LUA_TNIL:
-			std::cout << name << " is nil" << std::endl;
+			std::cout << name << " is nil" << r2::linefeed;
 			break;
 		case LUA_TBOOLEAN:
-			std::cout << name << " is boolean" << std::endl;
+			std::cout << name << " is boolean" << r2::linefeed;
 			break;
 		case LUA_TLIGHTUSERDATA:
-			std::cout << name << " is light userdata" << std::endl;
+			std::cout << name << " is light userdata" << r2::linefeed;
 			break;
 		case LUA_TNUMBER:
-			std::cout << name << " is number" << std::endl;
+			std::cout << name << " is number" << r2::linefeed;
 			break;
 		case LUA_TSTRING:
-			std::cout << name << " is string" << std::endl;
+			std::cout << name << " is string" << r2::linefeed;
 			break;
 		case LUA_TTABLE:
-			std::cout << name << " is table" << std::endl;
+			std::cout << name << " is table" << r2::linefeed;
 			break;
 		case LUA_TFUNCTION:
-			std::cout << name << " is function" << std::endl;
+			std::cout << name << " is function" << r2::linefeed;
 			break;
 		case LUA_TUSERDATA:
-			std::cout << name << " is userdata" << std::endl;
+			std::cout << name << " is userdata" << r2::linefeed;
 			break;
 		case LUA_TTHREAD:
-			std::cout << name << " is thread" << std::endl;
+			std::cout << name << " is thread" << r2::linefeed;
 			break;
 		case LUA_NUMTYPES:
-			std::cout << name << " is numtypes" << std::endl;
+			std::cout << name << " is numtypes" << r2::linefeed;
 			break;
 
 		default:
-			std::cout << name << " is undefined" << std::endl;
+			std::cout << name << " is undefined" << r2::linefeed;
 			break;
 		}
 	}
@@ -71,14 +71,14 @@ namespace step_helper
 		{
 			const auto error_message = lua_tostring( lua_state_obj, -1 );
 
-			std::cout << "DoString Failed " << std::endl;
-			std::cout << error_message << std::endl;
+			std::cout << "DoString Failed " << r2::linefeed;
+			std::cout << error_message << r2::linefeed;
 
 			return false;
 		}
 		else
 		{
-			std::cout << "DoString Success" << std::endl;
+			std::cout << "DoString Success" << r2::linefeed;
 
 			return true;
 		}

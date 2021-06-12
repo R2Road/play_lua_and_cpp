@@ -19,7 +19,7 @@ namespace step
 			// Command x 1
 			//
 			command = "a = 7 + 11";
-			std::cout << "Lua Command : " << command.c_str() << std::endl;
+			std::cout << "Lua Command : " << command.c_str() << r2::linefeed;
 
 			//
 			// Do String
@@ -29,16 +29,16 @@ namespace step
 			{
 				const auto error_message = lua_tostring( lua_state_obj, -1 );
 
-				std::cout << "Command Failed " << std::endl;
-				std::cout << error_message << std::endl;
+				std::cout << "Command Failed " << r2::linefeed;
+				std::cout << error_message << r2::linefeed;
 			}
 			else
 			{
-				std::cout << "Command Success" << std::endl;
+				std::cout << "Command Success" << r2::linefeed;
 			}
 		}
 
-		std::cout << std::endl;
+		std::cout << r2::linefeed;
 
 
 		//
@@ -49,7 +49,7 @@ namespace step
 			// Command x 2
 			//
 			std::string command = "a = 7 + ";
-			std::cout << "Lua Command : " << command.c_str() << std::endl;
+			std::cout << "Lua Command : " << command.c_str() << r2::linefeed;
 
 			//
 			// Do String
@@ -59,12 +59,12 @@ namespace step
 			{
 				const auto error_message = lua_tostring( lua_state_obj, -1 );
 
-				std::cout << "Command Failed " << std::endl;
-				std::cout << error_message << std::endl;
+				std::cout << "Command Failed " << r2::linefeed;
+				std::cout << error_message << r2::linefeed;
 			}
 			else
 			{
-				std::cout << "Command Success" << std::endl;
+				std::cout << "Command Success" << r2::linefeed;
 			}
 		}
 

@@ -14,7 +14,7 @@ namespace step
 		// Command
 		//
 		const std::string command = "a = 7 + 11";
-		std::cout << "Command : " << command.c_str() << std::endl << std::endl;
+		std::cout << "Command : " << command.c_str() << r2::linefeed << r2::linefeed;
 
 		//
 		// Do String
@@ -23,7 +23,7 @@ namespace step
 		if( result != LUA_OK )
 		{
 			const auto error_message = lua_tostring( lua_state_obj, -1 );
-			std::cout << error_message << std::endl;
+			std::cout << error_message << r2::linefeed;
 			return;
 		}
 
@@ -36,7 +36,7 @@ namespace step
 		// Test 1
 		//
 		{
-			std::cout << "lua_tonumber : -1 " << std::endl;
+			std::cout << "lua_tonumber : -1 " << r2::linefeed;
 
 			//
 			// -1 : is Last Value Index
@@ -44,17 +44,17 @@ namespace step
 			if( lua_isnumber( lua_state_obj, -1 ) )
 			{
 				const auto a = static_cast<int>( lua_tonumber( lua_state_obj, -1 ) );
-				std::cout << "result : " << "a : " << a << std::endl;
+				std::cout << "result : " << "a : " << a << r2::linefeed;
 			}
 		}
 
-		std::cout << std::endl;
+		std::cout << r2::linefeed;
 
 		//
 		// Test 2
 		//
 		{
-			std::cout << "lua_tonumber : 1 " << std::endl;
+			std::cout << "lua_tonumber : 1 " << r2::linefeed;
 
 			//
 			// 1 : is First Stack Index
@@ -62,7 +62,7 @@ namespace step
 			if( lua_isnumber( lua_state_obj, 1 ) )
 			{
 				const auto a = static_cast<int>( lua_tonumber( lua_state_obj, -1 ) );
-				std::cout << "result : " << "a : " << a << std::endl;
+				std::cout << "result : " << "a : " << a << r2::linefeed;
 			}
 		}
 

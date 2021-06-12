@@ -12,27 +12,27 @@ namespace step
 
 
 
-		std::cout << "Call : luaL_openlibs" << std::endl;
+		std::cout << "Call : luaL_openlibs" << r2::linefeed;
 		luaL_openlibs( lua_state_obj );
 
-		std::cout << std::endl;
+		std::cout << r2::linefeed;
 
 		if( !step_helper::LuaErrorCheck( lua_state_obj, luaL_dofile( lua_state_obj, "resources/step_PCall_03.lua" ), "luaL_dofile" ) )
 		{
 			return;
 		}
 
-		std::cout << std::endl;
+		std::cout << r2::linefeed;
 
 		lua_getglobal( lua_state_obj, "GetData" );
-		std::cout << "lua_getglobal : GetData" << std::endl;
+		std::cout << "lua_getglobal : GetData" << r2::linefeed;
 
 		//
 		// Check Stack 1
 		//
 		step_helper::PrintType( "[Stack 1]", lua_type( lua_state_obj, 1 ) );
 
-		std::cout << std::endl;
+		std::cout << r2::linefeed;
 
 		//
 		// Test x 0

@@ -40,7 +40,7 @@ namespace
 		ss << "E : step_PCall_03" << r2::linefeed;
 		ss << "R : step_PCall_04_CallCPPFunction" << r2::linefeed;
 
-		ss << std::endl << "Press Number" << r2::linefeed;
+		ss << r2::linefeed << "Press Number" << r2::linefeed;
 
 		return std::string( ss.str() );
 	}
@@ -118,7 +118,7 @@ namespace r2
 							break;
 						}
 
-						std::cout << std::endl << "Press Any Key" << r2::linefeed;
+						std::cout << r2::linefeed << "Press Any Key" << r2::linefeed;
 						_getch();
 						system( "cls" );
 					}

@@ -21,7 +21,7 @@ namespace step
 		// Command
 		//
 		const std::string command = "a = math.sin( math.pi * 0.5 )";
-		std::cout << "Command : " << command.c_str() << std::endl << std::endl;
+		std::cout << "Command : " << command.c_str() << r2::linefeed << r2::linefeed;
 
 		//
 		// Test 1
@@ -30,12 +30,12 @@ namespace step
 			step_helper::DoString( lua_state_obj, command.c_str() );
 		}
 
-		std::cout << std::endl;
-		std::cout << "Call : luaL_openlibs" << std::endl;
+		std::cout << r2::linefeed;
+		std::cout << "Call : luaL_openlibs" << r2::linefeed;
 
 		luaL_openlibs( lua_state_obj );
 
-		std::cout << std::endl;
+		std::cout << r2::linefeed;
 
 		//
 		// Test 2
@@ -48,7 +48,7 @@ namespace step
 			if( lua_isnumber( lua_state_obj, -1 ) )
 			{
 				const auto a = static_cast<float>( lua_tonumber( lua_state_obj, -1 ) );
-				std::cout << "result : " << "a : " << a << std::endl;
+				std::cout << "result : " << "a : " << a << r2::linefeed;
 			}
 		}
 
