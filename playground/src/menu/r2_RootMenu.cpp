@@ -25,7 +25,6 @@ namespace
 	{
 		std::stringstream ss;
 		ss << "+ Menu" << r2::linefeed;
-		ss << "3 : step_GetGlobal" << r2::linefeed;
 		ss << "4 : step_IsNumber" << r2::linefeed;
 		ss << "5 : step_OpenLibs" << r2::linefeed;
 		ss << "6 : step_DoFile" << r2::linefeed;
@@ -63,9 +62,14 @@ namespace r2
 		{
 			ret->AddChild( '1', lua_state_test::Basic::GetInstance() );
 			ret->AddChild( '2', lua_dostring_test::Basic::GetInstance() );
+			ret->AddChild( '3', lua_getglobal_test::Basic::GetInstance() );
+
+
+			ret->AddSplit();
+
 
 			ret->AddChild(
-				'3'
+				32
 				, []()->const char* { return "All"; }
 				, []()->eTestResult
 				{
@@ -80,9 +84,6 @@ namespace r2
 
 						switch( input )
 						{
-						case '3':
-							step::GetGlobal();
-							break;
 						case '4':
 							step::IsNumber();
 							break;
@@ -123,7 +124,9 @@ namespace r2
 				}
 			);
 
+
 			ret->AddSplit();
+
 
 			ret->AddChild(
 				27
