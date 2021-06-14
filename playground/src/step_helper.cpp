@@ -1,22 +1,41 @@
 ﻿#include "pch.h"
 #include "step_helper.h"
 
+namespace
+{
+	void DoTab( const std::size_t tab_count )
+	{
+		switch( tab_count )
+		{
+		case 1: std::cout << r2::tab; break;
+		case 2: std::cout << r2::tab2; break;
+		case 3: std::cout << r2::tab3; break;
+		}
+	}
+}
+
 namespace step_helper
 {
-	bool LuaErrorCheck( lua_State* lua_state_obj, const int return_code, const char* process_name )
+	bool LuaErrorCheck( lua_State* lua_state_obj, const int return_code, const char* process_name, const std::size_t tab_count )
 	{
+		DoTab( tab_count );
+
+		std::cout << "Result" << "[" << process_name << "] : ";
+
 		if( return_code != LUA_OK )
 		{
 			const auto error_message = lua_tostring( lua_state_obj, -1 );
 
-			std::cout << process_name << " Failed " << r2::linefeed;
+			std::cout << "Failed " << r2::linefeed;
+
+			DoTab( tab_count );
 			std::cout << error_message << r2::linefeed;
 
 			return false;
 		}
 		else
 		{
-			std::cout << process_name << " Success" << r2::linefeed;
+			std::cout << "Success" << r2::linefeed;
 
 			return true;
 		}

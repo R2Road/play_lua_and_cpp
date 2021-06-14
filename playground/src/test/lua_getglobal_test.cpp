@@ -48,6 +48,7 @@ namespace lua_getglobal_test
 					lua_state_obj
 					, luaL_dostring( lua_state_obj, command.c_str() )
 					, "lua_getglobal_test - Basic"
+					, 3
 				);
 			}
 
