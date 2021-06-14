@@ -44,18 +44,11 @@ namespace lua_getglobal_test
 				std::cout << r2::tab << "+ Process" << r2::linefeed2;
 				std::cout << r2::tab2 << "luaL_dostring( lua_state_obj, command.c_str() )" << r2::linefeed;
 
-				const int result = luaL_dostring( lua_state_obj, command.c_str() );
-				if( result != LUA_OK )
-				{
-					const auto error_message = lua_tostring( lua_state_obj, -1 );
-
-					std::cout << r2::tab3 << "Command Failed " << r2::linefeed;
-					std::cout << r2::tab3 << error_message << r2::linefeed;
-				}
-				else
-				{
-					std::cout << r2::tab3 << "Command Success" << r2::linefeed;
-				}
+				step_helper::LuaErrorCheck(
+					lua_state_obj
+					, luaL_dostring( lua_state_obj, command.c_str() )
+					, "lua_getglobal_test - Basic"
+				);
 			}
 
 			std::cout << r2::split;
