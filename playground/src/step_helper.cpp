@@ -82,21 +82,23 @@ namespace step_helper
 		}
 	}
 
-	bool DoString( lua_State* lua_state_obj, const char* command_string )
+	bool DoString( lua_State* lua_state_obj, const char* command_string, const std::size_t tab_count )
 	{
+		DoTab( tab_count );
+
 		const int result = luaL_dostring( lua_state_obj, command_string );
 		if( result != LUA_OK )
 		{
 			const auto error_message = lua_tostring( lua_state_obj, -1 );
 
-			std::cout << "DoString Failed " << r2::linefeed;
+			std::cout << "DoString : Failed " << r2::linefeed;
 			std::cout << error_message << r2::linefeed;
 
 			return false;
 		}
 		else
 		{
-			std::cout << "DoString Success" << r2::linefeed;
+			std::cout << "DoString : Success" << r2::linefeed;
 
 			return true;
 		}
