@@ -10,6 +10,9 @@
     <Filter Include="test">
       <UniqueIdentifier>{969087ae-f173-470e-b691-2e752d41c9dd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="test_deprecated">
+      <UniqueIdentifier>{ac36d45c-4822-4e2f-a29d-2f8d2c3c6b62}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -27,30 +30,6 @@
     <ClCompile Include="src\menu\r2_RootMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\step_DoFile.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\step_GetTable.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\step_IsNumber.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\step_OpenLibs.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\step_PCall_01.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\step_PCall_02.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\step_PCall_03.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\step_PCall_04_CallCPPFunction.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\lua_state_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
@@ -59,6 +38,30 @@
     </ClCompile>
     <ClCompile Include="src\test\lua_getglobal_test.cpp">
       <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\step_DoFile.cpp">
+      <Filter>test_deprecated</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\step_GetTable.cpp">
+      <Filter>test_deprecated</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\step_IsNumber.cpp">
+      <Filter>test_deprecated</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\step_OpenLibs.cpp">
+      <Filter>test_deprecated</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\step_PCall_01.cpp">
+      <Filter>test_deprecated</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\step_PCall_02.cpp">
+      <Filter>test_deprecated</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\step_PCall_03.cpp">
+      <Filter>test_deprecated</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\step_PCall_04_CallCPPFunction.cpp">
+      <Filter>test_deprecated</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -88,30 +91,6 @@
     <ClInclude Include="src\menu\r2_RootMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
-    <ClInclude Include="src\test\step_DoFile.h">
-      <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\step_GetTable.h">
-      <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\step_IsNumber.h">
-      <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\step_OpenLibs.h">
-      <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\step_PCall_01.h">
-      <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\step_PCall_02.h">
-      <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\step_PCall_03.h">
-      <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\step_PCall_04_CallCPPFunction.h">
-      <Filter>test</Filter>
-    </ClInclude>
     <ClInclude Include="src\test\lua_state_test.h">
       <Filter>test</Filter>
     </ClInclude>
@@ -120,6 +99,30 @@
     </ClInclude>
     <ClInclude Include="src\test\lua_getglobal_test.h">
       <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\step_DoFile.h">
+      <Filter>test_deprecated</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\step_GetTable.h">
+      <Filter>test_deprecated</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\step_IsNumber.h">
+      <Filter>test_deprecated</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\step_OpenLibs.h">
+      <Filter>test_deprecated</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\step_PCall_01.h">
+      <Filter>test_deprecated</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\step_PCall_02.h">
+      <Filter>test_deprecated</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\step_PCall_03.h">
+      <Filter>test_deprecated</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\step_PCall_04_CallCPPFunction.h">
+      <Filter>test_deprecated</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
