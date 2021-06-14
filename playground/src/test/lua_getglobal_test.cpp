@@ -2,7 +2,6 @@
 #include "lua_getglobal_test.h"
 
 #include "base/r2_eTestResult.h"
-#include "step_helper.h"
 
 namespace lua_getglobal_test
 {

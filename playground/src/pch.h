@@ -19,6 +19,8 @@ extern "C"
 	#pragma comment( lib, "lua/x86/liblua54.a" )
 #endif
 
+#include "step_helper.h"
+
 //
 //
 //

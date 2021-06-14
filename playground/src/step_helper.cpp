@@ -1,5 +1,4 @@
 ﻿#include "pch.h"
-
 #include "step_helper.h"
 
 namespace step_helper
