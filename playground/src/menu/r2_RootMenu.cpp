@@ -9,7 +9,7 @@
 
 #include "test/lua_state_test.h"
 #include "test/lua_dostring_test.h"
-#include "test/step_GetGlobal.h"
+#include "test/lua_getglobal_test.h"
 #include "test/step_IsNumber.h"
 #include "test/step_OpenLibs.h"
 #include "test/step_DoFile.h"

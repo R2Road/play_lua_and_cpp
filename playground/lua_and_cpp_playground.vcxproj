@@ -33,7 +33,7 @@
     <ClCompile Include="src\step_helper.cpp" />
     <ClCompile Include="src\test\step_DoFile.cpp" />
     <ClCompile Include="src\test\lua_dostring_test.cpp" />
-    <ClCompile Include="src\test\step_GetGlobal.cpp" />
+    <ClCompile Include="src\test\lua_getglobal_test.cpp" />
     <ClCompile Include="src\test\step_GetTable.cpp" />
     <ClCompile Include="src\test\step_IsNumber.cpp" />
     <ClCompile Include="src\test\lua_state_test.cpp" />
@@ -56,7 +56,7 @@
     <ClInclude Include="src\step_helper.h" />
     <ClInclude Include="src\test\step_DoFile.h" />
     <ClInclude Include="src\test\lua_dostring_test.h" />
-    <ClInclude Include="src\test\step_GetGlobal.h" />
+    <ClInclude Include="src\test\lua_getglobal_test.h" />
     <ClInclude Include="src\test\step_GetTable.h" />
     <ClInclude Include="src\test\step_IsNumber.h" />
     <ClInclude Include="src\test\lua_state_test.h" />
