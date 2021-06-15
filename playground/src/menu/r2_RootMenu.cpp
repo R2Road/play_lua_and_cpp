@@ -11,6 +11,7 @@
 #include "test/lua_dostring_test.h"
 #include "test/lua_getglobal_test.h"
 #include "test/step_IsNumber.h"
+
 #include "test/step_OpenLibs.h"
 #include "test/step_DoFile.h"
 #include "test/step_GetTable.h"
@@ -25,7 +26,6 @@ namespace
 	{
 		std::stringstream ss;
 		ss << "+ Menu" << r2::linefeed;
-		ss << "4 : step_IsNumber" << r2::linefeed;
 		ss << "5 : step_OpenLibs" << r2::linefeed;
 		ss << "6 : step_DoFile" << r2::linefeed;
 		ss << "7 : step_GetTable" << r2::linefeed;
@@ -63,6 +63,7 @@ namespace r2
 			ret->AddChild( '1', lua_state_test::Basic::GetInstance() );
 			ret->AddChild( '2', lua_dostring_test::Basic::GetInstance() );
 			ret->AddChild( '3', lua_getglobal_test::Basic::GetInstance() );
+			ret->AddChild( '4', lua_isnumber_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();
@@ -84,9 +85,6 @@ namespace r2
 
 						switch( input )
 						{
-						case '4':
-							step::IsNumber();
-							break;
 						case '5':
 							step::OpenLibs();
 							break;
