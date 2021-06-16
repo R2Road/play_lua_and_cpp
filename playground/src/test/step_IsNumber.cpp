@@ -18,7 +18,9 @@ namespace lua_isnumber_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
+
 			lua_State* lua_state_obj = luaL_newstate();
+
 
 			std::cout << r2::split;
 
@@ -37,49 +39,56 @@ namespace lua_isnumber_test
 			std::cout << r2::split;
 
 			{
-				//
-				// Push to Stack "a"
-				//
 				lua_getglobal( lua_state_obj, "a" );
 
-				//
-				// Test 1
-				//
-				{
-					std::cout << "lua_tonumber : -1 " << r2::linefeed;
-
-					//
-					// -1 : is Last Value Index
-					//
-					if( lua_isnumber( lua_state_obj, -1 ) )
-					{
-						const auto a = static_cast<int>( lua_tonumber( lua_state_obj, -1 ) );
-						std::cout << "result : " << "a : " << a << r2::linefeed;
-					}
-				}
-
-				std::cout << r2::linefeed;
-
-				//
-				// Test 2
-				//
-				{
-					std::cout << "lua_tonumber : 1 " << r2::linefeed;
-
-					//
-					// 1 : is First Stack Index
-					//
-					if( lua_isnumber( lua_state_obj, 1 ) )
-					{
-						const auto a = static_cast<int>( lua_tonumber( lua_state_obj, -1 ) );
-						std::cout << "result : " << "a : " << a << r2::linefeed;
-					}
-				}
+				std::cout << r2::tab << "+ Push to Stack \"a\"" << r2::linefeed2;
+				std::cout << r2::tab2 << "lua_getglobal( lua_state_obj, \"a\" );" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
+			{
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "lua_isnumber( lua_state_obj, -1 )" << r2::linefeed;
+				std::cout << r2::tab3 << "Result : " << ( lua_isnumber( lua_state_obj, -1 ) ? "O" : "X" ) << r2::linefeed2;
+
+				std::cout << r2::tab << "Note : -1 is Top of Stack" << r2::linefeed2;
+
+
+				std::cout << r2::tab2 << "lua_tonumber( lua_state_obj, -1 )" << r2::linefeed;
+				if( lua_isnumber( lua_state_obj, -1 ) )
+				{
+					const auto a = static_cast<int>( lua_tonumber( lua_state_obj, -1 ) );
+					std::cout << r2::tab3 << "Result : " << "a = " << a << r2::linefeed;
+				}
+				else
+				{
+					std::cout << r2::tab3 << "- Failed" << r2::linefeed;
+				}
+				std::cout << r2::linefeed;
+
+
+				std::cout << r2::tab2 << "lua_tonumber( lua_state_obj, 1 )" << r2::linefeed;
+				if( lua_isnumber( lua_state_obj, 1 ) )
+				{
+					const auto a = static_cast<int>( lua_tonumber( lua_state_obj, -1 ) );
+					std::cout << r2::tab3 << "Result : " << "a = " << a << r2::linefeed;
+				}
+				else
+				{
+					std::cout << r2::tab3 << "- Failed" << r2::linefeed;
+				}
+				std::cout << r2::linefeed;
+
+				std::cout << r2::tab << "Note : 1 is Bottom of Stack" << r2::linefeed2;
+			}
+
+			std::cout << r2::split;
+
+
 			lua_close( lua_state_obj );
+
 
 			return r2::eTestResult::RunTest;
 		};
