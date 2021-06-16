@@ -28,7 +28,7 @@ namespace lua_getglobal_test
 				const int type = lua_getglobal( lua_state_obj, "a" );
 
 				std::cout << r2::tab << "+ Find And Push 2 Stack" << r2::linefeed2;
-				std::cout << r2::tab2 << "lua_getglobal( lua_state_obj, \"a\" );" << r2::linefeed;
+				std::cout << r2::tab2 << "const int type = lua_getglobal( lua_state_obj, \"a\" );" << r2::linefeed;
 				std::cout << r2::tab3 << "Result : ";
 				step_helper::PrintType( "a", type );
 			}
@@ -53,9 +53,21 @@ namespace lua_getglobal_test
 				const int type = lua_getglobal( lua_state_obj, "a" );
 
 				std::cout << r2::tab << "+ Find And Push 2 Stack" << r2::linefeed2;
-				std::cout << r2::tab2 << "lua_getglobal( lua_state_obj, \"a\" );" << r2::linefeed;
+				std::cout << r2::tab2 << "const int type = lua_getglobal( lua_state_obj, \"a\" );" << r2::linefeed;
 				std::cout << r2::tab3 << "Result : ";
 				step_helper::PrintType( "a", type );
+			}
+
+			std::cout << r2::split;
+
+			{
+				const auto a = static_cast<int>( lua_tonumber( lua_state_obj, -1 ) );
+
+				std::cout << r2::tab << "+ Get Value" << r2::linefeed2;
+				std::cout << r2::tab2 << "const auto a = static_cast<int>( lua_tonumber( lua_state_obj, -1 ) );" << r2::linefeed;
+				std::cout << r2::tab3 << "Result : " << "a = " << a << r2::linefeed2;
+
+				std::cout << r2::tab << "Note : -1 is Top of Stack" << r2::linefeed2;
 			}
 
 			std::cout << r2::split;
