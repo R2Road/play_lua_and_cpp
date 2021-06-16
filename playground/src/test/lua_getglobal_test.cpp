@@ -18,9 +18,11 @@ namespace lua_getglobal_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-			std::cout << r2::split;
 
 			lua_State* lua_state_obj = luaL_newstate();
+
+
+			std::cout << r2::split;
 
 			{
 				//
@@ -59,7 +61,9 @@ namespace lua_getglobal_test
 
 			std::cout << r2::split;
 
+
 			lua_close( lua_state_obj );
+
 
 			return r2::eTestResult::RunTest;
 		};

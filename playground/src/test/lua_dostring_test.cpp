@@ -20,10 +20,11 @@ namespace lua_dostring_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-			std::cout << r2::split;
-
 
 			lua_State* lua_state_obj = luaL_newstate();
+
+
+			std::cout << r2::split;
 
 			std::string command;
 			std::cout << r2::tab << "+ Variable" << r2::linefeed2;
@@ -88,7 +89,9 @@ namespace lua_dostring_test
 
 			std::cout << r2::split;
 
+
 			lua_close( lua_state_obj );
+
 
 			return r2::eTestResult::RunTest;
 		};
