@@ -63,6 +63,9 @@
     <ClCompile Include="src\test\step_PCall_04_CallCPPFunction.cpp">
       <Filter>test_deprecated</Filter>
     </ClCompile>
+    <ClCompile Include="src\test\lua_stackprinter_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -123,6 +126,9 @@
     </ClInclude>
     <ClInclude Include="src\test\step_PCall_04_CallCPPFunction.h">
       <Filter>test_deprecated</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\lua_stackprinter_test.h">
+      <Filter>test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
