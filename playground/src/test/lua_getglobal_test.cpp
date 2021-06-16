@@ -25,13 +25,11 @@ namespace lua_getglobal_test
 			std::cout << r2::split;
 
 			{
-				//
-				// Push Variable "a"
-				//
 				const int type = lua_getglobal( lua_state_obj, "a" );
 
-				std::cout << r2::tab << "lua_getglobal( lua_state_obj, \"a\" );" << r2::linefeed;
-				std::cout << r2::tab2 << "Result : ";
+				std::cout << r2::tab << "+ Find And Push 2 Stack" << r2::linefeed2;
+				std::cout << r2::tab2 << "lua_getglobal( lua_state_obj, \"a\" );" << r2::linefeed;
+				std::cout << r2::tab3 << "Result : ";
 				step_helper::PrintType( "a", type );
 			}
 
@@ -54,8 +52,9 @@ namespace lua_getglobal_test
 			{
 				const int type = lua_getglobal( lua_state_obj, "a" );
 
-				std::cout << r2::tab << "lua_getglobal( lua_state_obj, \"a\" );" << r2::linefeed;
-				std::cout << r2::tab2 << "Result : ";
+				std::cout << r2::tab << "+ Find And Push 2 Stack" << r2::linefeed2;
+				std::cout << r2::tab2 << "lua_getglobal( lua_state_obj, \"a\" );" << r2::linefeed;
+				std::cout << r2::tab3 << "Result : ";
 				step_helper::PrintType( "a", type );
 			}
 
