@@ -11,4 +11,11 @@ namespace lua_stack_clear_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class Pop : public r2::iTest, public r2::SingleTon<Pop>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }

@@ -67,8 +67,9 @@ namespace r2
 			ret->AddChild( '3', lua_getglobal_test::Basic::GetInstance() );
 			ret->AddChild( '4', lua_stack_printer_test::Basic::GetInstance() );
 			ret->AddChild( '5', lua_stack_clear_test::SetTop::GetInstance() );
+			ret->AddChild( '6', lua_stack_clear_test::Pop::GetInstance() );
 
-			ret->AddChild( '6', lua_isnumber_test::Basic::GetInstance() );
+			ret->AddChild( '7', lua_isnumber_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();
