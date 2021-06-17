@@ -1,9 +1,9 @@
 ﻿#include "pch.h"
-#include "lua_stackprinter_test.h"
+#include "lua_stack_printer_test.h"
 
 #include "base/r2_eTestResult.h"
 
-namespace lua_stackprinter_test
+namespace lua_stack_printer_test
 {
 	r2::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
