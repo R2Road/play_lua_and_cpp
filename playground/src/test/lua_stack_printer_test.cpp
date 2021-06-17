@@ -60,6 +60,11 @@ namespace lua_stack_printer_test
 			std::cout << r2::split;
 
 			{
+				const int stack_size = lua_gettop( lua_state_obj );
+
+				std::cout << r2::tab << "const int stack_size = lua_gettop( lua_state_obj );" << r2::linefeed;
+				std::cout << r2::tab2 << "Stack Count : " << stack_size << r2::linefeed2;
+
 				step_helper::LuaViewAllStack( lua_state_obj );
 			}
 

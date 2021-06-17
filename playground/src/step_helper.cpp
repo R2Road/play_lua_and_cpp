@@ -127,8 +127,6 @@ namespace step_helper
 		const int stack_size = lua_gettop( lua_state_obj );
 
 		std::cout << r2::tab << "+ Print Stack" << r2::linefeed2;
-		std::cout << r2::tab2 << "const int stack_size = lua_gettop( lua_state_obj );" << r2::linefeed;
-		std::cout << r2::tab3 << "Stack Count : " << stack_size << r2::linefeed2;
 
 		for( int i = 1; stack_size >= i; ++i )
 		{
@@ -152,6 +150,11 @@ namespace step_helper
 				std::cout << lua_topointer( lua_state_obj, i ) << r2::linefeed;
 				break;
 			}
+		}
+
+		if( 0 == stack_size )
+		{
+			std::cout << r2::tab2 << "- Empty" << r2::linefeed;
 		}
 	}
 }
