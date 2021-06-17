@@ -36,38 +36,40 @@ namespace lua_getglobal_test
 			std::cout << r2::split;
 
 			{
-				const char* command = "a = 7";
-				std::cout << r2::tab << "+ Command String" << r2::linefeed2;
-				std::cout << r2::tab2 << "const char* command = \"a = 7\";" << r2::linefeed2;
+				{
+					const char* command = "a = 7";
+					std::cout << r2::tab << "+ Command String" << r2::linefeed2;
+					std::cout << r2::tab2 << "const char* command = \"a = 7\";" << r2::linefeed3;
 
 
-				std::cout << r2::tab << "+ Process" << r2::linefeed2;
-				std::cout << r2::tab2 << "luaL_dostring( lua_state_obj, command.c_str() )" << r2::linefeed;
+					std::cout << r2::tab << "+ Process" << r2::linefeed2;
+					std::cout << r2::tab2 << "luaL_dostring( lua_state_obj, command.c_str() )" << r2::linefeed;
 
-				step_helper::DoString( lua_state_obj, command, 3u );
-			}
+					step_helper::DoString( lua_state_obj, command, 3u );
+				}
 
-			std::cout << r2::split;
-				
-			{
-				const int type = lua_getglobal( lua_state_obj, "a" );
+				std::cout << r2::linefeed2;
 
-				std::cout << r2::tab << "+ Find And Push 2 Stack" << r2::linefeed2;
-				std::cout << r2::tab2 << "const int type = lua_getglobal( lua_state_obj, \"a\" );" << r2::linefeed;
-				std::cout << r2::tab3 << "Result : ";
-				step_helper::PrintType( "a", type );
-			}
+				{
+					const int type = lua_getglobal( lua_state_obj, "a" );
 
-			std::cout << r2::split;
+					std::cout << r2::tab << "+ Find And Push 2 Stack" << r2::linefeed2;
+					std::cout << r2::tab2 << "const int type = lua_getglobal( lua_state_obj, \"a\" );" << r2::linefeed;
+					std::cout << r2::tab3 << "Result : ";
+					step_helper::PrintType( "a", type );
+				}
 
-			{
-				const auto a = static_cast<int>( lua_tonumber( lua_state_obj, -1 ) );
+				std::cout << r2::linefeed2;
 
-				std::cout << r2::tab << "+ Get Value" << r2::linefeed2;
-				std::cout << r2::tab2 << "const auto a = static_cast<int>( lua_tonumber( lua_state_obj, -1 ) );" << r2::linefeed;
-				std::cout << r2::tab3 << "Result : " << "a = " << a << r2::linefeed2;
+				{
+					const auto a = static_cast<int>( lua_tonumber( lua_state_obj, -1 ) );
 
-				std::cout << r2::tab << "Note : -1 is Top of Stack" << r2::linefeed2;
+					std::cout << r2::tab << "+ Get Value" << r2::linefeed2;
+					std::cout << r2::tab2 << "const auto a = static_cast<int>( lua_tonumber( lua_state_obj, -1 ) );" << r2::linefeed;
+					std::cout << r2::tab3 << "Result : " << "a = " << a << r2::linefeed2;
+
+					std::cout << r2::tab << "Note : -1 is Top of Stack" << r2::linefeed;
+				}
 			}
 
 			std::cout << r2::split;
