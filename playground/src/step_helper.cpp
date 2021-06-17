@@ -103,4 +103,37 @@ namespace step_helper
 			return true;
 		}
 	}
+
+	void LuaViewAllStack( lua_State* lua_state_obj )
+	{
+		const int stack_size = lua_gettop( lua_state_obj );
+
+		std::cout << r2::tab << "+ Print Stack" << r2::linefeed2;
+		std::cout << r2::tab2 << "const int stack_size = lua_gettop( lua_state_obj );" << r2::linefeed;
+		std::cout << r2::tab3 << "Stack Count : " << stack_size << r2::linefeed2;
+
+		for( int i = 1; stack_size >= i; ++i )
+		{
+			std::cout << r2::tab << i << r2::tab << luaL_typename( lua_state_obj, i ) << r2::tab;
+
+			switch( lua_type( lua_state_obj, i ) )
+			{
+			case LUA_TNUMBER:
+				std::cout << lua_tonumber( lua_state_obj, i ) << r2::linefeed;
+				break;
+			case LUA_TSTRING:
+				std::cout << lua_tostring( lua_state_obj, i ) << r2::linefeed;
+				break;
+			case LUA_TBOOLEAN:
+				std::cout << ( lua_toboolean( lua_state_obj, i ) ? "true" : "false" ) << r2::linefeed;
+				break;
+			case LUA_TNIL:
+				std::cout << "nil" << r2::linefeed;
+				break;
+			default:
+				std::cout << lua_topointer( lua_state_obj, i ) << r2::linefeed;
+				break;
+			}
+		}
+	}
 }
