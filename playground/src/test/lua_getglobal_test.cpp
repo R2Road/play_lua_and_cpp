@@ -36,15 +36,15 @@ namespace lua_getglobal_test
 			std::cout << r2::split;
 
 			{
-				const std::string command = "a = 7";
+				const char* command = "a = 7";
 				std::cout << r2::tab << "+ Command String" << r2::linefeed2;
-				std::cout << r2::tab2 << "const std::string command = \"a = 7\";" << r2::linefeed2;
+				std::cout << r2::tab2 << "const char* command = \"a = 7\";" << r2::linefeed2;
 
 
 				std::cout << r2::tab << "+ Process" << r2::linefeed2;
 				std::cout << r2::tab2 << "luaL_dostring( lua_state_obj, command.c_str() )" << r2::linefeed;
 
-				step_helper::DoString( lua_state_obj, command.c_str(), 3u );
+				step_helper::DoString( lua_state_obj, command, 3u );
 			}
 
 			std::cout << r2::split;
