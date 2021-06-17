@@ -103,6 +103,24 @@ namespace step_helper
 			return true;
 		}
 	}
+	bool LuaDoString_Silent( lua_State* lua_state_obj, const char* command_string, const std::size_t tab_count )
+	{
+		const int result = luaL_dostring( lua_state_obj, command_string );
+		if( result != LUA_OK )
+		{
+			const auto error_message = lua_tostring( lua_state_obj, -1 );
+
+			DoTab( tab_count );
+			std::cout << "DoString : Failed " << r2::linefeed;
+			std::cout << error_message << r2::linefeed;
+
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
 
 	void LuaViewAllStack( lua_State* lua_state_obj )
 	{

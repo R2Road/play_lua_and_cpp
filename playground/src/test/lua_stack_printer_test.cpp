@@ -65,18 +65,6 @@ namespace lua_stack_printer_test
 
 			std::cout << r2::split;
 
-			{
-				lua_settop( lua_state_obj, 0 );
-
-				int stack_size = lua_gettop( lua_state_obj );
-				lua_pop( lua_state_obj, stack_size );
-
-				std::cout << r2::tab << "+ Clear Stack" << r2::linefeed2;
-				std::cout << r2::tab2 << "lua_settop( lua_state_obj, 0 );" << r2::linefeed;
-			}
-
-			std::cout << r2::split;
-
 
 			lua_close( lua_state_obj );
 

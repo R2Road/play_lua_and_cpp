@@ -11,6 +11,7 @@
 #include "test/lua_dostring_test.h"
 #include "test/lua_getglobal_test.h"
 #include "test/lua_stack_printer_test.h"
+#include "test/lua_stack_clear_test.h"
 #include "test/step_IsNumber.h"
 
 #include "test/step_OpenLibs.h"
@@ -65,7 +66,9 @@ namespace r2
 			ret->AddChild( '2', lua_dostring_test::Basic::GetInstance() );
 			ret->AddChild( '3', lua_getglobal_test::Basic::GetInstance() );
 			ret->AddChild( '4', lua_stack_printer_test::Basic::GetInstance() );
-			ret->AddChild( '5', lua_isnumber_test::Basic::GetInstance() );
+			ret->AddChild( '5', lua_stack_clear_test::SetTop::GetInstance() );
+
+			ret->AddChild( '6', lua_isnumber_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();

@@ -31,6 +31,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\step_helper.cpp" />
+    <ClCompile Include="src\test\lua_stack_clear_test.cpp" />
     <ClCompile Include="src\test\lua_stack_printer_test.cpp" />
     <ClCompile Include="src\test\step_DoFile.cpp" />
     <ClCompile Include="src\test\lua_dostring_test.cpp" />
@@ -55,6 +56,7 @@
     <ClInclude Include="src\menu\r2_RootMenu.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\step_helper.h" />
+    <ClInclude Include="src\test\lua_stack_clear_test.h" />
     <ClInclude Include="src\test\lua_stack_printer_test.h" />
     <ClInclude Include="src\test\step_DoFile.h" />
     <ClInclude Include="src\test\lua_dostring_test.h" />
