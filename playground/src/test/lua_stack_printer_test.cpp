@@ -29,7 +29,7 @@ namespace lua_stack_printer_test
 				std::cout << r2::tab2 << "const char* command = \"a = 15\";" << r2::linefeed;
 
 				const char* command = "a = 15";
-				step_helper::DoString( lua_state_obj, command, 3u );
+				step_helper::LuaDoString( lua_state_obj, command, 3u );
 			}
 
 			std::cout << r2::linefeed2;
@@ -39,7 +39,7 @@ namespace lua_stack_printer_test
 				std::cout << r2::tab2 << "const char* command = \"c = 7\";" << r2::linefeed;
 
 				const char* command = "c = 7";
-				step_helper::DoString( lua_state_obj, command, 3u );
+				step_helper::LuaDoString( lua_state_obj, command, 3u );
 			}
 
 			std::cout << r2::linefeed2;

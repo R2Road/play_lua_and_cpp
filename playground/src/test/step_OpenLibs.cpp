@@ -25,7 +25,7 @@ namespace step
 		// Test 1
 		//
 		{
-			step_helper::DoString( lua_state_obj, command.c_str() );
+			step_helper::LuaDoString( lua_state_obj, command.c_str() );
 		}
 
 		std::cout << r2::linefeed;
@@ -39,7 +39,7 @@ namespace step
 		// Test 2
 		//
 		{
-			step_helper::DoString( lua_state_obj, command.c_str() );
+			step_helper::LuaDoString( lua_state_obj, command.c_str() );
 
 			lua_getglobal( lua_state_obj, "a" );
 

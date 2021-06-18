@@ -82,7 +82,7 @@ namespace step_helper
 		}
 	}
 
-	bool DoString( lua_State* lua_state_obj, const char* command_string, const std::size_t tab_count )
+	bool LuaDoString( lua_State* lua_state_obj, const char* command_string, const std::size_t tab_count )
 	{
 		DoTab( tab_count );
 
