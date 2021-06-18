@@ -132,7 +132,22 @@ namespace step_helper
 		}
 
 		{
-			const char* command = "c = 7";
+			const char* command = "b = true";
+			step_helper::LuaDoString_Silent( lua_state_obj, command, 3u );
+		}
+
+		{
+			const char* command = "c = 'asdf 12345'";
+			step_helper::LuaDoString_Silent( lua_state_obj, command, 3u );
+		}
+
+		{
+			const char* command = "d = {}";
+			step_helper::LuaDoString_Silent( lua_state_obj, command, 3u );
+		}
+
+		{
+			const char* command = "e = function() end";
 			step_helper::LuaDoString_Silent( lua_state_obj, command, 3u );
 		}
 
@@ -140,6 +155,8 @@ namespace step_helper
 		lua_getglobal( lua_state_obj, "b" );
 		lua_getglobal( lua_state_obj, "c" );
 		lua_getglobal( lua_state_obj, "d" );
+		lua_getglobal( lua_state_obj, "e" );
+		lua_getglobal( lua_state_obj, "f" );
 	}
 	void LuaViewAllStack( lua_State* lua_state_obj )
 	{
