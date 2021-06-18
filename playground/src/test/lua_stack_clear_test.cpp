@@ -5,24 +5,6 @@
 
 namespace lua_stack_clear_test
 {
-	void FillStack( lua_State* lua_state_obj )
-	{
-		{
-			const char* command = "a = 15";
-			step_helper::LuaDoString_Silent( lua_state_obj, command, 3u );
-		}
-
-		{
-			const char* command = "c = 7";
-			step_helper::LuaDoString_Silent( lua_state_obj, command, 3u );
-		}
-
-		lua_getglobal( lua_state_obj, "a" );
-		lua_getglobal( lua_state_obj, "b" );
-		lua_getglobal( lua_state_obj, "c" );
-		lua_getglobal( lua_state_obj, "d" );
-	}
-
 	r2::iTest::TitleFunc SetTop::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -43,7 +25,7 @@ namespace lua_stack_clear_test
 			std::cout << r2::split;
 
 			{
-				FillStack( lua_state_obj );
+				step_helper::LuaInsertDummyValueInStack( lua_state_obj );
 
 				std::cout << r2::tab << "+ Fill Stack" << r2::linefeed;
 			}
@@ -101,7 +83,7 @@ namespace lua_stack_clear_test
 			std::cout << r2::split;
 
 			{
-				FillStack( lua_state_obj );
+				step_helper::LuaInsertDummyValueInStack( lua_state_obj );
 
 				std::cout << r2::tab << "+ Fill Stack" << r2::linefeed;
 			}

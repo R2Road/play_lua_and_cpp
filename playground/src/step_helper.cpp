@@ -122,6 +122,25 @@ namespace step_helper
 		}
 	}
 
+
+
+	void LuaInsertDummyValueInStack( lua_State* lua_state_obj )
+	{
+		{
+			const char* command = "a = 15";
+			step_helper::LuaDoString_Silent( lua_state_obj, command, 3u );
+		}
+
+		{
+			const char* command = "c = 7";
+			step_helper::LuaDoString_Silent( lua_state_obj, command, 3u );
+		}
+
+		lua_getglobal( lua_state_obj, "a" );
+		lua_getglobal( lua_state_obj, "b" );
+		lua_getglobal( lua_state_obj, "c" );
+		lua_getglobal( lua_state_obj, "d" );
+	}
 	void LuaViewAllStack( lua_State* lua_state_obj )
 	{
 		const int stack_size = lua_gettop( lua_state_obj );
