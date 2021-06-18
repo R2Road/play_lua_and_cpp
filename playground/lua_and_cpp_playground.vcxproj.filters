@@ -45,9 +45,6 @@
     <ClCompile Include="src\test\step_GetTable.cpp">
       <Filter>test_deprecated</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\step_IsNumber.cpp">
-      <Filter>test_deprecated</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\step_OpenLibs.cpp">
       <Filter>test_deprecated</Filter>
     </ClCompile>
@@ -67,6 +64,9 @@
       <Filter>test</Filter>
     </ClCompile>
     <ClCompile Include="src\test\lua_stack_clear_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\lua_type_check_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
   </ItemGroup>
@@ -112,9 +112,6 @@
     <ClInclude Include="src\test\step_GetTable.h">
       <Filter>test_deprecated</Filter>
     </ClInclude>
-    <ClInclude Include="src\test\step_IsNumber.h">
-      <Filter>test_deprecated</Filter>
-    </ClInclude>
     <ClInclude Include="src\test\step_OpenLibs.h">
       <Filter>test_deprecated</Filter>
     </ClInclude>
@@ -134,6 +131,9 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\test\lua_stack_clear_test.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\lua_type_check_test.h">
       <Filter>test</Filter>
     </ClInclude>
   </ItemGroup>

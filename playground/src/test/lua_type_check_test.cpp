@@ -1,15 +1,15 @@
 ﻿#include "pch.h"
-#include "step_IsNumber.h"
+#include "lua_type_check_test.h"
 
 #include "base/r2_eTestResult.h"
 
-namespace lua_isnumber_test
+namespace lua_type_check_test
 {
 	r2::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "IsNumber";
+			return "Type Check";
 		};
 	}
 	r2::iTest::DoFunc Basic::GetDoFunction()

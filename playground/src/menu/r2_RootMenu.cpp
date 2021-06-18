@@ -12,7 +12,7 @@
 #include "test/lua_getglobal_test.h"
 #include "test/lua_stack_printer_test.h"
 #include "test/lua_stack_clear_test.h"
-#include "test/step_IsNumber.h"
+#include "test/lua_type_check_test.h"
 
 #include "test/step_OpenLibs.h"
 #include "test/step_DoFile.h"
@@ -69,7 +69,7 @@ namespace r2
 			ret->AddChild( '5', lua_stack_clear_test::SetTop::GetInstance() );
 			ret->AddChild( '6', lua_stack_clear_test::Pop::GetInstance() );
 
-			ret->AddChild( '7', lua_isnumber_test::Basic::GetInstance() );
+			ret->AddChild( '7', lua_type_check_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();
