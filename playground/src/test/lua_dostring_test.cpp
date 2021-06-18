@@ -88,11 +88,3 @@ namespace lua_dostring_test
 		};
 	}
 }
-
-namespace step
-{
-	void DoString()
-	{
-		
-	}
-}
