@@ -48,7 +48,7 @@ namespace lua_state_test
 
 			{
 				//
-				// End
+				// Close Lua State
 				//
 				lua_close( lua_state_obj );
 
