@@ -50,7 +50,7 @@ namespace lua_stack_printer_test
 				lua_getglobal( lua_state_obj, "c" );
 				lua_getglobal( lua_state_obj, "d" );
 
-				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab << "+ Find And Push 2 Stack" << r2::linefeed2;
 				std::cout << r2::tab2 << "lua_getglobal( lua_state_obj, \"a\" );" << r2::linefeed2;
 				std::cout << r2::tab2 << "lua_getglobal( lua_state_obj, \"b\" );" << r2::linefeed2;
 				std::cout << r2::tab2 << "lua_getglobal( lua_state_obj, \"c\" );" << r2::linefeed2;
