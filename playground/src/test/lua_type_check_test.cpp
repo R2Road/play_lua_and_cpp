@@ -25,63 +25,86 @@ namespace lua_type_check_test
 			std::cout << r2::split;
 
 			{
-				const std::string command = "a = 7 + 11";
-				std::cout << r2::tab << "+ Command String" << r2::linefeed2;
-				std::cout << r2::tab2 << "const std::string command = \"a = 7 + 11\";" << r2::linefeed2;
+				step_helper::LuaDoString_Silent( lua_state_obj, "a = 7 + 11", 3u );
 
-
-				std::cout << r2::tab << "+ Process" << r2::linefeed2;
-				std::cout << r2::tab2 << "luaL_dostring( lua_state_obj, command.c_str() )" << r2::linefeed;
-
-				step_helper::LuaDoString( lua_state_obj, command.c_str(), 3u );
+				std::cout << r2::tab << "+ Do String" << r2::linefeed2;
+				std::cout << r2::tab2 << "luaL_dostring( lua_state_obj, \"a = 7 + 11\" )" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				lua_getglobal( lua_state_obj, "a" );
+				const int type = lua_getglobal( lua_state_obj, "a" );
 
-				std::cout << r2::tab << "+ Push to Stack \"a\"" << r2::linefeed2;
-				std::cout << r2::tab2 << "lua_getglobal( lua_state_obj, \"a\" );" << r2::linefeed;
+				std::cout << r2::tab << "+ Type Check And Push 2 Stack" << r2::linefeed2;
+				std::cout << r2::tab2 << "const int type = lua_getglobal( lua_state_obj, \"a\" );" << r2::linefeed;
+				std::cout << r2::tab3 << "Result : ";
+				step_helper::PrintType( "a", type );
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				const int type = lua_type( lua_state_obj, 1 );
 
-				std::cout << r2::tab2 << "lua_isnumber( lua_state_obj, -1 )" << r2::linefeed;
-				std::cout << r2::tab3 << "Result : " << ( lua_isnumber( lua_state_obj, -1 ) ? "O" : "X" ) << r2::linefeed2;
+				std::cout << r2::tab << "+ Type Check In Stack 1" << r2::linefeed2;
+				std::cout << r2::tab2 << "const int type = lua_type( lua_state_obj, 1 );" << r2::linefeed;
+				std::cout << r2::tab3 << "Result : ";
+				step_helper::PrintType( "1", type );
+			}
 
-				std::cout << r2::tab << "Note : -1 is Top of Stack" << r2::linefeed2;
+			std::cout << r2::split;
 
+			{
+				std::cout << r2::tab << "+ Type Check In Stack 2" << r2::linefeed2;
 
-				std::cout << r2::tab2 << "lua_tonumber( lua_state_obj, -1 )" << r2::linefeed;
-				if( lua_isnumber( lua_state_obj, -1 ) )
 				{
-					const auto a = static_cast<int>( lua_tonumber( lua_state_obj, -1 ) );
-					std::cout << r2::tab3 << "Result : " << "a = " << a << r2::linefeed;
+					const int boolean = lua_isnil( lua_state_obj, 1 );
+					std::cout << r2::tab2 << "const int type = lua_isnil( lua_state_obj, 1 );" << r2::linefeed;
+					std::cout << r2::tab3 << "Result : " << ( boolean ? "true" : "false" );
 				}
-				else
-				{
-					std::cout << r2::tab3 << "- Failed" << r2::linefeed;
-				}
-				std::cout << r2::linefeed;
 
+				std::cout << r2::linefeed2;
 
-				std::cout << r2::tab2 << "lua_tonumber( lua_state_obj, 1 )" << r2::linefeed;
-				if( lua_isnumber( lua_state_obj, 1 ) )
 				{
-					const auto a = static_cast<int>( lua_tonumber( lua_state_obj, -1 ) );
-					std::cout << r2::tab3 << "Result : " << "a = " << a << r2::linefeed;
+					const int boolean = lua_isnumber( lua_state_obj, 1 );
+					std::cout << r2::tab2 << "const int type = lua_isnumber( lua_state_obj, 1 );" << r2::linefeed;
+					std::cout << r2::tab3 << "Result : " << ( boolean ? "true" : "false" );
 				}
-				else
-				{
-					std::cout << r2::tab3 << "- Failed" << r2::linefeed;
-				}
-				std::cout << r2::linefeed;
 
-				std::cout << r2::tab << "Note : 1 is Bottom of Stack" << r2::linefeed2;
+				std::cout << r2::linefeed2;
+
+				{
+					const int boolean = lua_isstring( lua_state_obj, 1 );
+					std::cout << r2::tab2 << "const int type = lua_isstring( lua_state_obj, 1 );" << r2::linefeed;
+					std::cout << r2::tab3 << "Result : " << ( boolean ? "true" : "false" );
+				}
+
+				std::cout << r2::linefeed2;
+
+				{
+					const int boolean = lua_iscfunction( lua_state_obj, 1 );
+					std::cout << r2::tab2 << "const int type = lua_iscfunction( lua_state_obj, 1 );" << r2::linefeed;
+					std::cout << r2::tab3 << "Result : " << ( boolean ? "true" : "false" );
+				}
+
+				std::cout << r2::linefeed2;
+
+				{
+					const int boolean = lua_isinteger( lua_state_obj, 1 );
+					std::cout << r2::tab2 << "const int type = lua_isinteger( lua_state_obj, 1 );" << r2::linefeed;
+					std::cout << r2::tab3 << "Result : " << ( boolean ? "true" : "false" );
+				}
+
+				std::cout << r2::linefeed2;
+
+				{
+					const int boolean = lua_isuserdata( lua_state_obj, 1 );
+					std::cout << r2::tab2 << "const int type = lua_isuserdata( lua_state_obj, 1 );" << r2::linefeed;
+					std::cout << r2::tab3 << "Result : " << ( boolean ? "true" : "false" );
+				}
+
+				std::cout << r2::linefeed2;
 			}
 
 			std::cout << r2::split;
