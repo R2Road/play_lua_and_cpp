@@ -60,7 +60,7 @@ namespace lua_type_check_test
 
 				{
 					const int boolean = lua_isnil( lua_state_obj, 1 );
-					std::cout << r2::tab2 << "const int type = lua_isnil( lua_state_obj, 1 );" << r2::linefeed;
+					std::cout << r2::tab2 << "const int boolean = lua_isnil( lua_state_obj, 1 );" << r2::linefeed;
 					std::cout << r2::tab3 << "Result : " << ( boolean ? "true" : "false" );
 				}
 
@@ -68,7 +68,7 @@ namespace lua_type_check_test
 
 				{
 					const int boolean = lua_isnumber( lua_state_obj, 1 );
-					std::cout << r2::tab2 << "const int type = lua_isnumber( lua_state_obj, 1 );" << r2::linefeed;
+					std::cout << r2::tab2 << "const int boolean = lua_isnumber( lua_state_obj, 1 );" << r2::linefeed;
 					std::cout << r2::tab3 << "Result : " << ( boolean ? "true" : "false" );
 				}
 
@@ -76,7 +76,7 @@ namespace lua_type_check_test
 
 				{
 					const int boolean = lua_isstring( lua_state_obj, 1 );
-					std::cout << r2::tab2 << "const int type = lua_isstring( lua_state_obj, 1 );" << r2::linefeed;
+					std::cout << r2::tab2 << "const int boolean = lua_isstring( lua_state_obj, 1 );" << r2::linefeed;
 					std::cout << r2::tab3 << "Result : " << ( boolean ? "true" : "false" );
 				}
 
@@ -84,7 +84,7 @@ namespace lua_type_check_test
 
 				{
 					const int boolean = lua_iscfunction( lua_state_obj, 1 );
-					std::cout << r2::tab2 << "const int type = lua_iscfunction( lua_state_obj, 1 );" << r2::linefeed;
+					std::cout << r2::tab2 << "const int boolean = lua_iscfunction( lua_state_obj, 1 );" << r2::linefeed;
 					std::cout << r2::tab3 << "Result : " << ( boolean ? "true" : "false" );
 				}
 
@@ -92,7 +92,7 @@ namespace lua_type_check_test
 
 				{
 					const int boolean = lua_isinteger( lua_state_obj, 1 );
-					std::cout << r2::tab2 << "const int type = lua_isinteger( lua_state_obj, 1 );" << r2::linefeed;
+					std::cout << r2::tab2 << "const int boolean = lua_isinteger( lua_state_obj, 1 );" << r2::linefeed;
 					std::cout << r2::tab3 << "Result : " << ( boolean ? "true" : "false" );
 				}
 
@@ -100,7 +100,7 @@ namespace lua_type_check_test
 
 				{
 					const int boolean = lua_isuserdata( lua_state_obj, 1 );
-					std::cout << r2::tab2 << "const int type = lua_isuserdata( lua_state_obj, 1 );" << r2::linefeed;
+					std::cout << r2::tab2 << "const int boolean = lua_isuserdata( lua_state_obj, 1 );" << r2::linefeed;
 					std::cout << r2::tab3 << "Result : " << ( boolean ? "true" : "false" );
 				}
 
