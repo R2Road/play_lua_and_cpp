@@ -34,7 +34,7 @@ namespace lua_dostring_test
 
 
 				std::cout << r2::tab << "+ Process" << r2::linefeed2;
-				std::cout << r2::tab2 << "luaL_dostring( lua_state_obj, command.c_str() )" << r2::linefeed;
+				std::cout << r2::tab2 << "luaL_dostring( lua_state_obj, command )" << r2::linefeed;
 
 				const int result = luaL_dostring( lua_state_obj, command );
 				if( result != LUA_OK )
@@ -62,7 +62,7 @@ namespace lua_dostring_test
 
 
 				std::cout << r2::tab << "+ Process" << r2::linefeed2;
-				std::cout << r2::tab2 << "luaL_dostring( lua_state_obj, command.c_str() )" << r2::linefeed;
+				std::cout << r2::tab2 << "luaL_dostring( lua_state_obj, command )" << r2::linefeed;
 
 				const int result = luaL_dostring( lua_state_obj, command );
 				if( result != LUA_OK )
