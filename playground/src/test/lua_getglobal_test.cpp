@@ -43,7 +43,7 @@ namespace lua_getglobal_test
 
 
 					std::cout << r2::tab << "+ Process" << r2::linefeed2;
-					std::cout << r2::tab2 << "luaL_dostring( lua_state_obj, command.c_str() )" << r2::linefeed;
+					std::cout << r2::tab2 << "luaL_dostring( lua_state_obj, command )" << r2::linefeed;
 
 					step_helper::LuaDoString( lua_state_obj, command, 3u );
 				}
