@@ -28,7 +28,6 @@ namespace
 	{
 		std::stringstream ss;
 		ss << "+ Menu" << r2::linefeed;
-		ss << "5 : step_OpenLibs" << r2::linefeed;
 		ss << "6 : step_DoFile" << r2::linefeed;
 		ss << "7 : step_GetTable" << r2::linefeed;
 
@@ -76,6 +75,12 @@ namespace r2
 			ret->AddChild( '7', lua_stack_clear_test::Pop::GetInstance() );
 
 
+			ret->AddLineFeed();
+
+
+			ret->AddChild( 'q', lua_open_libs_test::Basic::GetInstance() );
+
+
 			ret->AddSplit();
 
 
@@ -95,9 +100,6 @@ namespace r2
 
 						switch( input )
 						{
-						case '5':
-							step::OpenLibs();
-							break;
 						case '6':
 							step::DoFile();
 							break;

@@ -1,57 +1,80 @@
 ﻿#include "pch.h"
 #include "lua_open_libs_test.h"
 
+#include "base/r2_eTestResult.h"
+
 
 //
 // http://lua-users.org/wiki/MathLibraryTutorial
 //
 
 
-namespace step
+namespace lua_open_libs_test
 {
-	void OpenLibs()
+	r2::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
-		lua_State* lua_state_obj = luaL_newstate();
-
-
-
-		//
-		// Command
-		//
-		const std::string command = "a = math.sin( math.pi * 0.5 )";
-		std::cout << "Command : " << command.c_str() << r2::linefeed << r2::linefeed;
-
-		//
-		// Test 1
-		//
+		return []()->const char*
 		{
-			step_helper::LuaDoString( lua_state_obj, command.c_str() );
-		}
-
-		std::cout << r2::linefeed;
-		std::cout << "Call : luaL_openlibs" << r2::linefeed;
-
-		luaL_openlibs( lua_state_obj );
-
-		std::cout << r2::linefeed;
-
-		//
-		// Test 2
-		//
+			return "Open Libs";
+		};
+	}
+	r2::iTest::DoFunc Basic::GetDoFunction()
+	{
+		return []()->r2::eTestResult
 		{
-			step_helper::LuaDoString( lua_state_obj, command.c_str() );
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-			lua_getglobal( lua_state_obj, "a" );
 
-			if( lua_isnumber( lua_state_obj, -1 ) )
+			lua_State* lua_state_obj = luaL_newstate();
+
+
+			std::cout << r2::split;
+
+
+			const char* command = "a = math.sin( math.pi * 0.5 )";
+			std::cout << r2::tab << "+ Command String" << r2::linefeed2;
+			std::cout << r2::tab2 << "Command : " << command << r2::linefeed;
+
+			std::cout << r2::split;
+
 			{
-				const auto a = static_cast<float>( lua_tonumber( lua_state_obj, -1 ) );
-				std::cout << "result : " << "a : " << a << r2::linefeed;
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "step_helper::LuaDoString( lua_state_obj, command )" << r2::linefeed2;
+
+				step_helper::LuaDoString( lua_state_obj, command );
 			}
-		}
+
+			std::cout << r2::split;
+
+			{
+				luaL_openlibs( lua_state_obj );
+
+				std::cout << r2::tab << "+ Call" << r2::linefeed2;
+				std::cout << r2::tab2 << "luaL_openlibs( lua_state_obj )" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "step_helper::LuaDoString( lua_state_obj, command )" << r2::linefeed2;
+
+				step_helper::LuaDoString( lua_state_obj, command );
+				lua_getglobal( lua_state_obj, "a" );
+				if( lua_isnumber( lua_state_obj, -1 ) )
+				{
+					const auto a = static_cast<float>( lua_tonumber( lua_state_obj, -1 ) );
+					std::cout << "result : " << "a : " << a << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
 
 
+			lua_close( lua_state_obj );
 
-		lua_close( lua_state_obj );
+
+			return r2::eTestResult::RunTest;
+		};
 	}
 }
