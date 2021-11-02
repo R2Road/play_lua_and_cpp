@@ -39,7 +39,7 @@
     <ClCompile Include="src\test\step_GetTable.cpp" />
     <ClCompile Include="src\test\lua_type_check_test.cpp" />
     <ClCompile Include="src\test\lua_state_test.cpp" />
-    <ClCompile Include="src\test\step_OpenLibs.cpp" />
+    <ClCompile Include="src\test\lua_open_libs_test.cpp" />
     <ClCompile Include="src\test\step_PCall_01.cpp" />
     <ClCompile Include="src\test\step_PCall_02.cpp" />
     <ClCompile Include="src\test\step_PCall_03.cpp" />
@@ -64,7 +64,7 @@
     <ClInclude Include="src\test\step_GetTable.h" />
     <ClInclude Include="src\test\lua_type_check_test.h" />
     <ClInclude Include="src\test\lua_state_test.h" />
-    <ClInclude Include="src\test\step_OpenLibs.h" />
+    <ClInclude Include="src\test\lua_open_libs_test.h" />
     <ClInclude Include="src\test\step_PCall_01.h" />
     <ClInclude Include="src\test\step_PCall_02.h" />
     <ClInclude Include="src\test\step_PCall_03.h" />
