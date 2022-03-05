@@ -13,15 +13,15 @@
     <Filter Include="test_lua\item">
       <UniqueIdentifier>{bb975c5e-ebe5-41b6-824a-da9b49efb89e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="r2">
+      <UniqueIdentifier>{908a8d2c-6580-4589-8a28-6c2bd04fdb7d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pch.cpp" />
     <ClCompile Include="src\step_helper.cpp" />
     <ClCompile Include="src\base\r2_Director.cpp">
-      <Filter>base</Filter>
-    </ClCompile>
-    <ClCompile Include="src\base\r2_FrameManager.cpp">
       <Filter>base</Filter>
     </ClCompile>
     <ClCompile Include="src\base\r2_Menu.cpp">
@@ -69,29 +69,23 @@
     <ClCompile Include="src\test_lua\step_PCall_04_CallCPPFunction.cpp">
       <Filter>test_lua\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2\r2_FrameManager.cpp">
+      <Filter>r2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\step_helper.h" />
-    <ClInclude Include="src\base\r2_Assert.h">
-      <Filter>base</Filter>
-    </ClInclude>
     <ClInclude Include="src\base\r2_Director.h">
       <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="src\base\r2_eTestResult.h">
       <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="src\base\r2_FrameManager.h">
-      <Filter>base</Filter>
-    </ClInclude>
     <ClInclude Include="src\base\r2_iTest.h">
       <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="src\base\r2_Menu.h">
-      <Filter>base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\base\r2_Singleton.h">
       <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="src\test_lua\RootMenu.h">
@@ -135,6 +129,15 @@
     </ClInclude>
     <ClInclude Include="src\test_lua\step_PCall_04_CallCPPFunction.h">
       <Filter>test_lua\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2\r2_Singleton.h">
+      <Filter>r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2\r2_Assert.h">
+      <Filter>r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2\r2_FrameManager.h">
+      <Filter>r2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
