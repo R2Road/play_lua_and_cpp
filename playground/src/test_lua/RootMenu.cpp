@@ -7,20 +7,20 @@
 #include "base/r2_Director.h"
 #include "base/r2_eTestResult.h"
 
-#include "test/lua_state_test.h"
-#include "test/lua_dostring_test.h"
-#include "test/lua_getglobal_test.h"
-#include "test/lua_type_check_test.h"
-#include "test/lua_stack_printer_test.h"
-#include "test/lua_stack_clear_test.h"
+#include "lua_state_test.h"
+#include "lua_dostring_test.h"
+#include "lua_getglobal_test.h"
+#include "lua_type_check_test.h"
+#include "lua_stack_printer_test.h"
+#include "lua_stack_clear_test.h"
 
-#include "test/lua_open_libs_test.h"
-#include "test/step_DoFile.h"
-#include "test/step_GetTable.h"
-#include "test/step_PCall_01.h"
-#include "test/step_PCall_02.h"
-#include "test/step_PCall_03.h"
-#include "test/step_PCall_04_CallCPPFunction.h"
+#include "lua_open_libs_test.h"
+#include "step_DoFile.h"
+#include "step_GetTable.h"
+#include "step_PCall_01.h"
+#include "step_PCall_02.h"
+#include "step_PCall_03.h"
+#include "step_PCall_04_CallCPPFunction.h"
 
 namespace
 {
