@@ -5,14 +5,14 @@
 
 namespace lua_stack_clear_test
 {
-	r2::iTest::TitleFunc SetTop::GetTitleFunction() const
+	r2::iItem::TitleFunc SetTop::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stack Clear : Set Top";
 		};
 	}
-	r2::iTest::DoFunc SetTop::GetDoFunction()
+	r2::iItem::DoFunc SetTop::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -63,14 +63,14 @@ namespace lua_stack_clear_test
 
 
 
-	r2::iTest::TitleFunc Pop::GetTitleFunction() const
+	r2::iItem::TitleFunc Pop::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stack Clear : Pop";
 		};
 	}
-	r2::iTest::DoFunc Pop::GetDoFunction()
+	r2::iItem::DoFunc Pop::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

@@ -6,13 +6,13 @@ namespace r2
 {
 	enum class eTestResult;
 
-	class iTest
+	class iItem
 	{
 	public:
 		using TitleFunc = std::function<const char*()>;
 		using DoFunc = std::function<eTestResult()>;
 
-		virtual ~iTest() {}
+		virtual ~iItem() {}
 
 		virtual TitleFunc GetTitleFunction() const = 0;
 		virtual DoFunc GetDoFunction() = 0;
