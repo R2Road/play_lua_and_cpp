@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\base\r2_Director.cpp" />
+    <ClCompile Include="src\base\r2cm_Director.cpp" />
     <ClCompile Include="src\base\r2_Menu.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pch.cpp">
@@ -46,7 +46,7 @@
     <ClCompile Include="src\test_lua\step_PCall_04_CallCPPFunction.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\base\r2_Director.h" />
+    <ClInclude Include="src\base\r2cm_Director.h" />
     <ClInclude Include="src\base\r2_eTestResult.h" />
     <ClInclude Include="src\base\r2_iTest.h" />
     <ClInclude Include="src\base\r2_Menu.h" />

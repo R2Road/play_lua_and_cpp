@@ -4,7 +4,7 @@
 #include <conio.h>
 #include <sstream>
 
-#include "base/r2_Director.h"
+#include "base/r2cm_Director.h"
 #include "base/r2_eTestResult.h"
 
 #include "lua_state_test.h"
@@ -61,33 +61,33 @@ namespace r2
 		) );
 
 		{
-			ret->AddChild( '1', lua_state_test::Basic::GetInstance() );
-			ret->AddChild( '2', lua_dostring_test::Basic::GetInstance() );
-			ret->AddChild( '3', lua_getglobal_test::Basic::GetInstance() );
-			ret->AddChild( '4', lua_type_check_test::Basic::GetInstance() );
-			ret->AddChild( '5', lua_stack_printer_test::Basic::GetInstance() );
+			ret->AddItem( '1', lua_state_test::Basic::GetInstance() );
+			ret->AddItem( '2', lua_dostring_test::Basic::GetInstance() );
+			ret->AddItem( '3', lua_getglobal_test::Basic::GetInstance() );
+			ret->AddItem( '4', lua_type_check_test::Basic::GetInstance() );
+			ret->AddItem( '5', lua_stack_printer_test::Basic::GetInstance() );
 
 
 			ret->AddLineFeed();
 
 
-			ret->AddChild( '6', lua_stack_clear_test::SetTop::GetInstance() );
-			ret->AddChild( '7', lua_stack_clear_test::Pop::GetInstance() );
+			ret->AddItem( '6', lua_stack_clear_test::SetTop::GetInstance() );
+			ret->AddItem( '7', lua_stack_clear_test::Pop::GetInstance() );
 
 
 			ret->AddLineFeed();
 
 
-			ret->AddChild( 'q', lua_open_libs_test::Basic::GetInstance() );
+			ret->AddItem( 'q', lua_open_libs_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();
 
 
-			ret->AddChild(
+			ret->AddItem(
 				32
 				, []()->const char* { return "All"; }
-				, []()->r2cm::eTestResult
+				, []()->r2cm::eTestEndAction
 				{
 					int input = 0;
 					bool process = true;
@@ -130,7 +130,7 @@ namespace r2
 						system( "cls" );
 					}
 
-					return r2cm::eTestResult::RunTest;
+					return r2cm::eTestEndAction::None;
 				}
 			);
 
@@ -138,10 +138,10 @@ namespace r2
 			ret->AddSplit();
 
 
-			ret->AddChild(
+			ret->AddItem(
 				27
 				, []()->const char* { return "Exit"; }
-				, []()->r2cm::eTestResult { return r2cm::eTestResult::Exit; }
+				, []()->r2cm::eTestEndAction { return r2cm::eTestEndAction::Exit; }
 			);
 		}
 

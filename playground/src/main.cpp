@@ -11,7 +11,7 @@
 //	#include <vld.h>
 //#endif
 
-#include "base/r2_Director.h"
+#include "base/r2cm_Director.h"
 #include "test_lua/RootMenu.h"
 
 int main()
@@ -45,7 +45,7 @@ int main()
 	//
 	// Process
 	//
-	director.Update();
+	director.Run();
 
 	return 0;
 }

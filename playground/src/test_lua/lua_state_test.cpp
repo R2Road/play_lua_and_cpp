@@ -12,16 +12,16 @@ extern "C"
 
 namespace lua_state_test
 {
-	r2cm::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Lua State";
 		};
 	}
-	r2cm::iItem::DoFunc Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2cm::eTestResult
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -58,7 +58,7 @@ namespace lua_state_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestResult::RunTest;
+			return r2cm::eTestEndAction::None;
 		};
 	}
 }

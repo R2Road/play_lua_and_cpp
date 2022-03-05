@@ -5,16 +5,16 @@
 
 namespace lua_stack_printer_test
 {
-	r2cm::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stack Printer";
 		};
 	}
-	r2cm::iItem::DoFunc Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2cm::eTestResult
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -74,7 +74,7 @@ namespace lua_stack_printer_test
 			lua_close( lua_state_obj );
 
 
-			return r2cm::eTestResult::RunTest;
+			return r2cm::eTestEndAction::None;
 		};
 	}
 }

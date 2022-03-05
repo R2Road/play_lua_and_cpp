@@ -5,16 +5,16 @@
 
 namespace lua_stack_clear_test
 {
-	r2cm::iItem::TitleFunc SetTop::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT SetTop::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stack Clear : Set Top";
 		};
 	}
-	r2cm::iItem::DoFunc SetTop::GetDoFunction()
+	r2cm::iItem::DoFuncT SetTop::GetDoFunction()
 	{
-		return []()->r2cm::eTestResult
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -57,22 +57,22 @@ namespace lua_stack_clear_test
 			lua_close( lua_state_obj );
 
 
-			return r2cm::eTestResult::RunTest;
+			return r2cm::eTestEndAction::None;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunc Pop::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Pop::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stack Clear : Pop";
 		};
 	}
-	r2cm::iItem::DoFunc Pop::GetDoFunction()
+	r2cm::iItem::DoFuncT Pop::GetDoFunction()
 	{
-		return []()->r2cm::eTestResult
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -117,7 +117,7 @@ namespace lua_stack_clear_test
 			lua_close( lua_state_obj );
 
 
-			return r2cm::eTestResult::RunTest;
+			return r2cm::eTestEndAction::None;
 		};
 	}
 }

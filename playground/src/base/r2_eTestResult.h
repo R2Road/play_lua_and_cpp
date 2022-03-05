@@ -2,11 +2,10 @@
 
 namespace r2cm
 {
-	enum class eTestResult
+	enum class eTestEndAction
 	{
-		RunTest,
-		RunTest_Without_Pause,
-		ChangeScene,
+		None,
+		Pause,
 		Exit,
 	};
 }

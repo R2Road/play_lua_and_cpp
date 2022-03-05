@@ -5,16 +5,16 @@
 
 namespace lua_getglobal_test
 {
-	r2cm::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "GetGlobal";
 		};
 	}
-	r2cm::iItem::DoFunc Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2cm::eTestResult
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -78,7 +78,7 @@ namespace lua_getglobal_test
 			lua_close( lua_state_obj );
 
 
-			return r2cm::eTestResult::RunTest;
+			return r2cm::eTestEndAction::None;
 		};
 	}
 }

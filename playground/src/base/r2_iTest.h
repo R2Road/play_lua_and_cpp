@@ -4,17 +4,17 @@
 
 namespace r2cm
 {
-	enum class eTestResult;
+	enum class eTestEndAction;
 
 	class iItem
 	{
 	public:
-		using TitleFunc = std::function<const char*()>;
-		using DoFunc = std::function<eTestResult()>;
+		using TitleFuncT = std::function<const char*()>;
+		using DoFuncT = std::function<eTestEndAction()>;
 
 		virtual ~iItem() {}
 
-		virtual TitleFunc GetTitleFunction() const = 0;
-		virtual DoFunc GetDoFunction() = 0;
+		virtual TitleFuncT GetTitleFunction() const = 0;
+		virtual DoFuncT GetDoFunction() = 0;
 	};
 }

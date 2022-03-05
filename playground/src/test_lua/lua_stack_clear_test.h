@@ -8,14 +8,14 @@ namespace lua_stack_clear_test
 	class SetTop : public r2cm::iItem, public r2::SingleTon<SetTop>
 	{
 	public:
-		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class Pop : public r2cm::iItem, public r2::SingleTon<Pop>
 	{
 	public:
-		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
 	};
 }
