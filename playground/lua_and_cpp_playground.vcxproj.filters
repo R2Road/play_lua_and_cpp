@@ -4,14 +4,17 @@
     <Filter Include="base">
       <UniqueIdentifier>{5fc1f00d-1c5a-40c7-9542-081fc7ad1a9c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="menu">
-      <UniqueIdentifier>{15b11151-aacc-4630-951e-09de3d0bec92}</UniqueIdentifier>
-    </Filter>
     <Filter Include="test">
       <UniqueIdentifier>{969087ae-f173-470e-b691-2e752d41c9dd}</UniqueIdentifier>
     </Filter>
     <Filter Include="test_deprecated">
       <UniqueIdentifier>{ac36d45c-4822-4e2f-a29d-2f8d2c3c6b62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test_lua">
+      <UniqueIdentifier>{75ee7280-cc66-4ddf-8d31-4001f0c8937b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test_lua\menu">
+      <UniqueIdentifier>{5404a19b-4605-4e33-8e81-be342b9fff88}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -26,9 +29,6 @@
     </ClCompile>
     <ClCompile Include="src\base\r2_Menu.cpp">
       <Filter>base</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_RootMenu.cpp">
-      <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\test\lua_state_test.cpp">
       <Filter>test</Filter>
@@ -69,6 +69,9 @@
     <ClCompile Include="src\test\lua_open_libs_test.cpp">
       <Filter>test_deprecated</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_lua\RootMenu.cpp">
+      <Filter>test_lua\menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -93,9 +96,6 @@
     </ClInclude>
     <ClInclude Include="src\base\r2_Singleton.h">
       <Filter>base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_RootMenu.h">
-      <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\test\lua_state_test.h">
       <Filter>test</Filter>
@@ -135,6 +135,9 @@
     </ClInclude>
     <ClInclude Include="src\test\lua_open_libs_test.h">
       <Filter>test_deprecated</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_lua\RootMenu.h">
+      <Filter>test_lua\menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

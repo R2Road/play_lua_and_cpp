@@ -23,7 +23,6 @@
     <ClCompile Include="src\base\r2_FrameManager.cpp" />
     <ClCompile Include="src\base\r2_Menu.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\menu\r2_RootMenu.cpp" />
     <ClCompile Include="src\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -44,6 +43,7 @@
     <ClCompile Include="src\test\step_PCall_02.cpp" />
     <ClCompile Include="src\test\step_PCall_03.cpp" />
     <ClCompile Include="src\test\step_PCall_04_CallCPPFunction.cpp" />
+    <ClCompile Include="src\test_lua\RootMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\base\r2_Assert.h" />
@@ -53,7 +53,6 @@
     <ClInclude Include="src\base\r2_iTest.h" />
     <ClInclude Include="src\base\r2_Menu.h" />
     <ClInclude Include="src\base\r2_Singleton.h" />
-    <ClInclude Include="src\menu\r2_RootMenu.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\step_helper.h" />
     <ClInclude Include="src\test\lua_stack_clear_test.h" />
@@ -69,6 +68,7 @@
     <ClInclude Include="src\test\step_PCall_02.h" />
     <ClInclude Include="src\test\step_PCall_03.h" />
     <ClInclude Include="src\test\step_PCall_04_CallCPPFunction.h" />
+    <ClInclude Include="src\test_lua\RootMenu.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

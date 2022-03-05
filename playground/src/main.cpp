@@ -12,7 +12,7 @@
 //#endif
 
 #include "base/r2_Director.h"
-#include "menu/r2_RootMenu.h"
+#include "test_lua/RootMenu.h"
 
 int main()
 {
