@@ -5,16 +5,16 @@
 
 namespace lua_type_check_test
 {
-	r2::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Type Check";
 		};
 	}
-	r2::iItem::DoFunc Basic::GetDoFunction()
+	r2cm::iItem::DoFunc Basic::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2cm::eTestResult
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -113,7 +113,7 @@ namespace lua_type_check_test
 			lua_close( lua_state_obj );
 
 
-			return r2::eTestResult::RunTest;
+			return r2cm::eTestResult::RunTest;
 		};
 	}
 }

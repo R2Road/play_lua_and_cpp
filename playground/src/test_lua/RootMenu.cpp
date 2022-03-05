@@ -52,9 +52,9 @@ namespace
 
 namespace r2
 {
-	MenuUp RootMenu::Create( Director& director )
+	r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
 	{
-		MenuUp ret( new ( std::nothrow ) Menu(
+		r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
 			director
 			, GetTitle()
 			, "> Add Some One"
@@ -87,7 +87,7 @@ namespace r2
 			ret->AddChild(
 				32
 				, []()->const char* { return "All"; }
-				, []()->eTestResult
+				, []()->r2cm::eTestResult
 				{
 					int input = 0;
 					bool process = true;
@@ -130,7 +130,7 @@ namespace r2
 						system( "cls" );
 					}
 
-					return eTestResult::RunTest;
+					return r2cm::eTestResult::RunTest;
 				}
 			);
 
@@ -141,7 +141,7 @@ namespace r2
 			ret->AddChild(
 				27
 				, []()->const char* { return "Exit"; }
-				, []()->eTestResult { return eTestResult::Exit; }
+				, []()->r2cm::eTestResult { return r2cm::eTestResult::Exit; }
 			);
 		}
 

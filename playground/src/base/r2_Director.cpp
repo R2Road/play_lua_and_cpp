@@ -6,7 +6,7 @@
 
 #include "r2_eTestResult.h"
 
-namespace r2
+namespace r2cm
 {
 	Director::Director() : mMenu()
 	{}

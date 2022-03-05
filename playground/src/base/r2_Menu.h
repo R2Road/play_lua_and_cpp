@@ -5,7 +5,7 @@
 #include <string_view>
 #include <vector>
 
-namespace r2
+namespace r2cm
 {
 	enum class eTestResult; 
 
@@ -21,7 +21,7 @@ namespace r2
 			TestInfo(
 				const char key_code
 				, const std::function<const char*( )> name_function
-				, const std::function<const r2::eTestResult()> test_function
+				, const std::function<const r2cm::eTestResult()> test_function
 			) :
 				KeyCode( key_code )
 				, NameFunction( name_function )
@@ -30,7 +30,7 @@ namespace r2
 
 			char KeyCode;
 			std::function<const char*()> NameFunction;
-			std::function<const r2::eTestResult()> TestFunction;
+			std::function<const r2cm::eTestResult()> TestFunction;
 		};
 
 		using TestContainerT = std::vector<TestInfo>;
@@ -50,7 +50,7 @@ namespace r2
 		eTestResult Do( const int key_code );
 
 		void AddChild( const char key_code, iItem& test_obj );
-		void AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2::eTestResult()> func_test );
+		void AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2cm::eTestResult()> func_test );
 		void AddLineFeed();
 		void AddSplit();
 

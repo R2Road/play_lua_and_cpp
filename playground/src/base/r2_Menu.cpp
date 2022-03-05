@@ -6,7 +6,7 @@
 #include "r2_eTestResult.h"
 #include "r2_iTest.h"
 
-namespace r2
+namespace r2cm
 {
 	Menu::Menu( Director& director, const char* title_string, const char* description_string ) :
 		mDirector( director )
@@ -102,21 +102,21 @@ namespace r2
 	{
 		mTests.emplace_back( key_code, test_obj.GetTitleFunction(), test_obj.GetDoFunction() );
 	}
-	void Menu::AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2::eTestResult()> func_test )
+	void Menu::AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2cm::eTestResult()> func_test )
 	{
 		mTests.emplace_back( key_code, func_title, func_test );
 	}
 	void Menu::AddLineFeed()
 	{
 		static const std::function<const char*()> func_title = []()->const char* { return ""; };
-		static const std::function<const r2::eTestResult()> func_test = []()->const r2::eTestResult { return r2::eTestResult::RunTest; };
+		static const std::function<const r2cm::eTestResult()> func_test = []()->const r2cm::eTestResult { return r2cm::eTestResult::RunTest; };
 
 		mTests.push_back( { 64, func_title, func_test } );
 	}
 	void Menu::AddSplit()
 	{
 		static const std::function<const char*( )> func_title = []()->const char* { return ""; };
-		static const std::function<const r2::eTestResult()> func_test = []()->const r2::eTestResult { return r2::eTestResult::RunTest; };
+		static const std::function<const r2cm::eTestResult()> func_test = []()->const r2cm::eTestResult { return r2cm::eTestResult::RunTest; };
 
 		mTests.push_back( { 42, func_title, func_test } );
 	}
