@@ -1,7 +1,7 @@
 ﻿#include "pch.h"
 #include "lua_stack_printer_test.h"
 
-#include "base/r2_eTestResult.h"
+#include "base/r2cm_eTestEndAction.h"
 
 namespace lua_stack_printer_test
 {

@@ -5,7 +5,7 @@
 #include <sstream>
 
 #include "base/r2cm_Director.h"
-#include "base/r2_eTestResult.h"
+#include "base/r2cm_eTestEndAction.h"
 
 #include "lua_state_test.h"
 #include "lua_dostring_test.h"

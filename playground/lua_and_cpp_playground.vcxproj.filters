@@ -69,7 +69,7 @@
     <ClCompile Include="src\base\r2cm_Director.cpp">
       <Filter>base</Filter>
     </ClCompile>
-    <ClCompile Include="src\base\r2_Menu.cpp">
+    <ClCompile Include="src\base\r2cm_Menu.cpp">
       <Filter>base</Filter>
     </ClCompile>
   </ItemGroup>
@@ -130,13 +130,13 @@
     <ClInclude Include="src\base\r2cm_Director.h">
       <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="src\base\r2_eTestResult.h">
+    <ClInclude Include="src\base\r2cm_Menu.h">
       <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="src\base\r2_iTest.h">
+    <ClInclude Include="src\base\r2cm_iItem.h">
       <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="src\base\r2_Menu.h">
+    <ClInclude Include="src\base\r2cm_eTestEndAction.h">
       <Filter>base</Filter>
     </ClInclude>
   </ItemGroup>
