@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="base">
-      <UniqueIdentifier>{5fc1f00d-1c5a-40c7-9542-081fc7ad1a9c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="test_lua">
       <UniqueIdentifier>{75ee7280-cc66-4ddf-8d31-4001f0c8937b}</UniqueIdentifier>
     </Filter>
@@ -15,6 +12,9 @@
     </Filter>
     <Filter Include="r2">
       <UniqueIdentifier>{908a8d2c-6580-4589-8a28-6c2bd04fdb7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="r2cm">
+      <UniqueIdentifier>{5fc1f00d-1c5a-40c7-9542-081fc7ad1a9c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -66,11 +66,11 @@
     <ClCompile Include="src\r2\r2_FrameManager.cpp">
       <Filter>r2</Filter>
     </ClCompile>
-    <ClCompile Include="src\base\r2cm_Director.cpp">
-      <Filter>base</Filter>
+    <ClCompile Include="src\r2cm\r2cm_Director.cpp">
+      <Filter>r2cm</Filter>
     </ClCompile>
-    <ClCompile Include="src\base\r2cm_Menu.cpp">
-      <Filter>base</Filter>
+    <ClCompile Include="src\r2cm\r2cm_Menu.cpp">
+      <Filter>r2cm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -127,17 +127,17 @@
     <ClInclude Include="src\r2\r2_FrameManager.h">
       <Filter>r2</Filter>
     </ClInclude>
-    <ClInclude Include="src\base\r2cm_Director.h">
-      <Filter>base</Filter>
+    <ClInclude Include="src\r2cm\r2cm_Director.h">
+      <Filter>r2cm</Filter>
     </ClInclude>
-    <ClInclude Include="src\base\r2cm_Menu.h">
-      <Filter>base</Filter>
+    <ClInclude Include="src\r2cm\r2cm_eTestEndAction.h">
+      <Filter>r2cm</Filter>
     </ClInclude>
-    <ClInclude Include="src\base\r2cm_iItem.h">
-      <Filter>base</Filter>
+    <ClInclude Include="src\r2cm\r2cm_iItem.h">
+      <Filter>r2cm</Filter>
     </ClInclude>
-    <ClInclude Include="src\base\r2cm_eTestEndAction.h">
-      <Filter>base</Filter>
+    <ClInclude Include="src\r2cm\r2cm_Menu.h">
+      <Filter>r2cm</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,7 +1,7 @@
 ﻿#include "pch.h"
 #include "lua_getglobal_test.h"
 
-#include "base/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_eTestEndAction.h"
 
 namespace lua_getglobal_test
 {

@@ -4,8 +4,8 @@
 #include <conio.h>
 #include <sstream>
 
-#include "base/r2cm_Director.h"
-#include "base/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_Director.h"
+#include "r2cm/r2cm_eTestEndAction.h"
 
 #include "lua_state_test.h"
 #include "lua_dostring_test.h"
