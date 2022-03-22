@@ -8,6 +8,8 @@
 
 #include "MainMenu.h"
 
+#include "r2lua_push_test.h"
+
 r2cm::MenuUp TestR2LuaRootMenu::Create( r2cm::Director& director )
 {
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
@@ -16,7 +18,7 @@ r2cm::MenuUp TestR2LuaRootMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		//ret->AddItem( '1', lua_state_test::Basic::GetInstance() );
+		ret->AddItem( '1', r2lua_push_test::Basic::GetInstance() );
 		
 
 		ret->AddSplit();
