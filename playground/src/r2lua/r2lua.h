@@ -25,37 +25,34 @@ namespace r2lua
 	class Bool
 	{
 	public:
-		Bool( bool boolean ) : mType( Type::Bool ), mValue( boolean ) {}
+		Bool( bool boolean ) : mValue( boolean ) {}
 
-		Type GetType() const { return mType; }
+		static Type GetType() { return Type::Bool; }
 		lua_Number GetValue() const { return mValue; }
 
 	private:
-		Type mType;
 		bool mValue;
 	};
 	class Number
 	{
 	public:
-		Number( lua_Number num ) : mType( Type::Number ), mValue( num ) {}
+		Number( lua_Number num ) : mValue( num ) {}
 
-		Type GetType() const { return mType; }
+		static Type GetType() { return Type::Number; }
 		lua_Number GetValue() const { return mValue; }
 
 	private:
-		Type mType;
 		lua_Number mValue;
 	};
 	class String
 	{
 	public:
-		String( const char* const str ) : mType( Type::String ), mValue( str ) {}
+		String( const char* const str ) : mValue( str ) {}
 
-		Type GetType() const { return mType; }
+		static Type GetType() { return Type::String; }
 		std::string_view GetValue() const { return mValue; }
 
 	private:
-		Type mType;
 		std::string mValue;
 	};
 
