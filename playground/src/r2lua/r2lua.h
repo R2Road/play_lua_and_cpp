@@ -3,6 +3,7 @@
 #include <string>
 #include <string_view>
 #include <variant>
+#include <vector>
 
 //
 // # REF
@@ -80,4 +81,7 @@ namespace r2lua
 	}
 
 	r2lua::Value GetValueFromStack( lua_State* const lua_state_obj, int index );
+
+	using ValueVector = std::vector<r2lua::Value>;
+	r2lua::ValueVector GetValuesFromStack( lua_State* const lua_state_obj );
 }

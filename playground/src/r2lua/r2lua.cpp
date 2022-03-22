@@ -55,4 +55,18 @@ namespace r2lua
 
 		return r2lua::Number( 0 );
 	}
+
+	r2lua::ValueVector GetValuesFromStack( lua_State* const lua_state_obj )
+	{
+		r2lua::ValueVector ret;
+		{
+			const int stack_size = lua_gettop( lua_state_obj );
+
+			for( int i = 1; stack_size >= i; ++i )
+			{
+				ret.emplace_back( GetValueFromStack( lua_state_obj, i ) );
+			}
+		}
+		return ret;
+	}
 }

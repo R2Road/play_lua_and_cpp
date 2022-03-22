@@ -20,6 +20,7 @@ r2cm::MenuUp TestR2LuaRootMenu::Create( r2cm::Director& director )
 	{
 		ret->AddItem( '1', r2lua_test::PushTest::GetInstance() );
 		ret->AddItem( '2', r2lua_test::GetValueFromStackTest::GetInstance() );
+		ret->AddItem( '3', r2lua_test::GetValuesFromStackTest::GetInstance() );
 		
 
 		ret->AddSplit();
