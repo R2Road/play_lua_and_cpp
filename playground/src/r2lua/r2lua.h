@@ -78,7 +78,7 @@ namespace r2lua
 	// 바로 해버림. @_@
 	//
 	template<typename T>
-	T GetValue( const Value& v )
+	const T& GetValue( const Value& v )
 	{
 		if( const auto* const ret = std::get_if<T>( &v ) )
 		{
@@ -87,7 +87,8 @@ namespace r2lua
 		else
 		{
 			assert( false );
-			return T();
+			static T dummy;
+			return dummy;
 		}
 	}
 

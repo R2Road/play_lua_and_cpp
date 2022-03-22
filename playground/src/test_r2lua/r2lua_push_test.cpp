@@ -187,21 +187,21 @@ namespace r2lua_test
 					{
 					case r2lua::Type::Bool:
 					{
-						DECLARATION_MAIN( auto b = r2lua::GetValue<r2lua::Bool>( v ) );
+						DECLARATION_MAIN( const auto& b = r2lua::GetValue<r2lua::Bool>( v ) );
 						std::cout << "b : " << b.GetValue() << r2::linefeed;
 					}
 					break;
 
 					case r2lua::Type::Number:
 					{
-						DECLARATION_MAIN( auto num = r2lua::GetValue<r2lua::Number>( v ) );
+						DECLARATION_MAIN( const auto& num = r2lua::GetValue<r2lua::Number>( v ) );
 						std::cout << "num : " << num.GetValue() << r2::linefeed;
 					}
 					break;
 
 					case r2lua::Type::String:
 					{
-						DECLARATION_MAIN( auto str = r2lua::GetValue<r2lua::String>( v ) );
+						DECLARATION_MAIN( const auto& str = r2lua::GetValue<r2lua::String>( v ) );
 						std::cout << "str : " << str.GetValue() << r2::linefeed;
 					}
 					break;
