@@ -12,7 +12,7 @@
 //#endif
 
 #include "r2cm/r2cm_Director.h"
-#include "test_lua/RootMenu.h"
+#include "test_lua/TestLuaRootMenu.h"
 
 int main()
 {
