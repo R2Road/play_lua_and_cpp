@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include <string>
+#include <string_view>
 #include <variant>
 
 //
@@ -25,6 +26,7 @@ namespace r2lua
 		Number( lua_Number num ) : mType( Type::Number ), mValue( num ) {}
 
 		Type GetType() const { return mType; }
+		lua_Number GetValue() const { return mValue; }
 
 	private:
 		Type mType;
@@ -36,6 +38,7 @@ namespace r2lua
 		String( const char* const str ) : mType( Type::String ), mValue( str ) {}
 
 		Type GetType() const { return mType; }
+		std::string_view GetValue() const { return mValue; }
 
 	private:
 		Type mType;

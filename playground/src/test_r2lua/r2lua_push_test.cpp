@@ -41,10 +41,12 @@ namespace r2lua_push_test
 			{
 				DECLARATION_MAIN( auto value = r2lua::GetValueFromStack( lua_state_obj, 1 ) );
 				DECLARATION_MAIN( auto value_type = r2lua::GetType( value ) );
+				DECLARATION_MAIN( auto num = std::get<r2lua::Number>( value ) );
 
 				std::cout << r2::linefeed;
 
 				std::cout << "value_type : " << static_cast<int>( value_type ) << r2::linefeed;
+				std::cout << "num : " << num.GetValue() << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -52,10 +54,12 @@ namespace r2lua_push_test
 			{
 				DECLARATION_MAIN( auto value = r2lua::GetValueFromStack( lua_state_obj, 2 ) );
 				DECLARATION_MAIN( auto value_type = r2lua::GetType( value ) );
+				DECLARATION_MAIN( auto num = std::get<r2lua::Number>( value ) );
 
 				std::cout << r2::linefeed;
 
 				std::cout << "value_type : " << static_cast<int>( value_type ) << r2::linefeed;
+				std::cout << "num : " << num.GetValue() << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -63,10 +67,12 @@ namespace r2lua_push_test
 			{
 				DECLARATION_MAIN( auto value = r2lua::GetValueFromStack( lua_state_obj, 3 ) );
 				DECLARATION_MAIN( auto value_type = r2lua::GetType( value ) );
+				DECLARATION_MAIN( auto str = std::get<r2lua::String>( value ) );
 
 				std::cout << r2::linefeed;
 
 				std::cout << "value_type : " << static_cast<int>( value_type ) << r2::linefeed;
+				std::cout << "str : " << str.GetValue() << r2::linefeed;
 			}
 
 			std::cout << r2::split;
