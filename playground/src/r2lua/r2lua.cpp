@@ -1,8 +1,6 @@
 ﻿#include "pch.h"
 #include "r2lua.h"
 
-#include <cassert>
-
 namespace r2lua
 {
 	Type GetType( const Value& v )

@@ -1,5 +1,6 @@
 ﻿#pragma once
 
+#include <cassert>
 #include <string>
 #include <string_view>
 #include <variant>
@@ -25,6 +26,7 @@ namespace r2lua
 	class Bool
 	{
 	public:
+		Bool() : mValue( false ) {}
 		Bool( bool boolean ) : mValue( boolean ) {}
 
 		static Type GetType() { return Type::Bool; }
@@ -36,6 +38,7 @@ namespace r2lua
 	class Number
 	{
 	public:
+		Number() : mValue( -1 ) {}
 		Number( lua_Number num ) : mValue( num ) {}
 
 		static Type GetType() { return Type::Number; }
@@ -47,6 +50,7 @@ namespace r2lua
 	class String
 	{
 	public:
+		String() : mValue( "Invalid String" ) {}
 		String( const char* const str ) : mValue( str ) {}
 
 		static Type GetType() { return Type::String; }
@@ -71,10 +75,20 @@ namespace r2lua
 	// 하지만... 그래야 할까?
 	// 나중에 필요할 때 고려해보자.
 	//
+	// 바로 해버림. @_@
+	//
 	template<typename T>
 	T GetValue( const Value& v )
 	{
-		return std::get<T>( v );
+		if( const auto* const ret = std::get_if<T>( &v ) )
+		{
+			return ( *ret );
+		}
+		else
+		{
+			assert( false );
+			return T();
+		}
 	}
 
 
