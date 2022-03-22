@@ -65,4 +65,19 @@ namespace r2lua
 
 
 	Type GetType( const Value& v );
+
+
+
+	void Push( lua_State* const lua_state_obj, bool b );
+	void Push( lua_State* const lua_state_obj, int n );
+	void Push( lua_State* const lua_state_obj, lua_Number n );
+	void Push( lua_State* const lua_state_obj, const char* const str );
+
+	template<typename... Args>
+	void PushArgs( lua_State* const lua_state_obj, Args... args )
+	{
+		( Push( lua_state_obj, args ), ... );
+	}
+
+	r2lua::Value GetValueFromStack( lua_State* const lua_state_obj, int index );
 }
