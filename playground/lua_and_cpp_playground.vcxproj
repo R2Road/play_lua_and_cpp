@@ -29,7 +29,7 @@
     </ClCompile>
     <ClCompile Include="src\r2cm\r2cm_Director.cpp" />
     <ClCompile Include="src\r2cm\r2cm_Menu.cpp" />
-    <ClCompile Include="src\r2lua\r2lua_Value.cpp" />
+    <ClCompile Include="src\r2lua\r2lua.cpp" />
     <ClCompile Include="src\r2\r2_FrameManager.cpp" />
     <ClCompile Include="src\step_helper.cpp" />
     <ClCompile Include="src\test_lua\lua_dostring_test.cpp" />
@@ -56,7 +56,7 @@
     <ClInclude Include="src\r2cm\r2cm_eTestEndAction.h" />
     <ClInclude Include="src\r2cm\r2cm_iItem.h" />
     <ClInclude Include="src\r2cm\r2cm_Menu.h" />
-    <ClInclude Include="src\r2lua\r2lua_Value.h" />
+    <ClInclude Include="src\r2lua\r2lua.h" />
     <ClInclude Include="src\r2\r2_Assert.h" />
     <ClInclude Include="src\r2\r2_FrameManager.h" />
     <ClInclude Include="src\r2\r2_Inspector.h" />
