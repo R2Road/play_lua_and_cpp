@@ -1,8 +1,8 @@
 ﻿#pragma once
 
-#include <cassert>
 #include <string>
 #include <string_view>
+#include <type_traits>
 #include <variant>
 #include <vector>
 
@@ -80,13 +80,18 @@ namespace r2lua
 	template<typename T>
 	const T& GetValue( const Value& v )
 	{
+		static_assert(
+			std::is_same<T, r2lua::Bool>()
+			|| std::is_same<T, r2lua::Number>()
+			|| std::is_same<T, r2lua::String>()
+		);
+
 		if( const auto* const ret = std::get_if<T>( &v ) )
 		{
 			return ( *ret );
 		}
 		else
 		{
-			assert( false );
 			static T dummy;
 			return dummy;
 		}
