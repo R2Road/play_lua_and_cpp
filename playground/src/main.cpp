@@ -40,7 +40,7 @@ int main()
 	// Setup
 	//
 	r2cm::Director director;
-	director.Setup( r2::RootMenu::Create( director ) );
+	director.Setup( TestLuaRootMenu::Create( director ) );
 
 	//
 	// Process

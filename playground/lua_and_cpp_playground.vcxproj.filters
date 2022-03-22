@@ -16,14 +16,14 @@
     <Filter Include="r2cm">
       <UniqueIdentifier>{5fc1f00d-1c5a-40c7-9542-081fc7ad1a9c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="r2lua">
+      <UniqueIdentifier>{26c61446-f236-4da8-92e9-69cf0892f66d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pch.cpp" />
     <ClCompile Include="src\step_helper.cpp" />
-    <ClCompile Include="src\test_lua\RootMenu.cpp">
-      <Filter>test_lua\menu</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_lua\lua_dostring_test.cpp">
       <Filter>test_lua\item</Filter>
     </ClCompile>
@@ -72,13 +72,16 @@
     <ClCompile Include="src\r2cm\r2cm_Menu.cpp">
       <Filter>r2cm</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2lua\r2lua_Value.cpp">
+      <Filter>r2lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_lua\RootMenu.cpp">
+      <Filter>test_lua\menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\step_helper.h" />
-    <ClInclude Include="src\test_lua\RootMenu.h">
-      <Filter>test_lua\menu</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_lua\lua_dostring_test.h">
       <Filter>test_lua\item</Filter>
     </ClInclude>
@@ -141,6 +144,12 @@
     </ClInclude>
     <ClInclude Include="src\r2\r2_Inspector.h">
       <Filter>r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2lua\r2lua_Value.h">
+      <Filter>r2lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_lua\RootMenu.h">
+      <Filter>test_lua\menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

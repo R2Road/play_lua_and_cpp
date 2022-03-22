@@ -50,101 +50,98 @@ namespace
 	}
 }
 
-namespace r2
+r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 {
-	r2cm::MenuUp RootMenu::Create( r2cm::Director& director )
+	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
+		director
+		, GetTitle()
+		, "> Add Some One"
+	) );
+
 	{
-		r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
-			director
-			, GetTitle()
-			, "> Add Some One"
-		) );
-
-		{
-			ret->AddItem( '1', lua_state_test::Basic::GetInstance() );
-			ret->AddItem( '2', lua_dostring_test::Basic::GetInstance() );
-			ret->AddItem( '3', lua_getglobal_test::Basic::GetInstance() );
-			ret->AddItem( '4', lua_type_check_test::Basic::GetInstance() );
-			ret->AddItem( '5', lua_stack_printer_test::Basic::GetInstance() );
+		ret->AddItem( '1', lua_state_test::Basic::GetInstance() );
+		ret->AddItem( '2', lua_dostring_test::Basic::GetInstance() );
+		ret->AddItem( '3', lua_getglobal_test::Basic::GetInstance() );
+		ret->AddItem( '4', lua_type_check_test::Basic::GetInstance() );
+		ret->AddItem( '5', lua_stack_printer_test::Basic::GetInstance() );
 
 
-			ret->AddLineFeed();
+		ret->AddLineFeed();
 
 
-			ret->AddItem( '6', lua_stack_clear_test::SetTop::GetInstance() );
-			ret->AddItem( '7', lua_stack_clear_test::Pop::GetInstance() );
+		ret->AddItem( '6', lua_stack_clear_test::SetTop::GetInstance() );
+		ret->AddItem( '7', lua_stack_clear_test::Pop::GetInstance() );
 
 
-			ret->AddLineFeed();
+		ret->AddLineFeed();
 
 
-			ret->AddItem( 'q', lua_open_libs_test::Basic::GetInstance() );
+		ret->AddItem( 'q', lua_open_libs_test::Basic::GetInstance() );
 
 
-			ret->AddSplit();
+		ret->AddSplit();
 
 
-			ret->AddItem(
-				32
-				, []()->const char* { return "All"; }
-				, []()->r2cm::eTestEndAction
+		ret->AddItem(
+			32
+			, []()->const char* { return "All"; }
+			, []()->r2cm::eTestEndAction
+			{
+				int input = 0;
+				bool process = true;
+				while( process )
 				{
-					int input = 0;
-					bool process = true;
-					while( process )
+					ShowMenu();
+
+					input = _getch();
+					system( "cls" );
+
+					switch( input )
 					{
-						ShowMenu();
+					case '6':
+						step::DoFile();
+						break;
+					case '7':
+						step::GetTable();
+						break;
 
-						input = _getch();
-						system( "cls" );
+					case 'q':
+						step::PCall_01();
+						break;
+					case 'w':
+						step::PCall_02();
+						break;
+					case 'e':
+						step::PCall_03();
+						break;
+					case 'r':
+						step::PCall_04_CallCPPFunction();
+						break;
 
-						switch( input )
-						{
-						case '6':
-							step::DoFile();
-							break;
-						case '7':
-							step::GetTable();
-							break;
-
-						case 'q':
-							step::PCall_01();
-							break;
-						case 'w':
-							step::PCall_02();
-							break;
-						case 'e':
-							step::PCall_03();
-							break;
-						case 'r':
-							step::PCall_04_CallCPPFunction();
-							break;
-
-						case 27: // ESC
-							process = false;
-							break;
-						}
-
-						std::cout << r2::linefeed << "Press Any Key" << r2::linefeed;
-						_getch();
-						system( "cls" );
+					case 27: // ESC
+						process = false;
+						break;
 					}
 
-					return r2cm::eTestEndAction::None;
+					std::cout << r2::linefeed << "Press Any Key" << r2::linefeed;
+					_getch();
+					system( "cls" );
 				}
-			);
+
+				return r2cm::eTestEndAction::None;
+			}
+		);
 
 
-			ret->AddSplit();
+		ret->AddSplit();
 
 
-			ret->AddItem(
-				27
-				, []()->const char* { return "Exit"; }
-				, []()->r2cm::eTestEndAction { return r2cm::eTestEndAction::Exit; }
-			);
-		}
-
-		return ret;
+		ret->AddItem(
+			27
+			, []()->const char* { return "Exit"; }
+			, []()->r2cm::eTestEndAction { return r2cm::eTestEndAction::Exit; }
+		);
 	}
+
+	return ret;
 }
