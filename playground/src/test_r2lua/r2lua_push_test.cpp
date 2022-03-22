@@ -7,7 +7,7 @@
 #include "r2lua/r2lua_utility.h"
 #include "step_helper.h"
 
-namespace r2lua_push_test
+namespace r2lua_test
 {
 	r2cm::iItem::TitleFuncT PushTest::GetTitleFunction() const
 	{
