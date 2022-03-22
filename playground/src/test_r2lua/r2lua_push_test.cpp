@@ -48,6 +48,42 @@ namespace r2lua_test
 
 			std::cout << r2::split;
 
+			PROCESS_SUB( lua_close( lua_state_obj ) );
+
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+	r2cm::iItem::TitleFuncT GetValueFromStackTest::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "GetValueFromStack";
+		};
+	}
+	r2cm::iItem::DoFuncT GetValueFromStackTest::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( lua_State* lua_state_obj = luaL_newstate() );
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( r2lua::PushArgs( lua_state_obj, 1, 3.141592, "test_string" ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( step_helper::LuaViewAllStack( lua_state_obj ) );
+			}
+
+			std::cout << r2::split;
+
 			{
 				DECLARATION_MAIN( auto value = r2lua::GetValueFromStack( lua_state_obj, 1 ) );
 				DECLARATION_MAIN( auto value_type = r2lua::GetType( value ) );
@@ -75,7 +111,7 @@ namespace r2lua_test
 			std::cout << r2::split;
 
 			{
-				DECLARATION_MAIN( auto value = r2lua::GetValueFromStack( lua_state_obj, 4 ) );
+				DECLARATION_MAIN( auto value = r2lua::GetValueFromStack( lua_state_obj, 3 ) );
 				DECLARATION_MAIN( auto value_type = r2lua::GetType( value ) );
 				DECLARATION_MAIN( auto str = std::get<r2lua::String>( value ) );
 

@@ -11,4 +11,11 @@ namespace r2lua_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class GetValueFromStackTest : public r2cm::iItem, public r2::SingleTon<GetValueFromStackTest>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }
