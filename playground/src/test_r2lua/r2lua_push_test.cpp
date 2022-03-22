@@ -4,6 +4,7 @@
 #include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
+#include "r2lua/r2lua_utility.h"
 #include "step_helper.h"
 
 namespace r2lua_push_test
@@ -28,6 +29,11 @@ namespace r2lua_push_test
 			std::cout << r2::split;
 
 			{
+				PROCESS_MAIN( r2lua::PushArgs( lua_state_obj, 1, 3.141592, "test_string" ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( step_helper::LuaViewAllStack( lua_state_obj ) );
 			}
 
 			std::cout << r2::split;
