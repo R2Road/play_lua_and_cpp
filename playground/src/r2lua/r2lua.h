@@ -64,6 +64,13 @@ namespace r2lua
 
 	Type GetType( const Value& v );
 
+	//
+	// # 20220323 - by R2
+	// assert 가 작동할 상황에서도 프로그램을 정상 작동 시키고 싶다면
+	// T에 해당하는 타입들에 기본 생성자를 추가해서 반환하면 될 것도 같다.
+	// 하지만... 그래야 할까?
+	// 나중에 필요할 때 고려해보자.
+	//
 	template<typename T>
 	T GetValue( const Value& v )
 	{
