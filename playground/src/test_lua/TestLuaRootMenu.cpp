@@ -22,6 +22,8 @@
 #include "step_PCall_03.h"
 #include "step_PCall_04_CallCPPFunction.h"
 
+#include "MainMenu.h"
+
 namespace
 {
 	std::string MakeMenuString()
@@ -138,8 +140,12 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 
 		ret->AddItem(
 			27
-			, []()->const char* { return "Exit"; }
-			, []()->r2cm::eTestEndAction { return r2cm::eTestEndAction::Exit; }
+			, []()->const char* { return MainMenu::GetTitle(); }
+			, [&director]()->r2cm::eTestEndAction
+			{
+				director.Setup( MainMenu::Create( director ) );
+				return r2cm::eTestEndAction::None;
+			}
 		);
 	}
 

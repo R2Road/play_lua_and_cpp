@@ -78,6 +78,7 @@
     <ClCompile Include="src\test_lua\TestLuaRootMenu.cpp">
       <Filter>test_lua\menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\MainMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -151,5 +152,6 @@
     <ClInclude Include="src\test_lua\TestLuaRootMenu.h">
       <Filter>test_lua\menu</Filter>
     </ClInclude>
+    <ClInclude Include="src\MainMenu.h" />
   </ItemGroup>
 </Project>

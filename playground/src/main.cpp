@@ -12,7 +12,7 @@
 //#endif
 
 #include "r2cm/r2cm_Director.h"
-#include "test_lua/TestLuaRootMenu.h"
+#include "MainMenu.h"
 
 int main()
 {
@@ -40,7 +40,7 @@ int main()
 	// Setup
 	//
 	r2cm::Director director;
-	director.Setup( TestLuaRootMenu::Create( director ) );
+	director.Setup( MainMenu::Create( director ) );
 
 	//
 	// Process
