@@ -3,4 +3,14 @@
 
 namespace r2lua
 {
+	Type GetType( const Value& v )
+	{
+		return std::visit(
+			[]( const auto& x )
+			{
+				return x.GetType();
+			}
+			, v
+		);
+	}
 }

@@ -1,5 +1,6 @@
 ﻿#pragma once
 
+#include <string>
 #include <variant>
 
 //
@@ -21,18 +22,24 @@ namespace r2lua
 	class Number
 	{
 	public:
+		Number( lua_Number num ) : mType( Type::Number ), mValue( num ) {}
+
 		Type GetType() const { return mType; }
 
 	private:
 		Type mType;
+		lua_Number mValue;
 	};
 	class String
 	{
 	public:
+		String( const char* const str ) : mType( Type::String ), mValue( str ) {}
+
 		Type GetType() const { return mType; }
 
 	private:
 		Type mType;
+		std::string mValue;
 	};
 
 
@@ -41,14 +48,5 @@ namespace r2lua
 
 
 
-	Type GetType( const Value& v )
-	{
-		return std::visit(
-			[]( const auto& x )
-			{
-				return x.GetType();
-			}
-			, v
-		);
-	}
+	Type GetType( const Value& v );
 }

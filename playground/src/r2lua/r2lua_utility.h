@@ -1,5 +1,7 @@
 ﻿#pragma once
 
+#include "r2lua_Value.h"
+
 //
 // # REF
 // CppCon 2017: Andreas Weis “Howling at the Moon: Lua for C++ Programmers”
@@ -18,4 +20,6 @@ namespace r2lua
 	{
 		( Push( lua_state_obj, args ), ... );
 	}
+
+	r2lua::Value GetValueFromStack( lua_State* const lua_state_obj, int index );
 }

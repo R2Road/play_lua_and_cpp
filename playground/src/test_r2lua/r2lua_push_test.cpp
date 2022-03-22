@@ -38,6 +38,38 @@ namespace r2lua_push_test
 
 			std::cout << r2::split;
 
+			{
+				DECLARATION_MAIN( auto value = r2lua::GetValueFromStack( lua_state_obj, 1 ) );
+				DECLARATION_MAIN( auto value_type = r2lua::GetType( value ) );
+
+				std::cout << r2::linefeed;
+
+				std::cout << "value_type : " << static_cast<int>( value_type ) << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				DECLARATION_MAIN( auto value = r2lua::GetValueFromStack( lua_state_obj, 2 ) );
+				DECLARATION_MAIN( auto value_type = r2lua::GetType( value ) );
+
+				std::cout << r2::linefeed;
+
+				std::cout << "value_type : " << static_cast<int>( value_type ) << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				DECLARATION_MAIN( auto value = r2lua::GetValueFromStack( lua_state_obj, 3 ) );
+				DECLARATION_MAIN( auto value_type = r2lua::GetType( value ) );
+
+				std::cout << r2::linefeed;
+
+				std::cout << "value_type : " << static_cast<int>( value_type ) << r2::linefeed;
+			}
+
+			std::cout << r2::split;
 
 			PROCESS_SUB( lua_close( lua_state_obj ) );
 
