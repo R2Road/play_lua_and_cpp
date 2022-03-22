@@ -75,7 +75,7 @@ namespace r2lua_test
 			std::cout << r2::split;
 
 			{
-				PROCESS_MAIN( r2lua::PushArgs( lua_state_obj, 1, 3.141592, "test_string" ) );
+				PROCESS_MAIN( r2lua::PushArgs( lua_state_obj, 1, 3.141592, "test_string", true ) );
 
 				std::cout << r2::linefeed;
 
@@ -119,6 +119,19 @@ namespace r2lua_test
 
 				std::cout << "value_type : " << static_cast<int>( value_type ) << r2::linefeed;
 				std::cout << "str : " << str.GetValue() << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				DECLARATION_MAIN( auto value = r2lua::GetValueFromStack( lua_state_obj, 4 ) );
+				DECLARATION_MAIN( auto value_type = r2lua::GetType( value ) );
+				DECLARATION_MAIN( auto b = std::get<r2lua::Bool>( value ) );
+
+				std::cout << r2::linefeed;
+
+				std::cout << "value_type : " << static_cast<int>( value_type ) << r2::linefeed;
+				std::cout << "b : " << b.GetValue() << r2::linefeed;
 			}
 
 			std::cout << r2::split;

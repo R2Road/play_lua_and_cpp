@@ -14,12 +14,25 @@ namespace r2lua
 {
 	enum class Type
 	{
+		Bool,
 		Number,
 		String,
 	};
 
 
 
+	class Bool
+	{
+	public:
+		Bool( bool boolean ) : mType( Type::Bool ), mValue( boolean ) {}
+
+		Type GetType() const { return mType; }
+		lua_Number GetValue() const { return mValue; }
+
+	private:
+		Type mType;
+		bool mValue;
+	};
 	class Number
 	{
 	public:
@@ -47,7 +60,7 @@ namespace r2lua
 
 
 
-	using Value = std::variant<Number, String>;
+	using Value = std::variant<Bool, Number, String>;
 
 
 

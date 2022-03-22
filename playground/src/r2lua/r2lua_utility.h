@@ -12,6 +12,8 @@ struct lua_State;
 
 namespace r2lua
 {
+	void Push( lua_State* const lua_state_obj, bool b );
+	void Push( lua_State* const lua_state_obj, int n );
 	void Push( lua_State* const lua_state_obj, lua_Number n );
 	void Push( lua_State* const lua_state_obj, const char* const str );
 
