@@ -64,6 +64,12 @@ namespace r2lua
 
 	Type GetType( const Value& v );
 
+	template<typename T>
+	T GetValue( const Value& v )
+	{
+		return std::get<T>( v );
+	}
+
 
 
 	void Push( lua_State* const lua_state_obj, bool b );
