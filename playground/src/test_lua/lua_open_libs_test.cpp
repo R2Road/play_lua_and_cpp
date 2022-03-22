@@ -74,7 +74,7 @@ namespace lua_open_libs_test
 			lua_close( lua_state_obj );
 
 
-			return r2cm::eTestEndAction::None;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

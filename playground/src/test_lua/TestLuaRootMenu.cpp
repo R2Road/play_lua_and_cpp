@@ -130,7 +130,7 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 					system( "cls" );
 				}
 
-				return r2cm::eTestEndAction::None;
+				return r2cm::eTestEndAction::Pause;
 			}
 		);
 
