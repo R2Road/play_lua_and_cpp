@@ -18,7 +18,7 @@ r2cm::MenuUp TestR2LuaRootMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', r2lua_push_test::Basic::GetInstance() );
+		ret->AddItem( '1', r2lua_push_test::PushTest::GetInstance() );
 		
 
 		ret->AddSplit();

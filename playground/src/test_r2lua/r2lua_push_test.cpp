@@ -9,14 +9,14 @@
 
 namespace r2lua_push_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT PushTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Push";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT PushTest::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{

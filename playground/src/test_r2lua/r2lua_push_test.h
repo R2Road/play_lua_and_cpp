@@ -5,7 +5,7 @@
 
 namespace r2lua_push_test
 {
-	class Basic : public r2cm::iItem, public r2::SingleTon<Basic>
+	class PushTest : public r2cm::iItem, public r2::SingleTon<PushTest>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
