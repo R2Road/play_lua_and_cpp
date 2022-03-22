@@ -19,6 +19,15 @@
     <Filter Include="r2lua">
       <UniqueIdentifier>{26c61446-f236-4da8-92e9-69cf0892f66d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="test_r2lua">
+      <UniqueIdentifier>{e0b628b0-7c7a-4796-9323-ed1a2371bbcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test_r2lua\item">
+      <UniqueIdentifier>{908430da-8ab5-4d7f-8d2a-366fd0948590}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test_r2lua\menu">
+      <UniqueIdentifier>{0a044e0a-6499-4b9a-b650-f3abbd02e2fd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -79,6 +88,9 @@
       <Filter>test_lua\menu</Filter>
     </ClCompile>
     <ClCompile Include="src\MainMenu.cpp" />
+    <ClCompile Include="src\test_r2lua\TestR2LuaRootMenu.cpp">
+      <Filter>test_r2lua\menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -153,5 +165,8 @@
       <Filter>test_lua\menu</Filter>
     </ClInclude>
     <ClInclude Include="src\MainMenu.h" />
+    <ClInclude Include="src\test_r2lua\TestR2LuaRootMenu.h">
+      <Filter>test_r2lua\menu</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

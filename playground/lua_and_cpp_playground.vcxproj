@@ -46,6 +46,7 @@
     <ClCompile Include="src\test_lua\step_PCall_02.cpp" />
     <ClCompile Include="src\test_lua\step_PCall_03.cpp" />
     <ClCompile Include="src\test_lua\step_PCall_04_CallCPPFunction.cpp" />
+    <ClCompile Include="src\test_r2lua\TestR2LuaRootMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MainMenu.h" />
@@ -74,6 +75,7 @@
     <ClInclude Include="src\test_lua\step_PCall_02.h" />
     <ClInclude Include="src\test_lua\step_PCall_03.h" />
     <ClInclude Include="src\test_lua\step_PCall_04_CallCPPFunction.h" />
+    <ClInclude Include="src\test_r2lua\TestR2LuaRootMenu.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

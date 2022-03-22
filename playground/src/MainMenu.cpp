@@ -8,6 +8,7 @@
 #include "r2cm/r2cm_eTestEndAction.h"
 
 #include "test_lua/TestLuaRootMenu.h"
+#include "test_r2lua/TestR2LuaRootMenu.h"
 
 r2cm::MenuUp MainMenu::Create( r2cm::Director& director )
 {
@@ -24,6 +25,15 @@ r2cm::MenuUp MainMenu::Create( r2cm::Director& director )
 			, [&director]()->r2cm::eTestEndAction
 			{
 				director.Setup( TestLuaRootMenu::Create( director ) );
+				return r2cm::eTestEndAction::None;
+			}
+		);
+		ret->AddItem(
+			'2'
+			, []()->const char* { return TestR2LuaRootMenu::GetTitle(); }
+			, [&director]()->r2cm::eTestEndAction
+			{
+				director.Setup( TestR2LuaRootMenu::Create( director ) );
 				return r2cm::eTestEndAction::None;
 			}
 		);
