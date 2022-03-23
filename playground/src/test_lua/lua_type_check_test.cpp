@@ -1,6 +1,7 @@
 ﻿#include "pch.h"
 #include "lua_type_check_test.h"
 
+#include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
 namespace lua_type_check_test
@@ -21,6 +22,13 @@ namespace lua_type_check_test
 
 			lua_State* lua_state_obj = luaL_newstate();
 
+
+			std::cout << r2::split;
+
+			{
+				DECLARATION_MAIN( const int type = lua_type( lua_state_obj, 1 ) );
+				PROCESS_MAIN( step_helper::PrintType( "1", type ) );
+			}
 
 			std::cout << r2::split;
 
