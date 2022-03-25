@@ -8,7 +8,7 @@
 
 #include "MainMenu.h"
 
-#include "r2lua_push_test.h"
+#include "r2lua_test.h"
 
 r2cm::MenuUp TestR2LuaRootMenu::Create( r2cm::Director& director )
 {

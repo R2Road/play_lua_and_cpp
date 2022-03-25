@@ -88,11 +88,11 @@
     <ClCompile Include="src\test_r2lua\TestR2LuaRootMenu.cpp">
       <Filter>test_r2lua\menu</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_r2lua\r2lua_push_test.cpp">
-      <Filter>test_r2lua\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2lua\r2lua.cpp">
       <Filter>r2lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_r2lua\r2lua_test.cpp">
+      <Filter>test_r2lua\item</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -168,11 +168,11 @@
     <ClInclude Include="src\test_r2lua\TestR2LuaRootMenu.h">
       <Filter>test_r2lua\menu</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_r2lua\r2lua_push_test.h">
-      <Filter>test_r2lua\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2lua\r2lua.h">
       <Filter>r2lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_r2lua\r2lua_test.h">
+      <Filter>test_r2lua\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
