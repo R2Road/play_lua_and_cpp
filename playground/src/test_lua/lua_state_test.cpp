@@ -1,6 +1,7 @@
 ﻿#include "pch.h"
 #include "lua_state_test.h"
 
+#include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
 extern "C"
@@ -27,34 +28,21 @@ namespace lua_state_test
 
 			std::cout << r2::split;
 
-			lua_State* lua_state_obj = nullptr;
-
-			std::cout << r2::tab << "+ Variable" << r2::linefeed2;
-			std::cout << r2::tab2 << "lua_State* lua_state_obj = nullptr;" << r2::linefeed;
+			DECLARATION_MAIN( lua_State* lua_state_obj = nullptr );
 
 			std::cout << r2::split;
 
-			{
-				//
-				// Make Lua State
-				//
-				lua_state_obj = luaL_newstate();
-
-				std::cout << r2::tab << "+ Make lua_State" << r2::linefeed2;
-				std::cout << r2::tab2 << "lua_state_obj = luaL_newstate();" << r2::linefeed;
-			}
+			//
+			// Make Lua State
+			//
+			PROCESS_MAIN( lua_state_obj = luaL_newstate() );
 
 			std::cout << r2::split;
 
-			{
-				//
-				// Close Lua State
-				//
-				lua_close( lua_state_obj );
-
-				std::cout << r2::tab << " + Close lua_State" << r2::linefeed2;
-				std::cout << r2::tab2 << "lua_close( lua_state_obj );" << r2::linefeed;
-			}
+			//
+			// Close Lua State
+			//
+			PROCESS_MAIN( lua_close( lua_state_obj ) );
 
 			std::cout << r2::split;
 
