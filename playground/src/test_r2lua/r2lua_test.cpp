@@ -173,40 +173,42 @@ namespace r2lua_test
 
 			std::cout << r2::split;
 
+			DECLARATION_MAIN( const auto values = r2lua::GetValuesFromStack( lua_state_obj ) );
+
+			std::cout << r2::split;
+
+			int index = 0;
+			for( const auto& v : values )
 			{
-				DECLARATION_MAIN( const auto values = r2lua::GetValuesFromStack( lua_state_obj ) );
+				std::cout << "index : " << index << r2::linefeed;
 
-				for( const auto& v : values )
+				DECLARATION_MAIN( auto value_type = r2lua::GetType( v ) );
+				switch( value_type )
 				{
-					std::cout << r2::linefeed;
-
-					DECLARATION_MAIN( auto value_type = r2lua::GetType( v ) );
-					std::cout << "value_type : " << static_cast<int>( value_type ) << r2::linefeed;
-
-					switch( value_type )
-					{
-					case r2lua::Type::Bool:
-					{
-						DECLARATION_MAIN( const auto& b = r2lua::GetValue<r2lua::Bool>( v ) );
-						std::cout << "b : " << b.GetValue() << r2::linefeed;
-					}
-					break;
-
-					case r2lua::Type::Number:
-					{
-						DECLARATION_MAIN( const auto& num = r2lua::GetValue<r2lua::Number>( v ) );
-						std::cout << "num : " << num.GetValue() << r2::linefeed;
-					}
-					break;
-
-					case r2lua::Type::String:
-					{
-						DECLARATION_MAIN( const auto& str = r2lua::GetValue<r2lua::String>( v ) );
-						std::cout << "str : " << str.GetValue() << r2::linefeed;
-					}
-					break;
-					}
+				case r2lua::Type::Bool:
+				{
+					DECLARATION_MAIN( const auto& b = r2lua::GetValue<r2lua::Bool>( v ) );
+					std::cout << "b : " << b.GetValue() << r2::linefeed;
 				}
+				break;
+
+				case r2lua::Type::Number:
+				{
+					DECLARATION_MAIN( const auto& num = r2lua::GetValue<r2lua::Number>( v ) );
+					std::cout << "num : " << num.GetValue() << r2::linefeed;
+				}
+				break;
+
+				case r2lua::Type::String:
+				{
+					DECLARATION_MAIN( const auto& str = r2lua::GetValue<r2lua::String>( v ) );
+					std::cout << "str : " << str.GetValue() << r2::linefeed;
+				}
+				break;
+				}
+
+				++index;
+				std::cout << r2::linefeed;
 			}
 
 			std::cout << r2::split;
