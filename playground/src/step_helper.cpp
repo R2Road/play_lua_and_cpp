@@ -164,7 +164,7 @@ namespace step_helper
 
 		for( int i = 1; stack_size >= i; ++i )
 		{
-			std::cout << r2::tab << i << r2::tab << luaL_typename( lua_state_obj, i ) << r2::tab;
+			std::cout << r2::tab << "[" << i << "]" << r2::tab << luaL_typename( lua_state_obj, i ) << r2::tab;
 
 			switch( lua_type( lua_state_obj, i ) )
 			{
