@@ -162,8 +162,6 @@ namespace step_helper
 	{
 		const int stack_size = lua_gettop( lua_state_obj );
 
-		std::cout << r2::tab << "+ Print Stack" << r2::linefeed2;
-
 		for( int i = 1; stack_size >= i; ++i )
 		{
 			std::cout << r2::tab << i << r2::tab << luaL_typename( lua_state_obj, i ) << r2::tab;
