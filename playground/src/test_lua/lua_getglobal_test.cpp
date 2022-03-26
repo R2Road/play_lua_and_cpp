@@ -1,6 +1,7 @@
 ﻿#include "pch.h"
 #include "lua_getglobal_test.h"
 
+#include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
 namespace lua_getglobal_test
@@ -9,7 +10,7 @@ namespace lua_getglobal_test
 	{
 		return []()->const char*
 		{
-			return "GetGlobal";
+			return "lua_getglobal";
 		};
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
@@ -18,64 +19,50 @@ namespace lua_getglobal_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
+			std::cout << r2::split;
 
-			lua_State* lua_state_obj = luaL_newstate();
-
+			DECLARATION_SUB( lua_State* lua_state_obj = luaL_newstate() );
 
 			std::cout << r2::split;
 
 			{
-				const int type = lua_getglobal( lua_state_obj, "a" );
-
-				std::cout << r2::tab << "+ Find And Push 2 Stack" << r2::linefeed2;
-				std::cout << r2::tab2 << "const int type = lua_getglobal( lua_state_obj, \"a\" );" << r2::linefeed;
-				std::cout << r2::tab3 << "Result : ";
-				step_helper::PrintType( "a", type );
+				std::cout << "+ Find And Push 2 Stack" << r2::linefeed2;
+				DECLARATION_MAIN( const int type = lua_getglobal( lua_state_obj, "a" ) );
+				PROCESS_MAIN( step_helper::PrintType( "a", type ) );
 			}
 
 			std::cout << r2::split;
 
 			{
 				{
-					const char* command = "a = 7";
-					std::cout << r2::tab << "+ Command String" << r2::linefeed2;
-					std::cout << r2::tab2 << "const char* command = \"a = 7\";" << r2::linefeed3;
-
-
-					std::cout << r2::tab << "+ Process" << r2::linefeed2;
-					std::cout << r2::tab2 << "luaL_dostring( lua_state_obj, command )" << r2::linefeed;
-
-					step_helper::LuaDoString( lua_state_obj, command, 3u );
+					DECLARATION_MAIN( const char* command = "a = 7" );
+					PROCESS_MAIN( step_helper::LuaDoString( lua_state_obj, command, 1u ) );
 				}
 
-				std::cout << r2::linefeed2;
+				std::cout << r2::linefeed3;
 
 				{
-					const int type = lua_getglobal( lua_state_obj, "a" );
-
-					std::cout << r2::tab << "+ Find And Push 2 Stack" << r2::linefeed2;
-					std::cout << r2::tab2 << "const int type = lua_getglobal( lua_state_obj, \"a\" );" << r2::linefeed;
-					std::cout << r2::tab3 << "Result : ";
-					step_helper::PrintType( "a", type );
+					std::cout << "+ Find And Push 2 Stack" << r2::linefeed2;
+					DECLARATION_MAIN( const int type = lua_getglobal( lua_state_obj, "a" ) );
+					PROCESS_MAIN( step_helper::PrintType( "a", type ) );
 				}
 
-				std::cout << r2::linefeed2;
+				std::cout << r2::linefeed3;
 
 				{
-					const auto a = static_cast<int>( lua_tonumber( lua_state_obj, -1 ) );
+					std::cout << "+ Get Value" << r2::linefeed2;
+					DECLARATION_MAIN( const auto a = static_cast<int>( lua_tonumber( lua_state_obj, -1 ) ) );
+					std::cout << r2::tab << "Result : " << "a = " << a << r2::linefeed2;
 
-					std::cout << r2::tab << "+ Get Value" << r2::linefeed2;
-					std::cout << r2::tab2 << "const auto a = static_cast<int>( lua_tonumber( lua_state_obj, -1 ) );" << r2::linefeed;
-					std::cout << r2::tab3 << "Result : " << "a = " << a << r2::linefeed2;
-
-					std::cout << r2::tab << "Note : -1 is Top of Stack" << r2::linefeed;
+					std::cout << "Note : -1 is Top of Stack" << r2::linefeed;
 				}
 			}
 
 			std::cout << r2::split;
 
+			PROCESS_SUB( lua_close( lua_state_obj ) );
 
-			lua_close( lua_state_obj );
+			std::cout << r2::split;
 
 
 			return r2cm::eTestEndAction::Pause;
