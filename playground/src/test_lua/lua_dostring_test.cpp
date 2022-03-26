@@ -28,20 +28,11 @@ namespace lua_dostring_test
 			{
 				DECLARATION_MAIN( const char* command = "a = 7 + 11" );
 
-				std::cout << r2::linefeed;
+				std::cout << r2::linefeed2;
 
-				DECLARATION_MAIN( const int result = luaL_dostring( lua_state_obj, command ) );
-				if( result != LUA_OK )
-				{
-					const auto error_message = lua_tostring( lua_state_obj, -1 );
-
-					std::cout << r2::tab << "Command Failed " << r2::linefeed;
-					std::cout << r2::tab << error_message << r2::linefeed;
-				}
-				else
-				{
-					std::cout << r2::tab << "Command Success" << r2::linefeed;
-				}
+				DECLARATION_MAIN( const int lua_result = luaL_dostring( lua_state_obj, command ) );
+				DECLARATION_MAIN( const bool bResult = lua_result != LUA_OK );
+				EXPECT_TRUE( LUA_OK == lua_result );
 			}
 
 			std::cout << r2::split;
@@ -49,20 +40,16 @@ namespace lua_dostring_test
 			{
 				DECLARATION_MAIN( const char* command = "a = 7 + " );
 
-				std::cout << r2::linefeed;
+				std::cout << r2::linefeed2;
 
-				DECLARATION_MAIN( const int result = luaL_dostring( lua_state_obj, command ) );
-				if( result != LUA_OK )
-				{
-					const auto error_message = lua_tostring( lua_state_obj, -1 );
+				DECLARATION_MAIN( const int lua_result = luaL_dostring( lua_state_obj, command ) );
+				DECLARATION_MAIN( const bool bResult = lua_result != LUA_OK );
+				EXPECT_FALSE( LUA_OK == lua_result );
 
-					std::cout << r2::tab << "Command Failed " << r2::linefeed;
-					std::cout << r2::tab << error_message << r2::linefeed;
-				}
-				else
-				{
-					std::cout << r2::tab3 << "Command Success" << r2::linefeed;
-				}
+				std::cout << r2::linefeed2;
+
+				DECLARATION_MAIN( const auto error_message = lua_tostring( lua_state_obj, -1 ) );
+				std::cout << r2::tab << "error message : " << error_message << r2::linefeed;
 			}
 
 			std::cout << r2::split;
