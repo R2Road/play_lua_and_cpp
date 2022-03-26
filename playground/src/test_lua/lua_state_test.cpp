@@ -17,7 +17,7 @@ namespace lua_state_test
 	{
 		return []()->const char*
 		{
-			return "Lua State";
+			return "luaL_newstate, lua_close";
 		};
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()

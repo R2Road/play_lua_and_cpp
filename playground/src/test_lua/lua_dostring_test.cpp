@@ -10,7 +10,7 @@ namespace lua_dostring_test
 	{
 		return []()->const char*
 		{
-			return "DoString";
+			return "luaL_dostring";
 		};
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
