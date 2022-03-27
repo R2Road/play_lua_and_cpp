@@ -11,7 +11,6 @@ namespace step_helper_deprecated
 	bool LuaDoString_Silent( lua_State* lua_state_obj, const char* command_string, const std::size_t tab_count = 0u );
 
 	void LuaInsertDummyValueInStack( lua_State* lua_state_obj );
-	void LuaViewAllStack( lua_State* lua_state_obj );
 }
 
 namespace test_lua_helper
@@ -21,4 +20,6 @@ namespace test_lua_helper
 
 	bool DoString( lua_State* lua_state_obj, const char* command_string );
 	bool DoString_Silent( lua_State* lua_state_obj, const char* command_string );
+
+	void PrintAllStack( lua_State* lua_state_obj );
 }

@@ -158,39 +158,6 @@ namespace step_helper_deprecated
 		lua_getglobal( lua_state_obj, "e" );
 		lua_getglobal( lua_state_obj, "f" );
 	}
-	void LuaViewAllStack( lua_State* lua_state_obj )
-	{
-		const int stack_size = lua_gettop( lua_state_obj );
-
-		for( int i = 1; stack_size >= i; ++i )
-		{
-			std::cout << r2::tab << "[" << i << "]" << r2::tab << luaL_typename( lua_state_obj, i ) << r2::tab;
-
-			switch( lua_type( lua_state_obj, i ) )
-			{
-			case LUA_TNUMBER:
-				std::cout << lua_tonumber( lua_state_obj, i ) << r2::linefeed;
-				break;
-			case LUA_TSTRING:
-				std::cout << lua_tostring( lua_state_obj, i ) << r2::linefeed;
-				break;
-			case LUA_TBOOLEAN:
-				std::cout << ( lua_toboolean( lua_state_obj, i ) ? "true" : "false" ) << r2::linefeed;
-				break;
-			case LUA_TNIL:
-				std::cout << "nil" << r2::linefeed;
-				break;
-			default:
-				std::cout << lua_topointer( lua_state_obj, i ) << r2::linefeed;
-				break;
-			}
-		}
-
-		if( 0 == stack_size )
-		{
-			std::cout << r2::tab2 << "- Empty" << r2::linefeed;
-		}
-	}
 }
 
 namespace test_lua_helper
@@ -277,5 +244,39 @@ namespace test_lua_helper
 		}
 
 		return true;
+	}
+
+	void PrintAllStack( lua_State* lua_state_obj )
+	{
+		const int stack_size = lua_gettop( lua_state_obj );
+
+		for( int i = 1; stack_size >= i; ++i )
+		{
+			std::cout << r2::tab << "[" << i << "]" << r2::tab << luaL_typename( lua_state_obj, i ) << r2::tab;
+
+			switch( lua_type( lua_state_obj, i ) )
+			{
+			case LUA_TNUMBER:
+				std::cout << lua_tonumber( lua_state_obj, i ) << r2::linefeed;
+				break;
+			case LUA_TSTRING:
+				std::cout << lua_tostring( lua_state_obj, i ) << r2::linefeed;
+				break;
+			case LUA_TBOOLEAN:
+				std::cout << ( lua_toboolean( lua_state_obj, i ) ? "true" : "false" ) << r2::linefeed;
+				break;
+			case LUA_TNIL:
+				std::cout << "nil" << r2::linefeed;
+				break;
+			default:
+				std::cout << lua_topointer( lua_state_obj, i ) << r2::linefeed;
+				break;
+			}
+		}
+
+		if( 0 == stack_size )
+		{
+			std::cout << r2::tab2 << "- Empty" << r2::linefeed;
+		}
 	}
 }

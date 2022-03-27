@@ -42,7 +42,7 @@ namespace lua_stack_printer_test
 			std::cout << r2::split;
 
 			{
-				PROCESS_MAIN( step_helper_deprecated::LuaViewAllStack( lua_state_obj ) );
+				PROCESS_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
 			}
 
 			std::cout << r2::split;
