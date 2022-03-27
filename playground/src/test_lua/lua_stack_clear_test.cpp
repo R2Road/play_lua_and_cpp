@@ -66,7 +66,7 @@ namespace lua_stack_clear_test
 	{
 		return []()->const char*
 		{
-			return "Stack Clear : Pop";
+			return "Stack Clear : lua_pop";
 		};
 	}
 	r2cm::iItem::DoFuncT Pop::GetDoFunction()
@@ -82,32 +82,52 @@ namespace lua_stack_clear_test
 			std::cout << r2::split;
 
 			{
-				test_lua_helper::FillDummyValue2Stack( lua_state_obj );
-
-				std::cout << r2::tab << "+ Fill Stack" << r2::linefeed;
+				PROCESS_MAIN( test_lua_helper::FillDummyValue2Stack( lua_state_obj ) );
+				PROCESS_SUB( test_lua_helper::PrintAllStack( lua_state_obj ) );
 			}
 
 			std::cout << r2::split;
 
 			{
-				test_lua_helper::PrintAllStack( lua_state_obj );
+				PROCESS_MAIN( lua_pop( lua_state_obj, 2 ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_SUB( test_lua_helper::PrintAllStack( lua_state_obj ) );
 			}
 
 			std::cout << r2::split;
 
 			{
-				int stack_size = lua_gettop( lua_state_obj );
-				lua_pop( lua_state_obj, stack_size );
+				PROCESS_MAIN( lua_pop( lua_state_obj, lua_gettop( lua_state_obj ) ) );
 
-				std::cout << r2::tab << "+ Clear Stack" << r2::linefeed2;
-				std::cout << r2::tab2 << "int stack_size = lua_gettop( lua_state_obj );" << r2::linefeed;
-				std::cout << r2::tab2 << "lua_pop( lua_state_obj, stack_size );" << r2::linefeed;
+				std::cout << r2::linefeed;
+
+				PROCESS_SUB( test_lua_helper::PrintAllStack( lua_state_obj ) );
 			}
 
 			std::cout << r2::split;
 
 			{
-				test_lua_helper::PrintAllStack( lua_state_obj );
+				PROCESS_MAIN( lua_pop( lua_state_obj, 3 ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_SUB( test_lua_helper::PrintAllStack( lua_state_obj ) );
+				std::cout << r2::linefeed << "???????" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( lua_getglobal( lua_state_obj, "a" ) );
+
+				std::cout << r2::linefeed;
+
+				SHOW_CODE( test_lua_helper::DoString_Silent( lua_state_obj, "a = 15" ) );
+				std::cout << "Boom : Don't Do That" << r2::linefeed2;
+
+				PROCESS_SUB( test_lua_helper::PrintAllStack( lua_state_obj ) );
 			}
 
 			std::cout << r2::split;
