@@ -11,7 +11,7 @@ namespace lua_type_check_test
 	{
 		return []()->const char*
 		{
-			return "Type Check";
+			return "Type Check : lua_getglobal, lua_type, lua_isnumber...";
 		};
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
