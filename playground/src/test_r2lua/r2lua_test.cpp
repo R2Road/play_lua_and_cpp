@@ -5,7 +5,7 @@
 #include "r2cm/r2cm_eTestEndAction.h"
 
 #include "r2lua/r2lua.h"
-#include "step_helper.h"
+#include "test_lua_helper.h"
 
 namespace r2lua_test
 {

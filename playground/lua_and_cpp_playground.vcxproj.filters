@@ -93,7 +93,7 @@
     <ClCompile Include="src\test_r2lua\r2lua_test.cpp">
       <Filter>test_r2lua\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\step_helper.cpp">
+    <ClCompile Include="src\test_lua_helper.cpp">
       <Filter>test_lua</Filter>
     </ClCompile>
   </ItemGroup>
@@ -175,7 +175,7 @@
     <ClInclude Include="src\test_r2lua\r2lua_test.h">
       <Filter>test_r2lua\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\step_helper.h">
+    <ClInclude Include="src\test_lua_helper.h">
       <Filter>test_lua</Filter>
     </ClInclude>
   </ItemGroup>
