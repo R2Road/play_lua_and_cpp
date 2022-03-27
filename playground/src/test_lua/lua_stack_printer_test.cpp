@@ -26,8 +26,8 @@ namespace lua_stack_printer_test
 			std::cout << r2::split;
 
 			{
-				DECLARATION_MAIN( test_lua_helper::DoString_Silent( lua_state_obj, "a = 15" ) );
-				DECLARATION_MAIN( test_lua_helper::DoString_Silent( lua_state_obj, "c = 7" ) );
+				PROCESS_MAIN( test_lua_helper::DoString_Silent( lua_state_obj, "a = 15" ) );
+				PROCESS_MAIN( test_lua_helper::DoString_Silent( lua_state_obj, "c = 7" ) );
 			}
 
 			std::cout << r2::split;
