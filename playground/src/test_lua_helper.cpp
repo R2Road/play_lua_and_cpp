@@ -252,33 +252,35 @@ namespace test_lua_helper
 
 		std::cout << r2::tab << "Stack Count : " << stack_size << r2::linefeed;
 
-		for( int i = 1, ri = -stack_size; stack_size >= i; ++i, ++ri )
-		{
-			std::cout << r2::tab << "[" << i << "]" << r2::tab << "[" << ri << "]" << r2::tab << luaL_typename( lua_state_obj, i ) << r2::tab;
-
-			switch( lua_type( lua_state_obj, i ) )
-			{
-			case LUA_TNUMBER:
-				std::cout << lua_tonumber( lua_state_obj, i ) << r2::linefeed;
-				break;
-			case LUA_TSTRING:
-				std::cout << lua_tostring( lua_state_obj, i ) << r2::linefeed;
-				break;
-			case LUA_TBOOLEAN:
-				std::cout << ( lua_toboolean( lua_state_obj, i ) ? "true" : "false" ) << r2::linefeed;
-				break;
-			case LUA_TNIL:
-				std::cout << "nil" << r2::linefeed;
-				break;
-			default:
-				std::cout << lua_topointer( lua_state_obj, i ) << r2::linefeed;
-				break;
-			}
-		}
-
 		if( 0 == stack_size )
 		{
 			std::cout << r2::tab2 << "- Empty" << r2::linefeed;
+		}
+		else
+		{
+			for( int i = 1, ri = -stack_size; stack_size >= i; ++i, ++ri )
+			{
+				std::cout << r2::tab << "[" << i << "]" << r2::tab << "[" << ri << "]" << r2::tab << luaL_typename( lua_state_obj, i ) << r2::tab;
+
+				switch( lua_type( lua_state_obj, i ) )
+				{
+				case LUA_TNUMBER:
+					std::cout << lua_tonumber( lua_state_obj, i ) << r2::linefeed;
+					break;
+				case LUA_TSTRING:
+					std::cout << lua_tostring( lua_state_obj, i ) << r2::linefeed;
+					break;
+				case LUA_TBOOLEAN:
+					std::cout << ( lua_toboolean( lua_state_obj, i ) ? "true" : "false" ) << r2::linefeed;
+					break;
+				case LUA_TNIL:
+					std::cout << "nil" << r2::linefeed;
+					break;
+				default:
+					std::cout << lua_topointer( lua_state_obj, i ) << r2::linefeed;
+					break;
+				}
+			}
 		}
 	}
 }
