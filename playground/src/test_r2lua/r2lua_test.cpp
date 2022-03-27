@@ -33,7 +33,7 @@ namespace r2lua_test
 
 				std::cout << r2::linefeed;
 
-				PROCESS_MAIN( step_helper::LuaViewAllStack( lua_state_obj ) );
+				PROCESS_MAIN( step_helper_deprecated::LuaViewAllStack( lua_state_obj ) );
 			}
 
 			std::cout << r2::split;
@@ -43,7 +43,7 @@ namespace r2lua_test
 
 				std::cout << r2::linefeed;
 
-				PROCESS_MAIN( step_helper::LuaViewAllStack( lua_state_obj ) );
+				PROCESS_MAIN( step_helper_deprecated::LuaViewAllStack( lua_state_obj ) );
 			}
 
 			std::cout << r2::split;
@@ -79,7 +79,7 @@ namespace r2lua_test
 
 				std::cout << r2::linefeed;
 
-				PROCESS_MAIN( step_helper::LuaViewAllStack( lua_state_obj ) );
+				PROCESS_MAIN( step_helper_deprecated::LuaViewAllStack( lua_state_obj ) );
 			}
 
 			std::cout << r2::split;
@@ -168,7 +168,7 @@ namespace r2lua_test
 
 				std::cout << r2::linefeed;
 
-				PROCESS_MAIN( step_helper::LuaViewAllStack( lua_state_obj ) );
+				PROCESS_MAIN( step_helper_deprecated::LuaViewAllStack( lua_state_obj ) );
 			}
 
 			std::cout << r2::split;

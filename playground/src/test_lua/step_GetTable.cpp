@@ -21,7 +21,7 @@ namespace step
 		{
 			std::cout << "# Test 1" << r2::linefeed;
 
-			if( step_helper::LuaErrorCheck( lua_state_obj, luaL_dofile( lua_state_obj, "resources/step_GetTable_01.lua" ), "luaL_dofile" ) )
+			if( step_helper_deprecated::LuaErrorCheck( lua_state_obj, luaL_dofile( lua_state_obj, "resources/step_GetTable_01.lua" ), "luaL_dofile" ) )
 			{
 				lua_getglobal( lua_state_obj, "data" );
 				if( lua_istable( lua_state_obj, -1 ) )

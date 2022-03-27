@@ -39,9 +39,9 @@ namespace lua_open_libs_test
 
 			{
 				std::cout << r2::tab << "+ Process" << r2::linefeed2;
-				std::cout << r2::tab2 << "step_helper::LuaDoString( lua_state_obj, command )" << r2::linefeed2;
+				std::cout << r2::tab2 << "step_helper_deprecated::LuaDoString( lua_state_obj, command )" << r2::linefeed2;
 
-				step_helper::LuaDoString( lua_state_obj, command );
+				step_helper_deprecated::LuaDoString( lua_state_obj, command );
 			}
 
 			std::cout << r2::split;
@@ -57,9 +57,9 @@ namespace lua_open_libs_test
 
 			{
 				std::cout << r2::tab << "+ Process" << r2::linefeed2;
-				std::cout << r2::tab2 << "step_helper::LuaDoString( lua_state_obj, command )" << r2::linefeed2;
+				std::cout << r2::tab2 << "step_helper_deprecated::LuaDoString( lua_state_obj, command )" << r2::linefeed2;
 
-				step_helper::LuaDoString( lua_state_obj, command );
+				step_helper_deprecated::LuaDoString( lua_state_obj, command );
 				lua_getglobal( lua_state_obj, "a" );
 				if( lua_isnumber( lua_state_obj, -1 ) )
 				{

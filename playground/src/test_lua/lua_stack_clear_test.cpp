@@ -25,7 +25,7 @@ namespace lua_stack_clear_test
 			std::cout << r2::split;
 
 			{
-				step_helper::LuaInsertDummyValueInStack( lua_state_obj );
+				step_helper_deprecated::LuaInsertDummyValueInStack( lua_state_obj );
 
 				std::cout << r2::tab << "+ Fill Stack" << r2::linefeed;
 			}
@@ -33,7 +33,7 @@ namespace lua_stack_clear_test
 			std::cout << r2::split;
 
 			{
-				step_helper::LuaViewAllStack( lua_state_obj );
+				step_helper_deprecated::LuaViewAllStack( lua_state_obj );
 			}
 
 			std::cout << r2::split;
@@ -48,7 +48,7 @@ namespace lua_stack_clear_test
 			std::cout << r2::split;
 
 			{
-				step_helper::LuaViewAllStack( lua_state_obj );
+				step_helper_deprecated::LuaViewAllStack( lua_state_obj );
 			}
 
 			std::cout << r2::split;
@@ -83,7 +83,7 @@ namespace lua_stack_clear_test
 			std::cout << r2::split;
 
 			{
-				step_helper::LuaInsertDummyValueInStack( lua_state_obj );
+				step_helper_deprecated::LuaInsertDummyValueInStack( lua_state_obj );
 
 				std::cout << r2::tab << "+ Fill Stack" << r2::linefeed;
 			}
@@ -91,7 +91,7 @@ namespace lua_stack_clear_test
 			std::cout << r2::split;
 
 			{
-				step_helper::LuaViewAllStack( lua_state_obj );
+				step_helper_deprecated::LuaViewAllStack( lua_state_obj );
 			}
 
 			std::cout << r2::split;
@@ -108,7 +108,7 @@ namespace lua_stack_clear_test
 			std::cout << r2::split;
 
 			{
-				step_helper::LuaViewAllStack( lua_state_obj );
+				step_helper_deprecated::LuaViewAllStack( lua_state_obj );
 			}
 
 			std::cout << r2::split;

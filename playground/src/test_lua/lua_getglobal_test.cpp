@@ -28,7 +28,7 @@ namespace lua_getglobal_test
 			{
 				std::cout << "+ Find And Push 2 Stack" << r2::linefeed2;
 				DECLARATION_MAIN( const int type = lua_getglobal( lua_state_obj, "a" ) );
-				PROCESS_MAIN( step_helper::PrintType( "a", type ) );
+				PROCESS_MAIN( step_helper_deprecated::PrintType( "a", type ) );
 			}
 
 			std::cout << r2::split;
@@ -36,7 +36,7 @@ namespace lua_getglobal_test
 			{
 				{
 					DECLARATION_MAIN( const char* command = "a = 7" );
-					PROCESS_MAIN( step_helper::LuaDoString( lua_state_obj, command, 1u ) );
+					PROCESS_MAIN( step_helper_deprecated::LuaDoString( lua_state_obj, command, 1u ) );
 				}
 
 				std::cout << r2::linefeed3;
@@ -44,7 +44,7 @@ namespace lua_getglobal_test
 				{
 					std::cout << "+ Find And Push 2 Stack" << r2::linefeed2;
 					DECLARATION_MAIN( const int type = lua_getglobal( lua_state_obj, "a" ) );
-					PROCESS_MAIN( step_helper::PrintType( "a", type ) );
+					PROCESS_MAIN( step_helper_deprecated::PrintType( "a", type ) );
 				}
 
 				std::cout << r2::linefeed3;

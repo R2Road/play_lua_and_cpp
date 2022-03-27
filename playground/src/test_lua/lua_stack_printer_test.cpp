@@ -29,7 +29,7 @@ namespace lua_stack_printer_test
 				std::cout << r2::tab2 << "const char* command = \"a = 15\";" << r2::linefeed;
 
 				const char* command = "a = 15";
-				step_helper::LuaDoString( lua_state_obj, command, 3u );
+				step_helper_deprecated::LuaDoString( lua_state_obj, command, 3u );
 			}
 
 			std::cout << r2::linefeed2;
@@ -39,7 +39,7 @@ namespace lua_stack_printer_test
 				std::cout << r2::tab2 << "const char* command = \"c = 7\";" << r2::linefeed;
 
 				const char* command = "c = 7";
-				step_helper::LuaDoString( lua_state_obj, command, 3u );
+				step_helper_deprecated::LuaDoString( lua_state_obj, command, 3u );
 			}
 
 			std::cout << r2::linefeed2;
@@ -65,7 +65,7 @@ namespace lua_stack_printer_test
 				std::cout << r2::tab << "const int stack_size = lua_gettop( lua_state_obj );" << r2::linefeed;
 				std::cout << r2::tab2 << "Stack Count : " << stack_size << r2::linefeed2;
 
-				step_helper::LuaViewAllStack( lua_state_obj );
+				step_helper_deprecated::LuaViewAllStack( lua_state_obj );
 			}
 
 			std::cout << r2::split;

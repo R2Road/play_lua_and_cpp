@@ -27,13 +27,13 @@ namespace lua_type_check_test
 
 			{
 				DECLARATION_MAIN( const int type = lua_type( lua_state_obj, 1 ) );
-				PROCESS_MAIN( step_helper::PrintType( "1", type ) );
+				PROCESS_MAIN( step_helper_deprecated::PrintType( "1", type ) );
 			}
 
 			std::cout << r2::split;
 
 			{
-				step_helper::LuaDoString_Silent( lua_state_obj, "a = 7 + 11", 3u );
+				step_helper_deprecated::LuaDoString_Silent( lua_state_obj, "a = 7 + 11", 3u );
 
 				std::cout << r2::tab << "+ Do String" << r2::linefeed2;
 				std::cout << r2::tab2 << "luaL_dostring( lua_state_obj, \"a = 7 + 11\" )" << r2::linefeed;
@@ -47,7 +47,7 @@ namespace lua_type_check_test
 				std::cout << r2::tab << "+ Type Check And Push 2 Stack" << r2::linefeed2;
 				std::cout << r2::tab2 << "const int type = lua_getglobal( lua_state_obj, \"a\" );" << r2::linefeed;
 				std::cout << r2::tab3 << "Result : ";
-				step_helper::PrintType( "a", type );
+				step_helper_deprecated::PrintType( "a", type );
 			}
 
 			std::cout << r2::split;
@@ -58,7 +58,7 @@ namespace lua_type_check_test
 				std::cout << r2::tab << "+ Type Check In Stack 1" << r2::linefeed2;
 				std::cout << r2::tab2 << "const int type = lua_type( lua_state_obj, 1 );" << r2::linefeed;
 				std::cout << r2::tab3 << "Result : ";
-				step_helper::PrintType( "1", type );
+				step_helper_deprecated::PrintType( "1", type );
 			}
 
 			std::cout << r2::split;

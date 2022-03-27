@@ -14,7 +14,7 @@ namespace
 	}
 }
 
-namespace step_helper
+namespace step_helper_deprecated
 {
 	bool LuaErrorCheck( lua_State* lua_state_obj, const int return_code, const char* process_name, const std::size_t tab_count )
 	{
@@ -128,27 +128,27 @@ namespace step_helper
 	{
 		{
 			const char* command = "a = 15";
-			step_helper::LuaDoString_Silent( lua_state_obj, command, 3u );
+			step_helper_deprecated::LuaDoString_Silent( lua_state_obj, command, 3u );
 		}
 
 		{
 			const char* command = "b = true";
-			step_helper::LuaDoString_Silent( lua_state_obj, command, 3u );
+			step_helper_deprecated::LuaDoString_Silent( lua_state_obj, command, 3u );
 		}
 
 		{
 			const char* command = "c = 'asdf 12345'";
-			step_helper::LuaDoString_Silent( lua_state_obj, command, 3u );
+			step_helper_deprecated::LuaDoString_Silent( lua_state_obj, command, 3u );
 		}
 
 		{
 			const char* command = "d = {}";
-			step_helper::LuaDoString_Silent( lua_state_obj, command, 3u );
+			step_helper_deprecated::LuaDoString_Silent( lua_state_obj, command, 3u );
 		}
 
 		{
 			const char* command = "e = function() end";
-			step_helper::LuaDoString_Silent( lua_state_obj, command, 3u );
+			step_helper_deprecated::LuaDoString_Silent( lua_state_obj, command, 3u );
 		}
 
 		lua_getglobal( lua_state_obj, "a" );

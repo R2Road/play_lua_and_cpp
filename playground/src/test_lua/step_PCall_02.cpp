@@ -15,7 +15,7 @@ namespace step
 
 		std::cout << r2::linefeed;
 
-		if( !step_helper::LuaErrorCheck( lua_state_obj, luaL_dofile( lua_state_obj, "resources/step_PCall_02.lua" ), "luaL_dofile" ) )
+		if( !step_helper_deprecated::LuaErrorCheck( lua_state_obj, luaL_dofile( lua_state_obj, "resources/step_PCall_02.lua" ), "luaL_dofile" ) )
 		{
 			return;
 		}
@@ -42,7 +42,7 @@ namespace step
 
 			lua_pushnumber( lua_state_obj, 0 );
 
-			if( step_helper::LuaErrorCheck( lua_state_obj, lua_pcall( lua_state_obj, 1, 1, 0 ), "lua_pcall" ) )
+			if( step_helper_deprecated::LuaErrorCheck( lua_state_obj, lua_pcall( lua_state_obj, 1, 1, 0 ), "lua_pcall" ) )
 			{
 				lua_pushstring( lua_state_obj, "name" );
 				lua_gettable( lua_state_obj, -2 );
@@ -71,7 +71,7 @@ namespace step
 
 			lua_pushnumber( lua_state_obj, 1 );
 
-			if( step_helper::LuaErrorCheck( lua_state_obj, lua_pcall( lua_state_obj, 1, 1, 0 ), "lua_pcall" ) )
+			if( step_helper_deprecated::LuaErrorCheck( lua_state_obj, lua_pcall( lua_state_obj, 1, 1, 0 ), "lua_pcall" ) )
 			{
 				lua_pushstring( lua_state_obj, "name" );
 				lua_gettable( lua_state_obj, -2 );
