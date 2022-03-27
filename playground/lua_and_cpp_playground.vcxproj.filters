@@ -32,7 +32,6 @@
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pch.cpp" />
-    <ClCompile Include="src\step_helper.cpp" />
     <ClCompile Include="src\test_lua\lua_dostring_test.cpp">
       <Filter>test_lua\item</Filter>
     </ClCompile>
@@ -94,10 +93,12 @@
     <ClCompile Include="src\test_r2lua\r2lua_test.cpp">
       <Filter>test_r2lua\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\step_helper.cpp">
+      <Filter>test_lua</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
-    <ClInclude Include="src\step_helper.h" />
     <ClInclude Include="src\test_lua\lua_dostring_test.h">
       <Filter>test_lua\item</Filter>
     </ClInclude>
@@ -173,6 +174,9 @@
     </ClInclude>
     <ClInclude Include="src\test_r2lua\r2lua_test.h">
       <Filter>test_r2lua\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\step_helper.h">
+      <Filter>test_lua</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
