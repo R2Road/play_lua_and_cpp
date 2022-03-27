@@ -250,9 +250,11 @@ namespace test_lua_helper
 	{
 		const int stack_size = lua_gettop( lua_state_obj );
 
-		for( int i = 1; stack_size >= i; ++i )
+		std::cout << r2::tab << "Stack Count : " << stack_size << r2::linefeed;
+
+		for( int i = 1, ri = -stack_size; stack_size >= i; ++i, ++ri )
 		{
-			std::cout << r2::tab << "[" << i << "]" << r2::tab << luaL_typename( lua_state_obj, i ) << r2::tab;
+			std::cout << r2::tab << "[" << i << "]" << r2::tab << "[" << ri << "]" << r2::tab << luaL_typename( lua_state_obj, i ) << r2::tab;
 
 			switch( lua_type( lua_state_obj, i ) )
 			{
