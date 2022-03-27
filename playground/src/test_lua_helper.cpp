@@ -121,43 +121,6 @@ namespace step_helper_deprecated
 			return true;
 		}
 	}
-
-
-
-	void LuaInsertDummyValueInStack( lua_State* lua_state_obj )
-	{
-		{
-			const char* command = "a = 15";
-			step_helper_deprecated::LuaDoString_Silent( lua_state_obj, command, 3u );
-		}
-
-		{
-			const char* command = "b = true";
-			step_helper_deprecated::LuaDoString_Silent( lua_state_obj, command, 3u );
-		}
-
-		{
-			const char* command = "c = 'asdf 12345'";
-			step_helper_deprecated::LuaDoString_Silent( lua_state_obj, command, 3u );
-		}
-
-		{
-			const char* command = "d = {}";
-			step_helper_deprecated::LuaDoString_Silent( lua_state_obj, command, 3u );
-		}
-
-		{
-			const char* command = "e = function() end";
-			step_helper_deprecated::LuaDoString_Silent( lua_state_obj, command, 3u );
-		}
-
-		lua_getglobal( lua_state_obj, "a" );
-		lua_getglobal( lua_state_obj, "b" );
-		lua_getglobal( lua_state_obj, "c" );
-		lua_getglobal( lua_state_obj, "d" );
-		lua_getglobal( lua_state_obj, "e" );
-		lua_getglobal( lua_state_obj, "f" );
-	}
 }
 
 namespace test_lua_helper
@@ -282,5 +245,39 @@ namespace test_lua_helper
 				}
 			}
 		}
+	}
+	void FillDummyValue2Stack( lua_State* lua_state_obj )
+	{
+		{
+			const char* command = "a = 15";
+			test_lua_helper::DoString_Silent( lua_state_obj, command );
+		}
+
+		{
+			const char* command = "b = true";
+			test_lua_helper::DoString_Silent( lua_state_obj, command );
+		}
+
+		{
+			const char* command = "c = 'asdf 12345'";
+			test_lua_helper::DoString_Silent( lua_state_obj, command );
+		}
+
+		{
+			const char* command = "d = {}";
+			test_lua_helper::DoString_Silent( lua_state_obj, command );
+		}
+
+		{
+			const char* command = "e = function() end";
+			test_lua_helper::DoString_Silent( lua_state_obj, command );
+		}
+
+		lua_getglobal( lua_state_obj, "a" );
+		lua_getglobal( lua_state_obj, "b" );
+		lua_getglobal( lua_state_obj, "c" );
+		lua_getglobal( lua_state_obj, "d" );
+		lua_getglobal( lua_state_obj, "e" );
+		lua_getglobal( lua_state_obj, "f" );
 	}
 }

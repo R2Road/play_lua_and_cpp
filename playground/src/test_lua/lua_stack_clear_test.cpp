@@ -25,7 +25,7 @@ namespace lua_stack_clear_test
 			std::cout << r2::split;
 
 			{
-				step_helper_deprecated::LuaInsertDummyValueInStack( lua_state_obj );
+				test_lua_helper::FillDummyValue2Stack( lua_state_obj );
 
 				std::cout << r2::tab << "+ Fill Stack" << r2::linefeed;
 			}
@@ -83,7 +83,7 @@ namespace lua_stack_clear_test
 			std::cout << r2::split;
 
 			{
-				step_helper_deprecated::LuaInsertDummyValueInStack( lua_state_obj );
+				test_lua_helper::FillDummyValue2Stack( lua_state_obj );
 
 				std::cout << r2::tab << "+ Fill Stack" << r2::linefeed;
 			}
