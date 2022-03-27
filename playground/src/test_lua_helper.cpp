@@ -207,6 +207,46 @@ namespace test_lua_helper
 			std::cout << stack_size << r2::linefeed;
 		}
 	}
+	void PrintTypeName( int type )
+	{
+		switch( type )
+		{
+		case LUA_TNIL:
+			std::cout << " is nil" << r2::linefeed;
+			break;
+		case LUA_TBOOLEAN:
+			std::cout << " is boolean" << r2::linefeed;
+			break;
+		case LUA_TLIGHTUSERDATA:
+			std::cout << " is light userdata" << r2::linefeed;
+			break;
+		case LUA_TNUMBER:
+			std::cout << " is number" << r2::linefeed;
+			break;
+		case LUA_TSTRING:
+			std::cout << " is string" << r2::linefeed;
+			break;
+		case LUA_TTABLE:
+			std::cout << " is table" << r2::linefeed;
+			break;
+		case LUA_TFUNCTION:
+			std::cout << " is function" << r2::linefeed;
+			break;
+		case LUA_TUSERDATA:
+			std::cout << " is userdata" << r2::linefeed;
+			break;
+		case LUA_TTHREAD:
+			std::cout << " is thread" << r2::linefeed;
+			break;
+		case LUA_NUMTYPES:
+			std::cout << " is numtypes" << r2::linefeed;
+			break;
+
+		default:
+			std::cout << " is undefined" << r2::linefeed;
+			break;
+		}
+	}
 
 	bool DoString( lua_State* lua_state_obj, const char* command_string )
 	{
@@ -224,5 +264,18 @@ namespace test_lua_helper
 
 			return true;
 		}
+	}
+	bool DoString_Silent( lua_State* lua_state_obj, const char* command_string )
+	{
+		const int result = luaL_dostring( lua_state_obj, command_string );
+		if( result != LUA_OK )
+		{
+			const auto error_message = lua_tostring( lua_state_obj, -1 );
+			std::cout << error_message << r2::linefeed;
+
+			return false;
+		}
+
+		return true;
 	}
 }

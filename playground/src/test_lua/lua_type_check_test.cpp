@@ -3,6 +3,7 @@
 
 #include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
+#include "test_lua_helper.h"
 
 namespace lua_type_check_test
 {
@@ -26,93 +27,62 @@ namespace lua_type_check_test
 			std::cout << r2::split;
 
 			{
+				std::cout << r2::tab << "+ 0 : Stack Empty" << r2::linefeed2;
+
 				DECLARATION_MAIN( const int type = lua_type( lua_state_obj, 1 ) );
-				PROCESS_MAIN( step_helper_deprecated::PrintType( "1", type ) );
+				PROCESS_MAIN( test_lua_helper::PrintTypeName( type ) );
 			}
 
 			std::cout << r2::split;
 
 			{
-				step_helper_deprecated::LuaDoString_Silent( lua_state_obj, "a = 7 + 11", 3u );
-
-				std::cout << r2::tab << "+ Do String" << r2::linefeed2;
-				std::cout << r2::tab2 << "luaL_dostring( lua_state_obj, \"a = 7 + 11\" )" << r2::linefeed;
+				DECLARATION_MAIN( test_lua_helper::DoString_Silent( lua_state_obj, "a = 7 + 11" ) );
 			}
 
 			std::cout << r2::split;
 
 			{
-				const int type = lua_getglobal( lua_state_obj, "a" );
+				std::cout << r2::tab << "+ 1 : Get Type With Push 2 Stack" << r2::linefeed2;
 
-				std::cout << r2::tab << "+ Type Check And Push 2 Stack" << r2::linefeed2;
-				std::cout << r2::tab2 << "const int type = lua_getglobal( lua_state_obj, \"a\" );" << r2::linefeed;
-				std::cout << r2::tab3 << "Result : ";
-				step_helper_deprecated::PrintType( "a", type );
+				DECLARATION_MAIN( const int type = lua_getglobal( lua_state_obj, "a" ) );
+				PROCESS_MAIN( test_lua_helper::PrintTypeName( type ) );
 			}
 
 			std::cout << r2::split;
 
 			{
-				const int type = lua_type( lua_state_obj, 1 );
-
-				std::cout << r2::tab << "+ Type Check In Stack 1" << r2::linefeed2;
-				std::cout << r2::tab2 << "const int type = lua_type( lua_state_obj, 1 );" << r2::linefeed;
-				std::cout << r2::tab3 << "Result : ";
-				step_helper_deprecated::PrintType( "1", type );
+				std::cout << r2::tab << "+ 2 : Get Type In Stack" << r2::linefeed2;
+				
+				DECLARATION_MAIN( const int type = lua_type( lua_state_obj, 1 ) );
+				PROCESS_MAIN( test_lua_helper::PrintTypeName( type ) );
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Type Check In Stack 2" << r2::linefeed2;
+				std::cout << r2::tab << "+ 3 : Type Check In Stack" << r2::linefeed2;
 
-				{
-					const int boolean = lua_isnil( lua_state_obj, 1 );
-					std::cout << r2::tab2 << "const int boolean = lua_isnil( lua_state_obj, 1 );" << r2::linefeed;
-					std::cout << r2::tab3 << "Result : " << ( boolean ? "true" : "false" );
-				}
+				EXPECT_FALSE( lua_isnil( lua_state_obj, 1 ) );
 
 				std::cout << r2::linefeed2;
 
-				{
-					const int boolean = lua_isnumber( lua_state_obj, 1 );
-					std::cout << r2::tab2 << "const int boolean = lua_isnumber( lua_state_obj, 1 );" << r2::linefeed;
-					std::cout << r2::tab3 << "Result : " << ( boolean ? "true" : "false" );
-				}
+				EXPECT_TRUE( lua_isnumber( lua_state_obj, 1 ) );
 
 				std::cout << r2::linefeed2;
 
-				{
-					const int boolean = lua_isstring( lua_state_obj, 1 );
-					std::cout << r2::tab2 << "const int boolean = lua_isstring( lua_state_obj, 1 );" << r2::linefeed;
-					std::cout << r2::tab3 << "Result : " << ( boolean ? "true" : "false" );
-				}
+				EXPECT_TRUE( lua_isstring( lua_state_obj, 1 ) );
 
 				std::cout << r2::linefeed2;
 
-				{
-					const int boolean = lua_iscfunction( lua_state_obj, 1 );
-					std::cout << r2::tab2 << "const int boolean = lua_iscfunction( lua_state_obj, 1 );" << r2::linefeed;
-					std::cout << r2::tab3 << "Result : " << ( boolean ? "true" : "false" );
-				}
+				EXPECT_FALSE( lua_isfunction( lua_state_obj, 1 ) );
 
 				std::cout << r2::linefeed2;
 
-				{
-					const int boolean = lua_isinteger( lua_state_obj, 1 );
-					std::cout << r2::tab2 << "const int boolean = lua_isinteger( lua_state_obj, 1 );" << r2::linefeed;
-					std::cout << r2::tab3 << "Result : " << ( boolean ? "true" : "false" );
-				}
+				EXPECT_TRUE( lua_isinteger( lua_state_obj, 1 ) );
 
 				std::cout << r2::linefeed2;
 
-				{
-					const int boolean = lua_isuserdata( lua_state_obj, 1 );
-					std::cout << r2::tab2 << "const int boolean = lua_isuserdata( lua_state_obj, 1 );" << r2::linefeed;
-					std::cout << r2::tab3 << "Result : " << ( boolean ? "true" : "false" );
-				}
-
-				std::cout << r2::linefeed2;
+				EXPECT_FALSE( lua_isuserdata( lua_state_obj, 1 ) );
 			}
 
 			std::cout << r2::split;
