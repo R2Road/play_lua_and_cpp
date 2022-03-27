@@ -1,6 +1,7 @@
 ﻿#include "pch.h"
 #include "lua_stack_clear_test.h"
 
+#include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
 namespace lua_stack_clear_test
@@ -9,7 +10,7 @@ namespace lua_stack_clear_test
 	{
 		return []()->const char*
 		{
-			return "Stack Clear : Set Top";
+			return "Stack Clear : lua_settop";
 		};
 	}
 	r2cm::iItem::DoFuncT SetTop::GetDoFunction()
@@ -25,30 +26,28 @@ namespace lua_stack_clear_test
 			std::cout << r2::split;
 
 			{
-				test_lua_helper::FillDummyValue2Stack( lua_state_obj );
-
-				std::cout << r2::tab << "+ Fill Stack" << r2::linefeed;
+				PROCESS_MAIN( test_lua_helper::FillDummyValue2Stack( lua_state_obj ) );
+				PROCESS_SUB( test_lua_helper::PrintAllStack( lua_state_obj ) );
 			}
 
 			std::cout << r2::split;
 
 			{
-				test_lua_helper::PrintAllStack( lua_state_obj );
+				PROCESS_MAIN( lua_settop( lua_state_obj, 2 ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_SUB( test_lua_helper::PrintAllStack( lua_state_obj ) );
 			}
 
 			std::cout << r2::split;
 
 			{
-				lua_settop( lua_state_obj, 0 );
+				PROCESS_MAIN( lua_settop( lua_state_obj, 0 ) );
 
-				std::cout << r2::tab << "+ Clear Stack" << r2::linefeed2;
-				std::cout << r2::tab2 << "lua_settop( lua_state_obj, 0 );" << r2::linefeed;
-			}
+				std::cout << r2::linefeed;
 
-			std::cout << r2::split;
-
-			{
-				test_lua_helper::PrintAllStack( lua_state_obj );
+				PROCESS_SUB( test_lua_helper::PrintAllStack( lua_state_obj ) );
 			}
 
 			std::cout << r2::split;

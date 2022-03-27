@@ -215,11 +215,7 @@ namespace test_lua_helper
 
 		std::cout << r2::tab << "Stack Count : " << stack_size << r2::linefeed;
 
-		if( 0 == stack_size )
-		{
-			std::cout << r2::tab2 << "- Empty" << r2::linefeed;
-		}
-		else
+		if( 0 < stack_size )
 		{
 			for( int i = 1, ri = -stack_size; stack_size >= i; ++i, ++ri )
 			{
