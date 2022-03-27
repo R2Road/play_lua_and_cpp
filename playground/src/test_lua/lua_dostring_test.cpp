@@ -31,7 +31,6 @@ namespace lua_dostring_test
 				std::cout << r2::linefeed2;
 
 				DECLARATION_MAIN( const int lua_result = luaL_dostring( lua_state_obj, command ) );
-				DECLARATION_MAIN( const bool bResult = lua_result != LUA_OK );
 				EXPECT_TRUE( LUA_OK == lua_result );
 			}
 
@@ -43,7 +42,6 @@ namespace lua_dostring_test
 				std::cout << r2::linefeed2;
 
 				DECLARATION_MAIN( const int lua_result = luaL_dostring( lua_state_obj, command ) );
-				DECLARATION_MAIN( const bool bResult = lua_result != LUA_OK );
 				EXPECT_FALSE( LUA_OK == lua_result );
 
 				std::cout << r2::linefeed2;
