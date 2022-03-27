@@ -1,6 +1,7 @@
 ﻿#include "pch.h"
 #include "lua_stack_printer_test.h"
 
+#include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
 namespace lua_stack_printer_test
@@ -25,47 +26,23 @@ namespace lua_stack_printer_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Command String" << r2::linefeed2;
-				std::cout << r2::tab2 << "const char* command = \"a = 15\";" << r2::linefeed;
-
-				const char* command = "a = 15";
-				step_helper_deprecated::LuaDoString( lua_state_obj, command, 3u );
-			}
-
-			std::cout << r2::linefeed2;
-
-			{
-				std::cout << r2::tab << "+ Command String" << r2::linefeed2;
-				std::cout << r2::tab2 << "const char* command = \"c = 7\";" << r2::linefeed;
-
-				const char* command = "c = 7";
-				step_helper_deprecated::LuaDoString( lua_state_obj, command, 3u );
-			}
-
-			std::cout << r2::linefeed2;
-
-			{
-				lua_getglobal( lua_state_obj, "a" );
-				lua_getglobal( lua_state_obj, "b" );
-				lua_getglobal( lua_state_obj, "c" );
-				lua_getglobal( lua_state_obj, "d" );
-
-				std::cout << r2::tab << "+ Find And Push 2 Stack" << r2::linefeed2;
-				std::cout << r2::tab2 << "lua_getglobal( lua_state_obj, \"a\" );" << r2::linefeed2;
-				std::cout << r2::tab2 << "lua_getglobal( lua_state_obj, \"b\" );" << r2::linefeed2;
-				std::cout << r2::tab2 << "lua_getglobal( lua_state_obj, \"c\" );" << r2::linefeed2;
-				std::cout << r2::tab2 << "lua_getglobal( lua_state_obj, \"d\" );" << r2::linefeed2;
+				DECLARATION_MAIN( test_lua_helper::DoString_Silent( lua_state_obj, "a = 15" ) );
+				DECLARATION_MAIN( test_lua_helper::DoString_Silent( lua_state_obj, "c = 7" ) );
 			}
 
 			std::cout << r2::split;
 
 			{
-				const int stack_size = lua_gettop( lua_state_obj );
+				PROCESS_MAIN( lua_getglobal( lua_state_obj, "a" ) );
+				PROCESS_MAIN( lua_getglobal( lua_state_obj, "b" ) );
+				PROCESS_MAIN( lua_getglobal( lua_state_obj, "c" ) );
+				PROCESS_MAIN( lua_getglobal( lua_state_obj, "d" ) );
+			}
 
-				std::cout << r2::tab << "const int stack_size = lua_gettop( lua_state_obj );" << r2::linefeed;
-				std::cout << r2::tab2 << "Stack Count : " << stack_size << r2::linefeed2;
+			std::cout << r2::split;
 
-				step_helper_deprecated::LuaViewAllStack( lua_state_obj );
+			{
+				PROCESS_MAIN( step_helper_deprecated::LuaViewAllStack( lua_state_obj ) );
 			}
 
 			std::cout << r2::split;
