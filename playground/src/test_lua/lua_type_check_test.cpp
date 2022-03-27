@@ -63,25 +63,10 @@ namespace lua_type_check_test
 				std::cout << r2::tab << "+ 3 : Type Check In Stack" << r2::linefeed2;
 
 				EXPECT_FALSE( lua_isnil( lua_state_obj, 1 ) );
-
-				std::cout << r2::linefeed2;
-
 				EXPECT_TRUE( lua_isnumber( lua_state_obj, 1 ) );
-
-				std::cout << r2::linefeed2;
-
 				EXPECT_TRUE( lua_isstring( lua_state_obj, 1 ) );
-
-				std::cout << r2::linefeed2;
-
 				EXPECT_FALSE( lua_isfunction( lua_state_obj, 1 ) );
-
-				std::cout << r2::linefeed2;
-
 				EXPECT_TRUE( lua_isinteger( lua_state_obj, 1 ) );
-
-				std::cout << r2::linefeed2;
-
 				EXPECT_FALSE( lua_isuserdata( lua_state_obj, 1 ) );
 			}
 
