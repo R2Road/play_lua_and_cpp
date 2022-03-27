@@ -192,3 +192,37 @@ namespace step_helper_deprecated
 		}
 	}
 }
+
+namespace test_lua_helper
+{
+	void PrintStackCount( lua_State* lua_state_obj )
+	{
+		const int stack_size = lua_gettop( lua_state_obj );
+		if( 0 == stack_size )
+		{
+			std::cout << "Empty" << r2::linefeed;
+		}
+		else
+		{
+			std::cout << stack_size << r2::linefeed;
+		}
+	}
+
+	bool DoString( lua_State* lua_state_obj, const char* command_string )
+	{
+		const int result = luaL_dostring( lua_state_obj, command_string );
+		if( result != LUA_OK )
+		{
+			const auto error_message = lua_tostring( lua_state_obj, -1 );
+			std::cout << error_message << r2::linefeed;
+
+			return false;
+		}
+		else
+		{
+			std::cout << "Success" << r2::linefeed;
+
+			return true;
+		}
+	}
+}
