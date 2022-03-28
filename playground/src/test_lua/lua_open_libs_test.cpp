@@ -1,6 +1,7 @@
 ﻿#include "pch.h"
 #include "lua_open_libs_test.h"
 
+#include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
 
@@ -15,7 +16,7 @@ namespace lua_open_libs_test
 	{
 		return []()->const char*
 		{
-			return "Open Libs";
+			return "luaL_openlibs";
 		};
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
@@ -31,41 +32,34 @@ namespace lua_open_libs_test
 			std::cout << r2::split;
 
 
-			const char* command = "a = math.sin( math.pi * 0.5 )";
-			std::cout << r2::tab << "+ Command String" << r2::linefeed2;
-			std::cout << r2::tab2 << "Command : " << command << r2::linefeed;
+			DECLARATION_MAIN( const char* command = "a = math.sin( math.pi * 0.5 )" );
 
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Process" << r2::linefeed2;
-				std::cout << r2::tab2 << "step_helper_deprecated::LuaDoString( lua_state_obj, command )" << r2::linefeed2;
-
-				step_helper_deprecated::LuaDoString( lua_state_obj, command );
+				PROCESS_MAIN( step_helper_deprecated::LuaDoString( lua_state_obj, command ) );
 			}
 
 			std::cout << r2::split;
 
 			{
-				luaL_openlibs( lua_state_obj );
-
-				std::cout << r2::tab << "+ Call" << r2::linefeed2;
-				std::cout << r2::tab2 << "luaL_openlibs( lua_state_obj )" << r2::linefeed;
+				PROCESS_MAIN( luaL_openlibs( lua_state_obj ) );
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Process" << r2::linefeed2;
-				std::cout << r2::tab2 << "step_helper_deprecated::LuaDoString( lua_state_obj, command )" << r2::linefeed2;
+				PROCESS_MAIN( step_helper_deprecated::LuaDoString( lua_state_obj, command ) );
 
-				step_helper_deprecated::LuaDoString( lua_state_obj, command );
-				lua_getglobal( lua_state_obj, "a" );
-				if( lua_isnumber( lua_state_obj, -1 ) )
-				{
-					const auto a = static_cast<float>( lua_tonumber( lua_state_obj, -1 ) );
-					std::cout << "result : " << "a : " << a << r2::linefeed;
-				}
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( lua_getglobal( lua_state_obj, "a" ) );
+				EXPECT_TRUE( lua_isnumber( lua_state_obj, -1 ) );
+
+				std::cout << r2::linefeed;
+
+				DECLARATION_MAIN( const auto a = static_cast<float>( lua_tonumber( lua_state_obj, -1 ) ) );
+				std::cout << "a : " << a << r2::linefeed;
 			}
 
 			std::cout << r2::split;
