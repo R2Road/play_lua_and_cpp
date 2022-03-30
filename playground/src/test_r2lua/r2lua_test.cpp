@@ -13,7 +13,7 @@ namespace r2lua_test
 	{
 		return []()->const char*
 		{
-			return "Push";
+			return "r2lua::Push, r2lua::PushArgs";
 		};
 	}
 	r2cm::iItem::DoFuncT PushTest::GetDoFunction()
