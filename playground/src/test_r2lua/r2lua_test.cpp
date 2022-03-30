@@ -91,8 +91,8 @@ namespace r2lua_test
 
 				std::cout << r2::linefeed;
 
-				std::cout << "value_type : " << static_cast<int>( value_type ) << r2::linefeed;
-				std::cout << "num : " << num.GetValue() << r2::linefeed;
+				EXPECT_EQ( r2lua::Type::Number, value_type );
+				EXPECT_EQ( 1, num.GetValue() );
 			}
 
 			std::cout << r2::split;
@@ -104,8 +104,8 @@ namespace r2lua_test
 
 				std::cout << r2::linefeed;
 
-				std::cout << "value_type : " << static_cast<int>( value_type ) << r2::linefeed;
-				std::cout << "num : " << num.GetValue() << r2::linefeed;
+				EXPECT_EQ( r2lua::Type::Number, value_type );
+				EXPECT_EQ( 3.141592, num.GetValue() );
 			}
 
 			std::cout << r2::split;
@@ -117,8 +117,8 @@ namespace r2lua_test
 
 				std::cout << r2::linefeed;
 
-				std::cout << "value_type : " << static_cast<int>( value_type ) << r2::linefeed;
-				std::cout << "str : " << str.GetValue() << r2::linefeed;
+				EXPECT_EQ( r2lua::Type::String, value_type );
+				EXPECT_EQ( "test_string", str.GetValue() );
 			}
 
 			std::cout << r2::split;
@@ -130,8 +130,8 @@ namespace r2lua_test
 
 				std::cout << r2::linefeed;
 
-				std::cout << "value_type : " << static_cast<int>( value_type ) << r2::linefeed;
-				std::cout << "b : " << b.GetValue() << r2::linefeed;
+				EXPECT_EQ( r2lua::Type::Bool, value_type );
+				EXPECT_EQ( true, b.GetValue() );
 			}
 
 			std::cout << r2::split;

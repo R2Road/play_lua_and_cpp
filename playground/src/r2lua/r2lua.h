@@ -30,7 +30,7 @@ namespace r2lua
 		Bool( bool boolean ) : mValue( boolean ) {}
 
 		static Type GetType() { return Type::Bool; }
-		lua_Number GetValue() const { return mValue; }
+		bool GetValue() const { return mValue; }
 
 	private:
 		bool mValue;
