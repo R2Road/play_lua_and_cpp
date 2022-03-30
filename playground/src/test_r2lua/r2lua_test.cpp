@@ -59,7 +59,7 @@ namespace r2lua_test
 	{
 		return []()->const char*
 		{
-			return "GetValueFromStack";
+			return "r2lua::GetValueFromStack";
 		};
 	}
 	r2cm::iItem::DoFuncT GetValueFromStackTest::GetDoFunction()
@@ -76,10 +76,7 @@ namespace r2lua_test
 
 			{
 				PROCESS_MAIN( r2lua::PushArgs( lua_state_obj, 1, 3.141592, "test_string", true ) );
-
-				std::cout << r2::linefeed;
-
-				PROCESS_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
+				PROCESS_SUB( test_lua_helper::PrintAllStack( lua_state_obj ) );
 			}
 
 			std::cout << r2::split;
@@ -133,6 +130,8 @@ namespace r2lua_test
 			std::cout << r2::split;
 
 			PROCESS_SUB( lua_close( lua_state_obj ) );
+
+			std::cout << r2::split;
 
 
 			return r2cm::eTestEndAction::Pause;
