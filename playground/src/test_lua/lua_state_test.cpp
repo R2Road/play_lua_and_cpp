@@ -35,14 +35,22 @@ namespace lua_state_test
 			//
 			// Make Lua State
 			//
-			PROCESS_MAIN( lua_state_obj = luaL_newstate() );
+			{
+				std::cout << r2::tab << "+ Create Lua State" << r2::linefeed2;
+
+				PROCESS_MAIN( lua_state_obj = luaL_newstate() );
+			}
 
 			std::cout << r2::split;
 
 			//
 			// Close Lua State
 			//
-			PROCESS_MAIN( lua_close( lua_state_obj ) );
+			{
+				std::cout << r2::tab << "+ Close Lua State" << r2::linefeed2;
+
+				PROCESS_MAIN( lua_close( lua_state_obj ) );
+			}
 
 			std::cout << r2::split;
 
