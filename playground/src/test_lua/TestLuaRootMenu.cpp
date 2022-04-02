@@ -79,6 +79,7 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 
 
 		ret->AddItem( 'q', lua_open_libs_test::Basic::GetInstance() );
+		ret->AddItem( 'w', luaL_dofile_test::Basic::GetInstance() );
 
 
 		ret->AddSplit();
@@ -100,9 +101,6 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 
 					switch( input )
 					{
-					case '6':
-						step::DoFile();
-						break;
 					case '7':
 						step::GetTable();
 						break;
