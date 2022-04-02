@@ -53,9 +53,6 @@
     <ClCompile Include="src\test_lua\lua_type_check_test.cpp">
       <Filter>test_lua\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_lua\step_DoFile.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_lua\step_GetTable.cpp">
       <Filter>test_lua\item</Filter>
     </ClCompile>
@@ -96,6 +93,9 @@
     <ClCompile Include="src\test_lua_helper.cpp">
       <Filter>test_lua</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_lua\luaL_dofile_test.cpp">
+      <Filter>test_lua\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -118,9 +118,6 @@
       <Filter>test_lua\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_lua\lua_type_check_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\step_DoFile.h">
       <Filter>test_lua\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_lua\step_GetTable.h">
@@ -177,6 +174,9 @@
     </ClInclude>
     <ClInclude Include="src\test_lua_helper.h">
       <Filter>test_lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_lua\luaL_dofile_test.h">
+      <Filter>test_lua\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
