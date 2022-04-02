@@ -47,7 +47,7 @@ namespace luaL_dofile_test
 			{
 				std::cout << r2::tab << "+ Test 1" << r2::linefeed2;
 
-				EXPECT_NE( LUA_OK, luaL_dofile( lua_state_obj, "resources/step_DoFile_01.lua" ) );
+				EXPECT_NE( LUA_OK, luaL_dofile( lua_state_obj, "resources/luaL_dofile_test_01.lua" ) );
 				
 				const auto error_message = lua_tostring( lua_state_obj, -1 );
 				std::cout << "error_message : " << error_message << r2::linefeed;
@@ -61,7 +61,7 @@ namespace luaL_dofile_test
 			{
 				std::cout << r2::tab << "+ Test 2" << r2::linefeed2;
 
-				EXPECT_EQ( LUA_OK, luaL_dofile( lua_state_obj, "resources/step_DoFile_02.lua" ) );
+				EXPECT_EQ( LUA_OK, luaL_dofile( lua_state_obj, "resources/luaL_dofile_test_02.lua" ) );
 
 				std::cout << r2::linefeed;
 
