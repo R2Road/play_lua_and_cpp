@@ -17,106 +17,65 @@ namespace luaL_dofile_test
 	{
 		return []()->r2cm::eTestEndAction
 		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
 			lua_State* lua_state_obj = luaL_newstate();
 
+			std::cout << r2::split;
 
+			PROCESS_MAIN( luaL_openlibs( lua_state_obj ) );
 
-			std::cout << "Call : luaL_openlibs" << r2::linefeed;
-			luaL_openlibs( lua_state_obj );
-
-			std::cout << r2::linefeed;
+			std::cout << r2::split;
 
 			//
 			// Test x 0
 			//
 			{
-				std::cout << "# Test 0" << r2::linefeed;
+				std::cout << r2::tab << "+ Test 0" << r2::linefeed2;
 
-				const int result = luaL_dofile( lua_state_obj, "resources/step_DoFile_00.lua" );
-				if( result != LUA_OK )
-				{
-					const auto error_message = lua_tostring( lua_state_obj, -1 );
+				EXPECT_NE( LUA_OK, luaL_dofile( lua_state_obj, "resources/step_DoFile_00.lua" ) );
 
-					std::cout << "DoFile Failed" << r2::linefeed;
-					std::cout << error_message << r2::linefeed;
-				}
-				else
-				{
-					std::cout << "DoFile Success" << r2::linefeed;
-				}
-
-				lua_getglobal( lua_state_obj, "a" );
-
-				if( lua_isnumber( lua_state_obj, -1 ) )
-				{
-					const auto a = static_cast<float>( lua_tonumber( lua_state_obj, -1 ) );
-					std::cout << "result : " << "a : " << a << r2::linefeed;
-				}
+				const auto error_message = lua_tostring( lua_state_obj, -1 );
+				std::cout << "error_message : " << error_message << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed;
+			std::cout << r2::split;
 
 			//
 			// Test x 1
 			//
 			{
-				std::cout << "# Test 1" << r2::linefeed;
+				std::cout << r2::tab << "+ Test 1" << r2::linefeed2;
 
-				const int result = luaL_dofile( lua_state_obj, "resources/step_DoFile_01.lua" );
-				if( result != LUA_OK )
-				{
-					const auto error_message = lua_tostring( lua_state_obj, -1 );
-
-					std::cout << "DoFile Failed" << r2::linefeed;
-					std::cout << error_message << r2::linefeed;
-				}
-				else
-				{
-					std::cout << "DoFile Success" << r2::linefeed;
-				}
-
-				lua_getglobal( lua_state_obj, "a" );
-
-				if( lua_isnumber( lua_state_obj, -1 ) )
-				{
-					const auto a = static_cast<float>( lua_tonumber( lua_state_obj, -1 ) );
-					std::cout << "result : " << "a : " << a << r2::linefeed;
-				}
+				EXPECT_NE( LUA_OK, luaL_dofile( lua_state_obj, "resources/step_DoFile_01.lua" ) );
+				
+				const auto error_message = lua_tostring( lua_state_obj, -1 );
+				std::cout << "error_message : " << error_message << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed;
+			std::cout << r2::split;
 
 			//
 			// Test x 2
 			//
 			{
-				std::cout << "# Test 2" << r2::linefeed;
+				std::cout << r2::tab << "+ Test 2" << r2::linefeed2;
 
-				const int result = luaL_dofile( lua_state_obj, "resources/step_DoFile_02.lua" );
-				if( result != LUA_OK )
-				{
-					const auto error_message = lua_tostring( lua_state_obj, -1 );
+				EXPECT_EQ( LUA_OK, luaL_dofile( lua_state_obj, "resources/step_DoFile_02.lua" ) );
 
-					std::cout << "DoFile Failed" << r2::linefeed;
-					std::cout << error_message << r2::linefeed;
-				}
-				else
-				{
-					std::cout << "DoFile Success" << r2::linefeed;
-				}
+				std::cout << r2::linefeed;
 
-				lua_getglobal( lua_state_obj, "a" );
+				PROCESS_MAIN( lua_getglobal( lua_state_obj, "a" ) );
+				EXPECT_TRUE( lua_isnumber( lua_state_obj, -1 ) );
 
-				if( lua_isnumber( lua_state_obj, -1 ) )
-				{
-					const auto a = static_cast<float>( lua_tonumber( lua_state_obj, -1 ) );
-					std::cout << "result : " << "a : " << a << r2::linefeed;
-				}
+				DECLARATION_MAIN( const auto a = static_cast<float>( lua_tonumber( lua_state_obj, -1 ) ) );
+				std::cout << "a : " << a << r2::linefeed;
 			}
 
-
+			std::cout << r2::split;
 
 			lua_close( lua_state_obj );
+
 			return r2cm::eTestEndAction::Pause;
 		};
 	}
