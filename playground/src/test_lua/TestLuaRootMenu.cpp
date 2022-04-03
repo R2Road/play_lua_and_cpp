@@ -8,7 +8,7 @@
 #include "r2cm/r2cm_eTestEndAction.h"
 
 #include "lua_state_test.h"
-#include "lua_dostring_test.h"
+#include "luaL_dostring_test.h"
 #include "lua_getglobal_test.h"
 #include "lua_type_check_test.h"
 #include "lua_stack_printer_test.h"

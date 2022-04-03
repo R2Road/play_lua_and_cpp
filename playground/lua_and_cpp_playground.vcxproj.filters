@@ -32,9 +32,6 @@
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pch.cpp" />
-    <ClCompile Include="src\test_lua\lua_dostring_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_lua\lua_getglobal_test.cpp">
       <Filter>test_lua\item</Filter>
     </ClCompile>
@@ -96,12 +93,12 @@
     <ClCompile Include="src\test_lua\luaL_dofile_test.cpp">
       <Filter>test_lua\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_lua\luaL_dostring_test.cpp">
+      <Filter>test_lua\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
-    <ClInclude Include="src\test_lua\lua_dostring_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_lua\lua_getglobal_test.h">
       <Filter>test_lua\item</Filter>
     </ClInclude>
@@ -176,6 +173,9 @@
       <Filter>test_lua</Filter>
     </ClInclude>
     <ClInclude Include="src\test_lua\luaL_dofile_test.h">
+      <Filter>test_lua\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_lua\luaL_dostring_test.h">
       <Filter>test_lua\item</Filter>
     </ClInclude>
   </ItemGroup>
