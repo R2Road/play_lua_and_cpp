@@ -31,11 +31,6 @@ namespace
 	{
 		std::stringstream ss;
 		ss << "+ Menu" << r2::linefeed;
-		ss << "6 : step_DoFile" << r2::linefeed;
-		ss << "7 : step_GetTable" << r2::linefeed;
-
-		ss << r2::linefeed;
-
 		ss << "Q : step_PCall_01" << r2::linefeed;
 		ss << "W : step_PCall_02" << r2::linefeed;
 		ss << "E : step_PCall_03" << r2::linefeed;
@@ -81,6 +76,7 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 
 		ret->AddItem( 'q', luaL_openlibs_test::Basic::GetInstance() );
 		ret->AddItem( 'w', luaL_dofile_test::Basic::GetInstance() );
+		ret->AddItem( 'e', lua_table_test::Basic::GetInstance() );
 
 
 		ret->AddSplit();
@@ -102,10 +98,6 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 
 					switch( input )
 					{
-					case '7':
-						step::GetTable();
-						break;
-
 					case 'q':
 						step::PCall_01();
 						break;
