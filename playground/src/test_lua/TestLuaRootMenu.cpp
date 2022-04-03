@@ -63,7 +63,7 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', lua_state_test::Basic::GetInstance() );
-		ret->AddItem( '2', lua_dostring_test::Basic::GetInstance() );
+		ret->AddItem( '2', luaL_dostring_test::Basic::GetInstance() );
 		ret->AddItem( '3', lua_getglobal_test::Basic::GetInstance() );
 		ret->AddItem( '4', lua_type_check_test::Basic::GetInstance() );
 		ret->AddItem( '5', lua_stack_printer_test::Basic::GetInstance() );
