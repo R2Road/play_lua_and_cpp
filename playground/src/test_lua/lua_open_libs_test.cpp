@@ -10,7 +10,7 @@
 //
 
 
-namespace lua_open_libs_test
+namespace luaL_openlibs_test
 {
 	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{

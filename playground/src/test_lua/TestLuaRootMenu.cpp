@@ -79,7 +79,7 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'q', lua_open_libs_test::Basic::GetInstance() );
+		ret->AddItem( 'q', luaL_openlibs_test::Basic::GetInstance() );
 		ret->AddItem( 'w', luaL_dofile_test::Basic::GetInstance() );
 
 
