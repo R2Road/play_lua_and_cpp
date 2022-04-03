@@ -16,8 +16,8 @@
 
 #include "luaL_openlibs_test.h"
 #include "luaL_dofile_test.h"
+#include "lua_table_test.h"
 
-#include "step_GetTable.h"
 #include "step_PCall_01.h"
 #include "step_PCall_02.h"
 #include "step_PCall_03.h"

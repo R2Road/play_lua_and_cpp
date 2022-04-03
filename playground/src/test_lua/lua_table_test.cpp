@@ -1,5 +1,5 @@
 ﻿#include "pch.h"
-#include "step_GetTable.h"
+#include "lua_table_test.h"
 
 
 namespace step
