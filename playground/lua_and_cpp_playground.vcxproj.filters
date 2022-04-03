@@ -35,9 +35,6 @@
     <ClCompile Include="src\test_lua\lua_getglobal_test.cpp">
       <Filter>test_lua\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_lua\lua_open_libs_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_lua\lua_stack_clear_test.cpp">
       <Filter>test_lua\item</Filter>
     </ClCompile>
@@ -96,13 +93,13 @@
     <ClCompile Include="src\test_lua\luaL_dostring_test.cpp">
       <Filter>test_lua\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_lua\luaL_openlibs_test.cpp">
+      <Filter>test_lua\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\test_lua\lua_getglobal_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\lua_open_libs_test.h">
       <Filter>test_lua\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_lua\lua_stack_clear_test.h">
@@ -176,6 +173,9 @@
       <Filter>test_lua\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_lua\luaL_dostring_test.h">
+      <Filter>test_lua\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_lua\luaL_openlibs_test.h">
       <Filter>test_lua\item</Filter>
     </ClInclude>
   </ItemGroup>

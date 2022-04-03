@@ -14,7 +14,7 @@
 #include "lua_stack_printer_test.h"
 #include "lua_stack_clear_test.h"
 
-#include "lua_open_libs_test.h"
+#include "luaL_openlibs_test.h"
 #include "luaL_dofile_test.h"
 
 #include "step_GetTable.h"
