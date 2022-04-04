@@ -28,7 +28,7 @@ namespace step
 		//
 		// Check Stack 1
 		//
-		step_helper_deprecated::PrintType( "[Stack 1]", lua_type( lua_state_obj, 1 ) );
+		test_lua_helper::PrintStack( lua_state_obj, 1 );
 
 		std::cout << r2::linefeed;
 
@@ -40,7 +40,7 @@ namespace step
 			//
 			// Check Stack 1
 			//
-			step_helper_deprecated::PrintType( "[Stack 1]", lua_type( lua_state_obj, 1 ) );
+			test_lua_helper::PrintStack( lua_state_obj, 1 );
 		}
 
 

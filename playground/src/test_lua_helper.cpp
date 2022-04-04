@@ -41,47 +41,6 @@ namespace step_helper_deprecated
 		}
 	}
 
-	void PrintType( const char* name, int type )
-	{
-		switch( type )
-		{
-		case LUA_TNIL:
-			std::cout << name << " is nil" << r2::linefeed;
-			break;
-		case LUA_TBOOLEAN:
-			std::cout << name << " is boolean" << r2::linefeed;
-			break;
-		case LUA_TLIGHTUSERDATA:
-			std::cout << name << " is light userdata" << r2::linefeed;
-			break;
-		case LUA_TNUMBER:
-			std::cout << name << " is number" << r2::linefeed;
-			break;
-		case LUA_TSTRING:
-			std::cout << name << " is string" << r2::linefeed;
-			break;
-		case LUA_TTABLE:
-			std::cout << name << " is table" << r2::linefeed;
-			break;
-		case LUA_TFUNCTION:
-			std::cout << name << " is function" << r2::linefeed;
-			break;
-		case LUA_TUSERDATA:
-			std::cout << name << " is userdata" << r2::linefeed;
-			break;
-		case LUA_TTHREAD:
-			std::cout << name << " is thread" << r2::linefeed;
-			break;
-		case LUA_NUMTYPES:
-			std::cout << name << " is numtypes" << r2::linefeed;
-			break;
-
-		default:
-			std::cout << name << " is undefined" << r2::linefeed;
-			break;
-		}
-	}
-
 	bool LuaDoString( lua_State* lua_state_obj, const char* command_string, const std::size_t tab_count )
 	{
 		DoTab( tab_count );
@@ -209,6 +168,13 @@ namespace test_lua_helper
 		return true;
 	}
 
+	void PrintStack( lua_State* lua_state_obj, const int stack_index )
+	{
+		const int stack_size = lua_gettop( lua_state_obj );
+
+		std::cout << r2::tab << "Stack Count : " << stack_size << r2::linefeed;
+		std::cout << r2::tab << "[" << stack_index << "]" << r2::tab << "[" << stack_index - ( stack_size + 1 ) << "]" << r2::tab << luaL_typename( lua_state_obj, stack_index ) << r2::tab;
+	}
 	void PrintAllStack( lua_State* lua_state_obj )
 	{
 		const int stack_size = lua_gettop( lua_state_obj );
