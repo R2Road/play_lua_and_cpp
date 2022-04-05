@@ -22,15 +22,11 @@ namespace lua_table_test
 			std::cout << r2::split;
 
 			DECLARATION_SUB( lua_State* lua_state_obj = luaL_newstate() );
+			DECLARATION_SUB( luaL_openlibs( lua_state_obj ) );
 
 			std::cout << r2::split;
 
 			{
-				std::cout << "Call : luaL_openlibs" << r2::linefeed;
-				luaL_openlibs( lua_state_obj );
-
-				std::cout << r2::linefeed;
-
 				//
 				// Test x 1
 				//
