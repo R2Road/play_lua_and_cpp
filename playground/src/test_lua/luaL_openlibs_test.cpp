@@ -37,7 +37,7 @@ namespace luaL_openlibs_test
 			std::cout << r2::split;
 
 			{
-				PROCESS_MAIN( step_helper_deprecated::LuaDoString( lua_state_obj, command ) );
+				PROCESS_MAIN( test_lua_helper::DoString( lua_state_obj, command ) );
 			}
 
 			std::cout << r2::split;
@@ -49,7 +49,7 @@ namespace luaL_openlibs_test
 			std::cout << r2::split;
 
 			{
-				PROCESS_MAIN( step_helper_deprecated::LuaDoString( lua_state_obj, command ) );
+				PROCESS_MAIN( test_lua_helper::DoString( lua_state_obj, command ) );
 
 				std::cout << r2::linefeed;
 
