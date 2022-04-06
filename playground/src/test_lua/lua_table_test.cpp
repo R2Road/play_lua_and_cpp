@@ -77,12 +77,3 @@ namespace lua_table_test
 		};
 	}
 }
-
-
-namespace step
-{
-	void GetTable()
-	{
-		
-	}
-}
