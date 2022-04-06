@@ -52,6 +52,72 @@ namespace lua_table_test
 
 
 
+	r2cm::iItem::TitleFuncT Add2GlobalTest::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Table : Add 2 Global";
+		};
+	}
+	r2cm::iItem::DoFuncT Add2GlobalTest::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( lua_State* lua_state_obj = luaL_newstate() );
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Generate Table" << r2::linefeed2;
+
+				PROCESS_MAIN( lua_newtable( lua_state_obj ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Add 2 Global" << r2::linefeed2;
+
+				PROCESS_MAIN( lua_setglobal( lua_state_obj, "dummy_table" ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Get Global" << r2::linefeed2;
+
+				PROCESS_MAIN( lua_getglobal( lua_state_obj, "dummy_table" ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
+			}
+
+			std::cout << r2::split;
+
+			PROCESS_SUB( lua_close( lua_state_obj ) );
+
+			std::cout << r2::split;
+
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*

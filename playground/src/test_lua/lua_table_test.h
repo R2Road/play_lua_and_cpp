@@ -12,6 +12,13 @@ namespace lua_table_test
 		DoFuncT GetDoFunction() override;
 	};
 
+	class Add2GlobalTest : public r2cm::iItem, public r2::SingleTon<Add2GlobalTest>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
+
 	class Basic : public r2cm::iItem, public r2::SingleTon<Basic>
 	{
 	public:
