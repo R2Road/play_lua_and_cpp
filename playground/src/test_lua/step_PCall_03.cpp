@@ -15,7 +15,7 @@ namespace step
 
 		std::cout << r2::linefeed;
 
-		if( !step_helper_deprecated::LuaErrorCheck( lua_state_obj, luaL_dofile( lua_state_obj, "resources/step_PCall_03.lua" ), "luaL_dofile" ) )
+		if( !test_lua_helper::LuaErrorCheck( lua_state_obj, luaL_dofile( lua_state_obj, "resources/step_PCall_03.lua" ), "luaL_dofile" ) )
 		{
 			return;
 		}
@@ -35,7 +35,7 @@ namespace step
 		//
 		// Test x 0
 		//
-		if( step_helper_deprecated::LuaErrorCheck( lua_state_obj, lua_pcall( lua_state_obj, 0, 1, 0 ), "lua_pcall" ) )
+		if( test_lua_helper::LuaErrorCheck( lua_state_obj, lua_pcall( lua_state_obj, 0, 1, 0 ), "lua_pcall" ) )
 		{
 			//
 			// Check Stack 1

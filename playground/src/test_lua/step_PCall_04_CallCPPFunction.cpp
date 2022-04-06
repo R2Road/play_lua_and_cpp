@@ -39,7 +39,7 @@ namespace step
 
 		std::cout << r2::linefeed << r2::linefeed;
 
-		if( !step_helper_deprecated::LuaErrorCheck( lua_state_obj, luaL_dofile( lua_state_obj, "resources/step_PCall_04.lua" ), "luaL_dofile" ) )
+		if( !test_lua_helper::LuaErrorCheck( lua_state_obj, luaL_dofile( lua_state_obj, "resources/step_PCall_04.lua" ), "luaL_dofile" ) )
 		{
 			return;
 		}
@@ -59,7 +59,7 @@ namespace step
 			lua_pushnumber( lua_state_obj, 123 );
 			lua_pushnumber( lua_state_obj, 456 );
 
-			step_helper_deprecated::LuaErrorCheck( lua_state_obj, lua_pcall( lua_state_obj, 2, 1, 0 ), "CallCPPFunction1" );
+			test_lua_helper::LuaErrorCheck( lua_state_obj, lua_pcall( lua_state_obj, 2, 1, 0 ), "CallCPPFunction1" );
 		}
 
 		std::cout << r2::linefeed << r2::linefeed;
@@ -79,7 +79,7 @@ namespace step
 			lua_pushnumber( lua_state_obj, 123 );
 			lua_pushnumber( lua_state_obj, 456 );
 
-			if( step_helper_deprecated::LuaErrorCheck( lua_state_obj, lua_pcall( lua_state_obj, 2, 1, 0 ), "CallCPPFunction1" ) )
+			if( test_lua_helper::LuaErrorCheck( lua_state_obj, lua_pcall( lua_state_obj, 2, 1, 0 ), "CallCPPFunction1" ) )
 			{
 				const int result = (int)lua_tointeger( lua_state_obj, -1 );
 				std::cout << "result : " << result << r2::linefeed;
@@ -103,7 +103,7 @@ namespace step
 			lua_pushnumber( lua_state_obj, 123 );
 			lua_pushnumber( lua_state_obj, 456 );
 
-			if( step_helper_deprecated::LuaErrorCheck( lua_state_obj, lua_pcall( lua_state_obj, 2, 1, 0 ), "CallCPPFunction2" ) )
+			if( test_lua_helper::LuaErrorCheck( lua_state_obj, lua_pcall( lua_state_obj, 2, 1, 0 ), "CallCPPFunction2" ) )
 			{
 				const int result = (int)lua_tointeger( lua_state_obj, -1 );
 				std::cout << "result : " << result << r2::linefeed;
