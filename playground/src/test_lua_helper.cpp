@@ -77,6 +77,14 @@ namespace test_lua_helper
 	{
 		return LuaErrorCheck_Silent( lua_state_obj, luaL_dostring( lua_state_obj, command_string ) );
 	}
+	bool DoFile( lua_State* lua_state_obj, const char* file_path )
+	{
+		return LuaErrorCheck( lua_state_obj, luaL_dofile( lua_state_obj, file_path ) );
+	}
+	bool DoFile_Silent( lua_State* lua_state_obj, const char* file_path )
+	{
+		return LuaErrorCheck_Silent( lua_state_obj, luaL_dofile( lua_state_obj, file_path ) );
+	}
 	bool LuaErrorCheck( lua_State* lua_state_obj, const int return_code )
 	{
 		if( return_code != LUA_OK )

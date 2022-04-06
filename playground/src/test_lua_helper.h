@@ -9,6 +9,8 @@ namespace test_lua_helper
 
 	bool DoString( lua_State* lua_state_obj, const char* command_string );
 	bool DoString_Silent( lua_State* lua_state_obj, const char* command_string );
+	bool DoFile( lua_State* lua_state_obj, const char* file_path );
+	bool DoFile_Silent( lua_State* lua_state_obj, const char* file_path );
 	bool LuaErrorCheck( lua_State* lua_state_obj, const int return_code );
 	bool LuaErrorCheck_Silent( lua_State* lua_state_obj, const int return_code );
 

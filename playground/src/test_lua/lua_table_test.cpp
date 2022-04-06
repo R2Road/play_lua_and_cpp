@@ -26,7 +26,7 @@ namespace lua_table_test
 
 			std::cout << r2::split;
 
-			PROCESS_MAIN( test_lua_helper::LuaErrorCheck( lua_state_obj, luaL_dofile( lua_state_obj, "resources/step_GetTable_01.lua" ) ) );
+			PROCESS_MAIN( test_lua_helper::DoFile( lua_state_obj, "resources/step_GetTable_01.lua" ) );
 
 			std::cout << r2::split;
 
@@ -72,7 +72,7 @@ namespace lua_table_test
 
 			std::cout << r2::split;
 
-			PROCESS_MAIN( test_lua_helper::LuaErrorCheck( lua_state_obj, luaL_dofile( lua_state_obj, "resources/step_GetTable_01.lua" ) ) );
+			PROCESS_MAIN( test_lua_helper::DoFile( lua_state_obj, "resources/step_GetTable_01.lua" ) );
 
 			std::cout << r2::split;
 
