@@ -6,6 +6,48 @@
 
 namespace lua_table_test
 {
+	r2cm::iItem::TitleFuncT GenerateTest::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Table : Generate";
+		};
+	}
+	r2cm::iItem::DoFuncT GenerateTest::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( lua_State* lua_state_obj = luaL_newstate() );
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Generate Table" << r2::linefeed2;
+
+				PROCESS_MAIN( lua_newtable( lua_state_obj ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
+			}
+
+			std::cout << r2::split;
+
+			PROCESS_SUB( lua_close( lua_state_obj ) );
+
+			std::cout << r2::split;
+
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
