@@ -15,7 +15,7 @@ namespace step
 
 		std::cout << r2::linefeed;
 
-		if( !test_lua_helper::LuaErrorCheck( lua_state_obj, luaL_dofile( lua_state_obj, "resources/step_PCall_01.lua" ), "luaL_dofile" ) )
+		if( !test_lua_helper::LuaErrorCheck( lua_state_obj, luaL_dofile( lua_state_obj, "resources/step_PCall_01.lua" ) ) )
 		{
 			return;
 		}
@@ -35,7 +35,7 @@ namespace step
 
 				lua_pushnumber( lua_state_obj, 123 );
 
-				if( test_lua_helper::LuaErrorCheck( lua_state_obj, lua_pcall( lua_state_obj, 2, 1, 0 ), "lua_pcall" ) )
+				if( test_lua_helper::LuaErrorCheck( lua_state_obj, lua_pcall( lua_state_obj, 2, 1, 0 ) ) )
 				{
 					std::cout << "Result : TestFunction : " << static_cast<float>( lua_tonumber( lua_state_obj, -1 ) ) << r2::linefeed;
 				}
@@ -62,7 +62,7 @@ namespace step
 				lua_pushnumber( lua_state_obj, 123 );
 				lua_pushnumber( lua_state_obj, 456 );
 
-				if( test_lua_helper::LuaErrorCheck( lua_state_obj, lua_pcall( lua_state_obj, 2, 1, 0 ), "lua_pcall" ) )
+				if( test_lua_helper::LuaErrorCheck( lua_state_obj, lua_pcall( lua_state_obj, 2, 1, 0 ) ) )
 				{
 					std::cout << "Result : TestFunction : " << static_cast<float>( lua_tonumber( lua_state_obj, -1 ) ) << r2::linefeed;
 				}

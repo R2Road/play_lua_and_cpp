@@ -99,19 +99,13 @@ namespace test_lua_helper
 
 		return true;
 	}
-	bool LuaErrorCheck( lua_State* lua_state_obj, const int return_code, const char* process_name, const std::size_t tab_count )
+	bool LuaErrorCheck( lua_State* lua_state_obj, const int return_code )
 	{
-		DoTab( tab_count );
-
-		std::cout << "Result" << "[" << process_name << "] : ";
-
 		if( return_code != LUA_OK )
 		{
 			const auto error_message = lua_tostring( lua_state_obj, -1 );
 
 			std::cout << "Failed " << r2::linefeed;
-
-			DoTab( tab_count );
 			std::cout << error_message << r2::linefeed;
 
 			return false;
