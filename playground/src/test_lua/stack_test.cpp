@@ -88,4 +88,55 @@ namespace stack_test
 			return r2cm::eTestEndAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFuncT StackPrinterTest::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Stack Printer";
+		};
+	}
+	r2cm::iItem::DoFuncT StackPrinterTest::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+
+			lua_State* lua_state_obj = luaL_newstate();
+
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( test_lua_helper::DoString_Silent( lua_state_obj, "a = 15" ) );
+				PROCESS_MAIN( test_lua_helper::DoString_Silent( lua_state_obj, "c = 7" ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( lua_getglobal( lua_state_obj, "a" ) );
+				PROCESS_MAIN( lua_getglobal( lua_state_obj, "b" ) );
+				PROCESS_MAIN( lua_getglobal( lua_state_obj, "c" ) );
+				PROCESS_MAIN( lua_getglobal( lua_state_obj, "d" ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
+			}
+
+			std::cout << r2::split;
+
+
+			lua_close( lua_state_obj );
+
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
 }

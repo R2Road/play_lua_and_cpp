@@ -38,9 +38,6 @@
     <ClCompile Include="src\test_lua\lua_stack_clear_test.cpp">
       <Filter>test_lua\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_lua\lua_stack_printer_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_lua\lua_state_test.cpp">
       <Filter>test_lua\item</Filter>
     </ClCompile>
@@ -106,9 +103,6 @@
       <Filter>test_lua\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_lua\lua_stack_clear_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\lua_stack_printer_test.h">
       <Filter>test_lua\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_lua\lua_state_test.h">

@@ -11,4 +11,11 @@ namespace stack_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class StackPrinterTest : public r2cm::iItem, public r2::SingleTon<StackPrinterTest>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }
