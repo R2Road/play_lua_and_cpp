@@ -77,7 +77,7 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'q', luaL_openlibs_test::Basic::GetInstance() );
 		ret->AddItem( 'w', luaL_dofile_test::Basic::GetInstance() );
 		ret->AddItem( 'e', lua_table_test::Basic::GetInstance() );
-		ret->AddItem( 'r', lua_table_test::GetTest::GetInstance() );
+		ret->AddItem( 'r', lua_table_test::GetValueTest::GetInstance() );
 
 
 		ret->AddSplit();

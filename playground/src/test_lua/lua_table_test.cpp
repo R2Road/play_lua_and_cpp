@@ -56,14 +56,14 @@ namespace lua_table_test
 
 
 
-	r2cm::iItem::TitleFuncT GetTest::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT GetValueTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Table : Get";
+			return "Table : Get Value";
 		};
 	}
-	r2cm::iItem::DoFuncT GetTest::GetDoFunction()
+	r2cm::iItem::DoFuncT GetValueTest::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{
@@ -73,10 +73,7 @@ namespace lua_table_test
 
 			DECLARATION_SUB( lua_State* lua_state_obj = luaL_newstate() );
 			DECLARATION_SUB( luaL_openlibs( lua_state_obj ) );
-
-			std::cout << r2::split;
-
-			PROCESS_MAIN( test_lua_helper::DoFile( lua_state_obj, "resources/step_GetTable_01.lua" ) );
+			PROCESS_SUB( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/step_GetTable_01.lua" ) );
 
 			std::cout << r2::split;
 
