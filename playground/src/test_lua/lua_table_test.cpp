@@ -26,7 +26,11 @@ namespace lua_table_test
 
 			std::cout << r2::split;
 
-			PROCESS_MAIN( test_lua_helper::DoFile( lua_state_obj, "resources/step_GetTable_01.lua" ) );
+			{
+				std::cout << r2::tab << "+ Load Table" << r2::linefeed2;
+
+				PROCESS_MAIN( test_lua_helper::DoFile( lua_state_obj, "resources/step_GetTable_01.lua" ) );
+			}
 
 			std::cout << r2::split;
 
