@@ -26,41 +26,44 @@ namespace lua_table_test
 
 			std::cout << r2::split;
 
+			PROCESS_MAIN( test_lua_helper::LuaErrorCheck( lua_state_obj, luaL_dofile( lua_state_obj, "resources/step_GetTable_01.lua" ) ) );
+
+			std::cout << r2::split;
+
 			{
-				//
-				// Test x 1
-				//
-				{
-					std::cout << "# Test 1" << r2::linefeed;
+				DECLARATION_MAIN( const int type = lua_getglobal( lua_state_obj, "data" ) );
+				EXPECT_TRUE( lua_istable( lua_state_obj, 1 ) );
 
-					if( test_lua_helper::LuaErrorCheck( lua_state_obj, luaL_dofile( lua_state_obj, "resources/step_GetTable_01.lua" ) ) )
-					{
-						lua_getglobal( lua_state_obj, "data" );
-						if( lua_istable( lua_state_obj, -1 ) )
-						{
-							std::cout << "data is Table" << r2::linefeed;
-							std::cout << r2::linefeed;
+				PROCESS_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
+			}
 
+			std::cout << r2::split;
 
-							lua_pushstring( lua_state_obj, "name" );
-							lua_gettable( lua_state_obj, -2 );
-							const std::string name = lua_tostring( lua_state_obj, -1 );
-							std::cout << "name : " << name.c_str() << r2::linefeed;
-							lua_pop( lua_state_obj, 1 );
+			{
+				std::cout << r2::tab << "+ Ready" << r2::linefeed2;
 
+				PROCESS_MAIN( lua_pushstring( lua_state_obj, "name" ) );
+				PROCESS_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
 
-							lua_pushstring( lua_state_obj, "age" );
-							lua_gettable( lua_state_obj, -2 );
-							const int age = (int)lua_tointeger( lua_state_obj, -1 );
-							std::cout << "age : " << age << r2::linefeed;
-							lua_pop( lua_state_obj, 1 );
-						}
-						else
-						{
-							std::cout << "Is Not Table" << r2::linefeed;
-						}
-					}
-				}
+				std::cout << r2::linefeed;
+				std::cout << r2::tab << "+ Get" << r2::linefeed2;
+
+				PROCESS_MAIN( lua_gettable( lua_state_obj, 1 ) );
+				PROCESS_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( lua_pop( lua_state_obj, 1 ) );
+			}
+				
+			std::cout << r2::split;
+
+			{
+				lua_pushstring( lua_state_obj, "age" );
+				lua_gettable( lua_state_obj, -2 );
+				const int age = (int)lua_tointeger( lua_state_obj, -1 );
+				std::cout << "age : " << age << r2::linefeed;
+				lua_pop( lua_state_obj, 1 );
 			}
 
 			std::cout << r2::split;
