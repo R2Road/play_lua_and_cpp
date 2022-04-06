@@ -98,14 +98,14 @@ namespace lua_table_test
 
 
 
-	r2cm::iItem::TitleFuncT GetValueTest::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT PushAndGetTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Table : Get Value";
+			return "Table : Push And Get Value";
 		};
 	}
-	r2cm::iItem::DoFuncT GetValueTest::GetDoFunction()
+	r2cm::iItem::DoFuncT PushAndGetTest::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{
