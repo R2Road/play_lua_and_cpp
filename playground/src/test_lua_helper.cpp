@@ -71,20 +71,7 @@ namespace test_lua_helper
 
 	bool DoString( lua_State* lua_state_obj, const char* command_string )
 	{
-		const int result = luaL_dostring( lua_state_obj, command_string );
-		if( result != LUA_OK )
-		{
-			const auto error_message = lua_tostring( lua_state_obj, -1 );
-			std::cout << error_message << r2::linefeed;
-
-			return false;
-		}
-		else
-		{
-			std::cout << "Success" << r2::linefeed;
-
-			return true;
-		}
+		return LuaErrorCheck( lua_state_obj, luaL_dostring( lua_state_obj, command_string ) );
 	}
 	bool DoString_Silent( lua_State* lua_state_obj, const char* command_string )
 	{
@@ -104,9 +91,7 @@ namespace test_lua_helper
 		if( return_code != LUA_OK )
 		{
 			const auto error_message = lua_tostring( lua_state_obj, -1 );
-
-			std::cout << "Failed " << r2::linefeed;
-			std::cout << error_message << r2::linefeed;
+			std::cout <<"error message : " << error_message << r2::linefeed;
 
 			return false;
 		}
