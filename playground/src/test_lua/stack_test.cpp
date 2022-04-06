@@ -111,17 +111,13 @@ namespace stack_test
 			std::cout << r2::split;
 
 			{
-				PROCESS_MAIN( test_lua_helper::DoString_Silent( lua_state_obj, "a = 15" ) );
-				PROCESS_MAIN( test_lua_helper::DoString_Silent( lua_state_obj, "c = 7" ) );
-			}
-
-			std::cout << r2::split;
-
-			{
-				PROCESS_MAIN( lua_getglobal( lua_state_obj, "a" ) );
-				PROCESS_MAIN( lua_getglobal( lua_state_obj, "b" ) );
-				PROCESS_MAIN( lua_getglobal( lua_state_obj, "c" ) );
-				PROCESS_MAIN( lua_getglobal( lua_state_obj, "d" ) );
+				PROCESS_SUB( lua_pushnil( lua_state_obj ) );
+				PROCESS_SUB( lua_pushnumber( lua_state_obj, 123.f ) );
+				PROCESS_SUB( lua_pushinteger( lua_state_obj, 7 ) );
+				PROCESS_SUB( lua_pushlstring( lua_state_obj, "dummy_text", 3 ) );
+				PROCESS_SUB( lua_pushstring( lua_state_obj, "dummy_text" ) );
+				PROCESS_SUB( lua_pushcclosure( lua_state_obj, &cclosure_test_function, 0 ) );
+				PROCESS_SUB( lua_pushboolean( lua_state_obj, true ) );
 			}
 
 			std::cout << r2::split;
