@@ -18,6 +18,7 @@
 #include "luaL_dofile_test.h"
 #include "lua_table_test.h"
 
+#include "stack_test.h"
 #include "step_PCall_01.h"
 #include "step_PCall_02.h"
 #include "step_PCall_03.h"
@@ -58,17 +59,18 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', lua_state_test::Basic::GetInstance() );
-		ret->AddItem( '2', luaL_dostring_test::Basic::GetInstance() );
-		ret->AddItem( '3', lua_getglobal_test::Basic::GetInstance() );
-		ret->AddItem( '4', lua_type_check_test::Basic::GetInstance() );
-		ret->AddItem( '5', lua_stack_printer_test::Basic::GetInstance() );
+		ret->AddItem( '2', stack_test::Basic::GetInstance() );
+		ret->AddItem( '3', luaL_dostring_test::Basic::GetInstance() );
+		ret->AddItem( '4', lua_getglobal_test::Basic::GetInstance() );
+		ret->AddItem( '5', lua_type_check_test::Basic::GetInstance() );
+		ret->AddItem( '6', lua_stack_printer_test::Basic::GetInstance() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( '6', lua_stack_clear_test::SetTop::GetInstance() );
-		ret->AddItem( '7', lua_stack_clear_test::Pop::GetInstance() );
+		ret->AddItem( '7', lua_stack_clear_test::SetTop::GetInstance() );
+		ret->AddItem( '8', lua_stack_clear_test::Pop::GetInstance() );
 
 
 		ret->AddLineFeed();

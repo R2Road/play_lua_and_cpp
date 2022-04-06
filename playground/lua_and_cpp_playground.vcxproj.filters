@@ -96,6 +96,9 @@
     <ClCompile Include="src\test_lua\lua_table_test.cpp">
       <Filter>test_lua\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_lua\stack_test.cpp">
+      <Filter>test_lua\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -176,6 +179,9 @@
       <Filter>test_lua\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_lua\lua_table_test.h">
+      <Filter>test_lua\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_lua\stack_test.h">
       <Filter>test_lua\item</Filter>
     </ClInclude>
   </ItemGroup>
