@@ -33,6 +33,10 @@ namespace lua_table_test
 				std::cout << r2::linefeed;
 
 				PROCESS_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
+
+				std::cout << r2::linefeed;
+
+				EXPECT_TRUE( lua_istable( lua_state_obj, 1 ) );
 			}
 
 			std::cout << r2::split;
