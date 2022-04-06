@@ -75,16 +75,7 @@ namespace test_lua_helper
 	}
 	bool DoString_Silent( lua_State* lua_state_obj, const char* command_string )
 	{
-		const int result = luaL_dostring( lua_state_obj, command_string );
-		if( result != LUA_OK )
-		{
-			const auto error_message = lua_tostring( lua_state_obj, -1 );
-			std::cout << error_message << r2::linefeed;
-
-			return false;
-		}
-
-		return true;
+		return LuaErrorCheck_Silent( lua_state_obj, luaL_dostring( lua_state_obj, command_string ) );
 	}
 	bool LuaErrorCheck( lua_State* lua_state_obj, const int return_code )
 	{
@@ -101,6 +92,18 @@ namespace test_lua_helper
 
 			return true;
 		}
+	}
+	bool LuaErrorCheck_Silent( lua_State* lua_state_obj, const int return_code )
+	{
+		if( return_code != LUA_OK )
+		{
+			const auto error_message = lua_tostring( lua_state_obj, -1 );
+			std::cout << "error message : " << error_message << r2::linefeed;
+
+			return false;
+		}
+
+		return true;
 	}
 
 	void PrintStack( lua_State* lua_state_obj, const int stack_index )
