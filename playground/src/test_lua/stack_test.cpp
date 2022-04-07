@@ -14,14 +14,14 @@ int cclosure_test_function( lua_State* )
 
 namespace stack_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT PushTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Stack";
+			return "Stack : Push";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT PushTest::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{

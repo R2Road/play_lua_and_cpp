@@ -58,7 +58,7 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', lua_state_test::Basic::GetInstance() );
-		ret->AddItem( '2', stack_test::Basic::GetInstance() );
+		ret->AddItem( '2', stack_test::PushTest::GetInstance() );
 		ret->AddItem( '3', stack_test::StackPrinterTest::GetInstance() );
 		ret->AddItem( '4', luaL_dostring_test::Basic::GetInstance() );
 		ret->AddItem( '5', lua_getglobal_test::Basic::GetInstance() );
