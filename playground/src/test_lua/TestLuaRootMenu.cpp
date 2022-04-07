@@ -24,6 +24,7 @@
 #include "step_PCall_04_CallCPPFunction.h"
 
 #include "MainMenu.h"
+#include "StackMenu.h"
 
 namespace
 {
@@ -58,19 +59,18 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', lua_state_test::Basic::GetInstance() );
-		ret->AddItem( '2', stack_test::PushTest::GetInstance() );
-		ret->AddItem( '3', stack_test::GetTest::GetInstance() );
-		ret->AddItem( '4', stack_test::PrintAllTest::GetInstance() );
+		ret->AddItem(
+			'2'
+			, []()->const char* { return StackMenu::GetTitle(); }
+			, [&director]()->r2cm::eTestEndAction
+			{
+				director.Setup( StackMenu::Create( director ) );
+				return r2cm::eTestEndAction::None;
+			}
+		);
 		ret->AddItem( '5', luaL_dostring_test::Basic::GetInstance() );
 		ret->AddItem( '6', lua_getglobal_test::Basic::GetInstance() );
 		ret->AddItem( '7', lua_type_check_test::Basic::GetInstance() );
-
-
-		ret->AddLineFeed();
-
-
-		ret->AddItem( '8', lua_stack_clear_test::SetTop::GetInstance() );
-		ret->AddItem( '9', lua_stack_clear_test::Pop::GetInstance() );
 
 
 		ret->AddLineFeed();

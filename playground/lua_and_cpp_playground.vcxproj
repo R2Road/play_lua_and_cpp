@@ -31,6 +31,7 @@
     <ClCompile Include="src\r2cm\r2cm_Menu.cpp" />
     <ClCompile Include="src\r2lua\r2lua.cpp" />
     <ClCompile Include="src\r2\r2_FrameManager.cpp" />
+    <ClCompile Include="src\test_lua\StackMenu.cpp" />
     <ClCompile Include="src\test_lua\stack_test.cpp" />
     <ClCompile Include="src\test_lua_helper.cpp" />
     <ClCompile Include="src\test_lua\luaL_dostring_test.cpp" />
@@ -61,6 +62,7 @@
     <ClInclude Include="src\r2\r2_FrameManager.h" />
     <ClInclude Include="src\r2\r2_Inspector.h" />
     <ClInclude Include="src\r2\r2_Singleton.h" />
+    <ClInclude Include="src\test_lua\StackMenu.h" />
     <ClInclude Include="src\test_lua\stack_test.h" />
     <ClInclude Include="src\test_lua_helper.h" />
     <ClInclude Include="src\test_lua\luaL_dostring_test.h" />
