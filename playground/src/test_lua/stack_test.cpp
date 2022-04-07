@@ -89,6 +89,7 @@ namespace stack_test
 				std::cout << r2::tab << "+ Push( info : lua.h 233 line )" << r2::linefeed2;
 
 				PROCESS_MAIN( lua_pushstring( lua_state_obj, "dummy_text" ) );
+				PROCESS_MAIN( lua_pushnumber( lua_state_obj, 777 ) );
 
 				std::cout << r2::linefeed;
 
@@ -113,7 +114,10 @@ namespace stack_test
 			{
 				std::cout << r2::tab << "+ Casting?" << r2::linefeed2;
 
-				DECLARATION_MAIN( const auto value = lua_tonumber( lua_state_obj, 1 ) );
+				DECLARATION_MAIN( const auto type_name = luaL_typename( lua_state_obj, 2 ) );
+				std::cout << r2::tab << "type_name : " << type_name << r2::linefeed2;
+
+				DECLARATION_MAIN( const auto value = lua_tostring( lua_state_obj, 2 ) );
 				std::cout << r2::tab << "value : " << value << r2::linefeed;
 			}
 
