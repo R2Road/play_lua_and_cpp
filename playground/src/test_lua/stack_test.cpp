@@ -38,7 +38,7 @@ namespace stack_test
 				std::cout << r2::tab << "+ Push( info : lua.h 233 line )" << r2::linefeed2;
 
 				PROCESS_MAIN( lua_pushnil( lua_state_obj ) );
-				PROCESS_MAIN( lua_pushnumber( lua_state_obj, 123.f ) );
+				PROCESS_MAIN( lua_pushnumber( lua_state_obj, 12345.12345 ) );
 				PROCESS_MAIN( lua_pushinteger( lua_state_obj, 7 ) );
 				PROCESS_MAIN( lua_pushlstring( lua_state_obj, "dummy_text", 3 ) );
 				PROCESS_MAIN( lua_pushstring( lua_state_obj, "dummy_text" ) );
@@ -112,7 +112,7 @@ namespace stack_test
 
 			{
 				PROCESS_SUB( lua_pushnil( lua_state_obj ) );
-				PROCESS_SUB( lua_pushnumber( lua_state_obj, 123.f ) );
+				PROCESS_SUB( lua_pushnumber( lua_state_obj, 12345.12345 ) );
 				PROCESS_SUB( lua_pushinteger( lua_state_obj, 7 ) );
 				PROCESS_SUB( lua_pushlstring( lua_state_obj, "dummy_text", 3 ) );
 				PROCESS_SUB( lua_pushstring( lua_state_obj, "dummy_text" ) );
