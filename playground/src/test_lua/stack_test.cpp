@@ -141,14 +141,14 @@ namespace stack_test
 
 
 
-	r2cm::iItem::TitleFuncT StackPrinterTest::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT PrintAllTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Stack Printer";
+			return "Stack : Print All";
 		};
 	}
-	r2cm::iItem::DoFuncT StackPrinterTest::GetDoFunction()
+	r2cm::iItem::DoFuncT PrintAllTest::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{
