@@ -26,6 +26,7 @@ r2cm::MenuUp StackMenu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 
 		ret->AddItem( 'q', stack_test::CopyTest::GetInstance() );
+		ret->AddItem( 'w', stack_test::RotateTest::GetInstance() );
 
 
 		ret->AddSplit();

@@ -459,4 +459,77 @@ namespace stack_test
 			return r2cm::eTestEndAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFuncT RotateTest::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "lua_rotate";
+		};
+	}
+	r2cm::iItem::DoFuncT RotateTest::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+
+			lua_State* lua_state_obj = luaL_newstate();
+
+
+			std::cout << r2::split;
+
+			{
+				test_lua_helper::FillDummyValue2Stack( lua_state_obj );
+				lua_settop( lua_state_obj, lua_gettop( lua_state_obj ) - 2 );
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Rotate( 1 to 2 )" << r2::linefeed2;
+
+				PROCESS_MAIN( lua_rotate( lua_state_obj, 1, 1 ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Rotate( 2 to 4 )" << r2::linefeed2;
+
+				PROCESS_MAIN( lua_rotate( lua_state_obj, 2, 2 ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Rotate( 4 to ?? )" << r2::linefeed2;
+
+				PROCESS_MAIN( lua_rotate( lua_state_obj, 4, 1 ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Rotate( 4 to ?? )" << r2::linefeed2;
+
+				PROCESS_MAIN( lua_rotate( lua_state_obj, 4, -1 ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2::linefeed;
+
+
+			lua_close( lua_state_obj );
+
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
 }

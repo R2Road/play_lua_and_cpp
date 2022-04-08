@@ -50,4 +50,11 @@ namespace stack_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class RotateTest : public r2cm::iItem, public r2::SingleTon<RotateTest>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }
