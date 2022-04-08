@@ -377,4 +377,86 @@ namespace stack_test
 			return r2cm::eTestEndAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFuncT CopyTest::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "lua_copy";
+		};
+	}
+	r2cm::iItem::DoFuncT CopyTest::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+
+			lua_State* lua_state_obj = luaL_newstate();
+
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Copy : 0 to 1" << r2::linefeed2;
+
+				PROCESS_MAIN( lua_copy( lua_state_obj, 0, 1 ) );
+
+				std::cout << r2::linefeed;
+
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_SUB( lua_pushstring( lua_state_obj, "dummy_string" ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_SUB( lua_pushvalue( lua_state_obj, 2 ) );
+
+				std::cout << r2::linefeed;
+
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Copy : 1 to 2" << r2::linefeed2;
+
+				PROCESS_MAIN( lua_copy( lua_state_obj, 1, 2 ) );
+
+				std::cout << r2::linefeed;
+
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Copy : 1 to 4 ????" << r2::linefeed2;
+
+				PROCESS_MAIN( lua_copy( lua_state_obj, 1, 4 ) );
+
+				std::cout << r2::linefeed;
+
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2::split;
+
+
+			lua_close( lua_state_obj );
+
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
 }

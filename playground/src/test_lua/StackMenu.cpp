@@ -23,6 +23,10 @@ r2cm::MenuUp StackMenu::Create( r2cm::Director& director )
 		ret->AddItem( '4', stack_test::SetTop::GetInstance() );
 		ret->AddItem( '5', stack_test::Pop::GetInstance() );
 
+		ret->AddLineFeed();
+
+		ret->AddItem( 'q', stack_test::CopyTest::GetInstance() );
+
 
 		ret->AddSplit();
 
