@@ -17,7 +17,7 @@ r2cm::MenuUp GlobalMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', global_test::Basic::GetInstance() );
+		ret->AddItem( '1', global_test::Basic_deprecated::GetInstance() );
 
 
 		ret->AddSplit();
