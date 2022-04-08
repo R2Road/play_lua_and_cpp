@@ -269,6 +269,16 @@ namespace stack_test
 
 			std::cout << r2::split;
 
+			{
+				PROCESS_MAIN( lua_settop( lua_state_obj, 2 ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_SUB( test_lua_helper::PrintAllStack( lua_state_obj ) );
+			}
+
+			std::cout << r2::split;
+
 
 			lua_close( lua_state_obj );
 
