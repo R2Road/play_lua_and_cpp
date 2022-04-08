@@ -25,4 +25,20 @@ namespace stack_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+
+
+	class SetTop : public r2cm::iItem, public r2::SingleTon<SetTop>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
+
+	class Pop : public r2cm::iItem, public r2::SingleTon<Pop>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }

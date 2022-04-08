@@ -4,7 +4,6 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
-#include "lua_stack_clear_test.h"
 #include "stack_test.h"
 
 #include "TestLuaRootMenu.h"
@@ -21,8 +20,8 @@ r2cm::MenuUp StackMenu::Create( r2cm::Director& director )
 		ret->AddItem( '1', stack_test::PushTest::GetInstance() );
 		ret->AddItem( '2', stack_test::GetTest::GetInstance() );
 		ret->AddItem( '3', stack_test::PrintAllTest::GetInstance() );
-		ret->AddItem( '4', lua_stack_clear_test::SetTop::GetInstance() );
-		ret->AddItem( '5', lua_stack_clear_test::Pop::GetInstance() );
+		ret->AddItem( '4', stack_test::SetTop::GetInstance() );
+		ret->AddItem( '5', stack_test::Pop::GetInstance() );
 
 
 		ret->AddSplit();
