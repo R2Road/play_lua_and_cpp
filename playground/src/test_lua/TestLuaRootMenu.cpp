@@ -23,6 +23,7 @@
 #include "step_PCall_03.h"
 #include "step_PCall_04_CallCPPFunction.h"
 
+#include "GlobalMenu.h"
 #include "MainMenu.h"
 #include "StackMenu.h"
 
@@ -68,9 +69,17 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 				return r2cm::eTestEndAction::None;
 			}
 		);
-		ret->AddItem( '5', luaL_dostring_test::Basic::GetInstance() );
-		ret->AddItem( '6', lua_getglobal_test::Basic::GetInstance() );
-		ret->AddItem( '7', lua_type_check_test::Basic::GetInstance() );
+		ret->AddItem(
+			'3'
+			, []()->const char* { return GlobalMenu::GetTitle(); }
+			, [&director]()->r2cm::eTestEndAction
+			{
+				director.Setup( GlobalMenu::Create( director ) );
+				return r2cm::eTestEndAction::None;
+			}
+		);
+		ret->AddItem( '4', luaL_dostring_test::Basic::GetInstance() );
+		ret->AddItem( '5', lua_type_check_test::Basic::GetInstance() );
 
 
 		ret->AddLineFeed();
