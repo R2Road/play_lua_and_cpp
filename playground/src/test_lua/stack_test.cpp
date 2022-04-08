@@ -35,6 +35,15 @@ namespace stack_test
 			std::cout << r2::split;
 
 			{
+				std::cout << r2::tab << "+ Top" << r2::linefeed2;
+
+				DECLARATION_MAIN( const auto stack_count = lua_gettop( lua_state_obj ) );
+				std::cout << r2::tab << "Stack Count : " << stack_count << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
 				std::cout << r2::tab << "+ Push( info : lua.h 233 line )" << r2::linefeed2;
 
 				PROCESS_MAIN( lua_pushnil( lua_state_obj ) );
@@ -49,6 +58,8 @@ namespace stack_test
 			std::cout << r2::split;
 
 			{
+				std::cout << r2::tab << "+ Top" << r2::linefeed2;
+
 				DECLARATION_MAIN( const auto stack_count = lua_gettop( lua_state_obj ) );
 				std::cout << r2::tab << "Stack Count : " << stack_count << r2::linefeed;
 			}
