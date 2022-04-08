@@ -1,5 +1,5 @@
 ﻿#include "pch.h"
-#include "lua_getglobal_test.h"
+#include "global_test.h"
 
 #include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"

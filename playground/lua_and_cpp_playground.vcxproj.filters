@@ -32,9 +32,6 @@
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pch.cpp" />
-    <ClCompile Include="src\test_lua\lua_getglobal_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_lua\lua_state_test.cpp">
       <Filter>test_lua\item</Filter>
     </ClCompile>
@@ -99,12 +96,12 @@
     <ClCompile Include="src\test_lua\GlobalMenu.cpp">
       <Filter>test_lua\menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_lua\global_test.cpp">
+      <Filter>test_lua\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
-    <ClInclude Include="src\test_lua\lua_getglobal_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_lua\lua_state_test.h">
       <Filter>test_lua\item</Filter>
     </ClInclude>
@@ -183,6 +180,9 @@
     </ClInclude>
     <ClInclude Include="src\test_lua\GlobalMenu.h">
       <Filter>test_lua\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_lua\global_test.h">
+      <Filter>test_lua\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
