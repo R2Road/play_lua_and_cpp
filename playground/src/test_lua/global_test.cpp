@@ -25,6 +25,11 @@ namespace global_test
 
 			std::cout << r2::split;
 
+			std::cout << "Note : lua_setglobal is Insert Variable 2 Lua Global Space" << r2::linefeed;
+			std::cout << "Note : lua_getglobal is Get And Push 2 Stack" << r2::linefeed;
+
+			std::cout << r2::split;
+
 			{
 				std::cout << r2::tab << "+ Ready" << r2::linefeed2;
 
@@ -91,7 +96,6 @@ namespace global_test
 
 			std::cout << r2::split;
 
-			std::cout << "Note : lua_getglobal is Find And Push 2 Stack" << r2::linefeed;
 			std::cout << "Note : lua_gettop returns the Stack Size" << r2::linefeed;
 			std::cout << "Note : -1 is Top of Stack" << r2::linefeed;
 
