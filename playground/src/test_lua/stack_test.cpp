@@ -380,6 +380,81 @@ namespace stack_test
 
 
 
+	r2cm::iItem::TitleFuncT PushValueTest::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "lua_pushvalue";
+		};
+	}
+	r2cm::iItem::DoFuncT PushValueTest::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			lua_State* lua_state_obj = luaL_newstate();
+
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "Note : 지정된 index의 값을 복사해서 push 한다." << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Push: 0 ???" << r2::linefeed2;
+
+				PROCESS_MAIN( lua_pushvalue( lua_state_obj, 0 ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Push: 2 ???" << r2::linefeed2;
+
+				PROCESS_MAIN( lua_settop( lua_state_obj, 0 ) );
+				PROCESS_MAIN( lua_pushvalue( lua_state_obj, 2 ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_SUB( lua_settop( lua_state_obj, 0 ) );
+				PROCESS_SUB( lua_pushnumber( lua_state_obj, 123 ) );
+				PROCESS_SUB( lua_pushnumber( lua_state_obj, 345 ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Push: 1, 0" << r2::linefeed2;
+
+				PROCESS_MAIN( lua_pushvalue( lua_state_obj, 1 ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( lua_pushvalue( lua_state_obj, 0 ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2::split;
+
+
+			lua_close( lua_state_obj );
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT CopyTest::GetTitleFunction() const
 	{
 		return []()->const char*

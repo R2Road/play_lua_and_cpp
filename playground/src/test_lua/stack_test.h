@@ -44,6 +44,13 @@ namespace stack_test
 
 
 
+	class PushValueTest : public r2cm::iItem, public r2::SingleTon<PushValueTest>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
+
 	class CopyTest : public r2cm::iItem, public r2::SingleTon<CopyTest>
 	{
 	public:
