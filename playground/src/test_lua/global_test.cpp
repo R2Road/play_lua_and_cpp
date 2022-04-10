@@ -101,9 +101,13 @@ namespace global_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
+			lua_State* lua_state_obj = luaL_newstate();
+
+
+
 			std::cout << r2::split;
 
-			DECLARATION_SUB( lua_State* lua_state_obj = luaL_newstate() );
+			std::cout << "Note : lua_setglobal 로 루아 전역 공간의 값 갱신" << r2::linefeed;
 
 			std::cout << r2::split;
 
@@ -130,9 +134,14 @@ namespace global_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Update" << r2::linefeed2;
-
 				PROCESS_MAIN( lua_settop( lua_state_obj, 0 ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Update" << r2::linefeed2;
+				
 				PROCESS_MAIN( lua_pushstring( lua_state_obj, "dummy_string 2" ) );
 				PROCESS_MAIN( lua_setglobal( lua_state_obj, "ds" ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
@@ -152,10 +161,9 @@ namespace global_test
 
 			std::cout << r2::split;
 
-			PROCESS_SUB( lua_close( lua_state_obj ) );
 
-			std::cout << r2::split;
 
+			lua_close( lua_state_obj );
 
 			return r2cm::eTestEndAction::Pause;
 		};
