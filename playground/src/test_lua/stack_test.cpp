@@ -18,7 +18,7 @@ namespace stack_test
 	{
 		return []()->const char*
 		{
-			return "Stack : Push";
+			return "Push";
 		};
 	}
 	r2cm::iItem::DoFuncT PushTest::GetDoFunction()
@@ -80,7 +80,7 @@ namespace stack_test
 	{
 		return []()->const char*
 		{
-			return "Stack : Get";
+			return "Get";
 		};
 	}
 	r2cm::iItem::DoFuncT GetTest::GetDoFunction()
@@ -160,7 +160,7 @@ namespace stack_test
 	{
 		return []()->const char*
 		{
-			return "Stack : Print All";
+			return "Print All";
 		};
 	}
 	r2cm::iItem::DoFuncT PrintAllTest::GetDoFunction()
