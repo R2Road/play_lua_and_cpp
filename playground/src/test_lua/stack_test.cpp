@@ -254,8 +254,8 @@ namespace stack_test
 			std::cout << r2::split;
 
 			{
-				PROCESS_MAIN( test_lua_helper::FillDummyValue2Stack( lua_state_obj ) );
-				PROCESS_SUB( test_lua_helper::PrintAllStack( lua_state_obj ) );
+				PROCESS_SUB( test_lua_helper::FillDummyValue2Stack( lua_state_obj ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
 			std::cout << r2::split;
@@ -265,7 +265,7 @@ namespace stack_test
 
 				std::cout << r2::linefeed;
 
-				PROCESS_SUB( test_lua_helper::PrintAllStack( lua_state_obj ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
 			std::cout << r2::split;
@@ -275,7 +275,7 @@ namespace stack_test
 
 				std::cout << r2::linefeed;
 
-				PROCESS_SUB( test_lua_helper::PrintAllStack( lua_state_obj ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
 			std::cout << r2::split;
@@ -285,7 +285,7 @@ namespace stack_test
 
 				std::cout << r2::linefeed;
 
-				PROCESS_SUB( test_lua_helper::PrintAllStack( lua_state_obj ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
 			std::cout << r2::split;
