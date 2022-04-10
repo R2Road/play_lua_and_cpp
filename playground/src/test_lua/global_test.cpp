@@ -25,7 +25,7 @@ namespace global_test
 
 			std::cout << r2::split;
 
-			std::cout << "Note : lua_setglobal 스택 1에 있는 값을 루아의 전역 공간에 값을 추가한다." << r2::linefeed;
+			std::cout << "Note : lua_setglobal 스택 1에 있는 값을 루아의 전역 공간에 추가한다." << r2::linefeed;
 			std::cout << "Note : lua_getglobal 루아의 전역 공간에서 값을 가져와 스택에 넣는다" << r2::linefeed;
 
 			std::cout << r2::split;
