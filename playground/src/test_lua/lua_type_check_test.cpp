@@ -7,14 +7,14 @@
 
 namespace lua_type_check_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT TypeCheck::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Type Check : lua_getglobal, lua_type, lua_isnumber...";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT TypeCheck::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{

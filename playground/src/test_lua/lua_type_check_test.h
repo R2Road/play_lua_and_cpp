@@ -5,7 +5,7 @@
 
 namespace lua_type_check_test
 {
-	class Basic : public r2cm::iItem, public r2::SingleTon<Basic>
+	class TypeCheck : public r2cm::iItem, public r2::SingleTon<TypeCheck>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
