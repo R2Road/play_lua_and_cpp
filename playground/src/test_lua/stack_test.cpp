@@ -89,61 +89,64 @@ namespace stack_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-
 			lua_State* lua_state_obj = luaL_newstate();
 
 
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ 0 : Stack Empty" << r2::linefeed2;
-
-				DECLARATION_MAIN( const int type = lua_type( lua_state_obj, 1 ) );
-				PROCESS_MAIN( test_lua_helper::PrintTypeName( type ) );
+				PROCESS_MAIN( lua_pushnil( lua_state_obj ) );
+				PROCESS_MAIN( lua_pushnumber( lua_state_obj, 12345.12345 ) );
+				PROCESS_MAIN( lua_pushinteger( lua_state_obj, 7 ) );
+				PROCESS_MAIN( lua_pushlstring( lua_state_obj, "dummy_text", 3 ) );
+				PROCESS_MAIN( lua_pushstring( lua_state_obj, "dummy_text" ) );
+				PROCESS_MAIN( lua_pushcclosure( lua_state_obj, &cclosure_test_function, 0 ) );
+				PROCESS_MAIN( lua_pushboolean( lua_state_obj, true ) );
 			}
 
 			std::cout << r2::split;
 
 			{
-				DECLARATION_MAIN( test_lua_helper::DoString_Silent( lua_state_obj, "a = 7 + 11" ) );
+				std::cout << r2::tab << "+ 0 : Type Check In Stack - lua_is..." << r2::linefeed2;
+
+				EXPECT_TRUE( lua_isnil( lua_state_obj, 1 ) );
+				EXPECT_TRUE( lua_isnumber( lua_state_obj, 2 ) );
+				EXPECT_TRUE( lua_isinteger( lua_state_obj, 3 ) );
+				EXPECT_TRUE( lua_isstring( lua_state_obj, 4 ) );
+				EXPECT_TRUE( lua_isstring( lua_state_obj, 5 ) );
+				EXPECT_TRUE( lua_iscfunction( lua_state_obj, 6 ) );
+				EXPECT_TRUE( lua_isboolean( lua_state_obj, 7 ) );
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ 1 : Get Type With Push 2 Stack" << r2::linefeed2;
+				std::cout << r2::tab << "+ 1 : Type Check In Stack - lua_type" << r2::linefeed2;
 
-				DECLARATION_MAIN( const int type = lua_getglobal( lua_state_obj, "a" ) );
-				PROCESS_MAIN( test_lua_helper::PrintTypeName( type ) );
+				EXPECT_EQ( LUA_TNIL, lua_type( lua_state_obj, 1 ) );
+				EXPECT_EQ( LUA_TNUMBER, lua_type( lua_state_obj, 2 ) );
+				EXPECT_EQ( LUA_TNUMBER, lua_type( lua_state_obj, 3 ) );
+				EXPECT_EQ( LUA_TSTRING, lua_type( lua_state_obj, 4 ) );
+				EXPECT_EQ( LUA_TSTRING, lua_type( lua_state_obj, 5 ) );
+				EXPECT_EQ( LUA_TFUNCTION, lua_type( lua_state_obj, 6 ) );
+				EXPECT_EQ( LUA_TBOOLEAN, lua_type( lua_state_obj, 7 ) );
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ 2 : Get Type In Stack" << r2::linefeed2;
+				std::cout << r2::tab << "+ 2 : Empty Stack" << r2::linefeed2;
 
-				DECLARATION_MAIN( const int type = lua_type( lua_state_obj, 1 ) );
-				PROCESS_MAIN( test_lua_helper::PrintTypeName( type ) );
-			}
+				DECLARATION_MAIN( const int type = lua_type( lua_state_obj, 8 ) );
+				std::cout << "type : " << type << r2::linefeed;
 
-			std::cout << r2::split;
-
-			{
-				std::cout << r2::tab << "+ 3 : Type Check In Stack" << r2::linefeed2;
-
-				EXPECT_FALSE( lua_isnil( lua_state_obj, 1 ) );
-				EXPECT_TRUE( lua_isnumber( lua_state_obj, 1 ) );
-				EXPECT_TRUE( lua_isstring( lua_state_obj, 1 ) );
-				EXPECT_FALSE( lua_isfunction( lua_state_obj, 1 ) );
-				EXPECT_TRUE( lua_isinteger( lua_state_obj, 1 ) );
-				EXPECT_FALSE( lua_isuserdata( lua_state_obj, 1 ) );
+				EXPECT_EQ( LUA_TNONE, type );
 			}
 
 			std::cout << r2::split;
 
 
 			lua_close( lua_state_obj );
-
 
 			return r2cm::eTestEndAction::Pause;
 		};
