@@ -5,7 +5,7 @@
 
 namespace global_test
 {
-	class Basic : public r2cm::iItem, public r2::SingleTon<Basic>
+	class Basic_1 : public r2cm::iItem, public r2::SingleTon<Basic_1>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

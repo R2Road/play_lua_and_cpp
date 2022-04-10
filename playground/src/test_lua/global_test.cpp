@@ -6,14 +6,14 @@
 
 namespace global_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Basic_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Basic";
+			return "Basic 1";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT Basic_1::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{
