@@ -13,7 +13,6 @@
 
 #include "luaL_openlibs_test.h"
 #include "luaL_dofile_test.h"
-#include "lua_table_test.h"
 
 #include "stack_test.h"
 #include "step_PCall_01.h"
@@ -24,6 +23,7 @@
 #include "GlobalMenu.h"
 #include "MainMenu.h"
 #include "StackMenu.h"
+#include "TableMenu.h"
 
 namespace
 {
@@ -85,11 +85,16 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 
 		ret->AddItem( 'q', luaL_openlibs_test::Basic::GetInstance() );
 		ret->AddItem( 'w', luaL_dofile_test::Basic::GetInstance() );
-
-		ret->AddItem( 'e', lua_table_test::GenerateTest::GetInstance() );
-		ret->AddItem( 'r', lua_table_test::Add2GlobalTest::GetInstance() );
-		ret->AddItem( 't', lua_table_test::Basic::GetInstance() );
-		ret->AddItem( 'y', lua_table_test::PushAndGetTest::GetInstance() );
+		ret->AddItem(
+			'e'
+			, []()->const char* { return TableMenu::GetTitle(); }
+			, [&director]()->r2cm::eTestEndAction
+			{
+				director.Setup( TableMenu::Create( director ) );
+				return r2cm::eTestEndAction::None;
+			}
+		);
+		
 
 
 		ret->AddSplit();
