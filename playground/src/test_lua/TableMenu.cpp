@@ -4,7 +4,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
-#include "lua_table_test.h"
+#include "table_test.h"
 
 #include "TestLuaRootMenu.h"
 
