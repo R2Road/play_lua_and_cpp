@@ -33,7 +33,7 @@ namespace luaL_dofile_test
 			{
 				std::cout << r2::tab << "+ Test 0 : 파일 없음" << r2::linefeed2;
 
-				EXPECT_NE( LUA_OK, luaL_dofile( lua_state_obj, "resources/step_DoFile_00.lua" ) );
+				EXPECT_NE( LUA_OK, luaL_dofile( lua_state_obj, "resources/luaL_dofile_test_00.lua" ) );
 
 				const auto error_message = lua_tostring( lua_state_obj, -1 );
 				std::cout << "error_message : " << error_message << r2::linefeed;
