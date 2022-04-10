@@ -107,7 +107,7 @@ namespace global_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ GetGlobal" << r2::linefeed2;
+				std::cout << r2::tab << "+ Get" << r2::linefeed2;
 
 				PROCESS_MAIN( lua_getglobal( lua_state_obj, "ds" ) );
 
@@ -119,7 +119,7 @@ namespace global_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Ready" << r2::linefeed2;
+				std::cout << r2::tab << "+ Update" << r2::linefeed2;
 
 				PROCESS_MAIN( lua_settop( lua_state_obj, 0 ) );
 				PROCESS_MAIN( lua_pushstring( lua_state_obj, "dummy_string 2" ) );
@@ -130,7 +130,7 @@ namespace global_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ GetGlobal" << r2::linefeed2;
+				std::cout << r2::tab << "+ Get" << r2::linefeed2;
 
 				PROCESS_MAIN( lua_getglobal( lua_state_obj, "ds" ) );
 
