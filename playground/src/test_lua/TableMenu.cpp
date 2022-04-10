@@ -17,10 +17,10 @@ r2cm::MenuUp TableMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', lua_table_test::GenerateTest::GetInstance() );
-		ret->AddItem( '2', lua_table_test::Add2GlobalTest::GetInstance() );
-		ret->AddItem( '3', lua_table_test::Basic::GetInstance() );
-		ret->AddItem( '4', lua_table_test::PushAndGetTest::GetInstance() );
+		ret->AddItem( '1', table_test::GenerateTest::GetInstance() );
+		ret->AddItem( '2', table_test::Add2GlobalTest::GetInstance() );
+		ret->AddItem( '3', table_test::Basic::GetInstance() );
+		ret->AddItem( '4', table_test::PushAndGetTest::GetInstance() );
 
 
 		ret->AddSplit();

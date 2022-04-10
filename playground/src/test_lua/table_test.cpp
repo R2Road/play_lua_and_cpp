@@ -4,7 +4,7 @@
 #include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
-namespace lua_table_test
+namespace table_test
 {
 	r2cm::iItem::TitleFuncT GenerateTest::GetTitleFunction() const
 	{

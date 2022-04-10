@@ -3,7 +3,7 @@
 #include "r2cm/r2cm_iItem.h"
 #include "r2/r2_Singleton.h"
 
-namespace lua_table_test
+namespace table_test
 {
 	class GenerateTest : public r2cm::iItem, public r2::SingleTon<GenerateTest>
 	{
