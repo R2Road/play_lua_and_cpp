@@ -39,6 +39,8 @@ namespace luaL_openlibs_test
 			std::cout << r2::split;
 
 			{
+				std::cout << r2::tab << "+ Test 1 : Library 로드 전" << r2::linefeed2;
+
 				PROCESS_MAIN( test_lua_helper::DoString( lua_state_obj, command ) );
 			}
 
@@ -51,6 +53,8 @@ namespace luaL_openlibs_test
 			std::cout << r2::split;
 
 			{
+				std::cout << r2::tab << "+ Test 1 : Library 로드 후" << r2::linefeed2;
+
 				PROCESS_MAIN( test_lua_helper::DoString( lua_state_obj, command ) );
 
 				std::cout << r2::linefeed;
