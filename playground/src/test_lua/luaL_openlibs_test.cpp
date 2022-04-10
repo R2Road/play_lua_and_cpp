@@ -28,9 +28,11 @@ namespace luaL_openlibs_test
 
 			lua_State* lua_state_obj = luaL_newstate();
 
-
 			std::cout << r2::split;
 
+			std::cout << "Note : luaL_openlibs - 함수들을 사용하려면 로드하자." << r2::linefeed;
+
+			std::cout << r2::split;
 
 			DECLARATION_MAIN( const char* command = "a = math.sin( math.pi * 0.5 )" );
 
