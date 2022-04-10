@@ -475,7 +475,7 @@ namespace stack_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Copy : 0 to 1" << r2::linefeed2;
+				std::cout << r2::tab << "+ Copy : 0 to 1 ????" << r2::linefeed2;
 
 				PROCESS_MAIN( lua_copy( lua_state_obj, 0, 1 ) );
 
@@ -488,16 +488,7 @@ namespace stack_test
 
 			{
 				PROCESS_SUB( lua_pushstring( lua_state_obj, "dummy_string" ) );
-				test_lua_helper::PrintAllStack( lua_state_obj );
-			}
-
-			std::cout << r2::split;
-
-			{
-				PROCESS_SUB( lua_pushvalue( lua_state_obj, 2 ) );
-
-				std::cout << r2::linefeed;
-
+				PROCESS_SUB( lua_pushnil( lua_state_obj ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
@@ -516,9 +507,9 @@ namespace stack_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Copy : 1 to 4 ????" << r2::linefeed2;
+				std::cout << r2::tab << "+ Copy : 2 to 3 ????" << r2::linefeed2;
 
-				PROCESS_MAIN( lua_copy( lua_state_obj, 1, 4 ) );
+				PROCESS_MAIN( lua_copy( lua_state_obj, 2, 3 ) );
 
 				std::cout << r2::linefeed;
 
