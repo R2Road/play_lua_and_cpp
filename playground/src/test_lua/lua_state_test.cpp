@@ -28,6 +28,11 @@ namespace lua_state_test
 
 			std::cout << r2::split;
 
+			std::cout << "Note : luaL_newstate - lua_State 생성." << r2::linefeed;
+			std::cout << "Note : lua_close - lua_State 제거." << r2::linefeed;
+
+			std::cout << r2::split;
+
 			DECLARATION_MAIN( lua_State* lua_state_obj = nullptr );
 
 			std::cout << r2::split;
@@ -36,7 +41,7 @@ namespace lua_state_test
 			// Make Lua State
 			//
 			{
-				std::cout << r2::tab << "+ Create Lua State" << r2::linefeed2;
+				std::cout << r2::tab << "+ Create" << r2::linefeed2;
 
 				PROCESS_MAIN( lua_state_obj = luaL_newstate() );
 			}
@@ -47,7 +52,7 @@ namespace lua_state_test
 			// Close Lua State
 			//
 			{
-				std::cout << r2::tab << "+ Close Lua State" << r2::linefeed2;
+				std::cout << r2::tab << "+ Close" << r2::linefeed2;
 
 				PROCESS_MAIN( lua_close( lua_state_obj ) );
 			}
