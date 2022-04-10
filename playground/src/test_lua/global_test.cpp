@@ -19,9 +19,9 @@ namespace global_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-			std::cout << r2::split;
+			lua_State* lua_state_obj = luaL_newstate();
 
-			DECLARATION_SUB( lua_State* lua_state_obj = luaL_newstate() );
+
 
 			std::cout << r2::split;
 
@@ -66,9 +66,20 @@ namespace global_test
 
 			std::cout << r2::split;
 
-			PROCESS_SUB( lua_close( lua_state_obj ) );
+			{
+				std::cout << r2::tab << "+ GetGlobal 은 타입을 반환한다." << r2::linefeed2;
+
+				DECLARATION_MAIN( const int type = lua_getglobal( lua_state_obj, "ds" ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( test_lua_helper::PrintTypeName( type ) );
+			}
 
 			std::cout << r2::split;
+
+
+			lua_close( lua_state_obj );
 
 
 			return r2cm::eTestEndAction::Pause;
