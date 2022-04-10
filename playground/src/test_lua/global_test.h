@@ -12,7 +12,7 @@ namespace global_test
 		DoFuncT GetDoFunction() override;
 	};
 
-	class Basic_deprecated : public r2cm::iItem, public r2::SingleTon<Basic_deprecated>
+	class Basic_2 : public r2cm::iItem, public r2::SingleTon<Basic_2>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

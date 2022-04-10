@@ -77,14 +77,14 @@ namespace global_test
 
 
 
-	r2cm::iItem::TitleFuncT Basic_deprecated::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Basic_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "lua_getglobal";
+			return "Basic 2";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic_deprecated::GetDoFunction()
+	r2cm::iItem::DoFuncT Basic_2::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{
