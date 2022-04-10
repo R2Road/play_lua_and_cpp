@@ -145,6 +145,15 @@ namespace stack_test
 
 			std::cout << r2::split;
 
+			{
+				std::cout << r2::tab << "+ 3 : Type Name" << r2::linefeed2;
+
+				DECLARATION_MAIN( const char* type_name = lua_typename( lua_state_obj, 4 ) );
+				std::cout << "type_name : " << type_name << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
 
 			lua_close( lua_state_obj );
 
