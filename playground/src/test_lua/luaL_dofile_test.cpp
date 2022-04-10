@@ -31,7 +31,7 @@ namespace luaL_dofile_test
 			// Test x 0
 			//
 			{
-				std::cout << r2::tab << "+ Test 0" << r2::linefeed2;
+				std::cout << r2::tab << "+ Test 0 : 파일 없음" << r2::linefeed2;
 
 				EXPECT_NE( LUA_OK, luaL_dofile( lua_state_obj, "resources/step_DoFile_00.lua" ) );
 
@@ -45,7 +45,7 @@ namespace luaL_dofile_test
 			// Test x 1
 			//
 			{
-				std::cout << r2::tab << "+ Test 1" << r2::linefeed2;
+				std::cout << r2::tab << "+ Test 1 : Script 에러" << r2::linefeed2;
 
 				EXPECT_NE( LUA_OK, luaL_dofile( lua_state_obj, "resources/luaL_dofile_test_01.lua" ) );
 				
