@@ -75,14 +75,14 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 		);
 		ret->AddItem( '4', luaL_dostring_test::Basic::GetInstance() );
 		ret->AddItem( '5', luaL_dofile_test::Basic::GetInstance() );
+		ret->AddItem( '6', luaL_openlibs_test::Basic::GetInstance() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'q', luaL_openlibs_test::Basic::GetInstance() );
 		ret->AddItem(
-			'w'
+			'q'
 			, []()->const char* { return TableMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
 			{
