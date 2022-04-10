@@ -35,9 +35,6 @@
     <ClCompile Include="src\test_lua\lua_state_test.cpp">
       <Filter>test_lua\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_lua\lua_type_check_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_lua\step_PCall_01.cpp">
       <Filter>test_lua\item</Filter>
     </ClCompile>
@@ -106,9 +103,6 @@
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\test_lua\lua_state_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\lua_type_check_test.h">
       <Filter>test_lua\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_lua\step_PCall_01.h">

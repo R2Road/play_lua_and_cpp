@@ -9,7 +9,6 @@
 
 #include "lua_state_test.h"
 #include "luaL_dostring_test.h"
-#include "lua_type_check_test.h"
 
 #include "luaL_openlibs_test.h"
 #include "luaL_dofile_test.h"
@@ -77,7 +76,6 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 		);
 		ret->AddItem( '4', luaL_dostring_test::Basic::GetInstance() );
 		ret->AddItem( '5', luaL_dofile_test::Basic::GetInstance() );
-		ret->AddItem( '6', lua_type_check_test::TypeCheck::GetInstance() );
 
 
 		ret->AddLineFeed();

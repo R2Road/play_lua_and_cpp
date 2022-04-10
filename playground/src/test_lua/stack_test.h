@@ -12,6 +12,13 @@ namespace stack_test
 		DoFuncT GetDoFunction() override;
 	};
 
+	class TypeCheck : public r2cm::iItem, public r2::SingleTon<TypeCheck>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
+
 	class GetTest : public r2cm::iItem, public r2::SingleTon<GetTest>
 	{
 	public:
