@@ -47,13 +47,15 @@ namespace luaL_openlibs_test
 			std::cout << r2::split;
 
 			{
+				std::cout << r2::tab << "+ Test 2 : Library 로드" << r2::linefeed2;
+
 				PROCESS_MAIN( luaL_openlibs( lua_state_obj ) );
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Test 1 : Library 로드 후" << r2::linefeed2;
+				std::cout << r2::tab << "+ Test 3 : Library 로드 후" << r2::linefeed2;
 
 				PROCESS_MAIN( test_lua_helper::DoString( lua_state_obj, command ) );
 
