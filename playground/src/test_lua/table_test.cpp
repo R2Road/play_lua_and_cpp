@@ -118,56 +118,6 @@ namespace table_test
 
 
 
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "Table : Basic";
-		};
-	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
-	{
-		return []()->r2cm::eTestEndAction
-		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
-
-			std::cout << r2::split;
-
-			DECLARATION_SUB( lua_State* lua_state_obj = luaL_newstate() );
-			DECLARATION_SUB( luaL_openlibs( lua_state_obj ) );
-
-			std::cout << r2::split;
-
-			{
-				std::cout << r2::tab << "+ Load Table" << r2::linefeed2;
-
-				PROCESS_MAIN( test_lua_helper::DoFile( lua_state_obj, "resources/step_GetTable_01.lua" ) );
-			}
-
-			std::cout << r2::split;
-
-			{
-				PROCESS_MAIN( lua_getglobal( lua_state_obj, "data" ) );
-				EXPECT_TRUE( lua_istable( lua_state_obj, 1 ) );
-
-				std::cout << r2::linefeed;
-
-				PROCESS_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
-			}
-
-			std::cout << r2::split;
-
-			PROCESS_SUB( lua_close( lua_state_obj ) );
-
-			std::cout << r2::split;
-
-
-			return r2cm::eTestEndAction::Pause;
-		};
-	}
-
-
-
 	r2cm::iItem::TitleFuncT PushAndGetTest::GetTitleFunction() const
 	{
 		return []()->const char*

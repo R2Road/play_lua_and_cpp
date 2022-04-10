@@ -19,13 +19,6 @@ namespace table_test
 		DoFuncT GetDoFunction() override;
 	};
 
-	class Basic : public r2cm::iItem, public r2::SingleTon<Basic>
-	{
-	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
-	};
-
 	class PushAndGetTest : public r2cm::iItem, public r2::SingleTon<PushAndGetTest>
 	{
 	public:
