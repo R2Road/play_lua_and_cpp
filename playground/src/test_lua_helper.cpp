@@ -68,6 +68,11 @@ namespace test_lua_helper
 			break;
 		}
 	}
+	void PrintLuaError( lua_State* lua_state_obj )
+	{
+		const auto error_message = lua_tostring( lua_state_obj, -1 );
+		std::cout << "error message : " << error_message << r2::linefeed;
+	}
 
 	bool DoString( lua_State* lua_state_obj, const char* command_string )
 	{
