@@ -9,6 +9,78 @@
 
 namespace r2lua_test
 {
+	r2cm::iItem::TitleFuncT ValueTest_1::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "r2lua::Value 1";
+		};
+	}
+	r2cm::iItem::DoFuncT ValueTest_1::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			lua_State* lua_state_obj = luaL_newstate();
+
+
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Bool" << r2::linefeed2;
+
+				DECLARATION_SUB( const bool primitive_b = true );
+				DECLARATION_MAIN( r2lua::Bool b = primitive_b );
+
+				std::cout << r2::linefeed;
+
+				EXPECT_EQ( r2lua::Type::Bool, b.GetType() );
+				EXPECT_EQ( primitive_b, b.GetValue() );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Number" << r2::linefeed2;
+
+				DECLARATION_SUB( const double primitive_d = 3.141592 );
+				DECLARATION_MAIN( r2lua::Number n = primitive_d );
+
+				std::cout << r2::linefeed;
+
+				EXPECT_EQ( r2lua::Type::Number, n.GetType() );
+				EXPECT_EQ( primitive_d, n.GetValue() );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ String" << r2::linefeed2;
+
+				DECLARATION_SUB( const char* primitive_s = "dummy_string" );
+				DECLARATION_MAIN( r2lua::String s = primitive_s );
+
+				std::cout << r2::linefeed;
+
+				EXPECT_EQ( r2lua::Type::String, s.GetType() );
+				EXPECT_EQ( primitive_s, s.GetValue() );
+			}
+
+			std::cout << r2::split;
+
+
+
+			lua_close( lua_state_obj );
+
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT ValueTest::GetTitleFunction() const
 	{
 		return []()->const char*
