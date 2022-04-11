@@ -84,48 +84,48 @@ namespace r2lua_test
 			std::cout << r2::split;
 
 			{
-				DECLARATION_MAIN( auto value = r2lua::GetValueFromStack( lua_state_obj, 1 ) );
-				DECLARATION_MAIN( auto num = std::get<r2lua::Number>( value ) );
+				DECLARATION_MAIN( auto variant_value = r2lua::GetValueFromStack( lua_state_obj, 1 ) );
+				DECLARATION_MAIN( auto num = std::get<r2lua::Number>( variant_value ) );
 
 				std::cout << r2::linefeed;
 
-				EXPECT_EQ( r2lua::Type::Number, r2lua::GetType( value ) );
+				EXPECT_EQ( r2lua::Type::Number, r2lua::GetType( variant_value ) );
 				EXPECT_EQ( 1, num.GetValue() );
 			}
 
 			std::cout << r2::split;
 
 			{
-				DECLARATION_MAIN( auto value = r2lua::GetValueFromStack( lua_state_obj, 2 ) );
-				DECLARATION_MAIN( auto num = std::get<r2lua::Number>( value ) );
+				DECLARATION_MAIN( auto variant_value = r2lua::GetValueFromStack( lua_state_obj, 2 ) );
+				DECLARATION_MAIN( auto num = std::get<r2lua::Number>( variant_value ) );
 
 				std::cout << r2::linefeed;
 
-				EXPECT_EQ( r2lua::Type::Number, r2lua::GetType( value ) );
+				EXPECT_EQ( r2lua::Type::Number, r2lua::GetType( variant_value ) );
 				EXPECT_EQ( 3.141592, num.GetValue() );
 			}
 
 			std::cout << r2::split;
 
 			{
-				DECLARATION_MAIN( auto value = r2lua::GetValueFromStack( lua_state_obj, 3 ) );
-				DECLARATION_MAIN( auto str = std::get<r2lua::String>( value ) );
+				DECLARATION_MAIN( auto variant_value = r2lua::GetValueFromStack( lua_state_obj, 3 ) );
+				DECLARATION_MAIN( auto str = std::get<r2lua::String>( variant_value ) );
 
 				std::cout << r2::linefeed;
 
-				EXPECT_EQ( r2lua::Type::String, r2lua::GetType( value ) );
+				EXPECT_EQ( r2lua::Type::String, r2lua::GetType( variant_value ) );
 				EXPECT_EQ( "test_string", str.GetValue() );
 			}
 
 			std::cout << r2::split;
 
 			{
-				DECLARATION_MAIN( auto value = r2lua::GetValueFromStack( lua_state_obj, 4 ) );
-				DECLARATION_MAIN( auto b = std::get<r2lua::Bool>( value ) );
+				DECLARATION_MAIN( auto variant_value = r2lua::GetValueFromStack( lua_state_obj, 4 ) );
+				DECLARATION_MAIN( auto b = std::get<r2lua::Bool>( variant_value ) );
 
 				std::cout << r2::linefeed;
 
-				EXPECT_EQ( r2lua::Type::Bool, r2lua::GetType( value ) );
+				EXPECT_EQ( r2lua::Type::Bool, r2lua::GetType( variant_value ) );
 				EXPECT_EQ( true, b.GetValue() );
 			}
 
