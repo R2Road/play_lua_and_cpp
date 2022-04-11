@@ -32,7 +32,7 @@ namespace table_test
 
 				std::cout << r2::linefeed;
 
-				PROCESS_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
 
 				std::cout << r2::linefeed;
 
@@ -78,7 +78,7 @@ namespace table_test
 
 				std::cout << r2::linefeed;
 
-				PROCESS_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
 			std::cout << r2::split;
@@ -90,7 +90,7 @@ namespace table_test
 
 				std::cout << r2::linefeed;
 
-				PROCESS_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
 			std::cout << r2::split;
@@ -102,7 +102,7 @@ namespace table_test
 
 				std::cout << r2::linefeed;
 
-				PROCESS_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
 			std::cout << r2::split;
@@ -139,7 +139,7 @@ namespace table_test
 
 			{
 				PROCESS_MAIN( lua_newtable( lua_state_obj ) );
-				PROCESS_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
 			std::cout << r2::split;
@@ -152,7 +152,7 @@ namespace table_test
 
 				std::cout << r2::linefeed;
 
-				PROCESS_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
 			std::cout << r2::split;
@@ -164,7 +164,7 @@ namespace table_test
 
 				std::cout << r2::linefeed;
 
-				PROCESS_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
 			std::cout << r2::split;
@@ -177,7 +177,7 @@ namespace table_test
 
 				std::cout << r2::linefeed;
 
-				PROCESS_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
 			std::cout << r2::split;
