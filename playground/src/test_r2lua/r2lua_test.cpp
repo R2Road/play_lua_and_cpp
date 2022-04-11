@@ -100,11 +100,9 @@ namespace r2lua_test
 
 			std::cout << r2::split;
 
-			std::cout << r2::tab << "+ 정의" << r2::linefeed2;
-
-			DECLARATION_MAIN( r2lua::Bool b = true );
-			DECLARATION_MAIN( r2lua::Number n = 3.141592 );
-			DECLARATION_MAIN( r2lua::String s = "dummy_string" );
+			DECLARATION_SUB( r2lua::Bool b = true );
+			DECLARATION_SUB( r2lua::Number n = 3.141592 );
+			DECLARATION_SUB( r2lua::String s = "dummy_string" );
 			DECLARATION_MAIN( r2lua::Value v; );
 
 			std::cout << r2::split;
