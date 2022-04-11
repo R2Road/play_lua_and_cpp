@@ -315,7 +315,7 @@ namespace r2lua_test
 	{
 		return []()->const char*
 		{
-			return "GetValuesFromStack";
+			return "r2lua::GetValuesFromStack";
 		};
 	}
 	r2cm::iItem::DoFuncT GetValuesFromStackTest::GetDoFunction()
