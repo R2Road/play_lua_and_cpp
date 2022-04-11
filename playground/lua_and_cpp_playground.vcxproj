@@ -43,7 +43,7 @@
     <ClCompile Include="src\test_lua\TestLuaRootMenu.cpp" />
     <ClCompile Include="src\test_lua\luaL_dofile_test.cpp" />
     <ClCompile Include="src\test_lua\table_test.cpp" />
-    <ClCompile Include="src\test_lua\step_PCall_01.cpp" />
+    <ClCompile Include="src\test_lua\function_cpp2lua_test.cpp" />
     <ClCompile Include="src\test_lua\step_PCall_02.cpp" />
     <ClCompile Include="src\test_lua\step_PCall_03.cpp" />
     <ClCompile Include="src\test_lua\step_PCall_04_CallCPPFunction.cpp" />
@@ -74,7 +74,7 @@
     <ClInclude Include="src\test_lua\TestLuaRootMenu.h" />
     <ClInclude Include="src\test_lua\luaL_dofile_test.h" />
     <ClInclude Include="src\test_lua\table_test.h" />
-    <ClInclude Include="src\test_lua\step_PCall_01.h" />
+    <ClInclude Include="src\test_lua\function_cpp2lua_test.h" />
     <ClInclude Include="src\test_lua\step_PCall_02.h" />
     <ClInclude Include="src\test_lua\step_PCall_03.h" />
     <ClInclude Include="src\test_lua\step_PCall_04_CallCPPFunction.h" />
