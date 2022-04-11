@@ -81,14 +81,14 @@ namespace r2lua_test
 
 
 
-	r2cm::iItem::TitleFuncT ValueTest::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT ValueTest_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "r2lua::Value";
 		};
 	}
-	r2cm::iItem::DoFuncT ValueTest::GetDoFunction()
+	r2cm::iItem::DoFuncT ValueTest_2::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{

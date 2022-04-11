@@ -12,7 +12,7 @@ namespace r2lua_test
 		DoFuncT GetDoFunction() override;
 	};
 
-	class ValueTest : public r2cm::iItem, public r2::SingleTon<ValueTest>
+	class ValueTest_2 : public r2cm::iItem, public r2::SingleTon<ValueTest_2>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
