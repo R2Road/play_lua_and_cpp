@@ -183,6 +183,8 @@ namespace r2lua_test
 			std::cout << r2::split;
 
 			int index = 0;
+			SHOW_CODE( for( const auto& v : values ) );
+			std::cout << r2::linefeed;
 			for( const auto& v : values )
 			{
 				std::cout << "index : " << index << r2::linefeed;
