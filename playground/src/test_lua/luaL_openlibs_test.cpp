@@ -66,7 +66,7 @@ namespace luaL_openlibs_test
 
 				std::cout << r2::linefeed;
 
-				DECLARATION_MAIN( const auto a = static_cast<float>( lua_tonumber( lua_state_obj, -1 ) ) );
+				DECLARATION_MAIN( const auto a = lua_tonumber( lua_state_obj, -1 ) );
 				std::cout << "a : " << a << r2::linefeed;
 			}
 
