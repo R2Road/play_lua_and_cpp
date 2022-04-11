@@ -5,7 +5,7 @@
 
 namespace function_cpp2lua_test
 {
-	class Basic : public r2cm::iItem, public r2::SingleTon<Basic>
+	class Argument2 : public r2cm::iItem, public r2::SingleTon<Argument2>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

@@ -6,14 +6,14 @@
 
 namespace function_cpp2lua_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Argument2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "function cpp2lua";
+			return "function cpp2lua : Argument 2";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT Argument2::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{
