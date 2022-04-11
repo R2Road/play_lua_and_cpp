@@ -5,7 +5,7 @@
 
 namespace r2lua
 {
-	Type GetType( const Value& v )
+	eType GetType( const Value& v )
 	{
 		return std::visit(
 			[]( const auto& x )

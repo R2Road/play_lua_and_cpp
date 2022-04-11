@@ -14,7 +14,7 @@
 
 namespace r2lua
 {
-	enum class Type
+	enum class eType
 	{
 		Bool,
 		Number,
@@ -29,7 +29,7 @@ namespace r2lua
 		Bool() : mValue( false ) {}
 		Bool( bool boolean ) : mValue( boolean ) {}
 
-		static Type GetType() { return Type::Bool; }
+		static eType GetType() { return eType::Bool; }
 		bool GetValue() const { return mValue; }
 
 	private:
@@ -41,7 +41,7 @@ namespace r2lua
 		Number() : mValue( -1 ) {}
 		Number( lua_Number num ) : mValue( num ) {}
 
-		static Type GetType() { return Type::Number; }
+		static eType GetType() { return eType::Number; }
 		lua_Number GetValue() const { return mValue; }
 
 	private:
@@ -53,7 +53,7 @@ namespace r2lua
 		String() : mValue( "Invalid String" ) {}
 		String( const char* const str ) : mValue( str ) {}
 
-		static Type GetType() { return Type::String; }
+		static eType GetType() { return eType::String; }
 		std::string_view GetValue() const { return mValue; }
 
 	private:
@@ -66,7 +66,7 @@ namespace r2lua
 
 
 
-	Type GetType( const Value& v );
+	eType GetType( const Value& v );
 
 	//
 	// # 20220323 - by R2

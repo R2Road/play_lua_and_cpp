@@ -36,7 +36,7 @@ namespace r2lua_test
 
 				std::cout << r2::linefeed;
 
-				EXPECT_EQ( r2lua::Type::Bool, b.GetType() );
+				EXPECT_EQ( r2lua::eType::Bool, b.GetType() );
 				EXPECT_EQ( primitive_b, b.GetValue() );
 			}
 
@@ -50,7 +50,7 @@ namespace r2lua_test
 
 				std::cout << r2::linefeed;
 
-				EXPECT_EQ( r2lua::Type::Number, n.GetType() );
+				EXPECT_EQ( r2lua::eType::Number, n.GetType() );
 				EXPECT_EQ( primitive_d, n.GetValue() );
 			}
 
@@ -64,7 +64,7 @@ namespace r2lua_test
 
 				std::cout << r2::linefeed;
 
-				EXPECT_EQ( r2lua::Type::String, s.GetType() );
+				EXPECT_EQ( r2lua::eType::String, s.GetType() );
 				EXPECT_EQ( primitive_s, s.GetValue() );
 			}
 
@@ -85,7 +85,7 @@ namespace r2lua_test
 	{
 		return []()->const char*
 		{
-			return "r2lua::Value";
+			return "r2lua::Value 2";
 		};
 	}
 	r2cm::iItem::DoFuncT ValueTest_2::GetDoFunction()
@@ -114,7 +114,7 @@ namespace r2lua_test
 
 				std::cout << r2::linefeed;
 
-				EXPECT_EQ( r2lua::Type::Bool, r2lua::GetType( v ) );
+				EXPECT_EQ( r2lua::eType::Bool, r2lua::GetType( v ) );
 
 				std::cout << r2::linefeed;
 
@@ -131,7 +131,7 @@ namespace r2lua_test
 
 				std::cout << r2::linefeed;
 
-				EXPECT_EQ( r2lua::Type::Number, r2lua::GetType( v ) );
+				EXPECT_EQ( r2lua::eType::Number, r2lua::GetType( v ) );
 
 				std::cout << r2::linefeed;
 
@@ -148,7 +148,7 @@ namespace r2lua_test
 
 				std::cout << r2::linefeed;
 
-				EXPECT_EQ( r2lua::Type::String, r2lua::GetType( v ) );
+				EXPECT_EQ( r2lua::eType::String, r2lua::GetType( v ) );
 
 				std::cout << r2::linefeed;
 
@@ -253,7 +253,7 @@ namespace r2lua_test
 
 				std::cout << r2::linefeed;
 
-				EXPECT_EQ( r2lua::Type::Number, r2lua::GetType( variant_value ) );
+				EXPECT_EQ( r2lua::eType::Number, r2lua::GetType( variant_value ) );
 				EXPECT_EQ( 1, real_value.GetValue() );
 			}
 
@@ -267,7 +267,7 @@ namespace r2lua_test
 
 				std::cout << r2::linefeed;
 
-				EXPECT_EQ( r2lua::Type::Number, r2lua::GetType( variant_value ) );
+				EXPECT_EQ( r2lua::eType::Number, r2lua::GetType( variant_value ) );
 				EXPECT_EQ( 3.141592, real_value.GetValue() );
 			}
 
@@ -281,7 +281,7 @@ namespace r2lua_test
 
 				std::cout << r2::linefeed;
 
-				EXPECT_EQ( r2lua::Type::String, r2lua::GetType( variant_value ) );
+				EXPECT_EQ( r2lua::eType::String, r2lua::GetType( variant_value ) );
 				EXPECT_EQ( "test_string", real_value.GetValue() );
 			}
 
@@ -295,7 +295,7 @@ namespace r2lua_test
 
 				std::cout << r2::linefeed;
 
-				EXPECT_EQ( r2lua::Type::Bool, r2lua::GetType( variant_value ) );
+				EXPECT_EQ( r2lua::eType::Bool, r2lua::GetType( variant_value ) );
 				EXPECT_EQ( true, real_value.GetValue() );
 			}
 
@@ -354,21 +354,21 @@ namespace r2lua_test
 				DECLARATION_MAIN( auto value_type = r2lua::GetType( v ) );
 				switch( value_type )
 				{
-				case r2lua::Type::Bool:
+				case r2lua::eType::Bool:
 				{
 					DECLARATION_MAIN( const auto& b = r2lua::GetValue<r2lua::Bool>( v ) );
 					std::cout << "b : " << b.GetValue() << r2::linefeed;
 				}
 				break;
 
-				case r2lua::Type::Number:
+				case r2lua::eType::Number:
 				{
 					DECLARATION_MAIN( const auto& num = r2lua::GetValue<r2lua::Number>( v ) );
 					std::cout << "num : " << num.GetValue() << r2::linefeed;
 				}
 				break;
 
-				case r2lua::Type::String:
+				case r2lua::eType::String:
 				{
 					DECLARATION_MAIN( const auto& str = r2lua::GetValue<r2lua::String>( v ) );
 					std::cout << "str : " << str.GetValue() << r2::linefeed;
