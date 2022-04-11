@@ -26,8 +26,8 @@ namespace function_cpp2lua_test
 
 			std::cout << r2::split;
 
-			std::cout << r2::tab << "+ Ready : Add Function : Sum( arg1, arg2 )" << r2::linefeed2;
-			PROCESS_MAIN( test_lua_helper::DoFile( lua_state_obj, "resources/function_cpp2lua_test_01.lua" ) );
+			std::cout << r2::tab << "+ Add Function : Sum( arg1, arg2 )" << r2::linefeed2;
+			PROCESS_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/function_cpp2lua_test_01.lua" ) );
 			DECLARATION_MAIN( const int arg_count = 2 );
 
 			std::cout << r2::split;
@@ -36,12 +36,12 @@ namespace function_cpp2lua_test
 				std::cout << r2::tab << "+ Ready With Arg x 1" << r2::linefeed2;
 
 				PROCESS_MAIN( lua_getglobal( lua_state_obj, "Sum" ) );
-				EXPECT_TRUE( lua_isfunction( lua_state_obj, -1 ) );
+				PROCESS_MAIN( lua_pushnumber( lua_state_obj, 123 ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
 
 				std::cout << r2::linefeed;
 
-				PROCESS_MAIN( lua_pushnumber( lua_state_obj, 123 ) );
-				test_lua_helper::PrintAllStack( lua_state_obj );
+				EXPECT_TRUE( lua_isfunction( lua_state_obj, 1 ) );
 			}
 
 			std::cout << r2::split;
@@ -58,7 +58,7 @@ namespace function_cpp2lua_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Ready With Arg x 1" << r2::linefeed2;
+				std::cout << r2::tab << "+ Ready With Arg x 2" << r2::linefeed2;
 
 				PROCESS_MAIN( lua_getglobal( lua_state_obj, "Sum" ) );
 				PROCESS_MAIN( lua_pushnumber( lua_state_obj, 123 ) );
