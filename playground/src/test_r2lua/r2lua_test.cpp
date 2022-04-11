@@ -414,14 +414,27 @@ namespace r2lua_test
 			std::cout << r2::split;
 
 			{
+				const char* command_4_add_function =
+							"function CallTest( arg1, arg2 )"
+					"\n"		"print( '[LUA] Call - CallTest - ' .. arg1 .. ', ' .. arg2 )"
+					"\n"		"return arg1 + arg2"
+					"\n"	"end";
+
+				SHOW_CODE( "function CallTest( arg1, arg2 )" );
+				SHOW_CODE( "	print( '[LUA] Call - CallTest - ' .. arg1 .. ', ' .. arg2 )" );
+				SHOW_CODE( "	return arg1 + arg2" );
+				SHOW_CODE( "end" );
+
+				std::cout << r2::linefeed;
+
 				PROCESS_MAIN( luaL_openlibs( lua_state_obj ) );
-				PROCESS_MAIN( test_lua_helper::DoFile( lua_state_obj, "resources/step_PCall_01.lua" ) );
+				PROCESS_MAIN( test_lua_helper::DoString( lua_state_obj, command_4_add_function ) );
 			}
 
 			std::cout << r2::split;
 
 			{
-				PROCESS_MAIN( r2lua::Call( lua_state_obj, "TestFunction", 3.141592, 7770 ) );
+				PROCESS_MAIN( r2lua::Call( lua_state_obj, "CallTest", 3.141592, 7770 ) );
 
 				std::cout << r2::linefeed;
 
