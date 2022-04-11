@@ -13,7 +13,6 @@
 #include "luaL_openlibs_test.h"
 
 #include "function_cpp2lua_test.h"
-#include "step_PCall_03.h"
 #include "step_PCall_04_CallCPPFunction.h"
 
 #include "GlobalMenu.h"
@@ -27,7 +26,6 @@ namespace
 	{
 		std::stringstream ss;
 		ss << "+ Menu" << r2::linefeed;
-		ss << "E : step_PCall_03" << r2::linefeed;
 		ss << "R : step_PCall_04_CallCPPFunction" << r2::linefeed;
 
 		ss << r2::linefeed << "Press Number" << r2::linefeed;
@@ -117,9 +115,6 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 
 					switch( input )
 					{
-					case 'e':
-						step::PCall_03();
-						break;
 					case 'r':
 						step::PCall_04_CallCPPFunction();
 						break;
