@@ -114,11 +114,12 @@ namespace r2lua_test
 
 				std::cout << r2::linefeed;
 
-				DECLARATION_MAIN( const auto real_type = r2lua::GetType( v ) );
-				std::cout << r2::tab << "static_cast<int>( real_type ) : " << static_cast<int>( real_type ) << r2::linefeed2;
+				EXPECT_EQ( r2lua::Type::Bool, r2lua::GetType( v ) );
 
-				DECLARATION_MAIN( const auto real_value = r2lua::GetValue<r2lua::Bool>( v ) );
-				std::cout << r2::tab << "real_value.GetValue() : " << real_value.GetValue() << r2::linefeed2;
+				std::cout << r2::linefeed;
+
+				DECLARATION_MAIN( const auto r2lua_value = r2lua::GetValue<r2lua::Bool>( v ) );
+				std::cout << r2::tab << "real_value.GetValue() : " << r2lua_value.GetValue() << r2::linefeed2;
 			}
 
 			std::cout << r2::split;
@@ -130,11 +131,12 @@ namespace r2lua_test
 
 				std::cout << r2::linefeed;
 
-				DECLARATION_MAIN( const auto real_type = r2lua::GetType( v ) );
-				std::cout << r2::tab << "static_cast<int>( real_type ) : " << static_cast<int>( real_type ) << r2::linefeed2;
+				EXPECT_EQ( r2lua::Type::Number, r2lua::GetType( v ) );
 
-				DECLARATION_MAIN( const auto real_value = r2lua::GetValue<r2lua::Number>( v ) );
-				std::cout << r2::tab << "real_value.GetValue() : " << real_value.GetValue() << r2::linefeed2;
+				std::cout << r2::linefeed;
+
+				DECLARATION_MAIN( const auto r2lua_value = r2lua::GetValue<r2lua::Number>( v ) );
+				std::cout << r2::tab << "real_value.GetValue() : " << r2lua_value.GetValue() << r2::linefeed2;
 			}
 
 			std::cout << r2::split;
@@ -146,11 +148,12 @@ namespace r2lua_test
 
 				std::cout << r2::linefeed;
 
-				DECLARATION_MAIN( const auto real_type = r2lua::GetType( v ) );
-				std::cout << r2::tab << "static_cast<int>( real_type ) : " << static_cast<int>( real_type ) << r2::linefeed2;
+				EXPECT_EQ( r2lua::Type::String, r2lua::GetType( v ) );
 
-				DECLARATION_MAIN( const auto real_value = r2lua::GetValue<r2lua::String>( v ) );
-				std::cout << r2::tab << "real_value.GetValue() : " << real_value.GetValue() << r2::linefeed2;
+				std::cout << r2::linefeed;
+
+				DECLARATION_MAIN( const auto r2lua_value = r2lua::GetValue<r2lua::String>( v ) );
+				std::cout << r2::tab << "real_value.GetValue() : " << r2lua_value.GetValue() << r2::linefeed2;
 			}
 
 			std::cout << r2::split;
