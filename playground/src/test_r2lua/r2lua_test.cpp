@@ -78,12 +78,14 @@ namespace r2lua_test
 
 			{
 				PROCESS_SUB( r2lua::PushArgs( lua_state_obj, 1, 3.141592, "test_string", true ) );
-				PROCESS_SUB( test_lua_helper::PrintAllStack( lua_state_obj ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
 			std::cout << r2::split;
 
 			{
+				std::cout << r2::tab << "+ Number" << r2::linefeed2;
+
 				DECLARATION_MAIN( auto variant_value = r2lua::GetValueFromStack( lua_state_obj, 1 ) );
 				DECLARATION_MAIN( auto real_value = std::get<r2lua::Number>( variant_value ) );
 
@@ -96,6 +98,8 @@ namespace r2lua_test
 			std::cout << r2::split;
 
 			{
+				std::cout << r2::tab << "+ Number" << r2::linefeed2;
+
 				DECLARATION_MAIN( auto variant_value = r2lua::GetValueFromStack( lua_state_obj, 2 ) );
 				DECLARATION_MAIN( auto real_value = std::get<r2lua::Number>( variant_value ) );
 
@@ -108,6 +112,8 @@ namespace r2lua_test
 			std::cout << r2::split;
 
 			{
+				std::cout << r2::tab << "+ String" << r2::linefeed2;
+
 				DECLARATION_MAIN( auto variant_value = r2lua::GetValueFromStack( lua_state_obj, 3 ) );
 				DECLARATION_MAIN( auto real_value = std::get<r2lua::String>( variant_value ) );
 
@@ -120,6 +126,8 @@ namespace r2lua_test
 			std::cout << r2::split;
 
 			{
+				std::cout << r2::tab << "+ Bool" << r2::linefeed2;
+
 				DECLARATION_MAIN( auto variant_value = r2lua::GetValueFromStack( lua_state_obj, 4 ) );
 				DECLARATION_MAIN( auto real_value = std::get<r2lua::Bool>( variant_value ) );
 
