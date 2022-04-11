@@ -6,6 +6,67 @@
 
 namespace function_cpp2lua_test
 {
+	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "function cpp2lua : Basic";
+		};
+	}
+	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			lua_State* lua_state_obj = luaL_newstate();
+			luaL_openlibs( lua_state_obj );
+
+
+
+			std::cout << r2::split;
+
+			std::cout << r2::tab << "+ Add Function" << r2::linefeed2;
+			DECLARATION_MAIN( const int argument_count = 0 );
+			DECLARATION_MAIN( const char* command_arg0_function = "function Test() print( 'Call : TestFunction()' ) end" );
+			PROCESS_MAIN( test_lua_helper::DoString_Silent( lua_state_obj, command_arg0_function ) );
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Ready : lua 전역 공간에서 함수를 가져와 스택에 넣는다." << r2::linefeed2;
+
+				PROCESS_MAIN( lua_getglobal( lua_state_obj, "Test" ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
+
+				std::cout << r2::linefeed;
+
+				EXPECT_TRUE( lua_isfunction( lua_state_obj, 1 ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Call" << r2::linefeed2;
+
+				EXPECT_EQ( LUA_OK, lua_pcall( lua_state_obj, argument_count, LUA_MULTRET, 0 ) );
+
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2::split;
+
+
+
+			lua_close( lua_state_obj );
+
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT Argument2::GetTitleFunction() const
 	{
 		return []()->const char*

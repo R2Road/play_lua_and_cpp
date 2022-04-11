@@ -95,7 +95,8 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'a', function_cpp2lua_test::Argument2::GetInstance() );
+		ret->AddItem( 'a', function_cpp2lua_test::Basic::GetInstance() );
+		ret->AddItem( 's', function_cpp2lua_test::Argument2::GetInstance() );
 		
 
 
