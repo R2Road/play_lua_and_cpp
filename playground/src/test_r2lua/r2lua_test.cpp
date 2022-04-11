@@ -391,4 +391,51 @@ namespace r2lua_test
 			return r2cm::eTestEndAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFuncT CallTest::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "r2lua::Call";
+		};
+	}
+	r2cm::iItem::DoFuncT CallTest::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			lua_State* lua_state_obj = luaL_newstate();
+
+			
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( luaL_openlibs( lua_state_obj ) );
+				PROCESS_MAIN( test_lua_helper::DoFile( lua_state_obj, "resources/step_PCall_01.lua" ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( r2lua::Call( lua_state_obj, "TestFunction", 3.141592, 7770 ) );
+
+				std::cout << r2::linefeed;
+
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2::split;
+
+
+
+			lua_close( lua_state_obj );
+
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
 }

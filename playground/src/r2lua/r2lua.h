@@ -116,4 +116,16 @@ namespace r2lua
 
 	using ValueVector = std::vector<r2lua::Value>;
 	r2lua::ValueVector GetValuesFromStack( lua_State* const lua_state_obj );
+
+
+
+	template<typename... Args>
+	ValueVector Call( lua_State* const lua_state_obj, const char* const function_name, Args... args )
+	{
+		lua_getglobal( lua_state_obj, function_name );
+		PushArgs( lua_state_obj, args... );
+		lua_pcall( lua_state_obj, sizeof...( args ), LUA_MULTRET, 0 );
+
+		return GetValuesFromStack( lua_state_obj );
+	}
 }
