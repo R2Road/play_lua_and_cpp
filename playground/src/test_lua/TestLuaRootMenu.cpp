@@ -90,6 +90,12 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 				return r2cm::eTestEndAction::None;
 			}
 		);
+
+
+		ret->AddLineFeed();
+
+
+		ret->AddItem( 'a', function_cpp2lua_test::Basic::GetInstance() );
 		
 
 
@@ -112,9 +118,6 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 
 					switch( input )
 					{
-					case 'q':
-						step::PCall_01();
-						break;
 					case 'w':
 						step::PCall_02();
 						break;
