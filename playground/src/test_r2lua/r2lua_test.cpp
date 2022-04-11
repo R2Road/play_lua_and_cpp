@@ -9,6 +9,93 @@
 
 namespace r2lua_test
 {
+	r2cm::iItem::TitleFuncT ValueTest::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "r2lua::Value";
+		};
+	}
+	r2cm::iItem::DoFuncT ValueTest::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			lua_State* lua_state_obj = luaL_newstate();
+
+
+
+			std::cout << r2::split;
+
+			std::cout << r2::tab << "+ 정의" << r2::linefeed2;
+
+			DECLARATION_MAIN( r2lua::Bool b = true );
+			DECLARATION_MAIN( r2lua::Number n = 3.141592 );
+			DECLARATION_MAIN( r2lua::String s = "dummy_string" );
+			DECLARATION_MAIN( r2lua::Value v; );
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Value <> Bool" << r2::linefeed2;
+
+				PROCESS_MAIN( v = b );
+
+				std::cout << r2::linefeed;
+
+				DECLARATION_MAIN( const auto real_type = r2lua::GetType( v ) );
+				std::cout << r2::tab << "static_cast<int>( real_type ) : " << static_cast<int>( real_type ) << r2::linefeed2;
+
+				DECLARATION_MAIN( const auto real_value = r2lua::GetValue<r2lua::Bool>( v ) );
+				std::cout << r2::tab << "real_value.GetValue() : " << real_value.GetValue() << r2::linefeed2;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Value <> Number" << r2::linefeed2;
+
+				PROCESS_MAIN( v = n );
+
+				std::cout << r2::linefeed;
+
+				DECLARATION_MAIN( const auto real_type = r2lua::GetType( v ) );
+				std::cout << r2::tab << "static_cast<int>( real_type ) : " << static_cast<int>( real_type ) << r2::linefeed2;
+
+				DECLARATION_MAIN( const auto real_value = r2lua::GetValue<r2lua::Number>( v ) );
+				std::cout << r2::tab << "real_value.GetValue() : " << real_value.GetValue() << r2::linefeed2;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Value <> String" << r2::linefeed2;
+
+				PROCESS_MAIN( v = s );
+
+				std::cout << r2::linefeed;
+
+				DECLARATION_MAIN( const auto real_type = r2lua::GetType( v ) );
+				std::cout << r2::tab << "static_cast<int>( real_type ) : " << static_cast<int>( real_type ) << r2::linefeed2;
+
+				DECLARATION_MAIN( const auto real_value = r2lua::GetValue<r2lua::String>( v ) );
+				std::cout << r2::tab << "real_value.GetValue() : " << real_value.GetValue() << r2::linefeed2;
+			}
+
+			std::cout << r2::split;
+
+
+
+			lua_close( lua_state_obj );
+
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT PushTest::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -56,6 +143,8 @@ namespace r2lua_test
 			return r2cm::eTestEndAction::Pause;
 		};
 	}
+
+
 
 	r2cm::iItem::TitleFuncT GetValueFromStackTest::GetTitleFunction() const
 	{
