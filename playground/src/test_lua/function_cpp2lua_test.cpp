@@ -26,7 +26,7 @@ namespace function_cpp2lua_test
 
 			std::cout << r2::split;
 
-			std::cout << r2::tab << "+ Add Function" << r2::linefeed2;
+			std::cout << r2::tab << "+ Add Function : Test()" << r2::linefeed2;
 			DECLARATION_MAIN( const int argument_count = 0 );
 			DECLARATION_MAIN( const char* command_arg0_function = "function Test() print( 'Call : TestFunction()' ) end" );
 			PROCESS_MAIN( test_lua_helper::DoString_Silent( lua_state_obj, command_arg0_function ) );
