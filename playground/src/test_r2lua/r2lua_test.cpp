@@ -22,9 +22,9 @@ namespace r2lua_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-			std::cout << r2::split;
+			lua_State* lua_state_obj = luaL_newstate();
 
-			DECLARATION_SUB( lua_State* lua_state_obj = luaL_newstate() );
+
 
 			std::cout << r2::split;
 
@@ -48,7 +48,9 @@ namespace r2lua_test
 
 			std::cout << r2::split;
 
-			PROCESS_SUB( lua_close( lua_state_obj ) );
+
+
+			lua_close( lua_state_obj );
 
 
 			return r2cm::eTestEndAction::Pause;
@@ -68,14 +70,14 @@ namespace r2lua_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-			std::cout << r2::split;
+			lua_State* lua_state_obj = luaL_newstate();
 
-			DECLARATION_SUB( lua_State* lua_state_obj = luaL_newstate() );
+
 
 			std::cout << r2::split;
 
 			{
-				PROCESS_MAIN( r2lua::PushArgs( lua_state_obj, 1, 3.141592, "test_string", true ) );
+				PROCESS_SUB( r2lua::PushArgs( lua_state_obj, 1, 3.141592, "test_string", true ) );
 				PROCESS_SUB( test_lua_helper::PrintAllStack( lua_state_obj ) );
 			}
 
@@ -129,9 +131,9 @@ namespace r2lua_test
 
 			std::cout << r2::split;
 
-			PROCESS_SUB( lua_close( lua_state_obj ) );
 
-			std::cout << r2::split;
+
+			lua_close( lua_state_obj );
 
 
 			return r2cm::eTestEndAction::Pause;
@@ -152,9 +154,9 @@ namespace r2lua_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-			std::cout << r2::split;
+			lua_State* lua_state_obj = luaL_newstate();
 
-			DECLARATION_SUB( lua_State* lua_state_obj = luaL_newstate() );
+
 
 			std::cout << r2::split;
 
@@ -208,7 +210,9 @@ namespace r2lua_test
 
 			std::cout << r2::split;
 
-			PROCESS_SUB( lua_close( lua_state_obj ) );
+
+
+			lua_close( lua_state_obj );
 
 
 			return r2cm::eTestEndAction::Pause;
