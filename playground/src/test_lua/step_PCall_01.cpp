@@ -27,7 +27,7 @@ namespace function_cpp2lua_test
 			std::cout << r2::split;
 
 			std::cout << r2::tab << "+ Ready : Add Function : TestFunction( arg1, arg2 )" << r2::linefeed2;
-			PROCESS_MAIN( test_lua_helper::DoFile( lua_state_obj, "resources/step_PCall_01.lua" ) );
+			PROCESS_MAIN( test_lua_helper::DoFile( lua_state_obj, "resources/function_cpp2lua_test_01.lua" ) );
 			DECLARATION_MAIN( const int arg_count = 2 );
 
 			std::cout << r2::split;
