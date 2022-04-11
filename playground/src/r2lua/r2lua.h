@@ -67,6 +67,8 @@ namespace r2lua
 
 
 	eType GetType( const Value& v );
+	const char* const GetTypeName( const Value& v );
+	const char* const GetTypeName( const eType t );
 
 	//
 	// # 20220323 - by R2

@@ -352,26 +352,27 @@ namespace r2lua_test
 				std::cout << "index : " << index << r2::linefeed;
 
 				DECLARATION_MAIN( auto value_type = r2lua::GetType( v ) );
+				std::cout << r2::tab << "type name : " << r2lua::GetTypeName( value_type ) << r2::linefeed;
 				switch( value_type )
 				{
 				case r2lua::eType::Bool:
 				{
 					DECLARATION_MAIN( const auto& b = r2lua::GetValue<r2lua::Bool>( v ) );
-					std::cout << "b : " << b.GetValue() << r2::linefeed;
+					std::cout << r2::tab << "b : " << b.GetValue() << r2::linefeed;
 				}
 				break;
 
 				case r2lua::eType::Number:
 				{
 					DECLARATION_MAIN( const auto& num = r2lua::GetValue<r2lua::Number>( v ) );
-					std::cout << "num : " << num.GetValue() << r2::linefeed;
+					std::cout << r2::tab << "num : " << num.GetValue() << r2::linefeed;
 				}
 				break;
 
 				case r2lua::eType::String:
 				{
 					DECLARATION_MAIN( const auto& str = r2lua::GetValue<r2lua::String>( v ) );
-					std::cout << "str : " << str.GetValue() << r2::linefeed;
+					std::cout << r2::tab << "str : " << str.GetValue() << r2::linefeed;
 				}
 				break;
 				}

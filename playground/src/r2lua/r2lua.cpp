@@ -15,6 +15,25 @@ namespace r2lua
 			, v
 		);
 	}
+	const char* const GetTypeName( const Value& v )
+	{
+		const auto r2lua_type = GetType( v );
+		return GetTypeName( r2lua_type );
+	}
+	const char* const GetTypeName( const eType t )
+	{
+		switch( t )
+		{
+		case r2lua::eType::Bool:
+			return "Bool";
+		case r2lua::eType::Number:
+			return "Number";
+		case r2lua::eType::String:
+			return "String";
+		default:
+			return "Undefined";
+		}
+	}
 
 
 
