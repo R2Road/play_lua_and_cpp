@@ -252,23 +252,17 @@ namespace stack_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-			std::cout << r2::split;
+			lua_State* lua_state_obj = luaL_newstate();
 
-			DECLARATION_SUB( lua_State* lua_state_obj = nullptr );
-			PROCESS_SUB( lua_state_obj = luaL_newstate() );
+
 
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Push( info : lua.h 233 line )" << r2::linefeed2;
+				std::cout << r2::tab << "+ Push" << r2::linefeed2;
 
 				PROCESS_MAIN( lua_pushstring( lua_state_obj, "dummy_text" ) );
 				PROCESS_MAIN( lua_pushnumber( lua_state_obj, 777 ) );
-
-				std::cout << r2::linefeed;
-
-				DECLARATION_MAIN( const auto stack_count = lua_gettop( lua_state_obj ) );
-				std::cout << r2::tab << "stack_count : " << stack_count << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -276,11 +270,11 @@ namespace stack_test
 			{
 				std::cout << r2::tab << "+ Get" << r2::linefeed2;
 
-				DECLARATION_MAIN( const auto type_name = luaL_typename( lua_state_obj, 1 ) );
-				std::cout << r2::tab << "type_name : " << type_name << r2::linefeed2;
+				DECLARATION_MAIN( const auto s = lua_tostring( lua_state_obj, 1 ) );
+				std::cout << r2::tab << "s : " << s << r2::linefeed2;
 
-				DECLARATION_MAIN( const auto value = lua_tostring( lua_state_obj, 1 ) );
-				std::cout << r2::tab << "value : " << value << r2::linefeed;
+				DECLARATION_MAIN( const auto n = lua_tonumber( lua_state_obj, 2 ) );
+				std::cout << r2::tab << "n : " << n << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -288,11 +282,11 @@ namespace stack_test
 			{
 				std::cout << r2::tab << "+ Casting?" << r2::linefeed2;
 
-				DECLARATION_MAIN( const auto type_name = luaL_typename( lua_state_obj, 2 ) );
-				std::cout << r2::tab << "type_name : " << type_name << r2::linefeed2;
+				DECLARATION_MAIN( const auto n = lua_tonumber( lua_state_obj, 1 ) );
+				std::cout << r2::tab << "n : " << n << r2::linefeed2;
 
-				DECLARATION_MAIN( const auto value = lua_tostring( lua_state_obj, 2 ) );
-				std::cout << r2::tab << "value : " << value << r2::linefeed;
+				DECLARATION_MAIN( const auto s = lua_tostring( lua_state_obj, 2 ) );
+				std::cout << r2::tab << "s : " << s << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -300,18 +294,15 @@ namespace stack_test
 			{
 				std::cout << r2::tab << "+ 0?" << r2::linefeed2;
 
-				DECLARATION_MAIN( const auto type_name = luaL_typename( lua_state_obj, 0 ) );
-				std::cout << r2::tab << "type_name : " << type_name << r2::linefeed2;
-
 				DECLARATION_MAIN( const auto value = lua_tonumber( lua_state_obj, 0 ) );
 				std::cout << r2::tab << "value : " << value << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
-			PROCESS_SUB( lua_close( lua_state_obj ) );
 
-			std::cout << r2::split;
+
+			lua_close( lua_state_obj );
 
 			return r2cm::eTestEndAction::Pause;
 		};
