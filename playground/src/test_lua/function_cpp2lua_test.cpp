@@ -150,4 +150,89 @@ namespace function_cpp2lua_test
 			return r2cm::eTestEndAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFuncT GetTable::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "function cpp2lua : Get Table";
+		};
+	}
+	r2cm::iItem::DoFuncT GetTable::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			lua_State* lua_state_obj = luaL_newstate();
+			luaL_openlibs( lua_state_obj );
+
+
+
+			std::cout << r2::split;
+
+			std::cout << r2::tab << "+ Add Function : GetData( idx )" << r2::linefeed2;
+			DECLARATION_MAIN( const int arg_count = 1 );
+			PROCESS_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/step_PCall_02.lua" ) );
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Call" << r2::linefeed2;
+
+				PROCESS_MAIN( lua_getglobal( lua_state_obj, "GetData" ) );
+				PROCESS_MAIN( lua_pushnumber( lua_state_obj, 0 ) );
+				EXPECT_EQ( LUA_OK, lua_pcall( lua_state_obj, arg_count, LUA_MULTRET, 0 ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Check" << r2::linefeed2;
+
+				PROCESS_MAIN( lua_pushstring( lua_state_obj, "name" ) );
+				PROCESS_MAIN( lua_gettable( lua_state_obj, 1 ) );
+				PROCESS_MAIN( lua_pushstring( lua_state_obj, "age" ) );
+				PROCESS_MAIN( lua_gettable( lua_state_obj, 1 ) );
+				
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Call" << r2::linefeed2;
+
+				PROCESS_MAIN( lua_settop( lua_state_obj, 0 ) );
+
+				PROCESS_MAIN( lua_getglobal( lua_state_obj, "GetData" ) );
+				PROCESS_MAIN( lua_pushnumber( lua_state_obj, 1 ) );
+				EXPECT_EQ( LUA_OK, lua_pcall( lua_state_obj, arg_count, LUA_MULTRET, 0 ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Check" << r2::linefeed2;
+
+				PROCESS_MAIN( lua_pushstring( lua_state_obj, "name" ) );
+				PROCESS_MAIN( lua_gettable( lua_state_obj, 1 ) );
+				PROCESS_MAIN( lua_pushstring( lua_state_obj, "age" ) );
+				PROCESS_MAIN( lua_gettable( lua_state_obj, 1 ) );
+				
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2::split;
+
+
+
+			lua_close( lua_state_obj );
+
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
 }

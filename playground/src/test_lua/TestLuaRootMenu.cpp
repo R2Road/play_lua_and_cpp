@@ -13,7 +13,6 @@
 #include "luaL_openlibs_test.h"
 
 #include "function_cpp2lua_test.h"
-#include "step_PCall_02.h"
 #include "step_PCall_03.h"
 #include "step_PCall_04_CallCPPFunction.h"
 
@@ -28,8 +27,6 @@ namespace
 	{
 		std::stringstream ss;
 		ss << "+ Menu" << r2::linefeed;
-		ss << "Q : step_PCall_01" << r2::linefeed;
-		ss << "W : step_PCall_02" << r2::linefeed;
 		ss << "E : step_PCall_03" << r2::linefeed;
 		ss << "R : step_PCall_04_CallCPPFunction" << r2::linefeed;
 
@@ -97,6 +94,7 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 
 		ret->AddItem( 'a', function_cpp2lua_test::Basic::GetInstance() );
 		ret->AddItem( 's', function_cpp2lua_test::Argument2::GetInstance() );
+		ret->AddItem( 'd', function_cpp2lua_test::GetTable::GetInstance() );
 		
 
 
@@ -119,9 +117,6 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 
 					switch( input )
 					{
-					case 'w':
-						step::PCall_02();
-						break;
 					case 'e':
 						step::PCall_03();
 						break;
