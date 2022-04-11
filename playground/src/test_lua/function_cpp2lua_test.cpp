@@ -175,7 +175,7 @@ namespace function_cpp2lua_test
 
 			std::cout << r2::tab << "+ Add Function : GetData( idx )" << r2::linefeed2;
 			DECLARATION_MAIN( const int arg_count = 1 );
-			PROCESS_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/step_PCall_02.lua" ) );
+			PROCESS_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/function_cpp2lua_test_02.lua" ) );
 
 			std::cout << r2::split;
 
