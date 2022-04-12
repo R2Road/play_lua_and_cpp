@@ -20,6 +20,7 @@ r2cm::MenuUp TableMenu::Create( r2cm::Director& director )
 		ret->AddItem( '1', table_test::GenerateTest::GetInstance() );
 		ret->AddItem( '2', table_test::Add2GlobalTest::GetInstance() );
 		ret->AddItem( '3', table_test::PushAndGetTest::GetInstance() );
+		ret->AddItem( '4', table_test::PushAndGetTest_2::GetInstance() );
 
 
 		ret->AddSplit();

@@ -25,4 +25,11 @@ namespace table_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class PushAndGetTest_2 : public r2cm::iItem, public r2::SingleTon<PushAndGetTest_2>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }
