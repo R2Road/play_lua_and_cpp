@@ -13,7 +13,7 @@
 #include "luaL_openlibs_test.h"
 
 #include "function_cpp2lua_test.h"
-#include "step_PCall_04_CallCPPFunction.h"
+#include "function_lua2cpp_test.h"
 
 #include "GlobalMenu.h"
 #include "MainMenu.h"
@@ -93,6 +93,9 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'a', function_cpp2lua_test::Basic::GetInstance() );
 		ret->AddItem( 's', function_cpp2lua_test::Argument2::GetInstance() );
 		ret->AddItem( 'd', function_cpp2lua_test::GetTable::GetInstance() );
+
+
+		ret->AddLineFeed();
 		
 
 
