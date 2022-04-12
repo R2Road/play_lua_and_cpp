@@ -12,9 +12,7 @@
 #include "luaL_dostring_test.h"
 #include "luaL_openlibs_test.h"
 
-#include "function_cpp2lua_test.h"
-#include "function_lua2cpp_test.h"
-
+#include "FunctionMenu.h"
 #include "GlobalMenu.h"
 #include "MainMenu.h"
 #include "StackMenu.h"
@@ -65,21 +63,15 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 				return r2cm::eTestEndAction::None;
 			}
 		);
-
-
-		ret->AddLineFeed();
-
-
-		ret->AddItem( 'a', function_cpp2lua_test::Basic::GetInstance() );
-		ret->AddItem( 's', function_cpp2lua_test::Argument2::GetInstance() );
-		ret->AddItem( 'd', function_cpp2lua_test::GetTable::GetInstance() );
-
-
-		ret->AddLineFeed();
-
-
-		ret->AddItem( 'z', function_lua2cpp_test::Basic::GetInstance() );
-		
+		ret->AddItem(
+			'w'
+			, []()->const char* { return FunctionMenu::GetTitle(); }
+			, [&director]()->r2cm::eTestEndAction
+			{
+				director.Setup( FunctionMenu::Create( director ) );
+				return r2cm::eTestEndAction::None;
+			}
+		);
 
 
 		ret->AddSplit();
