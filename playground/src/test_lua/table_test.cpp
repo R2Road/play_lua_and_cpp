@@ -118,14 +118,14 @@ namespace table_test
 
 
 
-	r2cm::iItem::TitleFuncT PushAndGetTest::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT PushAndGetTest_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Push And Get Value";
+			return "Push And Get Value 1";
 		};
 	}
-	r2cm::iItem::DoFuncT PushAndGetTest::GetDoFunction()
+	r2cm::iItem::DoFuncT PushAndGetTest_1::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{
