@@ -10,7 +10,7 @@ namespace table_test
 	{
 		return []()->const char*
 		{
-			return "Table : Generate";
+			return "Generate";
 		};
 	}
 	r2cm::iItem::DoFuncT GenerateTest::GetDoFunction()
@@ -56,7 +56,7 @@ namespace table_test
 	{
 		return []()->const char*
 		{
-			return "Table : Add 2 Global";
+			return "Add 2 Global";
 		};
 	}
 	r2cm::iItem::DoFuncT Add2GlobalTest::GetDoFunction()
@@ -122,7 +122,7 @@ namespace table_test
 	{
 		return []()->const char*
 		{
-			return "Table : Push And Get Value";
+			return "Push And Get Value";
 		};
 	}
 	r2cm::iItem::DoFuncT PushAndGetTest::GetDoFunction()
