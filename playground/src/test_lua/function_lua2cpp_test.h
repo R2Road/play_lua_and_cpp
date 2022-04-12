@@ -1,6 +1,14 @@
 ﻿#pragma once
 
-namespace step
+#include "r2cm/r2cm_iItem.h"
+#include "r2/r2_Singleton.h"
+
+namespace function_lua2cpp_test
 {
-	void PCall_04_CallCPPFunction();
+	class Basic : public r2cm::iItem, public r2::SingleTon<Basic>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }

@@ -20,26 +20,6 @@
 #include "StackMenu.h"
 #include "TableMenu.h"
 
-namespace
-{
-	std::string MakeMenuString()
-	{
-		std::stringstream ss;
-		ss << "+ Menu" << r2::linefeed;
-		ss << "R : step_PCall_04_CallCPPFunction" << r2::linefeed;
-
-		ss << r2::linefeed << "Press Number" << r2::linefeed;
-
-		return std::string( ss.str() );
-	}
-
-	void ShowMenu()
-	{
-		static std::string menu_string( std::move( MakeMenuString() ) );
-		std::cout << menu_string;
-	}
-}
-
 r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 {
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
@@ -96,45 +76,10 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 
 
 		ret->AddLineFeed();
+
+
+		ret->AddItem( 'z', function_lua2cpp_test::Basic::GetInstance() );
 		
-
-
-		ret->AddSplit();
-
-
-		ret->AddItem(
-			32
-			, []()->const char* { return "All"; }
-			, []()->r2cm::eTestEndAction
-			{
-				int input = 0;
-				bool process = true;
-				while( process )
-				{
-					ShowMenu();
-
-					input = _getch();
-					system( "cls" );
-
-					switch( input )
-					{
-					case 'r':
-						step::PCall_04_CallCPPFunction();
-						break;
-
-					case 27: // ESC
-						process = false;
-						break;
-					}
-
-					std::cout << r2::linefeed << "Press Any Key" << r2::linefeed;
-					_getch();
-					system( "cls" );
-				}
-
-				return r2cm::eTestEndAction::Pause;
-			}
-		);
 
 
 		ret->AddSplit();
