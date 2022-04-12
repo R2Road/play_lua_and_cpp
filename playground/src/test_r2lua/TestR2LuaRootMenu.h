@@ -15,6 +15,6 @@ private:
 	TestR2LuaRootMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Test R2Lua Root"; }
+	static const char* GetTitle() { return "Test R2Lua"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
