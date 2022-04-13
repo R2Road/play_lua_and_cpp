@@ -124,7 +124,7 @@ namespace function_lua2cpp_test
 
 			std::cout << r2::split;
 
-			PROCESS_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/step_PCall_04.lua" ) );
+			PROCESS_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/function_lua2cpp_test_01.lua" ) );
 
 			std::cout << r2::split;
 
