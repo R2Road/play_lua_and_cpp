@@ -1,8 +1,6 @@
 #include "pch.h"
 #include "MainMenu.h"
 
-#include <conio.h>
-#include <sstream>
 
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_eTestEndAction.h"
