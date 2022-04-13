@@ -1,19 +1,6 @@
 ﻿#include "pch.h"
 #include "test_lua_helper.h"
 
-namespace
-{
-	void DoTab( const std::size_t tab_count )
-	{
-		switch( tab_count )
-		{
-		case 1: std::cout << r2::tab; break;
-		case 2: std::cout << r2::tab2; break;
-		case 3: std::cout << r2::tab3; break;
-		}
-	}
-}
-
 namespace test_lua_helper
 {
 	int GetVersion()
