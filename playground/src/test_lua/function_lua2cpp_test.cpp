@@ -59,7 +59,7 @@ namespace function_lua2cpp_test
 			std::cout << r2::split;
 
 			std::cout << "Note : cpp 펑션의 반환값 0 = 반환값 없음" << r2::linefeed;
-			std::cout << "Note : cpp 펑션의 반환값 1 = 스택에 값을 넣어두면 반환값으로 처리" << r2::linefeed;
+			std::cout << "Note : cpp 펑션의 반환값 n = 반환값의 수, 스택에 값을 넣어두면 반환값으로 처리" << r2::linefeed;
 
 			std::cout << r2::split;
 
