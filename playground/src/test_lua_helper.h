@@ -4,6 +4,8 @@ struct lua_State;
 
 namespace test_lua_helper
 {
+	int GetVersion();
+
 	void PrintStackCount( lua_State* lua_state_obj );
 	void PrintTypeName( int type );
 	void PrintLuaError( lua_State* lua_state_obj );

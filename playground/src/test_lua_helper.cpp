@@ -16,6 +16,20 @@ namespace
 
 namespace test_lua_helper
 {
+	int GetVersion()
+	{
+		static const int v = []()->int
+		{
+			lua_State* lua_state_obj = luaL_newstate();
+			const auto v = lua_version( lua_state_obj );
+			lua_close( lua_state_obj );
+
+			return static_cast<int>( v );
+		}();
+
+		return v;
+	}
+
 	void PrintStackCount( lua_State* lua_state_obj )
 	{
 		const int stack_size = lua_gettop( lua_state_obj );

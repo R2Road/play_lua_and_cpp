@@ -1,13 +1,20 @@
 #include "pch.h"
 #include "MainMenu.h"
 
+#include <string>
 
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
+#include "test_lua_helper.h"
 #include "test_lua/TestLuaRootMenu.h"
 #include "test_r2lua/TestR2LuaRootMenu.h"
 
+const char* MainMenu::GetTitle()
+{
+	static const std::string title_string = std::string( "Main( lua version : " ) + std::to_string( test_lua_helper::GetVersion() ) + " )";
+	return title_string.c_str();
+}
 r2cm::MenuUp MainMenu::Create( r2cm::Director& director )
 {
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
