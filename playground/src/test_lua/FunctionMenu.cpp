@@ -19,18 +19,15 @@ r2cm::MenuUp FunctionMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddLineFeed();
-
-
-		ret->AddItem( 'a', function_cpp2lua_test::Basic::GetInstance() );
-		ret->AddItem( 's', function_cpp2lua_test::Argument2::GetInstance() );
-		ret->AddItem( 'd', function_cpp2lua_test::GetTable::GetInstance() );
+		ret->AddItem( '1', function_cpp2lua_test::Basic::GetInstance() );
+		ret->AddItem( '2', function_cpp2lua_test::Argument2::GetInstance() );
+		ret->AddItem( '3', function_cpp2lua_test::GetTable::GetInstance() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'z', function_lua2cpp_test::Basic::GetInstance() );
+		ret->AddItem( 'q', function_lua2cpp_test::Basic::GetInstance() );
 
 
 		ret->AddSplit();
