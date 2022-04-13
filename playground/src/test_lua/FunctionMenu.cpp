@@ -4,8 +4,6 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
-#include "stack_test.h"
-
 #include "function_cpp2lua_test.h"
 #include "function_lua2cpp_test.h"
 #include "TestLuaRootMenu.h"
