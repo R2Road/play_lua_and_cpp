@@ -102,14 +102,14 @@ namespace function_lua2cpp_test
 
 
 
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Basic_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return " function_lua2cpp_test : Basic";
+			return " function_lua2cpp_test : Basic 2";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT Basic_2::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{
