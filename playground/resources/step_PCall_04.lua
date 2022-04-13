@@ -1,15 +1,15 @@
-function CallCPPFunction1( arg1, arg2 )
-	print( "[LUA] Call - CallCPPFunction1 - " .. arg1 .. " , " .. arg2 )
+function CallCPPFunction_1( arg1, arg2 )
+	print( "[LUA] Call : CallCPPFunction_1 - " .. arg1 .. " , " .. arg2 )
 
-	result = CPPFunction1( arg1, arg2 );
+	result1 = CPPFunction_1( arg1, arg2 );
 
-	return result;
+	return result1;
 end
 
-function CallCPPFunction2( arg1, arg2 )
-	print( "[LUA] Call - CallCPPFunction2 - " .. arg1 .. " , " .. arg2 )
+function CallCPPFunction_2( arg1, arg2 )
+	print( "[LUA] Call : CallCPPFunction_2 - " .. arg1 .. " , " .. arg2 )
 
-	result = CPPFunction2( arg1, arg2 );
+	result1, result2, result3 = CPPFunction_2( arg1, arg2 );
 
-	return result;
+	return result1, result2, result3;
 end
