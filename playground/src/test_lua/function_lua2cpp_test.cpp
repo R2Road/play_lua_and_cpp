@@ -64,7 +64,7 @@ namespace function_lua2cpp_test
 			std::cout << r2::split;
 
 			{
-				DECLARATION_MAIN( const char* command = "function LUAFunction_0() CPPFunction_0() end"; )
+				DECLARATION_MAIN( const char* command = "function LUAFunction_0()    CPPFunction_0()    end"; )
 				PROCESS_MAIN( test_lua_helper::DoString( lua_state_obj, command ) );
 			}
 
