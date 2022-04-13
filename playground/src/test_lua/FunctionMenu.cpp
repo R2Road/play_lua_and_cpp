@@ -25,7 +25,8 @@ r2cm::MenuUp FunctionMenu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'q', function_lua2cpp_test::Basic::GetInstance() );
+		ret->AddItem( 'q', function_lua2cpp_test::Basic_1::GetInstance() );
+		ret->AddItem( 'w', function_lua2cpp_test::Basic::GetInstance() );
 
 
 		ret->AddSplit();

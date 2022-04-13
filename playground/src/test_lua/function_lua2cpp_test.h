@@ -5,6 +5,13 @@
 
 namespace function_lua2cpp_test
 {
+	class Basic_1 : public r2cm::iItem, public r2::SingleTon<Basic_1>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
+
 	class Basic : public r2cm::iItem, public r2::SingleTon<Basic>
 	{
 	public:
