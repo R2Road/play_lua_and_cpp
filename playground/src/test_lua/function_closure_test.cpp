@@ -4,6 +4,7 @@
 #include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
+
 int CPPClosure( lua_State* lua_state_obj )
 {
 	std::cout << "[CPP] CPPClosure" << r2::linefeed;
@@ -13,15 +14,13 @@ int CPPClosure( lua_State* lua_state_obj )
 
 	return 0;
 }
-
-
 namespace function_closure_test
 {
 	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return " function_closure_test : Basic";
+			return "function_closure_test : Basic";
 		};
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
@@ -111,7 +110,7 @@ namespace function_closure_test
 	{
 		return []()->const char*
 		{
-			return " function_closure_test : Update Upvalue";
+			return "function_closure_test : Update Upvalue";
 		};
 	}
 	r2cm::iItem::DoFuncT UpdateUpvalue::GetDoFunction()
