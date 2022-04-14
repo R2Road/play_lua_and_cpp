@@ -11,4 +11,11 @@ namespace function_closure_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class UpdateUpvalue : public r2cm::iItem, public r2::SingleTon<UpdateUpvalue>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }

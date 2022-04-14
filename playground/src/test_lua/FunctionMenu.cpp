@@ -34,6 +34,7 @@ r2cm::MenuUp FunctionMenu::Create( r2cm::Director& director )
 
 
 		ret->AddItem( 'a', function_closure_test::Basic::GetInstance() );
+		ret->AddItem( 's', function_closure_test::UpdateUpvalue::GetInstance() );
 
 
 		ret->AddSplit();
