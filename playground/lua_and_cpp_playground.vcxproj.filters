@@ -96,6 +96,9 @@
     <ClCompile Include="src\test_lua\FunctionMenu.cpp">
       <Filter>test_lua\menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_lua\function_closure_test.cpp">
+      <Filter>test_lua\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -177,6 +180,9 @@
     </ClInclude>
     <ClInclude Include="src\test_lua\FunctionMenu.h">
       <Filter>test_lua\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_lua\function_closure_test.h">
+      <Filter>test_lua\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

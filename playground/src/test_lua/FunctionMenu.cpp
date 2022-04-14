@@ -4,6 +4,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
+#include "function_closure_test.h"
 #include "function_cpp2lua_test.h"
 #include "function_lua2cpp_test.h"
 #include "TestLuaRootMenu.h"
@@ -27,6 +28,12 @@ r2cm::MenuUp FunctionMenu::Create( r2cm::Director& director )
 
 		ret->AddItem( 'q', function_lua2cpp_test::Basic_1::GetInstance() );
 		ret->AddItem( 'w', function_lua2cpp_test::Basic_2::GetInstance() );
+
+
+		ret->AddLineFeed();
+
+
+		ret->AddItem( 'a', function_closure_test::Basic::GetInstance() );
 
 
 		ret->AddSplit();
