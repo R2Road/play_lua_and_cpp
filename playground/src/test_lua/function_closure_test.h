@@ -18,4 +18,11 @@ namespace function_closure_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class ArgumentTest : public r2cm::iItem, public r2::SingleTon<ArgumentTest>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }
