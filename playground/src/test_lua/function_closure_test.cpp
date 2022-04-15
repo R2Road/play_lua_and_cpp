@@ -42,7 +42,7 @@ namespace function_closure_test
 
 			{
 				DECLARATION_MAIN( const char* command = "function CallCPPClosure()    CPPClosure()    end"; )
-					PROCESS_MAIN( test_lua_helper::DoString( lua_state_obj, command ) );
+				PROCESS_MAIN( test_lua_helper::DoString( lua_state_obj, command ) );
 			}
 
 			std::cout << r2::split;
