@@ -44,7 +44,7 @@ namespace function_lua2cpp_test
 	{
 		return []()->const char*
 		{
-			return " function_lua2cpp_test : Basic 1";
+			return "function_lua2cpp_test : Basic 1";
 		};
 	}
 	r2cm::iItem::DoFuncT Basic_1::GetDoFunction()
@@ -108,7 +108,7 @@ namespace function_lua2cpp_test
 	{
 		return []()->const char*
 		{
-			return " function_lua2cpp_test : Basic 2";
+			return "function_lua2cpp_test : Basic 2";
 		};
 	}
 	r2cm::iItem::DoFuncT Basic_2::GetDoFunction()
