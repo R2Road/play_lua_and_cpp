@@ -14,6 +14,7 @@
 #include "MainMenu.h"
 #include "StackMenu.h"
 #include "TableMenu.h"
+#include "UserDataMenu.h"
 
 r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 {
@@ -66,6 +67,15 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 			, [&director]()->r2cm::eTestEndAction
 			{
 				director.Setup( FunctionMenu::Create( director ) );
+				return r2cm::eTestEndAction::None;
+			}
+		);
+		ret->AddItem(
+			'e'
+			, []()->const char* { return UserDataMenu::GetTitle(); }
+			, [&director]()->r2cm::eTestEndAction
+			{
+				director.Setup( UserDataMenu::Create( director ) );
 				return r2cm::eTestEndAction::None;
 			}
 		);

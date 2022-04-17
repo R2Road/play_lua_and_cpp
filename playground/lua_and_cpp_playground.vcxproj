@@ -38,6 +38,7 @@
     <ClCompile Include="src\test_lua\StackMenu.cpp" />
     <ClCompile Include="src\test_lua\stack_test.cpp" />
     <ClCompile Include="src\test_lua\TableMenu.cpp" />
+    <ClCompile Include="src\test_lua\UserDataMenu.cpp" />
     <ClCompile Include="src\test_lua_helper.cpp" />
     <ClCompile Include="src\test_lua\luaL_dostring_test.cpp" />
     <ClCompile Include="src\test_lua\global_test.cpp" />
@@ -69,6 +70,7 @@
     <ClInclude Include="src\test_lua\StackMenu.h" />
     <ClInclude Include="src\test_lua\stack_test.h" />
     <ClInclude Include="src\test_lua\TableMenu.h" />
+    <ClInclude Include="src\test_lua\UserDataMenu.h" />
     <ClInclude Include="src\test_lua_helper.h" />
     <ClInclude Include="src\test_lua\luaL_dostring_test.h" />
     <ClInclude Include="src\test_lua\global_test.h" />
