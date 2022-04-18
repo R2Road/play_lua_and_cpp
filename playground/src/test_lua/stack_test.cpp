@@ -1,6 +1,8 @@
 ﻿#include "pch.h"
 #include "stack_test.h"
 
+#include <string_view>
+
 #include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
@@ -300,6 +302,69 @@ namespace stack_test
 
 			std::cout << r2::split;
 
+
+
+			lua_close( lua_state_obj );
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT GetTest_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Get 2 : luaL_check...";
+		};
+	}
+	r2cm::iItem::DoFuncT GetTest_2::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			lua_State* lua_state_obj = luaL_newstate();
+
+
+			std::cout << r2::split;
+
+			std::cout << "Note : Type이 맞지 않으면 프로그램이 강제 종료 된다." << r2::linefeed;
+			std::cout << "Note : Type의 확인을 먼저 하고 호출하자." << r2::linefeed2;
+			std::cout << "Note : 빈 Stack을 대상으로 호출해도 강제 종료 된다.( 이게 맞나? )" << r2::linefeed;
+			std::cout << "Note : 이 상태라면 이 함수들은 쓰지 않는게 맞다고 판단된다." << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( lua_pushinteger( lua_state_obj, 7 ) );
+				PROCESS_MAIN( lua_pushnumber( lua_state_obj, 123.123 ) );
+				PROCESS_MAIN( lua_pushstring( lua_state_obj, "dummy_text" ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Test" << r2::linefeed2;
+
+				EXPECT_EQ( 7, luaL_checkinteger( lua_state_obj, 1 ) );
+				EXPECT_EQ( 123.123, luaL_checknumber( lua_state_obj, 2 ) );
+				EXPECT_EQ( std::string_view( "dummy_text" ), luaL_checkstring( lua_state_obj, 3 ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Test" << r2::linefeed2;
+
+				PROCESS_MAIN( luaL_checkany( lua_state_obj, 1 ) );
+				PROCESS_MAIN( luaL_checkany( lua_state_obj, 2 ) );
+				PROCESS_MAIN( luaL_checkany( lua_state_obj, 3 ) );
+			}
+
+			std::cout << r2::split;
 
 
 			lua_close( lua_state_obj );

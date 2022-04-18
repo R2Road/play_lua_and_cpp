@@ -21,8 +21,9 @@ r2cm::MenuUp StackMenu::Create( r2cm::Director& director )
 		ret->AddItem( '2', stack_test::TypeCheck::GetInstance() );
 		ret->AddItem( '3', stack_test::PrintAll::GetInstance() );
 		ret->AddItem( '4', stack_test::GetTest::GetInstance() );
-		ret->AddItem( '5', stack_test::SetTop::GetInstance() );
-		ret->AddItem( '6', stack_test::Pop::GetInstance() );
+		ret->AddItem( '5', stack_test::GetTest_2::GetInstance() );
+		ret->AddItem( '6', stack_test::SetTop::GetInstance() );
+		ret->AddItem( '7', stack_test::Pop::GetInstance() );
 
 		ret->AddLineFeed();
 

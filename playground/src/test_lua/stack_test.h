@@ -33,6 +33,12 @@ namespace stack_test
 		DoFuncT GetDoFunction() override;
 	};
 
+	class GetTest_2 : public r2cm::iItem, public r2::SingleTon<GetTest_2>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 
 
 	class SetTop : public r2cm::iItem, public r2::SingleTon<SetTop>
