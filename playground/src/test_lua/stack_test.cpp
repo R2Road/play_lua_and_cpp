@@ -241,14 +241,14 @@ namespace stack_test
 
 
 
-	r2cm::iItem::TitleFuncT GetTest::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT GetTest_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Get";
+			return "Get 1 : lua_to...";
 		};
 	}
-	r2cm::iItem::DoFuncT GetTest::GetDoFunction()
+	r2cm::iItem::DoFuncT GetTest_1::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{

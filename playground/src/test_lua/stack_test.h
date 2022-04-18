@@ -26,7 +26,7 @@ namespace stack_test
 		DoFuncT GetDoFunction() override;
 	};
 
-	class GetTest : public r2cm::iItem, public r2::SingleTon<GetTest>
+	class GetTest_1 : public r2cm::iItem, public r2::SingleTon<GetTest_1>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
