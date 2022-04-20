@@ -1,6 +1,8 @@
 ﻿#include "pch.h"
 #include "luaL_dofile_test.h"
 
+#include <filesystem>
+
 #include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
@@ -47,7 +49,12 @@ namespace luaL_dofile_test
 			{
 				std::cout << r2::tab << "+ Test 1 : Script 에러" << r2::linefeed2;
 
-				EXPECT_NE( LUA_OK, luaL_dofile( lua_state_obj, "resources/luaL_dofile_test_01.lua" ) );
+				const std::filesystem::path p( "resources/luaL_dofile_test_01.lua");
+				SHOW_FILE( p.string().c_str() );
+
+				std::cout << r2::linefeed;
+
+				EXPECT_NE( LUA_OK, luaL_dofile( lua_state_obj, p.string().c_str() ) );
 				
 				const auto error_message = lua_tostring( lua_state_obj, -1 );
 				std::cout << "error_message : " << error_message << r2::linefeed;
@@ -61,7 +68,12 @@ namespace luaL_dofile_test
 			{
 				std::cout << r2::tab << "+ Test 2" << r2::linefeed2;
 
-				EXPECT_EQ( LUA_OK, luaL_dofile( lua_state_obj, "resources/luaL_dofile_test_02.lua" ) );
+				const std::filesystem::path p( "resources/luaL_dofile_test_02.lua" );
+				SHOW_FILE( p.string().c_str() );
+
+				std::cout << r2::linefeed;
+
+				EXPECT_EQ( LUA_OK, luaL_dofile( lua_state_obj, p.string().c_str() ) );
 
 				std::cout << r2::linefeed;
 

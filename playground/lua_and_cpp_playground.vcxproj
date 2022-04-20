@@ -31,6 +31,7 @@
     <ClCompile Include="src\r2cm\r2cm_Menu.cpp" />
     <ClCompile Include="src\r2lua\r2lua.cpp" />
     <ClCompile Include="src\r2\r2_FrameManager.cpp" />
+    <ClCompile Include="src\r2\r2_Inspector.cpp" />
     <ClCompile Include="src\test_lua\FunctionMenu.cpp" />
     <ClCompile Include="src\test_lua\function_closure_test.cpp" />
     <ClCompile Include="src\test_lua\function_lua2cpp_test.cpp" />

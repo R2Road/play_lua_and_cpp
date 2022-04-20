@@ -102,6 +102,9 @@
     <ClCompile Include="src\test_lua\UserDataMenu.cpp">
       <Filter>test_lua\menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2\r2_Inspector.cpp">
+      <Filter>r2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
