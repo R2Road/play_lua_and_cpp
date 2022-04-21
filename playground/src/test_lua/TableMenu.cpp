@@ -23,6 +23,12 @@ r2cm::MenuUp TableMenu::Create( r2cm::Director& director )
 		ret->AddItem( '4', table_test::PushAndGetTest_2::GetInstance() );
 
 
+		ret->AddLineFeed();
+
+
+		ret->AddItem( 'q', table_test::GetTable::GetInstance() );
+
+
 		ret->AddSplit();
 
 

@@ -20,7 +20,6 @@ r2cm::MenuUp FunctionMenu::Create( r2cm::Director& director )
 	{
 		ret->AddItem( '1', function_cpp2lua_test::Basic::GetInstance() );
 		ret->AddItem( '2', function_cpp2lua_test::Argument2::GetInstance() );
-		ret->AddItem( '3', function_cpp2lua_test::GetTable::GetInstance() );
 
 
 		ret->AddLineFeed();
