@@ -26,7 +26,7 @@ r2cm::MenuUp TableMenu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'q', table_test::GetTable::GetInstance() );
+		ret->AddItem( 'q', table_test::LuaFunction_And_GetTable::GetInstance() );
 
 
 		ret->AddSplit();

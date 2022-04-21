@@ -268,14 +268,14 @@ namespace table_test
 
 
 
-	r2cm::iItem::TitleFuncT GetTable::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT LuaFunction_And_GetTable::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Lua Function + Get Table";
 		};
 	}
-	r2cm::iItem::DoFuncT GetTable::GetDoFunction()
+	r2cm::iItem::DoFuncT LuaFunction_And_GetTable::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{
@@ -290,7 +290,7 @@ namespace table_test
 
 			std::cout << r2::tab << "+ Add Function : GetData( idx )" << r2::linefeed2;
 			DECLARATION_MAIN( const int arg_count = 1 );
-			PROCESS_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/function_cpp2lua_test_02.lua" ) );
+			PROCESS_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/table_test_luafunction_and_gettable_01.lua" ) );
 
 			std::cout << r2::split;
 

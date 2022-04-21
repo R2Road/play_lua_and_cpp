@@ -33,7 +33,7 @@ namespace table_test
 		DoFuncT GetDoFunction() override;
 	};
 
-	class GetTable : public r2cm::iItem, public r2::SingleTon<GetTable>
+	class LuaFunction_And_GetTable : public r2cm::iItem, public r2::SingleTon<LuaFunction_And_GetTable>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
