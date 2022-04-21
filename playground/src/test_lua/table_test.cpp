@@ -212,7 +212,7 @@ namespace table_test
 
 			std::cout << r2::split; 
 			
-			std::cout << "Note : table을 다른 Index에 배치해보기." << r2::linefeed;
+			std::cout << "Note : table을 1이외의 Index에 배치해보기." << r2::linefeed;
 			
 			std::cout << r2::split;
 
