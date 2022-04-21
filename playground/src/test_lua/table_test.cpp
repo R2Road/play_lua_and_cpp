@@ -246,10 +246,62 @@ namespace table_test
 
 			std::cout << r2::split;
 
+
+
+			lua_close( lua_state_obj );
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT PushAndGetTest_3::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Push And Get Value 3";
+		};
+	}
+	r2cm::iItem::DoFuncT PushAndGetTest_3::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			lua_State* lua_state_obj = luaL_newstate();
+
+
+
+			std::cout << r2::split;
+
+			std::cout << "Note : 잘못된 Index에 GetTable 해보기." << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( lua_pushnil( lua_state_obj ) );
+				PROCESS_MAIN( lua_pushnil( lua_state_obj ) );
+				PROCESS_MAIN( lua_newtable( lua_state_obj ) );
+				PROCESS_MAIN( lua_pushstring( lua_state_obj, "dummy_int" ) );
+				PROCESS_MAIN( lua_pushnumber( lua_state_obj, 777 ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Push" << r2::linefeed2;
+
+				PROCESS_MAIN( lua_settable( lua_state_obj, 3 ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2::split;
+
 			{
 				std::cout << r2::tab << "+ Get" << r2::linefeed2;
 
-				PROCESS_MAIN( lua_pop( lua_state_obj, 1 ) );
 				PROCESS_MAIN( lua_pushstring( lua_state_obj, "dummy_int" ) );
 				SHOW_CODE( lua_gettable( lua_state_obj, 2 ) );
 

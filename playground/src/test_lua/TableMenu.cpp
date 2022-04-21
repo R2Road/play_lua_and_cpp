@@ -21,6 +21,7 @@ r2cm::MenuUp TableMenu::Create( r2cm::Director& director )
 		ret->AddItem( '2', table_test::Add2GlobalTest::GetInstance() );
 		ret->AddItem( '3', table_test::PushAndGetTest_1::GetInstance() );
 		ret->AddItem( '4', table_test::PushAndGetTest_2::GetInstance() );
+		ret->AddItem( '5', table_test::PushAndGetTest_3::GetInstance() );
 
 
 		ret->AddLineFeed();
