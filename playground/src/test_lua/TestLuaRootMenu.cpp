@@ -54,19 +54,19 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 
 		ret->AddItem(
 			'q'
-			, []()->const char* { return TableMenu::GetTitle(); }
+			, []()->const char* { return FunctionMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
 			{
-				director.Setup( TableMenu::Create( director ) );
+				director.Setup( FunctionMenu::Create( director ) );
 				return r2cm::eTestEndAction::None;
 			}
 		);
 		ret->AddItem(
 			'w'
-			, []()->const char* { return FunctionMenu::GetTitle(); }
+			, []()->const char* { return TableMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
 			{
-				director.Setup( FunctionMenu::Create( director ) );
+				director.Setup( TableMenu::Create( director ) );
 				return r2cm::eTestEndAction::None;
 			}
 		);
