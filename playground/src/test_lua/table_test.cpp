@@ -408,7 +408,7 @@ namespace table_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Call" << r2::linefeed2;
+				std::cout << r2::tab << "+ Call : GetData( 0 )" << r2::linefeed2;
 
 				PROCESS_MAIN( lua_getglobal( lua_state_obj, "GetData" ) );
 				PROCESS_MAIN( lua_pushnumber( lua_state_obj, 0 ) );
@@ -431,7 +431,7 @@ namespace table_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Call" << r2::linefeed2;
+				std::cout << r2::tab << "+ Call : GetData( 1 )" << r2::linefeed2;
 
 				PROCESS_MAIN( lua_settop( lua_state_obj, 0 ) );
 
