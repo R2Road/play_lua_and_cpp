@@ -2,7 +2,7 @@
 #include "TestLuaRootMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 #include "lua_state_test.h"
 #include "luaL_dofile_test.h"
@@ -29,19 +29,19 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 		ret->AddItem(
 			'2'
 			, []()->const char* { return StackMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( StackMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 		ret->AddItem(
 			'3'
 			, []()->const char* { return GlobalMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( GlobalMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 		ret->AddItem( '4', luaL_dostring_test::Basic::GetInstance() );
@@ -55,28 +55,28 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 		ret->AddItem(
 			'q'
 			, []()->const char* { return FunctionMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( FunctionMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 		ret->AddItem(
 			'w'
 			, []()->const char* { return TableMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( TableMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 		ret->AddItem(
 			'e'
 			, []()->const char* { return UserDataMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( UserDataMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 
@@ -87,10 +87,10 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 		ret->AddItem(
 			27
 			, []()->const char* { return MainMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( MainMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 	}

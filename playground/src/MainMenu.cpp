@@ -4,7 +4,7 @@
 #include <string>
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 #include "test_lua_helper.h"
 #include "test_lua/TestLuaRootMenu.h"
@@ -27,19 +27,19 @@ r2cm::MenuUp MainMenu::Create( r2cm::Director& director )
 		ret->AddItem(
 			'1'
 			, []()->const char* { return TestLuaRootMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( TestLuaRootMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 		ret->AddItem(
 			'2'
 			, []()->const char* { return TestR2LuaRootMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( TestR2LuaRootMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 
@@ -50,7 +50,7 @@ r2cm::MenuUp MainMenu::Create( r2cm::Director& director )
 		ret->AddItem(
 			27
 			, []()->const char* { return "Exit"; }
-			, []()->r2cm::eTestEndAction { return r2cm::eTestEndAction::Exit; }
+			, []()->r2cm::eItemLeaveAction { return r2cm::eItemLeaveAction::Exit; }
 		);
 	}
 

@@ -38,12 +38,6 @@
     <ClCompile Include="src\r2\r2_FrameManager.cpp">
       <Filter>r2</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2cm\r2cm_Director.cpp">
-      <Filter>r2cm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2cm\r2cm_Menu.cpp">
-      <Filter>r2cm</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_lua\TestLuaRootMenu.cpp">
       <Filter>test_lua\menu</Filter>
     </ClCompile>
@@ -102,8 +96,14 @@
     <ClCompile Include="src\test_lua\UserDataMenu.cpp">
       <Filter>test_lua\menu</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2\r2_Inspector.cpp">
-      <Filter>r2</Filter>
+    <ClCompile Include="src\r2cm\r2cm_Director.cpp">
+      <Filter>r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2cm\r2cm_Inspector.cpp">
+      <Filter>r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2cm\r2cm_Menu.cpp">
+      <Filter>r2cm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -111,28 +111,10 @@
     <ClInclude Include="src\test_lua\lua_state_test.h">
       <Filter>test_lua\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2\r2_Singleton.h">
-      <Filter>r2</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2\r2_Assert.h">
       <Filter>r2</Filter>
     </ClInclude>
     <ClInclude Include="src\r2\r2_FrameManager.h">
-      <Filter>r2</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_Director.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_eTestEndAction.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_iItem.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_Menu.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2\r2_Inspector.h">
       <Filter>r2</Filter>
     </ClInclude>
     <ClInclude Include="src\test_lua\TestLuaRootMenu.h">
@@ -192,6 +174,24 @@
     </ClInclude>
     <ClInclude Include="src\test_lua\UserDataMenu.h">
       <Filter>test_lua\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_constant.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_Director.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_iItem.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_Inspector.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_Menu.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_Singleton.h">
+      <Filter>r2cm</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

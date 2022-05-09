@@ -28,10 +28,10 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\r2cm\r2cm_Director.cpp" />
+    <ClCompile Include="src\r2cm\r2cm_Inspector.cpp" />
     <ClCompile Include="src\r2cm\r2cm_Menu.cpp" />
     <ClCompile Include="src\r2lua\r2lua.cpp" />
     <ClCompile Include="src\r2\r2_FrameManager.cpp" />
-    <ClCompile Include="src\r2\r2_Inspector.cpp" />
     <ClCompile Include="src\test_lua\FunctionMenu.cpp" />
     <ClCompile Include="src\test_lua\function_closure_test.cpp" />
     <ClCompile Include="src\test_lua\function_lua2cpp_test.cpp" />
@@ -55,15 +55,15 @@
   <ItemGroup>
     <ClInclude Include="src\MainMenu.h" />
     <ClInclude Include="src\pch.h" />
+    <ClInclude Include="src\r2cm\r2cm_constant.h" />
     <ClInclude Include="src\r2cm\r2cm_Director.h" />
-    <ClInclude Include="src\r2cm\r2cm_eTestEndAction.h" />
     <ClInclude Include="src\r2cm\r2cm_iItem.h" />
+    <ClInclude Include="src\r2cm\r2cm_Inspector.h" />
     <ClInclude Include="src\r2cm\r2cm_Menu.h" />
+    <ClInclude Include="src\r2cm\r2cm_Singleton.h" />
     <ClInclude Include="src\r2lua\r2lua.h" />
     <ClInclude Include="src\r2\r2_Assert.h" />
     <ClInclude Include="src\r2\r2_FrameManager.h" />
-    <ClInclude Include="src\r2\r2_Inspector.h" />
-    <ClInclude Include="src\r2\r2_Singleton.h" />
     <ClInclude Include="src\test_lua\FunctionMenu.h" />
     <ClInclude Include="src\test_lua\function_closure_test.h" />
     <ClInclude Include="src\test_lua\function_lua2cpp_test.h" />

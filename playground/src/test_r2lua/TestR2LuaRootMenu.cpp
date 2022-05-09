@@ -4,7 +4,7 @@
 #include <conio.h>
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 #include "MainMenu.h"
 
@@ -32,10 +32,10 @@ r2cm::MenuUp TestR2LuaRootMenu::Create( r2cm::Director& director )
 		ret->AddItem(
 			27
 			, []()->const char* { return MainMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( MainMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 	}
