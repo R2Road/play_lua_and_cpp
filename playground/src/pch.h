@@ -13,12 +13,6 @@ extern "C"
 #include "lualib.h"
 }
 
-#if defined( _WIN64 )
-	#pragma comment( lib, "external/lua/x64/liblua54.a" )
-#else
-	#pragma comment( lib, "external/lua/x86/liblua54.a" )
-#endif
-
 #include "test_lua_helper.h"
 
 #endif //PCH_H

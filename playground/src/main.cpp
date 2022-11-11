@@ -8,6 +8,15 @@
 //	#include <vld.h>
 //#endif
 
+//
+// Lua lib
+//
+#if defined( _WIN64 )
+	#pragma comment( lib, "external/lua/x64/liblua54.a" )
+#else
+	#pragma comment( lib, "external/lua/x86/liblua54.a" )
+#endif
+
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_WindowUtility.h"
 
