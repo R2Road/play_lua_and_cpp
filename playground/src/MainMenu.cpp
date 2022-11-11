@@ -5,6 +5,7 @@
 
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
+#include "r2cm/r2cm_VersionInfo.h"
 
 #include "test_lua_helper.h"
 #include "test_lua/TestLuaRootMenu.h"
@@ -12,8 +13,11 @@
 
 const char* MainMenu::GetTitle()
 {
-	static const std::string title_string = std::string( "Main( lua version : " ) + std::to_string( test_lua_helper::GetVersion() ) + " )";
-	return title_string.c_str();
+	static const std::string ret =
+		std::string( "Main Menu" )
+		+ " : <" + r2cm::VersionInfo.String4Version + ">"
+		+ " : <" + "lua version : v" + std::to_string( test_lua_helper::GetVersion() ) + ">";
+	return ret.c_str();
 }
 r2cm::MenuUp MainMenu::Create( r2cm::Director& director )
 {
