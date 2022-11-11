@@ -1,7 +1,9 @@
-﻿#include "pch.h"
-#include "test_lua_helper.h"
+﻿#include "test_lua_helper.h"
+
+#include "lua_header_package.h"
 
 #include "r2cm/r2cm_ostream.h"
+
 
 namespace test_lua_helper
 {

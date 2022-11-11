@@ -1,5 +1,4 @@
-﻿#include "pch.h"
-#include "r2lua.h"
+﻿#include "r2lua.h"
 
 #include <cassert>
 

@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "TestR2LuaRootMenu.h"
 
 #include <conio.h>

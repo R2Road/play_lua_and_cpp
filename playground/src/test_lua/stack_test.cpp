@@ -1,7 +1,8 @@
-﻿#include "pch.h"
-#include "stack_test.h"
+﻿#include "stack_test.h"
 
 #include <string_view>
+
+#include "lua_header_package.h"
 
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"

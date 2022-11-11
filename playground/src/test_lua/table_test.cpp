@@ -1,5 +1,6 @@
-﻿#include "pch.h"
-#include "table_test.h"
+﻿#include "table_test.h"
+
+#include "lua_header_package.h"
 
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"

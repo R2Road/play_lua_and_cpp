@@ -6,6 +6,8 @@
 #include <variant>
 #include <vector>
 
+#include "lua_header_package.h"
+
 //
 // # REF
 // CppCon 2017: Andreas Weis “Howling at the Moon: Lua for C++ Programmers”

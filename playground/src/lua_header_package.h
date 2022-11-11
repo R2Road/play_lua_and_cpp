@@ -1,5 +1,5 @@
-﻿#ifndef PCH_H
-#define PCH_H
+﻿#ifndef LUA_HEADER_PACKAGE
+#define LUA_HEADER_PACKAGE
 
 //
 // Lua
@@ -11,4 +11,4 @@ extern "C"
 #include "lualib.h"
 }
 
-#endif //PCH_H
+#endif //LUA_HEADER_PACKAGE

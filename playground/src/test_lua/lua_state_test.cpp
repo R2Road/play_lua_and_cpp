@@ -1,5 +1,4 @@
-﻿#include "pch.h"
-#include "lua_state_test.h"
+﻿#include "lua_state_test.h"
 
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"

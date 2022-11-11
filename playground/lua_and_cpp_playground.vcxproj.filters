@@ -34,7 +34,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\pch.cpp" />
     <ClCompile Include="src\test_lua\lua_state_test.cpp">
       <Filter>test_lua\item</Filter>
     </ClCompile>
@@ -119,7 +118,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\test_lua\lua_state_test.h">
       <Filter>test_lua\item</Filter>
     </ClInclude>
@@ -217,5 +215,6 @@
     <ClInclude Include="external\r2cm\r2cm_WindowUtility.h">
       <Filter>external\r2cm</Filter>
     </ClInclude>
+    <ClInclude Include="src\lua_header_package.h" />
   </ItemGroup>
 </Project>
