@@ -6,6 +6,8 @@
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
+#include "test_lua_helper.h"
+
 //
 // lua_CFunction : typedef int (*lua_CFunction) (lua_State *L);
 //

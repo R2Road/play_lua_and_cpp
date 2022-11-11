@@ -11,6 +11,4 @@ extern "C"
 #include "lualib.h"
 }
 
-#include "test_lua_helper.h"
-
 #endif //PCH_H

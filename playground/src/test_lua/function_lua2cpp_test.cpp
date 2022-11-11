@@ -4,6 +4,8 @@
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
+#include "test_lua_helper.h"
+
 int CPPFunction_0( lua_State* lua_state_obj )
 {
 	std::cout << "[CPP] Call : CPPFunction_0" << r2cm::linefeed;

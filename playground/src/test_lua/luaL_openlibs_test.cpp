@@ -4,6 +4,8 @@
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
+#include "test_lua_helper.h"
+
 
 //
 // http://lua-users.org/wiki/MathLibraryTutorial
