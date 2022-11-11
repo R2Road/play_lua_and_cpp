@@ -2,7 +2,7 @@
 #include "luaL_openlibs_test.h"
 
 #include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 
 //
@@ -12,14 +12,14 @@
 
 namespace luaL_openlibs_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "luaL_openlibs";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

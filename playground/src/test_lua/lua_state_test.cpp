@@ -2,7 +2,7 @@
 #include "lua_state_test.h"
 
 #include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 extern "C"
 {
@@ -13,14 +13,14 @@ extern "C"
 
 namespace lua_state_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "luaL_newstate, lua_close";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

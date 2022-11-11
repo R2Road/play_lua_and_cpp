@@ -2,7 +2,7 @@
 #include "TestLuaRootMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 #include "lua_state_test.h"
 #include "luaL_dofile_test.h"

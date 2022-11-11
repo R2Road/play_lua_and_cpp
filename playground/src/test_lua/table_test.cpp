@@ -2,18 +2,18 @@
 #include "table_test.h"
 
 #include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 namespace table_test
 {
-	r2cm::iItem::TitleFuncT GenerateTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT GenerateTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Generate";
 		};
 	}
-	r2cm::iItem::DoFuncT GenerateTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT GenerateTest::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -52,14 +52,14 @@ namespace table_test
 
 
 
-	r2cm::iItem::TitleFuncT Add2GlobalTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Add2GlobalTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Add 2 Global";
 		};
 	}
-	r2cm::iItem::DoFuncT Add2GlobalTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT Add2GlobalTest::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -118,14 +118,14 @@ namespace table_test
 
 
 
-	r2cm::iItem::TitleFuncT PushAndGetTest_1::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT PushAndGetTest_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Push And Get Value 1";
 		};
 	}
-	r2cm::iItem::DoFuncT PushAndGetTest_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT PushAndGetTest_1::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -193,14 +193,14 @@ namespace table_test
 
 
 
-	r2cm::iItem::TitleFuncT PushAndGetTest_2::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT PushAndGetTest_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Push And Get Value 2";
 		};
 	}
-	r2cm::iItem::DoFuncT PushAndGetTest_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT PushAndGetTest_2::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -256,14 +256,14 @@ namespace table_test
 
 
 
-	r2cm::iItem::TitleFuncT PushAndGetTest_3::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT PushAndGetTest_3::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Push And Get Value 3 : Invalid Stack Index";
 		};
 	}
-	r2cm::iItem::DoFuncT PushAndGetTest_3::GetDoFunction()
+	r2cm::iItem::DoFunctionT PushAndGetTest_3::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -320,14 +320,14 @@ namespace table_test
 
 
 
-	r2cm::iItem::TitleFuncT PushAndGetTest_4::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT PushAndGetTest_4::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Push And Get Value 4 : Invalid Key";
 		};
 	}
-	r2cm::iItem::DoFuncT PushAndGetTest_4::GetDoFunction()
+	r2cm::iItem::DoFunctionT PushAndGetTest_4::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -381,14 +381,14 @@ namespace table_test
 
 
 
-	r2cm::iItem::TitleFuncT LuaFunction_And_GetTable::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT LuaFunction_And_GetTable::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Lua Function + Get Table";
 		};
 	}
-	r2cm::iItem::DoFuncT LuaFunction_And_GetTable::GetDoFunction()
+	r2cm::iItem::DoFunctionT LuaFunction_And_GetTable::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

@@ -4,7 +4,7 @@
 #include <string>
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 #include "test_lua_helper.h"
 #include "test_lua/TestLuaRootMenu.h"

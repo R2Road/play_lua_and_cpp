@@ -2,7 +2,7 @@
 #include "function_closure_test.h"
 
 #include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 
 int CPPClosure( lua_State* lua_state_obj )
@@ -16,14 +16,14 @@ int CPPClosure( lua_State* lua_state_obj )
 }
 namespace function_closure_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "function_closure_test : Basic";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -106,14 +106,14 @@ int CPPClosure_UpdateUpvalue( lua_State* lua_state_obj )
 }
 namespace function_closure_test
 {
-	r2cm::iItem::TitleFuncT UpdateUpvalue::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT UpdateUpvalue::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "function_closure_test : Update Upvalue";
 		};
 	}
-	r2cm::iItem::DoFuncT UpdateUpvalue::GetDoFunction()
+	r2cm::iItem::DoFunctionT UpdateUpvalue::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -184,14 +184,14 @@ int CPPClosure_ArgumentTest( lua_State* lua_state_obj )
 }
 namespace function_closure_test
 {
-	r2cm::iItem::TitleFuncT ArgumentTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT ArgumentTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "function_closure_test : Argument Test";
 		};
 	}
-	r2cm::iItem::DoFuncT ArgumentTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT ArgumentTest::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

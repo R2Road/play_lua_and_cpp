@@ -2,7 +2,6 @@
 #include "FunctionMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_constant.h"
 
 #include "function_closure_test.h"
 #include "function_cpp2lua_test.h"

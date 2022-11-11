@@ -1,7 +1,7 @@
 ﻿#include "pch.h"
 #include "test_lua_helper.h"
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 namespace test_lua_helper
 {

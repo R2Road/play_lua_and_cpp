@@ -2,18 +2,18 @@
 #include "function_cpp2lua_test.h"
 
 #include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 namespace function_cpp2lua_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "function cpp2lua : Basic";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -71,14 +71,14 @@ namespace function_cpp2lua_test
 
 
 
-	r2cm::iItem::TitleFuncT Argument2::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Argument2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "function cpp2lua : Argument 2";
 		};
 	}
-	r2cm::iItem::DoFuncT Argument2::GetDoFunction()
+	r2cm::iItem::DoFunctionT Argument2::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

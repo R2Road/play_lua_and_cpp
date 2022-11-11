@@ -2,7 +2,7 @@
 #include "StackMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 #include "stack_test.h"
 

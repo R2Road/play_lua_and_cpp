@@ -2,21 +2,27 @@
 #include "r2lua_test.h"
 
 #include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 #include "r2lua/r2lua.h"
 #include "test_lua_helper.h"
 
+std::ostream& operator<<( std::ostream& o, const r2lua::eType type )
+{
+	o.put( static_cast<int>( type ) );
+	return ( o );
+}
+
 namespace r2lua_test
 {
-	r2cm::iItem::TitleFuncT ValueTest_1::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT ValueTest_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "r2lua::Value 1";
 		};
 	}
-	r2cm::iItem::DoFuncT ValueTest_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT ValueTest_1::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -81,14 +87,14 @@ namespace r2lua_test
 
 
 
-	r2cm::iItem::TitleFuncT ValueTest_2::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT ValueTest_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "r2lua::Value 2";
 		};
 	}
-	r2cm::iItem::DoFuncT ValueTest_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT ValueTest_2::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -169,14 +175,14 @@ namespace r2lua_test
 
 
 
-	r2cm::iItem::TitleFuncT PushTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT PushTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "r2lua::Push, r2lua::PushArgs";
 		};
 	}
-	r2cm::iItem::DoFuncT PushTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT PushTest::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -219,14 +225,14 @@ namespace r2lua_test
 
 
 
-	r2cm::iItem::TitleFuncT GetValueFromStackTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT GetValueFromStackTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "r2lua::GetValueFromStack";
 		};
 	}
-	r2cm::iItem::DoFuncT GetValueFromStackTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT GetValueFromStackTest::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -311,14 +317,14 @@ namespace r2lua_test
 	}
 
 
-	r2cm::iItem::TitleFuncT GetValuesFromStackTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT GetValuesFromStackTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "r2lua::GetValuesFromStack";
 		};
 	}
-	r2cm::iItem::DoFuncT GetValuesFromStackTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT GetValuesFromStackTest::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -394,14 +400,14 @@ namespace r2lua_test
 
 
 
-	r2cm::iItem::TitleFuncT CallTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT CallTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "r2lua::Call";
 		};
 	}
-	r2cm::iItem::DoFuncT CallTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT CallTest::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

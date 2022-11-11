@@ -2,7 +2,7 @@
 #include "function_lua2cpp_test.h"
 
 #include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 int CPPFunction_0( lua_State* lua_state_obj )
 {
@@ -40,14 +40,14 @@ int CPPFunction_2( lua_State* lua_state_obj )
 
 namespace function_lua2cpp_test
 {
-	r2cm::iItem::TitleFuncT Basic_1::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Basic_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "function_lua2cpp_test : Basic 1";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic_1::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -104,14 +104,14 @@ namespace function_lua2cpp_test
 
 
 
-	r2cm::iItem::TitleFuncT Basic_2::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Basic_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "function_lua2cpp_test : Basic 2";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic_2::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

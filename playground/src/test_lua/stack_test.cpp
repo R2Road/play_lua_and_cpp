@@ -4,7 +4,7 @@
 #include <string_view>
 
 #include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 //
 // lua_CFunction : typedef int (*lua_CFunction) (lua_State *L);
@@ -16,14 +16,14 @@ int cclosure_test_function( lua_State* )
 
 namespace stack_test
 {
-	r2cm::iItem::TitleFuncT PushTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT PushTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Push";
 		};
 	}
-	r2cm::iItem::DoFuncT PushTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT PushTest::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -78,14 +78,14 @@ namespace stack_test
 
 
 
-	r2cm::iItem::TitleFuncT TypeCheck::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT TypeCheck::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Type Check : lua_type, lua_typename, lua_isnumber...";
 		};
 	}
-	r2cm::iItem::DoFuncT TypeCheck::GetDoFunction()
+	r2cm::iItem::DoFunctionT TypeCheck::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -165,14 +165,14 @@ namespace stack_test
 
 
 
-	r2cm::iItem::TitleFuncT PrintAll::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT PrintAll::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Print All";
 		};
 	}
-	r2cm::iItem::DoFuncT PrintAll::GetDoFunction()
+	r2cm::iItem::DoFunctionT PrintAll::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -241,14 +241,14 @@ namespace stack_test
 
 
 
-	r2cm::iItem::TitleFuncT GetTest_1::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT GetTest_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Get 1 : lua_to...";
 		};
 	}
-	r2cm::iItem::DoFuncT GetTest_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT GetTest_1::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -312,14 +312,14 @@ namespace stack_test
 
 
 
-	r2cm::iItem::TitleFuncT GetTest_2::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT GetTest_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Get 2 : luaL_check...";
 		};
 	}
-	r2cm::iItem::DoFuncT GetTest_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT GetTest_2::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -375,14 +375,14 @@ namespace stack_test
 
 
 
-	r2cm::iItem::TitleFuncT SetTop::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT SetTop::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stack Clear : lua_settop";
 		};
 	}
-	r2cm::iItem::DoFuncT SetTop::GetDoFunction()
+	r2cm::iItem::DoFunctionT SetTop::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -441,14 +441,14 @@ namespace stack_test
 
 
 
-	r2cm::iItem::TitleFuncT Pop::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Pop::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stack Clear : lua_pop";
 		};
 	}
-	r2cm::iItem::DoFuncT Pop::GetDoFunction()
+	r2cm::iItem::DoFunctionT Pop::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -521,14 +521,14 @@ namespace stack_test
 
 
 
-	r2cm::iItem::TitleFuncT PushValueTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT PushValueTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "lua_pushvalue";
 		};
 	}
-	r2cm::iItem::DoFuncT PushValueTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT PushValueTest::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -596,14 +596,14 @@ namespace stack_test
 
 
 
-	r2cm::iItem::TitleFuncT CopyTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT CopyTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "lua_copy";
 		};
 	}
-	r2cm::iItem::DoFuncT CopyTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT CopyTest::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -669,14 +669,14 @@ namespace stack_test
 
 
 
-	r2cm::iItem::TitleFuncT RotateTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT RotateTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "lua_rotate";
 		};
 	}
-	r2cm::iItem::DoFuncT RotateTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT RotateTest::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
