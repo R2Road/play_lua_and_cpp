@@ -17,8 +17,6 @@ namespace function_cpp2lua_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			lua_State* lua_state_obj = luaL_newstate();
 			luaL_openlibs( lua_state_obj );
 
@@ -82,8 +80,6 @@ namespace function_cpp2lua_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			lua_State* lua_state_obj = luaL_newstate();
 			luaL_openlibs( lua_state_obj );
 

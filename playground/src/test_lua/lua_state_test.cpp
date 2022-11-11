@@ -24,8 +24,6 @@ namespace lua_state_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::cout << "Note : luaL_newstate - lua_State 생성." << r2cm::linefeed;

@@ -17,8 +17,6 @@ namespace table_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( lua_State* lua_state_obj = luaL_newstate() );
@@ -63,8 +61,6 @@ namespace table_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( lua_State* lua_state_obj = luaL_newstate() );
@@ -129,8 +125,6 @@ namespace table_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( lua_State* lua_state_obj = luaL_newstate() );
@@ -204,8 +198,6 @@ namespace table_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			lua_State* lua_state_obj = luaL_newstate();
 
 
@@ -267,8 +259,6 @@ namespace table_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			lua_State* lua_state_obj = luaL_newstate();
 
 
@@ -331,8 +321,6 @@ namespace table_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			lua_State* lua_state_obj = luaL_newstate();
 
 
@@ -392,8 +380,6 @@ namespace table_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			lua_State* lua_state_obj = luaL_newstate();
 			luaL_openlibs( lua_state_obj );
 
