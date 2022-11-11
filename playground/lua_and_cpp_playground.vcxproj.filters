@@ -10,12 +10,6 @@
     <Filter Include="test_lua\item">
       <UniqueIdentifier>{bb975c5e-ebe5-41b6-824a-da9b49efb89e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="r2">
-      <UniqueIdentifier>{908a8d2c-6580-4589-8a28-6c2bd04fdb7d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="r2cm">
-      <UniqueIdentifier>{5fc1f00d-1c5a-40c7-9542-081fc7ad1a9c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="r2lua">
       <UniqueIdentifier>{26c61446-f236-4da8-92e9-69cf0892f66d}</UniqueIdentifier>
     </Filter>
@@ -28,15 +22,21 @@
     <Filter Include="test_r2lua\menu">
       <UniqueIdentifier>{0a044e0a-6499-4b9a-b650-f3abbd02e2fd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="external">
+      <UniqueIdentifier>{955480a9-8970-4fc2-a2db-68e012a01677}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\r2">
+      <UniqueIdentifier>{908a8d2c-6580-4589-8a28-6c2bd04fdb7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\r2cm">
+      <UniqueIdentifier>{5fc1f00d-1c5a-40c7-9542-081fc7ad1a9c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pch.cpp" />
     <ClCompile Include="src\test_lua\lua_state_test.cpp">
       <Filter>test_lua\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2\r2_FrameManager.cpp">
-      <Filter>r2</Filter>
     </ClCompile>
     <ClCompile Include="src\test_lua\TestLuaRootMenu.cpp">
       <Filter>test_lua\menu</Filter>
@@ -96,26 +96,23 @@
     <ClCompile Include="src\test_lua\UserDataMenu.cpp">
       <Filter>test_lua\menu</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2cm\r2cm_Director.cpp">
-      <Filter>r2cm</Filter>
+    <ClCompile Include="external\r2\r2_FrameManager.cpp">
+      <Filter>external\r2</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2cm\r2cm_Inspector.cpp">
-      <Filter>r2cm</Filter>
+    <ClCompile Include="external\r2cm\r2cm_Director.cpp">
+      <Filter>external\r2cm</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2cm\r2cm_Menu.cpp">
-      <Filter>r2cm</Filter>
+    <ClCompile Include="external\r2cm\r2cm_Inspector.cpp">
+      <Filter>external\r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2cm\r2cm_Menu.cpp">
+      <Filter>external\r2cm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\test_lua\lua_state_test.h">
       <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2\r2_Assert.h">
-      <Filter>r2</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2\r2_FrameManager.h">
-      <Filter>r2</Filter>
     </ClInclude>
     <ClInclude Include="src\test_lua\TestLuaRootMenu.h">
       <Filter>test_lua\menu</Filter>
@@ -175,23 +172,29 @@
     <ClInclude Include="src\test_lua\UserDataMenu.h">
       <Filter>test_lua\menu</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_constant.h">
-      <Filter>r2cm</Filter>
+    <ClInclude Include="external\r2\r2_Assert.h">
+      <Filter>external\r2</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_Director.h">
-      <Filter>r2cm</Filter>
+    <ClInclude Include="external\r2\r2_FrameManager.h">
+      <Filter>external\r2</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_iItem.h">
-      <Filter>r2cm</Filter>
+    <ClInclude Include="external\r2cm\r2cm_constant.h">
+      <Filter>external\r2cm</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_Inspector.h">
-      <Filter>r2cm</Filter>
+    <ClInclude Include="external\r2cm\r2cm_Director.h">
+      <Filter>external\r2cm</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_Menu.h">
-      <Filter>r2cm</Filter>
+    <ClInclude Include="external\r2cm\r2cm_iItem.h">
+      <Filter>external\r2cm</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_Singleton.h">
-      <Filter>r2cm</Filter>
+    <ClInclude Include="external\r2cm\r2cm_Inspector.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_Menu.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_Singleton.h">
+      <Filter>external\r2cm</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
