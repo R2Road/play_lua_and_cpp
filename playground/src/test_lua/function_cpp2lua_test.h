@@ -12,7 +12,7 @@ namespace function_cpp2lua_test
 		DoFunctionT GetDoFunction() override;
 	};
 
-	class Argument2 : public r2cm::iItem, public r2cm::SingleTon<Argument2>
+	class Argument : public r2cm::iItem, public r2cm::SingleTon<Argument>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;

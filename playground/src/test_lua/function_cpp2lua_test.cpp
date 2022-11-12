@@ -72,14 +72,14 @@ namespace function_cpp2lua_test
 
 
 
-	r2cm::iItem::TitleFunctionT Argument2::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Argument::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "function cpp2lua : Argument 2";
+			return "function cpp2lua : Argument";
 		};
 	}
-	r2cm::iItem::DoFunctionT Argument2::GetDoFunction()
+	r2cm::iItem::DoFunctionT Argument::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
