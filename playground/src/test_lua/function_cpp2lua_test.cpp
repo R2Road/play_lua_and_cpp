@@ -92,7 +92,7 @@ namespace function_cpp2lua_test
 
 			std::cout << r2cm::tab << "+ Add Function : Sum( arg1, arg2 )" << r2cm::linefeed2;
 			DECLARATION_MAIN( const int arg_count = 2 );
-			PROCESS_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/function_cpp2lua_test_01.lua" ) );
+			PROCESS_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/function_cpp2lua_test_argument_01.lua" ) );
 
 			std::cout << r2cm::split;
 
