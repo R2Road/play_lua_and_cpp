@@ -25,8 +25,8 @@ namespace lua_state_test
 		{
 			std::cout << r2cm::split;
 
-			std::cout << "Note : luaL_newstate - lua_State 생성." << r2cm::linefeed;
-			std::cout << "Note : lua_close - lua_State 제거." << r2cm::linefeed;
+			OUTPUT_NOTE( "luaL_newstate - lua_State 생성." );
+			OUTPUT_NOTE( "lua_close - lua_State 제거." );
 
 			std::cout << r2cm::split;
 
