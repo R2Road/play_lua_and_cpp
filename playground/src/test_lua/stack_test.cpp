@@ -37,7 +37,9 @@ namespace stack_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Top" << r2cm::linefeed2;
+				OUTPUT_NOTE( "Top" );
+
+				std::cout << r2cm::linefeed;
 
 				OUTPUT_VALUE( lua_gettop( lua_state_obj ) );
 			}
@@ -45,7 +47,9 @@ namespace stack_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Push( info : lua.h 233 line )" << r2cm::linefeed2;
+				OUTPUT_NOTE( "Push( info : lua.h 233 line )" );
+
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( lua_pushnil( lua_state_obj ) );
 				PROCESS_MAIN( lua_pushnumber( lua_state_obj, 12345.12345 ) );
@@ -59,7 +63,9 @@ namespace stack_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Top" << r2cm::linefeed2;
+				OUTPUT_NOTE( "Top" );
+
+				std::cout << r2cm::linefeed;
 
 				OUTPUT_VALUE( lua_gettop( lua_state_obj ) );
 			}
@@ -105,7 +111,9 @@ namespace stack_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ 0 : Type Check In Stack - lua_is..." << r2cm::linefeed2;
+				OUTPUT_NOTE( "0 : Type Check In Stack - lua_is..." );
+
+				std::cout << r2cm::linefeed;
 
 				EXPECT_TRUE( lua_isnil( lua_state_obj, 1 ) );
 				EXPECT_TRUE( lua_isnumber( lua_state_obj, 2 ) );
@@ -119,7 +127,9 @@ namespace stack_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ 1 : Type Check In Stack - lua_type" << r2cm::linefeed2;
+				OUTPUT_NOTE( "1 : Type Check In Stack - lua_type" );
+
+				std::cout << r2cm::linefeed;
 
 				EXPECT_EQ( LUA_TNIL, lua_type( lua_state_obj, 1 ) );
 				EXPECT_EQ( LUA_TNUMBER, lua_type( lua_state_obj, 2 ) );
@@ -133,7 +143,9 @@ namespace stack_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ 2 : Empty Stack" << r2cm::linefeed2;
+				OUTPUT_NOTE( "2 : Empty Stack" );
+
+				std::cout << r2cm::linefeed;
 
 				DECLARATION_MAIN( const int type = lua_type( lua_state_obj, 8 ) );
 				OUTPUT_VALUE( type );
@@ -144,7 +156,9 @@ namespace stack_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ 3 : Type Name" << r2cm::linefeed2;
+				OUTPUT_NOTE( "3 : Type Name" );
+
+				std::cout << r2cm::linefeed;
 
 				DECLARATION_MAIN( const char* type_name = lua_typename( lua_state_obj, 4 ) );
 				OUTPUT_VALUE( type_name );
