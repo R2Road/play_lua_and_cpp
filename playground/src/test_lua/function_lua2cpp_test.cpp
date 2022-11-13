@@ -9,7 +9,7 @@
 
 int CPPFunction_0( lua_State* lua_state_obj )
 {
-	std::cout << "[CPP] Call : CPPFunction_0" << r2cm::linefeed;
+	std::cout << "[CPP] CPPFunction_0" << r2cm::linefeed;
 
 	return 0;
 }
