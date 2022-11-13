@@ -38,8 +38,6 @@ namespace lua_state_test
 			// Make Lua State
 			//
 			{
-				std::cout << r2cm::tab << "+ Create" << r2cm::linefeed2;
-
 				PROCESS_MAIN( lua_state_obj = luaL_newstate() );
 			}
 
@@ -49,8 +47,6 @@ namespace lua_state_test
 			// Close Lua State
 			//
 			{
-				std::cout << r2cm::tab << "+ Close" << r2cm::linefeed2;
-
 				PROCESS_MAIN( lua_close( lua_state_obj ) );
 			}
 
