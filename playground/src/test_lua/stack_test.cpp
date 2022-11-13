@@ -32,16 +32,14 @@ namespace stack_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_SUB( lua_State* lua_state_obj = nullptr );
-			PROCESS_SUB( lua_state_obj = luaL_newstate() );
+			DECLARATION_SUB( lua_State* lua_state_obj = luaL_newstate() );
 
 			std::cout << r2cm::split;
 
 			{
 				std::cout << r2cm::tab << "+ Top" << r2cm::linefeed2;
 
-				DECLARATION_MAIN( const auto stack_count = lua_gettop( lua_state_obj ) );
-				std::cout << r2cm::tab << "Stack Count : " << stack_count << r2cm::linefeed;
+				OUTPUT_VALUE( lua_gettop( lua_state_obj ) );
 			}
 
 			std::cout << r2cm::split;
@@ -63,8 +61,7 @@ namespace stack_test
 			{
 				std::cout << r2cm::tab << "+ Top" << r2cm::linefeed2;
 
-				DECLARATION_MAIN( const auto stack_count = lua_gettop( lua_state_obj ) );
-				std::cout << r2cm::tab << "Stack Count : " << stack_count << r2cm::linefeed;
+				OUTPUT_VALUE( lua_gettop( lua_state_obj ) );
 			}
 			
 			std::cout << r2cm::split;
