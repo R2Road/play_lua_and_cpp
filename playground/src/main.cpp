@@ -1,7 +1,8 @@
 ﻿//
 // # ref
-// - https://www.lua.org/manual/5.4/manual.html
-// - http://lua-users.org/wiki/MathLibraryTutorial
+// - EN Manual : https://www.lua.org/manual/5.4/manual.html
+// - KR Manual : https://wariua.github.io/lua-manual/5.4/
+// - ... : http://lua-users.org/wiki/MathLibraryTutorial
 //
 
 //#if defined( DEBUG ) || defined( _DEBUG )
