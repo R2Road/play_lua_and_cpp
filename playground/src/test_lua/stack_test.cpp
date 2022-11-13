@@ -673,7 +673,7 @@ namespace stack_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Rotate( 1 to 2 )" << r2cm::linefeed2;
+				std::cout << r2cm::tab << "+ Rotate( 1 ~ 4 를 대상으로 1회 회전 )" << r2cm::linefeed2;
 
 				PROCESS_MAIN( lua_rotate( lua_state_obj, 1, 1 ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
@@ -682,7 +682,16 @@ namespace stack_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Rotate( 2 to 4 )" << r2cm::linefeed2;
+				std::cout << r2cm::tab << "+ Rotate( 1 ~ 4 를 대상으로 1회 역회전 )" << r2cm::linefeed2;
+
+				PROCESS_MAIN( lua_rotate( lua_state_obj, 1, -1 ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Rotate( 2 ~ 4 를 대상으로 2회 회전 )" << r2cm::linefeed2;
 
 				PROCESS_MAIN( lua_rotate( lua_state_obj, 2, 2 ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
@@ -691,22 +700,13 @@ namespace stack_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Rotate( 4 to ?? )" << r2cm::linefeed2;
+				std::cout << r2cm::tab << "+ Rotate( 4 이후에 값이 없으므로 회전이 되지 않는다. )" << r2cm::linefeed2;
 
 				PROCESS_MAIN( lua_rotate( lua_state_obj, 4, 1 ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
 			std::cout << r2cm::split;
-
-			{
-				std::cout << r2cm::tab << "+ Rotate( 4 to ?? )" << r2cm::linefeed2;
-
-				PROCESS_MAIN( lua_rotate( lua_state_obj, 4, -1 ) );
-				test_lua_helper::PrintAllStack( lua_state_obj );
-			}
-
-			std::cout << r2cm::linefeed;
 
 
 			lua_close( lua_state_obj );
