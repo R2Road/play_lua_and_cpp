@@ -136,7 +136,7 @@ namespace stack_test
 				std::cout << r2cm::tab << "+ 2 : Empty Stack" << r2cm::linefeed2;
 
 				DECLARATION_MAIN( const int type = lua_type( lua_state_obj, 8 ) );
-				std::cout << "type : " << type << r2cm::linefeed;
+				OUTPUT_VALUE( type );
 
 				EXPECT_EQ( LUA_TNONE, type );
 			}
@@ -147,7 +147,7 @@ namespace stack_test
 				std::cout << r2cm::tab << "+ 3 : Type Name" << r2cm::linefeed2;
 
 				DECLARATION_MAIN( const char* type_name = lua_typename( lua_state_obj, 4 ) );
-				std::cout << "type_name : " << type_name << r2cm::linefeed;
+				OUTPUT_VALUE( type_name );
 			}
 
 			std::cout << r2cm::split;
