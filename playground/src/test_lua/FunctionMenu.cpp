@@ -24,7 +24,7 @@ r2cm::MenuUp FunctionMenu::Create( r2cm::Director& director )
 
 
 		ret->AddItem( 'q', function_lua2cpp_test::Register_And_PCall::GetInstance() );
-		ret->AddItem( 'w', function_lua2cpp_test::Basic_2::GetInstance() );
+		ret->AddItem( 'w', function_lua2cpp_test::Argument::GetInstance() );
 
 
 		ret->AddLineFeed();
