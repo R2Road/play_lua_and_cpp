@@ -19,6 +19,13 @@ namespace stack_test
 		DoFunctionT GetDoFunction() override;
 	};
 
+	class TypeName : public r2cm::iItem, public r2cm::SingleTon<TypeName>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class PrintAll: public r2cm::iItem, public r2cm::SingleTon<PrintAll>
 	{
 	public:

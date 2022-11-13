@@ -86,7 +86,7 @@ namespace stack_test
 	{
 		return []()->const char*
 		{
-			return "Type Check : lua_type, lua_typename, lua_isnumber...";
+			return "Type Check : lua_type, lua_isnumber...";
 		};
 	}
 	r2cm::iItem::DoFunctionT TypeCheck::GetDoFunction()
@@ -155,13 +155,67 @@ namespace stack_test
 
 			std::cout << r2cm::split;
 
+
+			lua_close( lua_state_obj );
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT TypeName::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Type Name : lua_typename...";
+		};
+	}
+	r2cm::iItem::DoFunctionT TypeName::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			lua_State* lua_state_obj = luaL_newstate();
+
+
+			std::cout << r2cm::split;
+
 			{
-				OUTPUT_NOTE( "3 : Type Name" );
+				PROCESS_MAIN( lua_pushnil( lua_state_obj ) );
+				PROCESS_MAIN( lua_pushnumber( lua_state_obj, 12345.12345 ) );
+				PROCESS_MAIN( lua_pushinteger( lua_state_obj, 7 ) );
+				PROCESS_MAIN( lua_pushlstring( lua_state_obj, "dummy_text", 3 ) );
+				PROCESS_MAIN( lua_pushstring( lua_state_obj, "dummy_text" ) );
+				PROCESS_MAIN( lua_pushcclosure( lua_state_obj, &cclosure_test_function, 0 ) );
+				PROCESS_MAIN( lua_pushboolean( lua_state_obj, true ) );
+				OUTPUT_VALUE( lua_gettop( lua_state_obj ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "Type Name" );
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( const char* type_name = lua_typename( lua_state_obj, 4 ) );
-				OUTPUT_VALUE( type_name );
+				OUTPUT_VALUE( lua_typename( lua_state_obj, lua_type( lua_state_obj, 1 ) ) );
+				OUTPUT_VALUE( lua_typename( lua_state_obj, lua_type( lua_state_obj, 2 ) ) );
+				OUTPUT_VALUE( lua_typename( lua_state_obj, lua_type( lua_state_obj, 3 ) ) );
+				OUTPUT_VALUE( lua_typename( lua_state_obj, lua_type( lua_state_obj, 4 ) ) );
+				OUTPUT_VALUE( lua_typename( lua_state_obj, lua_type( lua_state_obj, 5 ) ) );
+				OUTPUT_VALUE( lua_typename( lua_state_obj, lua_type( lua_state_obj, 6 ) ) );
+				OUTPUT_VALUE( lua_typename( lua_state_obj, lua_type( lua_state_obj, 7 ) ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "???" );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( lua_typename( lua_state_obj, lua_type( lua_state_obj, 0 ) ) );
+				OUTPUT_VALUE( lua_typename( lua_state_obj, lua_type( lua_state_obj, 8 ) ) );
 			}
 
 			std::cout << r2cm::split;
