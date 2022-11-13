@@ -61,14 +61,14 @@ namespace function_lua2cpp_test
 
 			std::cout << r2cm::split;
 
-			std::cout << "Note : cpp 펑션의 반환값 0 = 반환값 없음" << r2cm::linefeed;
-			std::cout << "Note : cpp 펑션의 반환값 n = 반환값의 수, 스택에 값을 넣어두면 반환값으로 처리" << r2cm::linefeed;
+			OUTPUT_NOTE( "cpp 펑션의 반환값 0 = 반환값 없음" );
+			OUTPUT_NOTE( "cpp 펑션의 반환값 n = 반환값의 수, 스택에 값을 넣어두면 반환값으로 처리" );
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( const char* command = "function LUAFunction_0()    CPPFunction_0()    end"; )
-				PROCESS_MAIN( test_lua_helper::DoString( lua_state_obj, command ) );
+				SHOW_FILE( "resources/function_lua2cpp_test_register_n_pcall_01.lua" );
+				PROCESS_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/function_lua2cpp_test_register_n_pcall_01.lua" ) );
 			}
 
 			std::cout << r2cm::split;
