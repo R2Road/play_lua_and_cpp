@@ -43,14 +43,14 @@ int CPPFunction_2( lua_State* lua_state_obj )
 
 namespace function_lua2cpp_test
 {
-	r2cm::iItem::TitleFunctionT Basic_1::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Register_And_PCall::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "function_lua2cpp_test : Basic 1";
+			return "function_lua2cpp_test : Register And PCall";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT Register_And_PCall::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
