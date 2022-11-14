@@ -11,6 +11,13 @@ struct Data
 auto cpp_process = []( lua_State* l )->int
 {
 	void* d = lua_newuserdata( l, sizeof( Data ) );
-	new ( d ) Data;
+
+	test_lua_helper::PrintAllStack( l );
+	OUTPUT_VALUE( ( (Data*)d )->t );
+
+	new ( d ) Data; // <<== Here
+
+	OUTPUT_VALUE( ( (Data*)d )->t );
+
 	return 1;
 };

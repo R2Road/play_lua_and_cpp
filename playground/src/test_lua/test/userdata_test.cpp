@@ -114,11 +114,11 @@ namespace userdata_test
 
 			std::cout << r2cm::split;
 
-			OUTPUT_NOTE( "위치 지정 new 를 활용해서 강제로 생성자를 호출한다." );
-
-			std::cout << r2cm::split;
-
 			{
+				OUTPUT_NOTE( "위치 지정 new 를 활용해서 강제로 생성자를 호출한다." );
+
+				std::cout << r2cm::linefeed;
+
 				SHOW_FILE( "src/test_lua/test/userdata_test_helper_constructor.hpp" );
 
 				std::cout << r2cm::linefeed;
