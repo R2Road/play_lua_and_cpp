@@ -26,11 +26,11 @@ namespace metatable_test
 
 			std::cout << r2cm::split;
 
-			OUTPUT_NOTE( "MetaTable 에 operator 의 할당이 가능하다." );
-
-			std::cout << r2cm::split;
-
 			{
+				OUTPUT_NOTE( "MetaTable 에 operator 의 할당이 가능하다." );
+
+				std::cout << r2cm::linefeed;
+
 				SHOW_FILE( "src/test_lua/test/metatable_test_helper.hpp" );
 
 				std::cout << r2cm::linefeed;
@@ -65,7 +65,7 @@ namespace metatable_test
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( lua_getfield( lua_state_obj, 1, "x" ) );
+				PROCESS_MAIN( lua_getfield( lua_state_obj, -1, "x" ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
