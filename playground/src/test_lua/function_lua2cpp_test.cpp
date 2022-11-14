@@ -14,30 +14,32 @@ int CPPFunction_0( lua_State* lua_state_obj )
 	return 0;
 }
 
-void CPPFunctionBody( lua_State* lua_state_obj )
+int CPPFunction_1( lua_State* lua_state_obj )
+{
+	float arg1 = (float)lua_tonumber( lua_state_obj, 1 );
+
+	std::cout << "[CPP] START : " << arg1 << r2cm::linefeed;
+
+	lua_pushnumber( lua_state_obj, arg1 * 0.01 );
+	lua_pushnumber( lua_state_obj, arg1 * 0.1 );
+
+	return 2; // 반환값 숫자
+}
+
+int CPPFunction_2( lua_State* lua_state_obj )
 {
 	float arg1 = (float)lua_tonumber( lua_state_obj, 1 );
 	float arg2 = (float)lua_tonumber( lua_state_obj, 2 );
 
-	std::cout << "[CPP] Call : CPPFunction : " << arg1 << ", " << arg2 << r2cm::linefeed;
+	std::cout << "[CPP] START : " << arg1 << ", " << arg2 << r2cm::linefeed;
 
 	const float result = arg1 + arg2;
 
 	lua_pushnumber( lua_state_obj, result * 0.01 );
 	lua_pushnumber( lua_state_obj, result * 0.1 );
 	lua_pushnumber( lua_state_obj, result );
-}
 
-int CPPFunction_1( lua_State* lua_state_obj )
-{
-	CPPFunctionBody( lua_state_obj );
-	return 1;
-}
-
-int CPPFunction_2( lua_State* lua_state_obj )
-{
-	CPPFunctionBody( lua_state_obj );
-	return 3;
+	return 3; // 반환값 숫자
 }
 
 
@@ -133,12 +135,11 @@ namespace function_lua2cpp_test
 				PROCESS_MAIN( lua_register( lua_state_obj, "CPPFunction_1", CPPFunction_1 ) );
 				PROCESS_MAIN( lua_getglobal( lua_state_obj, "LUAFunction_1" ) );
 				PROCESS_MAIN( lua_pushnumber( lua_state_obj, 123 ) );
-				PROCESS_MAIN( lua_pushnumber( lua_state_obj, 456 ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( lua_pcall( lua_state_obj, 2, LUA_MULTRET, 0 ) );
+				PROCESS_MAIN( lua_pcall( lua_state_obj, 1, LUA_MULTRET, 0 ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
