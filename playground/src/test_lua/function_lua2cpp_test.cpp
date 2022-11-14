@@ -169,4 +169,73 @@ namespace function_lua2cpp_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT Lambda::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "function_lua2cpp_test : Lambda";
+		};
+	}
+	r2cm::iItem::DoFunctionT Lambda::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			lua_State* lua_state_obj = luaL_newstate();
+			luaL_openlibs( lua_state_obj );
+
+			std::cout << r2cm::split;
+
+			{
+				SHOW_FILE( "resources/function_lua2cpp_test_lambda_01.lua" );
+				PROCESS_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/function_lua2cpp_test_lambda_01.lua" ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "Lambda 함수 등록" );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( auto cpp_func = []( lua_State* l )->int
+				{
+					std::cout << "[CPP] Start\n";
+					lua_pushnumber( l, 7 );
+					std::cout << "[CPP] End\n";
+
+					return 1;
+				} );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( lua_pushcfunction( lua_state_obj, cpp_func ) );
+				PROCESS_MAIN( lua_setglobal( lua_state_obj, "CPPFunction" ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "Call" );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( lua_getglobal( lua_state_obj, "LUAFunction" ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( lua_pcall( lua_state_obj, 0, LUA_MULTRET, 0 ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2cm::split;
+
+			lua_close( lua_state_obj );
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }

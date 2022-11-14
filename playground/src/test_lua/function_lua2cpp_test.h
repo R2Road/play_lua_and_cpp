@@ -18,4 +18,11 @@ namespace function_lua2cpp_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class Lambda : public r2cm::iItem, public r2cm::SingleTon<Lambda>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }
