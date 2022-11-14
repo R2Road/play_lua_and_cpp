@@ -1,5 +1,1 @@
-vec = {};
-
-function LUAFunction()
-	vec = CPPProcess();
-end
+vec = CPPProcess();

@@ -29,7 +29,17 @@ namespace userdata_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( struct Vec { int x = 0; int y = 0; } );
+			DECLARATION_MAIN( struct Vec
+			{
+				int x = 0;
+				int y = 0;
+
+				void Move( int vx, int vy )
+				{
+					x += vx;
+					y += vy;
+				}
+			} );
 
 			std::cout << r2cm::split;
 
@@ -58,23 +68,18 @@ namespace userdata_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Call Lua Function" << r2cm::linefeed2;
-
-				PROCESS_MAIN( lua_getglobal( lua_state_obj, "LUAFunction" ) );
-				test_lua_helper::PrintAllStack( lua_state_obj );
+				PROCESS_MAIN( lua_getglobal( lua_state_obj, "vec" ) );
+				EXPECT_TRUE( lua_isuserdata( lua_state_obj, -1 ) );
 
 				std::cout << r2cm::linefeed;
 
-				EXPECT_EQ( LUA_OK, lua_pcall( lua_state_obj, 0, LUA_MULTRET, 0 ) );
-				test_lua_helper::PrintAllStack( lua_state_obj );
-			}
-
-			std::cout << r2cm::split;
-
-			{
-				PROCESS_MAIN( lua_getglobal( lua_state_obj, "vec" ) );
-				EXPECT_TRUE( lua_isuserdata( lua_state_obj, -1 ) );
 				DECLARATION_MAIN( Vec* v = (Vec*)lua_touserdata( lua_state_obj, -1 ) );
+				OUTPUT_VALUE( v->x );
+				OUTPUT_VALUE( v->y );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( v->Move( 2, 3 ) );
 				OUTPUT_VALUE( v->x );
 				OUTPUT_VALUE( v->y );
 			}
