@@ -7,6 +7,7 @@
 #include "test/luaL_dofile_test.h"
 #include "test/luaL_dostring_test.h"
 #include "test/luaL_openlibs_test.h"
+#include "test/metatable_test.h"
 
 #include "FunctionMenu.h"
 #include "GlobalMenu.h"
@@ -78,6 +79,15 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
+
+
+
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 'a', metatable_test::Basic::GetInstance() );
+
 
 
 		ret->AddSplit();
