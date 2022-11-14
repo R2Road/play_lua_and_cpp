@@ -228,5 +228,8 @@
     <ClInclude Include="src\test_lua\test\metatable_test.h">
       <Filter>test_lua\item</Filter>
     </ClInclude>
+    <ClInclude Include="src\test_lua\test\metatable_test_helper.hpp">
+      <Filter>test_lua\item</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
