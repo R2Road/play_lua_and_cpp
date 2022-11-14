@@ -4,9 +4,6 @@
 
 struct Vec
 {
-	int x = 0;
-	int y = 0;
-
 	static int CreateVector( lua_State* l )
 	{
 		lua_newtable( l );
