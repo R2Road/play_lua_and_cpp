@@ -1,1 +1,1 @@
-vec = CPPProcess();
+vec = CreateVector2();

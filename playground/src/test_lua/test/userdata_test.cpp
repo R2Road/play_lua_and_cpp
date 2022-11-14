@@ -59,7 +59,7 @@ namespace userdata_test
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( lua_pushcfunction( lua_state_obj, cpp_process ) );
-				PROCESS_MAIN( lua_setglobal( lua_state_obj, "CPPProcess" ) );
+				PROCESS_MAIN( lua_setglobal( lua_state_obj, "CreateVector2" ) );
 			}
 
 			std::cout << r2cm::split;
@@ -127,7 +127,7 @@ namespace userdata_test
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( lua_pushcfunction( lua_state_obj, cpp_process ) );
-				PROCESS_MAIN( lua_setglobal( lua_state_obj, "CPPProcess" ) );
+				PROCESS_MAIN( lua_setglobal( lua_state_obj, "CreateVector2" ) );
 			}
 
 			std::cout << r2cm::split;
@@ -190,7 +190,7 @@ namespace userdata_test
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( lua_pushcfunction( lua_state_obj, Vector2_4_DestructorTest::Create ) );
-				PROCESS_MAIN( lua_setglobal( lua_state_obj, "CPPProcess" ) );
+				PROCESS_MAIN( lua_setglobal( lua_state_obj, "CreateVector2" ) );
 
 				std::cout << r2cm::linefeed;
 
