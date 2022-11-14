@@ -1,4 +1,5 @@
 ﻿#include "userdata_test.h"
+#include "userdata_test_helper_constructor.hpp"
 
 #include "lua_header_package.h"
 
@@ -117,21 +118,8 @@ namespace userdata_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( struct Data
 			{
-				Data() : t( 777 ) {}
-				int t;
-			} );
-
-			std::cout << r2cm::split;
-
-			{
-				DECLARATION_MAIN( auto cpp_process = []( lua_State* l )->int
-				{
-					void* d = lua_newuserdata( l, sizeof( Data ) );
-					new ( d ) Data;
-					return 1;
-				} );
+				SHOW_FILE( "src/test_lua/test/userdata_test_helper_constructor.hpp" );
 
 				std::cout << r2cm::linefeed;
 

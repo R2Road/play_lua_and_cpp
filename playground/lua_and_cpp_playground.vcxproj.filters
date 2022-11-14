@@ -237,5 +237,8 @@
     <ClInclude Include="src\test_lua\MetaTableMenu.h">
       <Filter>test_lua\menu</Filter>
     </ClInclude>
+    <ClInclude Include="src\test_lua\test\userdata_test_helper_constructor.hpp">
+      <Filter>test_lua\item</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
