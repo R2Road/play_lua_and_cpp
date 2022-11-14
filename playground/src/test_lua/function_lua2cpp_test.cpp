@@ -131,7 +131,7 @@ namespace function_lua2cpp_test
 				std::cout << r2cm::tab << "+ Return Arg x 1" << r2cm::linefeed2;
 
 				PROCESS_MAIN( lua_register( lua_state_obj, "CPPFunction_1", CPPFunction_1 ) );
-				PROCESS_MAIN( lua_getglobal( lua_state_obj, "CallCPPFunction_1" ) );
+				PROCESS_MAIN( lua_getglobal( lua_state_obj, "LUAFunction_1" ) );
 				PROCESS_MAIN( lua_pushnumber( lua_state_obj, 123 ) );
 				PROCESS_MAIN( lua_pushnumber( lua_state_obj, 456 ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
@@ -149,7 +149,7 @@ namespace function_lua2cpp_test
 
 				PROCESS_MAIN( lua_settop( lua_state_obj, 0 ) );
 				PROCESS_MAIN( lua_register( lua_state_obj, "CPPFunction_2", CPPFunction_2 ) );
-				PROCESS_MAIN( lua_getglobal( lua_state_obj, "CallCPPFunction_2" ) );
+				PROCESS_MAIN( lua_getglobal( lua_state_obj, "LUAFunction_2" ) );
 				PROCESS_MAIN( lua_pushnumber( lua_state_obj, 234 ) );
 				PROCESS_MAIN( lua_pushnumber( lua_state_obj, 567 ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
