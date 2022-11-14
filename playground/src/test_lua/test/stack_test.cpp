@@ -250,7 +250,9 @@ namespace stack_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Push( info : lua.h 233 line )" << r2cm::linefeed2;
+				OUTPUT_NOTE( "Push( info : lua.h 233 line )" );
+
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( lua_pushnil( lua_state_obj ) );
 				PROCESS_MAIN( lua_pushnumber( lua_state_obj, 12345.12345 ) );
@@ -265,10 +267,10 @@ namespace stack_test
 
 			{
 				DECLARATION_MAIN( const auto stack_count = lua_gettop( lua_state_obj ) );
+				OUTPUT_VALUE( stack_count );
 
 				std::cout << r2cm::linefeed;
 
-				std::cout << r2cm::tab << "Stack Count : " << stack_count << r2cm::linefeed;
 				for( int i = 1, ri = -stack_count; stack_count >= i; ++i, ++ri )
 				{
 					std::cout << r2cm::tab << "[" << i << "]" << r2cm::tab << "[" << ri << "]" << r2cm::tab << luaL_typename( lua_state_obj, i ) << r2cm::tab;
