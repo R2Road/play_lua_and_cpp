@@ -4,7 +4,7 @@
 
 struct Vec
 {
-	static int CreateVector( lua_State* l )
+	static int Create( lua_State* l )
 	{
 		lua_newtable( l );
 
@@ -39,7 +39,7 @@ struct Vec
 
 		lua_Number ret_x = left_x + right_x;
 
-		CreateVector( l ); // 3 : -3
+		Create( l ); // 3 : -3
 		lua_pushstring( l, "x" ); // 4 : -2
 		lua_pushnumber( l, ret_x ); // 5 : -1
 

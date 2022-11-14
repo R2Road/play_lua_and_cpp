@@ -35,7 +35,7 @@ namespace metatable_test
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( lua_pushcfunction( lua_state_obj, Vec::CreateVector ) );
+				PROCESS_MAIN( lua_pushcfunction( lua_state_obj, Vec::Create ) );
 				PROCESS_MAIN( lua_setglobal( lua_state_obj, "CreateVector" ) );
 			
 				std::cout << r2cm::linefeed;
