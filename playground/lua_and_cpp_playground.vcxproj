@@ -88,6 +88,7 @@
     <ClInclude Include="src\test_lua\test\userdata_test.h" />
     <ClInclude Include="src\test_lua\test\userdata_test_helper_constructor.hpp" />
     <ClInclude Include="src\test_lua\test\userdata_test_helper_destructor.hpp" />
+    <ClInclude Include="src\test_lua\test\userdata_test_helper_new.hpp" />
     <ClInclude Include="src\test_lua\UserDataMenu.h" />
     <ClInclude Include="src\test_lua_helper.h" />
     <ClInclude Include="src\test_lua\TestLuaRootMenu.h" />

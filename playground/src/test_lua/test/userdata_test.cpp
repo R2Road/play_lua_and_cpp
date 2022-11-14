@@ -1,6 +1,7 @@
 ﻿#include "userdata_test.h"
 #include "userdata_test_helper_constructor.hpp"
 #include "userdata_test_helper_destructor.hpp"
+#include "userdata_test_helper_new.hpp"
 
 #include <conio.h>
 
@@ -29,36 +30,16 @@ namespace userdata_test
 
 			std::cout << r2cm::split;
 
-			OUTPUT_NOTE( "lua_newuserdata 를 사용하여 Lua 에서 메모리를 할당한다." );
-
-			std::cout << r2cm::split;
-
-			DECLARATION_MAIN( struct Vec
 			{
-				int x = 0;
-				int y = 0;
-
-				void Move( int vx, int vy )
-				{
-					x += vx;
-					y += vy;
-				}
-			} );
-
-			std::cout << r2cm::split;
-
-			{
-				DECLARATION_MAIN( auto cpp_process = []( lua_State* l )->int
-				{
-					Vec* v = (Vec*)( lua_newuserdata( l, sizeof( Vec ) ) );
-					v->x = 1;
-					v->y = 2;
-					return 1;
-				} );
+				OUTPUT_NOTE( "lua_newuserdata 를 사용하여 Lua 에서 메모리를 할당한다." );
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( lua_pushcfunction( lua_state_obj, cpp_process ) );
+				SHOW_FILE( "src/test_lua/test/userdata_test_helper_new.hpp" );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( lua_pushcfunction( lua_state_obj, Vector2_4_NewTest::Create ) );
 				PROCESS_MAIN( lua_setglobal( lua_state_obj, "CreateVector2" ) );
 			}
 
@@ -80,7 +61,7 @@ namespace userdata_test
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( Vec* v = (Vec*)lua_touserdata( lua_state_obj, -1 ) );
+				DECLARATION_MAIN( Vector2_4_NewTest* v = (Vector2_4_NewTest*)lua_touserdata( lua_state_obj, -1 ) );
 				OUTPUT_VALUE( v->x );
 				OUTPUT_VALUE( v->y );
 

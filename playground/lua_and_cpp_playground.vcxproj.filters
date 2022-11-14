@@ -243,5 +243,8 @@
     <ClInclude Include="src\test_lua\test\userdata_test_helper_destructor.hpp">
       <Filter>test_lua\item</Filter>
     </ClInclude>
+    <ClInclude Include="src\test_lua\test\userdata_test_helper_new.hpp">
+      <Filter>test_lua\item</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
