@@ -495,6 +495,17 @@ namespace table_test
 
 			std::cout << r2cm::split;
 
+			{
+				OUTPUT_NOTE( "한 번 더 가져오기." );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( lua_getfield( lua_state_obj, -2, "name" ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2cm::split;
+
 			lua_close( lua_state_obj );
 
 			return r2cm::eItemLeaveAction::Pause;
