@@ -113,8 +113,7 @@ namespace metatable_test
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( lua_pushstring( lua_state_obj, "x" ) );
-				PROCESS_MAIN( lua_gettable( lua_state_obj, 1 ) );
+				PROCESS_MAIN( lua_getfield( lua_state_obj, 1, "x" ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
