@@ -35,14 +35,14 @@ namespace metatable_test
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( lua_pushcfunction( lua_state_obj, Vec::Create ) );
+				PROCESS_MAIN( lua_pushcfunction( lua_state_obj, Vector2_4_MetatableTest::Create ) );
 				PROCESS_MAIN( lua_setglobal( lua_state_obj, "CreateVector" ) );
 			
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( luaL_newmetatable( lua_state_obj, "VectorMetaTable" ) );
 				PROCESS_MAIN( lua_pushstring( lua_state_obj, "__add" ) );
-				PROCESS_MAIN( lua_pushcfunction( lua_state_obj, Vec::__add ) );
+				PROCESS_MAIN( lua_pushcfunction( lua_state_obj, Vector2_4_MetatableTest::__add ) );
 				PROCESS_MAIN( lua_settable( lua_state_obj, -3 ) );
 			}
 

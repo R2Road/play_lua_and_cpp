@@ -2,7 +2,7 @@
 #include "r2cm/r2cm_Inspector.h"
 #include "test_lua_helper.h"
 
-struct Vec
+struct Vector2_4_MetatableTest
 {
 	static int Create( lua_State* l )
 	{
