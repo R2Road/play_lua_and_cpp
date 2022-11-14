@@ -326,8 +326,6 @@ namespace stack_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Push" << r2cm::linefeed2;
-
 				PROCESS_MAIN( lua_pushstring( lua_state_obj, "dummy_text" ) );
 				PROCESS_MAIN( lua_pushnumber( lua_state_obj, 777 ) );
 			}
@@ -335,34 +333,45 @@ namespace stack_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Get" << r2cm::linefeed2;
+				OUTPUT_NOTE( "Get" );
+
+				std::cout << r2cm::linefeed;
 
 				DECLARATION_MAIN( const auto s = lua_tostring( lua_state_obj, 1 ) );
-				std::cout << r2cm::tab << "s : " << s << r2cm::linefeed2;
+				OUTPUT_VALUE( s );
 
 				DECLARATION_MAIN( const auto n = lua_tonumber( lua_state_obj, 2 ) );
-				std::cout << r2cm::tab << "n : " << n << r2cm::linefeed;
+				OUTPUT_VALUE( n );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Casting?" << r2cm::linefeed2;
+				OUTPUT_NOTE( "Casting?" );
+
+				std::cout << r2cm::linefeed;
 
 				DECLARATION_MAIN( const auto n = lua_tonumber( lua_state_obj, 1 ) );
-				std::cout << r2cm::tab << "n : " << n << r2cm::linefeed2;
+				OUTPUT_VALUE( n );
 
 				DECLARATION_MAIN( const auto s = lua_tostring( lua_state_obj, 2 ) );
-				std::cout << r2cm::tab << "s : " << s << r2cm::linefeed;
+				OUTPUT_VALUE( s );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ 0?" << r2cm::linefeed2;
+				OUTPUT_NOTE( "Invalid Index" );
 
-				DECLARATION_MAIN( const auto value = lua_tonumber( lua_state_obj, 0 ) );
-				std::cout << r2cm::tab << "value : " << value << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( lua_tonumber( lua_state_obj, 0 ) );
+				EXPECT_EQ( nullptr, lua_tostring( lua_state_obj, 0 ) );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( lua_tonumber( lua_state_obj, 3 ) );
+				EXPECT_EQ( nullptr, lua_tostring( lua_state_obj, 3 ) );
 			}
 
 			std::cout << r2cm::split;
