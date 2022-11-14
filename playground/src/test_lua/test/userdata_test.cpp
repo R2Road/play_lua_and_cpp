@@ -126,7 +126,7 @@ namespace userdata_test
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( lua_pushcfunction( lua_state_obj, cpp_process ) );
+				PROCESS_MAIN( lua_pushcfunction( lua_state_obj, Vector2_4_ConstructorTest::CreateVector2 ) );
 				PROCESS_MAIN( lua_setglobal( lua_state_obj, "CreateVector2" ) );
 			}
 
@@ -148,7 +148,7 @@ namespace userdata_test
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( Data* v = (Data*)lua_touserdata( lua_state_obj, -1 ) );
+				DECLARATION_MAIN( Vector2_4_ConstructorTest* v = (Vector2_4_ConstructorTest*)lua_touserdata( lua_state_obj, -1 ) );
 				OUTPUT_VALUE( v->t );
 			}
 
