@@ -71,15 +71,6 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
-		ret->AddItem(
-			'e'
-			, []()->const char* { return UserDataMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( UserDataMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
 
 
 
@@ -88,10 +79,12 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 
 
 		ret->AddMenu<MetaTableMenu>( 'a' );
+		ret->AddMenu<UserDataMenu>( 's' );
 
 
 
 		ret->AddSplit();
+
 
 
 		ret->AddItem(
