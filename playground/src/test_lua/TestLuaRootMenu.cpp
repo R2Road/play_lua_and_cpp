@@ -3,10 +3,10 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
-#include "lua_state_test.h"
-#include "luaL_dofile_test.h"
-#include "luaL_dostring_test.h"
-#include "luaL_openlibs_test.h"
+#include "test/lua_state_test.h"
+#include "test/luaL_dofile_test.h"
+#include "test/luaL_dostring_test.h"
+#include "test/luaL_openlibs_test.h"
 
 #include "FunctionMenu.h"
 #include "GlobalMenu.h"

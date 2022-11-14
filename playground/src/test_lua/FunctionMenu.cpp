@@ -2,9 +2,10 @@
 
 #include "r2cm/r2cm_Director.h"
 
-#include "function_closure_test.h"
-#include "function_cpp2lua_test.h"
-#include "function_lua2cpp_test.h"
+#include "test/function_closure_test.h"
+#include "test/function_cpp2lua_test.h"
+#include "test/function_lua2cpp_test.h"
+
 #include "TestLuaRootMenu.h"
 
 r2cm::MenuUp FunctionMenu::Create( r2cm::Director& director )

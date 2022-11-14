@@ -34,9 +34,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\test_lua\lua_state_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_lua\TestLuaRootMenu.cpp">
       <Filter>test_lua\menu</Filter>
     </ClCompile>
@@ -53,44 +50,17 @@
     <ClCompile Include="src\test_lua_helper.cpp">
       <Filter>test_lua</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_lua\luaL_dofile_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\luaL_dostring_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\luaL_openlibs_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\stack_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_lua\StackMenu.cpp">
       <Filter>test_lua\menu</Filter>
     </ClCompile>
     <ClCompile Include="src\test_lua\GlobalMenu.cpp">
       <Filter>test_lua\menu</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_lua\global_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_lua\TableMenu.cpp">
       <Filter>test_lua\menu</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_lua\table_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\function_cpp2lua_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\function_lua2cpp_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_lua\FunctionMenu.cpp">
       <Filter>test_lua\menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\function_closure_test.cpp">
-      <Filter>test_lua\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test_lua\UserDataMenu.cpp">
       <Filter>test_lua\menu</Filter>
@@ -116,11 +86,38 @@
     <ClCompile Include="external\r2cm\r2cm_WindowUtility.cpp">
       <Filter>external\r2cm</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_lua\test\function_closure_test.cpp">
+      <Filter>test_lua\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_lua\test\function_cpp2lua_test.cpp">
+      <Filter>test_lua\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_lua\test\function_lua2cpp_test.cpp">
+      <Filter>test_lua\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_lua\test\global_test.cpp">
+      <Filter>test_lua\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_lua\test\lua_state_test.cpp">
+      <Filter>test_lua\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_lua\test\luaL_dofile_test.cpp">
+      <Filter>test_lua\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_lua\test\luaL_dostring_test.cpp">
+      <Filter>test_lua\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_lua\test\luaL_openlibs_test.cpp">
+      <Filter>test_lua\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_lua\test\stack_test.cpp">
+      <Filter>test_lua\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_lua\test\table_test.cpp">
+      <Filter>test_lua\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\test_lua\lua_state_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_lua\TestLuaRootMenu.h">
       <Filter>test_lua\menu</Filter>
     </ClInclude>
@@ -137,44 +134,17 @@
     <ClInclude Include="src\test_lua_helper.h">
       <Filter>test_lua</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_lua\luaL_dofile_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\luaL_dostring_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\luaL_openlibs_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\stack_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_lua\StackMenu.h">
       <Filter>test_lua\menu</Filter>
     </ClInclude>
     <ClInclude Include="src\test_lua\GlobalMenu.h">
       <Filter>test_lua\menu</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_lua\global_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_lua\TableMenu.h">
       <Filter>test_lua\menu</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_lua\table_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\function_cpp2lua_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\function_lua2cpp_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_lua\FunctionMenu.h">
       <Filter>test_lua\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\function_closure_test.h">
-      <Filter>test_lua\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_lua\UserDataMenu.h">
       <Filter>test_lua\menu</Filter>
@@ -216,5 +186,35 @@
       <Filter>external\r2cm</Filter>
     </ClInclude>
     <ClInclude Include="src\lua_header_package.h" />
+    <ClInclude Include="src\test_lua\test\function_closure_test.h">
+      <Filter>test_lua\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_lua\test\function_cpp2lua_test.h">
+      <Filter>test_lua\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_lua\test\function_lua2cpp_test.h">
+      <Filter>test_lua\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_lua\test\global_test.h">
+      <Filter>test_lua\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_lua\test\lua_state_test.h">
+      <Filter>test_lua\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_lua\test\luaL_dofile_test.h">
+      <Filter>test_lua\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_lua\test\luaL_dostring_test.h">
+      <Filter>test_lua\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_lua\test\luaL_openlibs_test.h">
+      <Filter>test_lua\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_lua\test\stack_test.h">
+      <Filter>test_lua\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_lua\test\table_test.h">
+      <Filter>test_lua\item</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
