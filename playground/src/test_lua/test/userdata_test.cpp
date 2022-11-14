@@ -131,6 +131,9 @@ namespace userdata_test
 
 			{
 				SHOW_FILE( "resources/userdata_test_struct_01.lua" );
+
+				std::cout << r2cm::linefeed;
+
 				PROCESS_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/userdata_test_struct_01.lua" ) );
 			}
 
