@@ -13,14 +13,14 @@
 
 namespace userdata_test
 {
-	r2cm::iItem::TitleFunctionT NewUserData::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT New::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "User Data : lua_newuserdata";
 		};
 	}
-	r2cm::iItem::DoFunctionT NewUserData::GetDoFunction()
+	r2cm::iItem::DoFunctionT New::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

@@ -5,7 +5,7 @@
 
 namespace userdata_test
 {
-	class NewUserData : public r2cm::iItem, public r2cm::SingleTon<NewUserData>
+	class New : public r2cm::iItem, public r2cm::SingleTon<New>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;

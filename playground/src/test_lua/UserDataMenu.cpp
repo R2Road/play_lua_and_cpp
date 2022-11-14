@@ -16,7 +16,7 @@ r2cm::MenuUp UserDataMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', userdata_test::NewUserData::GetInstance() );
+		ret->AddItem( '1', userdata_test::New::GetInstance() );
 		ret->AddItem( '2', userdata_test::Constructor::GetInstance() );
 		ret->AddItem( '3', userdata_test::Destructor::GetInstance() );
 
