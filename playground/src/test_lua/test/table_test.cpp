@@ -452,4 +452,52 @@ namespace table_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT GetField::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "lua_getfield";
+		};
+	}
+	r2cm::iItem::DoFunctionT GetField::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			lua_State* lua_state_obj = luaL_newstate();
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const char* lua_script = "t = { name = 'asdf' }" );
+				PROCESS_MAIN( test_lua_helper::DoString( lua_state_obj, lua_script ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( lua_getglobal( lua_state_obj, "t" ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "lua_getfield 를 활용하여 깔끔하게 테이블 내부 데이터 가져오기." );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( lua_getfield( lua_state_obj, -1, "name" ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2cm::split;
+
+			lua_close( lua_state_obj );
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }

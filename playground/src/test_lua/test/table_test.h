@@ -53,4 +53,11 @@ namespace table_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class GetField : public r2cm::iItem, public r2cm::SingleTon<GetField>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }
