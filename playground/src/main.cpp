@@ -5,9 +5,12 @@
 // - ... : http://lua-users.org/wiki/MathLibraryTutorial
 //
 
-//#if defined( DEBUG ) || defined( _DEBUG )
-//	#include <vld.h>
-//#endif
+//
+// Vld
+//
+#if defined( DEBUG ) || defined( _DEBUG )
+	#include "vld/include/vld.h"
+#endif
 
 //
 // Lua lib

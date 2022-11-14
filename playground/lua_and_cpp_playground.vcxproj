@@ -169,9 +169,12 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>external\vld\lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy "$(ProjectDir)\external\lua\x86\lua54.dll" "$(OutDir)" /D /I /F /Y</Command>
+      <Command>if not exist "$(OutDir)" mkdir "$(OutDir)"
+xcopy "$(SolutionDir)external\vld\bin\Win32\*.*" "$(OutDir)" /D /E /I /F /Y
+xcopy "$(ProjectDir)\external\lua\x86\lua54.dll" "$(OutDir)" /D /I /F /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -190,9 +193,12 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>external\vld\lib\Win64</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy "$(ProjectDir)\external\lua\x64\lua54.dll" "$(OutDir)" /D /I /F /Y</Command>
+      <Command>if not exist "$(OutDir)" mkdir "$(OutDir)"
+xcopy "$(SolutionDir)external\vld\bin\Win64\*.*" "$(OutDir)" /D /E /I /F /Y
+xcopy "$(ProjectDir)\external\lua\x64\lua54.dll" "$(OutDir)" /D /I /F /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -217,7 +223,9 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy "$(ProjectDir)\external\lua\x86\lua54.dll" "$(OutDir)" /D /I /F /Y</Command>
+      <Command>xcopy "$(ProjectDir)\external\lua\x86\lua54.dll" "$(OutDir)" /D /I /F /Y
+if not exist "$(OutDir)" mkdir "$(OutDir)"
+xcopy "$(SolutionDir)external\vld\bin\Win32\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
