@@ -27,27 +27,13 @@ r2cm::MenuUp MainMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem(
-			'1'
-			, []()->const char* { return TestLuaRootMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( TestLuaRootMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
-		ret->AddItem(
-			'2'
-			, []()->const char* { return TestR2LuaRootMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( TestR2LuaRootMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
+		ret->AddMenu<TestLuaRootMenu>( '1' );
+		ret->AddMenu<TestR2LuaRootMenu>( '2' );
+
 
 
 		ret->AddSplit();
+
 
 
 		ret->AddItem(
