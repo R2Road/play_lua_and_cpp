@@ -130,7 +130,9 @@ namespace function_lua2cpp_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Return Arg x 1" << r2cm::linefeed2;
+				OUTPUT_NOTE( "인자 x 1, 반환값 x 2" );
+
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( lua_register( lua_state_obj, "CPPFunction_1", CPPFunction_1 ) );
 				PROCESS_MAIN( lua_getglobal( lua_state_obj, "LUAFunction_1" ) );
@@ -146,7 +148,9 @@ namespace function_lua2cpp_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Return Arg x 3" << r2cm::linefeed2;
+				OUTPUT_NOTE( "인자 x 2, 반환값 x 3" );
+
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( lua_settop( lua_state_obj, 0 ) );
 				PROCESS_MAIN( lua_register( lua_state_obj, "CPPFunction_2", CPPFunction_2 ) );
