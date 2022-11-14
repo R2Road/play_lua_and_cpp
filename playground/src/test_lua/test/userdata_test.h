@@ -18,4 +18,11 @@ namespace userdata_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class Destructor : public r2cm::iItem, public r2cm::SingleTon<Destructor>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }
