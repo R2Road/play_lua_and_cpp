@@ -500,4 +500,64 @@ namespace table_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT SetField::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "lua_setfield";
+		};
+	}
+	r2cm::iItem::DoFunctionT SetField::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			lua_State* lua_state_obj = luaL_newstate();
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const char* lua_script = "t = {}" );
+				PROCESS_MAIN( test_lua_helper::DoString( lua_state_obj, lua_script ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( lua_getglobal( lua_state_obj, "t" ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "lua_setfield 를 활용하여 테이블에 데이터 넣기." );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( lua_pushstring( lua_state_obj, "asdf" ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( lua_setfield( lua_state_obj, -2, "name" ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( lua_getfield( lua_state_obj, -1, "name" ) );
+				test_lua_helper::PrintAllStack( lua_state_obj );
+			}
+
+			std::cout << r2cm::split;
+
+			lua_close( lua_state_obj );
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }

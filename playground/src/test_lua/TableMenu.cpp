@@ -34,6 +34,7 @@ r2cm::MenuUp TableMenu::Create( r2cm::Director& director )
 
 
 		ret->AddItem( 'a', table_test::GetField::GetInstance() );
+		ret->AddItem( 's', table_test::SetField::GetInstance() );
 
 
 		ret->AddSplit();
