@@ -11,4 +11,11 @@ namespace userdata_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class Constructor : public r2cm::iItem, public r2cm::SingleTon<Constructor>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }

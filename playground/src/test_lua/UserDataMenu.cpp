@@ -17,6 +17,7 @@ r2cm::MenuUp UserDataMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', userdata_test::NewUserData::GetInstance() );
+		ret->AddItem( '2', userdata_test::Constructor::GetInstance() );
 
 
 		ret->AddSplit();
