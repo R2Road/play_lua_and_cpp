@@ -3,6 +3,8 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
+#include "test/userdata_test.h"
+
 #include "TestLuaRootMenu.h"
 
 r2cm::MenuUp UserDataMenu::Create( r2cm::Director& director )
@@ -14,7 +16,7 @@ r2cm::MenuUp UserDataMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		//ret->AddItem( '1', stack_test::PushTest::GetInstance() );
+		ret->AddItem( '1', userdata_test::NewUserData::GetInstance() );
 
 
 		ret->AddSplit();

@@ -43,6 +43,7 @@
     <ClCompile Include="src\test_lua\test\lua_state_test.cpp" />
     <ClCompile Include="src\test_lua\test\stack_test.cpp" />
     <ClCompile Include="src\test_lua\test\table_test.cpp" />
+    <ClCompile Include="src\test_lua\test\userdata_test.cpp" />
     <ClCompile Include="src\test_lua\UserDataMenu.cpp" />
     <ClCompile Include="src\test_lua_helper.cpp" />
     <ClCompile Include="src\test_lua\TestLuaRootMenu.cpp" />
@@ -79,6 +80,7 @@
     <ClInclude Include="src\test_lua\test\lua_state_test.h" />
     <ClInclude Include="src\test_lua\test\stack_test.h" />
     <ClInclude Include="src\test_lua\test\table_test.h" />
+    <ClInclude Include="src\test_lua\test\userdata_test.h" />
     <ClInclude Include="src\test_lua\UserDataMenu.h" />
     <ClInclude Include="src\test_lua_helper.h" />
     <ClInclude Include="src\test_lua\TestLuaRootMenu.h" />
