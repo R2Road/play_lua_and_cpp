@@ -46,11 +46,11 @@ namespace userdata_test
 			std::cout << r2cm::split;
 
 			{
-				SHOW_FILE( "resources/userdata_test_struct_01.lua" );
+				SHOW_FILE( "resources/userdata_test_01.lua" );
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/userdata_test_struct_01.lua" ) );
+				PROCESS_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/userdata_test_01.lua" ) );
 			}
 
 			std::cout << r2cm::split;
@@ -114,11 +114,11 @@ namespace userdata_test
 			std::cout << r2cm::split;
 
 			{
-				SHOW_FILE( "resources/userdata_test_struct_01.lua" );
+				SHOW_FILE( "resources/userdata_test_01.lua" );
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/userdata_test_struct_01.lua" ) );
+				PROCESS_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/userdata_test_01.lua" ) );
 			}
 
 			std::cout << r2cm::split;
@@ -186,11 +186,11 @@ namespace userdata_test
 			{
 				std::cout << r2cm::linefeed;
 
-				SHOW_FILE( "resources/userdata_test_struct_01.lua" );
+				SHOW_FILE( "resources/userdata_test_01.lua" );
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/userdata_test_struct_01.lua" ) );
+				PROCESS_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/userdata_test_01.lua" ) );
 			}
 
 			std::cout << r2cm::split;
