@@ -1,13 +1,11 @@
 #include "R2LuaRootMenu.h"
 
-#include <conio.h>
-
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
-#include "MainMenu.h"
-
 #include "r2lua_test.h"
+
+#include "MainMenu.h"
 
 r2cm::MenuUp R2LuaRootMenu::Create( r2cm::Director& director )
 {
@@ -25,18 +23,12 @@ r2cm::MenuUp R2LuaRootMenu::Create( r2cm::Director& director )
 		ret->AddItem( '6', r2lua_test::CallTest::GetInstance() );
 		
 
+
 		ret->AddSplit();
 
 
-		ret->AddItem(
-			27
-			, []()->const char* { return MainMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( MainMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
+
+		ret->AddMenu<MainMenu>( 27 );
 	}
 
 	return ret;
