@@ -15,6 +15,6 @@ private:
 	UserDataMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "User Data"; }
+	static const char* GetTitle() { return "UserData And MetaTable"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };

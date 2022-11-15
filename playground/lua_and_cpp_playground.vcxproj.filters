@@ -62,9 +62,6 @@
     <ClCompile Include="src\test_lua\FunctionMenu.cpp">
       <Filter>test_lua\menu</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_lua\UserDataMenu.cpp">
-      <Filter>test_lua\menu</Filter>
-    </ClCompile>
     <ClCompile Include="external\r2\r2_FrameManager.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
@@ -122,7 +119,7 @@
     <ClCompile Include="src\test_lua\test\metatable_test.cpp">
       <Filter>test_lua\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_lua\MetaTableMenu.cpp">
+    <ClCompile Include="src\test_lua\UserData_And_MetaTable_Menu.cpp">
       <Filter>test_lua\menu</Filter>
     </ClCompile>
   </ItemGroup>
@@ -153,9 +150,6 @@
       <Filter>test_lua\menu</Filter>
     </ClInclude>
     <ClInclude Include="src\test_lua\FunctionMenu.h">
-      <Filter>test_lua\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\UserDataMenu.h">
       <Filter>test_lua\menu</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Assert.h">
@@ -234,9 +228,6 @@
     <ClInclude Include="src\test_lua\test\metatable_test_helper.hpp">
       <Filter>test_lua\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_lua\MetaTableMenu.h">
-      <Filter>test_lua\menu</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_lua\test\userdata_test_helper_constructor.hpp">
       <Filter>test_lua\item</Filter>
     </ClInclude>
@@ -245,6 +236,9 @@
     </ClInclude>
     <ClInclude Include="src\test_lua\test\userdata_test_helper_new.hpp">
       <Filter>test_lua\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_lua\UserData_And_MetaTable_Menu.h">
+      <Filter>test_lua\menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -31,7 +31,6 @@
     <ClCompile Include="src\r2lua\r2lua.cpp" />
     <ClCompile Include="src\test_lua\FunctionMenu.cpp" />
     <ClCompile Include="src\test_lua\GlobalMenu.cpp" />
-    <ClCompile Include="src\test_lua\MetaTableMenu.cpp" />
     <ClCompile Include="src\test_lua\StackMenu.cpp" />
     <ClCompile Include="src\test_lua\TableMenu.cpp" />
     <ClCompile Include="src\test_lua\test\function_closure_test.cpp" />
@@ -46,7 +45,7 @@
     <ClCompile Include="src\test_lua\test\stack_test.cpp" />
     <ClCompile Include="src\test_lua\test\table_test.cpp" />
     <ClCompile Include="src\test_lua\test\userdata_test.cpp" />
-    <ClCompile Include="src\test_lua\UserDataMenu.cpp" />
+    <ClCompile Include="src\test_lua\UserData_And_MetaTable_Menu.cpp" />
     <ClCompile Include="src\test_lua_helper.cpp" />
     <ClCompile Include="src\test_lua\TestLuaRootMenu.cpp" />
     <ClCompile Include="src\test_r2lua\r2lua_test.cpp" />
@@ -70,7 +69,6 @@
     <ClInclude Include="src\r2lua\r2lua.h" />
     <ClInclude Include="src\test_lua\FunctionMenu.h" />
     <ClInclude Include="src\test_lua\GlobalMenu.h" />
-    <ClInclude Include="src\test_lua\MetaTableMenu.h" />
     <ClInclude Include="src\test_lua\StackMenu.h" />
     <ClInclude Include="src\test_lua\TableMenu.h" />
     <ClInclude Include="src\test_lua\test\function_closure_test.h" />
@@ -89,7 +87,7 @@
     <ClInclude Include="src\test_lua\test\userdata_test_helper_constructor.hpp" />
     <ClInclude Include="src\test_lua\test\userdata_test_helper_destructor.hpp" />
     <ClInclude Include="src\test_lua\test\userdata_test_helper_new.hpp" />
-    <ClInclude Include="src\test_lua\UserDataMenu.h" />
+    <ClInclude Include="src\test_lua\UserData_And_MetaTable_Menu.h" />
     <ClInclude Include="src\test_lua_helper.h" />
     <ClInclude Include="src\test_lua\TestLuaRootMenu.h" />
     <ClInclude Include="src\test_r2lua\r2lua_test.h" />

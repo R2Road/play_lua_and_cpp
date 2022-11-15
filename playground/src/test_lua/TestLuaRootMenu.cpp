@@ -11,10 +11,9 @@
 #include "FunctionMenu.h"
 #include "GlobalMenu.h"
 #include "MainMenu.h"
-#include "MetatableMenu.h"
 #include "StackMenu.h"
 #include "TableMenu.h"
-#include "UserDataMenu.h"
+#include "UserData_And_MetaTable_Menu.h"
 
 r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 {
@@ -47,7 +46,6 @@ r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<MetaTableMenu>( 'a' );
 		ret->AddMenu<UserDataMenu>( 's' );
 
 
