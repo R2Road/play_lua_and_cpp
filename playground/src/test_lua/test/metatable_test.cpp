@@ -27,7 +27,7 @@ namespace metatable_test
 			std::cout << r2cm::split;
 
 			{
-				OUTPUT_NOTE( "MetaTable 에 operator 의 할당이 가능하다." );
+				OUTPUT_NOTE( "MetaTable 을 이용하여 table 에 operator 의 할당이 가능하다." );
 
 				std::cout << r2cm::linefeed;
 
