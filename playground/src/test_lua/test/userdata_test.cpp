@@ -1,4 +1,5 @@
 ﻿#include "userdata_test.h"
+#include "userdata_n_metatable_test_helper_index_and_newindex.hpp"
 #include "userdata_n_metatable_test_helper_field_get.hpp"
 #include "userdata_n_metatable_test_helper_field_set.hpp"
 #include "userdata_n_metatable_test_helper_oop.hpp"
@@ -511,6 +512,79 @@ namespace userdata_test
 			{
 				PROCESS_MAIN( lua_getglobal( L, "temp_x" ) );
 				test_lua_helper::PrintAllStack( L );
+			}
+
+			std::cout << r2cm::split;
+
+			lua_close( L );
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Index_And_NewIndex::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "__index and __newindex";
+		};
+	}
+	r2cm::iItem::DoFunctionT Index_And_NewIndex::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			lua_State* L = luaL_newstate();
+			luaL_openlibs( L );
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "metatable 의 __newindex 기능을 활용한 멤버 접근." );
+
+				std::cout << r2cm::linefeed;
+
+				SHOW_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_index_and_newindex.hpp" );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( lua_newtable( L ) );
+				PROCESS_MAIN( lua_setglobal( L, "Sprite" ) );
+				PROCESS_MAIN( lua_getglobal( L, "Sprite" ) );
+				int sprite_table_index = lua_gettop( L );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_Index_N_NewIndex_Test::Create ) );
+				PROCESS_MAIN( lua_setfield( L, -2, "Create" ) );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_Index_N_NewIndex_Test::Move ) );
+				PROCESS_MAIN( lua_setfield( L, -2, "Move" ) );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( luaL_newmetatable( L, "SpriteMetaTable" ) );
+				PROCESS_MAIN( lua_pushstring( L, "__index" ) );
+				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_Index_N_NewIndex_Test::__index ) );
+				PROCESS_MAIN( lua_settable( L, -3 ) );
+				PROCESS_MAIN( lua_pushstring( L, "__newindex" ) );
+				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_Index_N_NewIndex_Test::__newindex ) );
+				PROCESS_MAIN( lua_settable( L, -3 ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				const char* lua_file_path = "resources/userdata_n_metatable_test_index_and_newindex.lua";
+
+				SHOW_FILE( lua_file_path );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( test_lua_helper::DoFile_Silent( L, lua_file_path ) );
 			}
 
 			std::cout << r2cm::split;

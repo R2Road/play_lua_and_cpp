@@ -53,4 +53,11 @@ namespace userdata_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class Index_And_NewIndex : public r2cm::iItem, public r2cm::SingleTon<Index_And_NewIndex>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }

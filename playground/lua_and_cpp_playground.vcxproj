@@ -85,6 +85,7 @@
     <ClInclude Include="src\test_lua\test\table_test.h" />
     <ClInclude Include="src\test_lua\test\userdata_n_metatable_test_helper_field_get.hpp" />
     <ClInclude Include="src\test_lua\test\userdata_n_metatable_test_helper_field_set.hpp" />
+    <ClInclude Include="src\test_lua\test\userdata_n_metatable_test_helper_index_and_newindex.hpp" />
     <ClInclude Include="src\test_lua\test\userdata_n_metatable_test_helper_oop.hpp" />
     <ClInclude Include="src\test_lua\test\userdata_test.h" />
     <ClInclude Include="src\test_lua\test\userdata_test_helper_constructor.hpp" />
