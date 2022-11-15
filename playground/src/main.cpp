@@ -3,6 +3,7 @@
 // - EN Manual : https://www.lua.org/manual/5.4/manual.html
 // - KR Manual : https://wariua.github.io/lua-manual/5.4/
 // - ... : http://lua-users.org/wiki/MathLibraryTutorial
+// - Dave Poo : Embedding Lua in C++ : https://www.youtube.com/playlist?list=PLLwK93hM93Z3nhfJyRRWGRXHaXgNX0Itk
 //
 
 //
