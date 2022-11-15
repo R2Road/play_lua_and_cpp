@@ -122,6 +122,9 @@
     <ClCompile Include="src\test_r2lua\R2LuaRootMenu.cpp">
       <Filter>test_r2lua\menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_lua\test\memory_allocation_test.cpp">
+      <Filter>test_lua\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MainMenu.h" />
@@ -253,6 +256,9 @@
       <Filter>test_lua\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_lua\test\userdata_n_metatable_test_helper_field_add_from_lua.hpp">
+      <Filter>test_lua\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_lua\test\memory_allocation_test.h">
       <Filter>test_lua\item</Filter>
     </ClInclude>
   </ItemGroup>

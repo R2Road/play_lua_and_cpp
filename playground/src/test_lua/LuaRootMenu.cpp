@@ -7,6 +7,7 @@
 #include "test/luaL_dofile_test.h"
 #include "test/luaL_dostring_test.h"
 #include "test/luaL_openlibs_test.h"
+#include "test/memory_allocation_test.h"
 
 #include "FunctionMenu.h"
 #include "GlobalMenu.h"
@@ -47,6 +48,7 @@ r2cm::MenuUp LuaRootMenu::Create( r2cm::Director& director )
 
 
 		ret->AddMenu<UserDataMenu>( 's' );
+		ret->AddItem( 'd', memory_allocation_test::Basic::GetInstance() );
 
 
 

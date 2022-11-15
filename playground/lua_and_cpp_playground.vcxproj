@@ -41,6 +41,7 @@
     <ClCompile Include="src\test_lua\test\luaL_dostring_test.cpp" />
     <ClCompile Include="src\test_lua\test\luaL_openlibs_test.cpp" />
     <ClCompile Include="src\test_lua\test\lua_state_test.cpp" />
+    <ClCompile Include="src\test_lua\test\memory_allocation_test.cpp" />
     <ClCompile Include="src\test_lua\test\metatable_test.cpp" />
     <ClCompile Include="src\test_lua\test\stack_test.cpp" />
     <ClCompile Include="src\test_lua\test\table_test.cpp" />
@@ -79,6 +80,7 @@
     <ClInclude Include="src\test_lua\test\luaL_dostring_test.h" />
     <ClInclude Include="src\test_lua\test\luaL_openlibs_test.h" />
     <ClInclude Include="src\test_lua\test\lua_state_test.h" />
+    <ClInclude Include="src\test_lua\test\memory_allocation_test.h" />
     <ClInclude Include="src\test_lua\test\metatable_test.h" />
     <ClInclude Include="src\test_lua\test\metatable_test_helper.hpp" />
     <ClInclude Include="src\test_lua\test\stack_test.h" />
