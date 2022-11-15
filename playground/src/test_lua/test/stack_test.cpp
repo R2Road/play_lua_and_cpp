@@ -147,13 +147,13 @@ namespace stack_test
 
 				std::cout << r2cm::linefeed;
 
-				OUTPUT_VALUE( lua_type( lua_state_obj, 0 ) );
 				EXPECT_EQ( LUA_TNIL, lua_type( lua_state_obj, 0 ) );
+				OUTPUT_VALUE( lua_type( lua_state_obj, 0 ) );
 
 				std::cout << r2cm::linefeed;
 
-				OUTPUT_VALUE( lua_type( lua_state_obj, 8 ) );
 				EXPECT_EQ( LUA_TNONE, lua_type( lua_state_obj, 8 ) );
+				OUTPUT_VALUE( lua_type( lua_state_obj, 8 ) );
 			}
 
 			std::cout << r2cm::split;
