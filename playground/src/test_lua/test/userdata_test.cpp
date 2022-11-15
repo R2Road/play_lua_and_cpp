@@ -163,7 +163,7 @@ namespace userdata_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( lua_State* lua_state_obj = luaL_newstate() );
+			lua_State* lua_state_obj = luaL_newstate();
 			luaL_openlibs( lua_state_obj );
 
 			std::cout << r2cm::split;
@@ -191,22 +191,22 @@ namespace userdata_test
 			std::cout << r2cm::split;
 
 			{
-				const char* lua_file_path = "resources/userdata_test_01.lua";
+				const char* lua_file_path = "resources/userdata_n_metatable_test_destructor_01.lua";
 
 				SHOW_FILE( lua_file_path );
 
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, lua_file_path ) );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( lua_gc( lua_state_obj, LUA_GCCOLLECT ) );
 			}
 
 			std::cout << r2cm::split;
 
-			PROCESS_MAIN( lua_close( lua_state_obj ) );
-
-			std::cout << r2cm::split;
-
-			_getch();
+			lua_close( lua_state_obj );
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
