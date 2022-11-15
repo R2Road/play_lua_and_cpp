@@ -1,4 +1,4 @@
-#include "TestLuaRootMenu.h"
+#include "LuaRootMenu.h"
 
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
@@ -15,7 +15,7 @@
 #include "TableMenu.h"
 #include "UserData_And_MetaTable_Menu.h"
 
-r2cm::MenuUp TestLuaRootMenu::Create( r2cm::Director& director )
+r2cm::MenuUp LuaRootMenu::Create( r2cm::Director& director )
 {
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
 		director

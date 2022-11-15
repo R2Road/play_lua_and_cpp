@@ -7,7 +7,7 @@
 #include "r2cm/r2cm_VersionInfo.h"
 
 #include "test_lua_helper.h"
-#include "test_lua/TestLuaRootMenu.h"
+#include "test_lua/LuaRootMenu.h"
 #include "test_r2lua/TestR2LuaRootMenu.h"
 
 const char* MainMenu::GetTitle()
@@ -27,7 +27,7 @@ r2cm::MenuUp MainMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddMenu<TestLuaRootMenu>( '1' );
+		ret->AddMenu<LuaRootMenu>( '1' );
 		ret->AddMenu<TestR2LuaRootMenu>( '2' );
 
 

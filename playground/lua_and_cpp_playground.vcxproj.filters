@@ -34,9 +34,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\test_lua\TestLuaRootMenu.cpp">
-      <Filter>test_lua\menu</Filter>
-    </ClCompile>
     <ClCompile Include="src\MainMenu.cpp" />
     <ClCompile Include="src\test_r2lua\TestR2LuaRootMenu.cpp">
       <Filter>test_r2lua\menu</Filter>
@@ -122,11 +119,11 @@
     <ClCompile Include="src\test_lua\UserData_And_MetaTable_Menu.cpp">
       <Filter>test_lua\menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_lua\LuaRootMenu.cpp">
+      <Filter>test_lua\menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\test_lua\TestLuaRootMenu.h">
-      <Filter>test_lua\menu</Filter>
-    </ClInclude>
     <ClInclude Include="src\MainMenu.h" />
     <ClInclude Include="src\test_r2lua\TestR2LuaRootMenu.h">
       <Filter>test_r2lua\menu</Filter>
@@ -238,6 +235,9 @@
       <Filter>test_lua\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_lua\UserData_And_MetaTable_Menu.h">
+      <Filter>test_lua\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_lua\LuaRootMenu.h">
       <Filter>test_lua\menu</Filter>
     </ClInclude>
   </ItemGroup>

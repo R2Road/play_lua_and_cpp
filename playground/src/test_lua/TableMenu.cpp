@@ -5,7 +5,7 @@
 
 #include "test/table_test.h"
 
-#include "TestLuaRootMenu.h"
+#include "LuaRootMenu.h"
 
 r2cm::MenuUp TableMenu::Create( r2cm::Director& director )
 {
@@ -40,15 +40,7 @@ r2cm::MenuUp TableMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddItem(
-			27
-			, []()->const char* { return TestLuaRootMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( TestLuaRootMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
+		ret->AddMenu<LuaRootMenu>( 27 );
 	}
 
 	return ret;
