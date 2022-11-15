@@ -240,5 +240,8 @@
     <ClInclude Include="src\test_r2lua\R2LuaRootMenu.h">
       <Filter>test_r2lua\menu</Filter>
     </ClInclude>
+    <ClInclude Include="src\test_lua\test\userdata_n_metatable_test_helper_oop.hpp">
+      <Filter>test_lua\item</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

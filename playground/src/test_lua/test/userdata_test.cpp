@@ -2,6 +2,7 @@
 #include "userdata_test_helper_constructor.hpp"
 #include "userdata_test_helper_destructor.hpp"
 #include "userdata_test_helper_new.hpp"
+#include "userdata_n_metatable_test_helper_oop.hpp"
 
 #include <conio.h>
 
@@ -200,6 +201,67 @@ namespace userdata_test
 			std::cout << r2cm::split;
 
 			_getch();
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT OOP::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "User Data : OOP";
+		};
+	}
+	r2cm::iItem::DoFunctionT OOP::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			lua_State* L = luaL_newstate();
+			luaL_openlibs( L );
+
+			std::cout << r2cm::split;
+
+			{
+				SHOW_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_oop.hpp" );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( lua_newtable( L ) );
+				PROCESS_MAIN( lua_setglobal( L, "Sprite" ) );
+				PROCESS_MAIN( lua_getglobal( L, "Sprite" ) );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_OOP_Test::Create ) );
+				PROCESS_MAIN( lua_setfield( L, -2, "Create" ) );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_OOP_Test::Move ) );
+				PROCESS_MAIN( lua_setfield( L, -2, "Move" ) );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_OOP_Test::Draw ) );
+				PROCESS_MAIN( lua_setfield( L, -2, "Draw" ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				SHOW_FILE( "resources/userdata_n_metatable_test_oop_01.lua" );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( test_lua_helper::DoFile_Silent( L, "resources/userdata_n_metatable_test_oop_01.lua" ) );
+			}
+
+			std::cout << r2cm::split;
+
+			lua_close( L );
 
 			return r2cm::eItemLeaveAction::Pause;
 		};

@@ -23,7 +23,17 @@ r2cm::MenuUp UserDataMenu::Create( r2cm::Director& director )
 		ret->AddItem( '4', userdata_test::Destructor::GetInstance() );
 
 
+
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 'q', userdata_test::OOP::GetInstance() );
+
+
+
 		ret->AddSplit();
+
 
 
 		ret->AddMenu<LuaRootMenu>( 27 );
