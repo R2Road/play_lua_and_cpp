@@ -4,14 +4,14 @@
 
 #include "r2/r2_Assert.h"
 
-struct Sprite_4_Field_Test_02
+struct Sprite_4_Field_Set_Test
 {
 	int x;
 	int y;
 
 	static int Create( lua_State* l )
 	{
-		auto s = (Sprite_4_Field_Test_02*)( lua_newuserdata( l, sizeof( Sprite_4_Field_Test_02 ) ) );
+		auto s = (Sprite_4_Field_Set_Test*)( lua_newuserdata( l, sizeof( Sprite_4_Field_Set_Test ) ) );
 		s->x = 0;
 		s->y = 0;
 
@@ -23,7 +23,7 @@ struct Sprite_4_Field_Test_02
 
 	static int Move( lua_State* l )
 	{
-		Sprite_4_Field_Test_02* s = (Sprite_4_Field_Test_02*)lua_touserdata( l, 1 );
+		Sprite_4_Field_Set_Test* s = (Sprite_4_Field_Set_Test*)lua_touserdata( l, 1 );
 		auto vx = (int)lua_tonumber( l, 2 );
 		auto vy = (int)lua_tonumber( l, 3 );
 
@@ -35,7 +35,7 @@ struct Sprite_4_Field_Test_02
 
 	static int Draw( lua_State* l )
 	{
-		Sprite_4_Field_Test_02* s = (Sprite_4_Field_Test_02*)lua_touserdata( l, 1 );
+		Sprite_4_Field_Set_Test* s = (Sprite_4_Field_Set_Test*)lua_touserdata( l, 1 );
 
 		std::cout << "x : " << s->x << "    " "y :" << s->y << "\n";
 
@@ -44,7 +44,7 @@ struct Sprite_4_Field_Test_02
 
 	static int __index( lua_State* l )
 	{
-		Sprite_4_Field_Test_02* s = (Sprite_4_Field_Test_02*)lua_touserdata( l, 1 );
+		Sprite_4_Field_Set_Test* s = (Sprite_4_Field_Set_Test*)lua_touserdata( l, 1 );
 
 		const char* index_string = lua_tostring( l, 2 );
 
@@ -69,7 +69,7 @@ struct Sprite_4_Field_Test_02
 
 	static int __newindex( lua_State* l )
 	{
-		Sprite_4_Field_Test_02* s = (Sprite_4_Field_Test_02*)lua_touserdata( l, 1 );
+		Sprite_4_Field_Set_Test* s = (Sprite_4_Field_Set_Test*)lua_touserdata( l, 1 );
 
 		const char* index_string = lua_tostring( l, 2 );
 

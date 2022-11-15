@@ -243,10 +243,10 @@
     <ClInclude Include="src\test_lua\test\userdata_n_metatable_test_helper_oop.hpp">
       <Filter>test_lua\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_lua\test\userdata_n_metatable_test_helper_field_02.hpp">
+    <ClInclude Include="src\test_lua\test\userdata_n_metatable_test_helper_field_get.hpp">
       <Filter>test_lua\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_lua\test\userdata_n_metatable_test_helper_field_get.hpp">
+    <ClInclude Include="src\test_lua\test\userdata_n_metatable_test_helper_field_set.hpp">
       <Filter>test_lua\item</Filter>
     </ClInclude>
   </ItemGroup>
