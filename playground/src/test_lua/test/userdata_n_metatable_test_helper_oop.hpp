@@ -13,6 +13,9 @@ struct Sprite_4_OOP_Test
 		s->x = 0;
 		s->y = 0;
 
+		luaL_getmetatable( l, "SpriteMetaTable" );
+		lua_setmetatable( l, -2 );
+
 		return 1;
 	};
 
@@ -34,11 +37,6 @@ struct Sprite_4_OOP_Test
 
 		std::cout << "x : " << s->x << "    " "y :" << s->y << "\n";
 
-		return 0;
-	}
-
-	static int __gc( lua_State* l )
-	{
 		return 0;
 	}
 };

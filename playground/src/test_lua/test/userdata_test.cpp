@@ -247,6 +247,10 @@ namespace userdata_test
 
 				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_OOP_Test::Draw ) );
 				PROCESS_MAIN( lua_setfield( L, -2, "Draw" ) );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( luaL_newmetatable( L, "SpriteMetaTable" ) );
 			}
 
 			std::cout << r2cm::split;
@@ -257,6 +261,79 @@ namespace userdata_test
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( test_lua_helper::DoFile_Silent( L, "resources/userdata_n_metatable_test_oop_01.lua" ) );
+			}
+
+			std::cout << r2cm::split;
+
+			lua_close( L );
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT OOP_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "User Data : OOP 2";
+		};
+	}
+	r2cm::iItem::DoFunctionT OOP_2::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			lua_State* L = luaL_newstate();
+			luaL_openlibs( L );
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "metatable 의 __index 기능을 활용한 oop 스러운 코드 작성." );
+
+				std::cout << r2cm::linefeed;
+
+				SHOW_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_oop.hpp" );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( lua_newtable( L ) );
+				PROCESS_MAIN( lua_setglobal( L, "Sprite" ) );
+				PROCESS_MAIN( lua_getglobal( L, "Sprite" ) );
+				int sprite_table_index = lua_gettop( L );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_OOP_Test::Create ) );
+				PROCESS_MAIN( lua_setfield( L, -2, "Create" ) );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_OOP_Test::Move ) );
+				PROCESS_MAIN( lua_setfield( L, -2, "Move" ) );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_OOP_Test::Draw ) );
+				PROCESS_MAIN( lua_setfield( L, -2, "Draw" ) );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( luaL_newmetatable( L, "SpriteMetaTable" ) );
+				PROCESS_MAIN( lua_pushstring( L, "__index" ) );
+				PROCESS_MAIN( lua_pushvalue( L, sprite_table_index ) ); // copy
+				PROCESS_MAIN( lua_settable( L, -3 ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				SHOW_FILE( "resources/userdata_n_metatable_test_oop_02.lua" );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( test_lua_helper::DoFile_Silent( L, "resources/userdata_n_metatable_test_oop_02.lua" ) );
 			}
 
 			std::cout << r2cm::split;
