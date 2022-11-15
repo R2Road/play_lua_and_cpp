@@ -539,12 +539,12 @@ namespace userdata_test
 			luaL_openlibs( L );
 
 			std::cout << r2cm::split;
+			
+			OUTPUT_NOTE( "__index 와 __newindex 가 작동하는 시점 확인." );
+
+			std::cout << r2cm::split;
 
 			{
-				OUTPUT_NOTE( "metatable 의 __newindex 기능을 활용한 멤버 접근." );
-
-				std::cout << r2cm::linefeed;
-
 				SHOW_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_index_and_newindex.hpp" );
 
 				std::cout << r2cm::linefeed;
