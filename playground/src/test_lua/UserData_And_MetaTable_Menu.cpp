@@ -30,6 +30,7 @@ r2cm::MenuUp UserDataMenu::Create( r2cm::Director& director )
 
 		ret->AddItem( 'q', userdata_test::OOP::GetInstance() );
 		ret->AddItem( 'w', userdata_test::OOP_2::GetInstance() );
+		ret->AddItem( 'e', userdata_test::Field::GetInstance() );
 
 
 
