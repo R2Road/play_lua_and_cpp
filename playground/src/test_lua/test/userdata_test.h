@@ -26,7 +26,7 @@ namespace userdata_test
 		DoFunctionT GetDoFunction() override;
 	};
 
-	class OOP : public r2cm::iItem, public r2cm::SingleTon<OOP>
+	class OOP_1 : public r2cm::iItem, public r2cm::SingleTon<OOP_1>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
