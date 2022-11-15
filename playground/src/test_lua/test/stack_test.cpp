@@ -618,7 +618,7 @@ namespace stack_test
 			std::cout << r2cm::split;
 
 			{
-				std::cout << "Note : 지정된 index의 값을 복사해서 push 한다." << r2cm::linefeed;
+				OUTPUT_NOTE( "지정된 index의 값을 복사해서 push 한다." );
 			}
 
 			std::cout << r2cm::split;
