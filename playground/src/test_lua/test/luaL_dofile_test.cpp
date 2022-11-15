@@ -36,8 +36,9 @@ namespace luaL_dofile_test
 
 				EXPECT_NE( LUA_OK, luaL_dofile( lua_state_obj, "resources/luaL_dofile_test_00.lua" ) );
 
-				const auto error_message = lua_tostring( lua_state_obj, -1 );
-				std::cout << "error_message : " << error_message << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( lua_tostring( lua_state_obj, -1 ) );
 			}
 
 			std::cout << r2cm::split;
@@ -55,8 +56,9 @@ namespace luaL_dofile_test
 
 				EXPECT_NE( LUA_OK, luaL_dofile( lua_state_obj, p.string().c_str() ) );
 				
-				const auto error_message = lua_tostring( lua_state_obj, -1 );
-				std::cout << "error_message : " << error_message << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( lua_tostring( lua_state_obj, -1 ) );
 			}
 
 			std::cout << r2cm::split;
