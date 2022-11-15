@@ -356,14 +356,14 @@ namespace userdata_test
 
 
 
-	r2cm::iItem::TitleFunctionT Field::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Field_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "User Data : Field";
+			return "User Data : Field 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT Field::GetDoFunction()
+	r2cm::iItem::DoFunctionT Field_1::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
