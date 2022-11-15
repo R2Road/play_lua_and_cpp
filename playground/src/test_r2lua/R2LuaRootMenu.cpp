@@ -1,4 +1,4 @@
-#include "TestR2LuaRootMenu.h"
+#include "R2LuaRootMenu.h"
 
 #include <conio.h>
 
@@ -9,7 +9,7 @@
 
 #include "r2lua_test.h"
 
-r2cm::MenuUp TestR2LuaRootMenu::Create( r2cm::Director& director )
+r2cm::MenuUp R2LuaRootMenu::Create( r2cm::Director& director )
 {
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
 		director

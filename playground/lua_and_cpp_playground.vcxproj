@@ -49,7 +49,7 @@
     <ClCompile Include="src\test_lua_helper.cpp" />
     <ClCompile Include="src\test_lua\LuaRootMenu.cpp" />
     <ClCompile Include="src\test_r2lua\r2lua_test.cpp" />
-    <ClCompile Include="src\test_r2lua\TestR2LuaRootMenu.cpp" />
+    <ClCompile Include="src\test_r2lua\R2LuaRootMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="external\r2cm\r2cm_BinaryPrint.h" />
@@ -91,7 +91,7 @@
     <ClInclude Include="src\test_lua_helper.h" />
     <ClInclude Include="src\test_lua\LuaRootMenu.h" />
     <ClInclude Include="src\test_r2lua\r2lua_test.h" />
-    <ClInclude Include="src\test_r2lua\TestR2LuaRootMenu.h" />
+    <ClInclude Include="src\test_r2lua\R2LuaRootMenu.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

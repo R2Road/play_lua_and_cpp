@@ -9,12 +9,12 @@ namespace r2cm
 	class Director;
 }
 
-class TestR2LuaRootMenu
+class R2LuaRootMenu
 {
 private:
-	TestR2LuaRootMenu() = delete;
+	R2LuaRootMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Test R2Lua"; }
+	static const char* GetTitle() { return "R2Lua"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
