@@ -25,11 +25,6 @@ namespace lua_state_test
 		{
 			std::cout << r2cm::split;
 
-			OUTPUT_NOTE( "luaL_newstate - lua_State 생성." );
-			OUTPUT_NOTE( "lua_close - lua_State 제거." );
-
-			std::cout << r2cm::split;
-
 			DECLARATION_MAIN( lua_State* lua_state_obj = nullptr );
 
 			std::cout << r2cm::split;
@@ -38,6 +33,10 @@ namespace lua_state_test
 			// Make Lua State
 			//
 			{
+				OUTPUT_NOTE( "luaL_newstate - lua_State 생성." );
+
+				std::cout << r2cm::linefeed;
+
 				PROCESS_MAIN( lua_state_obj = luaL_newstate() );
 			}
 
@@ -47,6 +46,10 @@ namespace lua_state_test
 			// Close Lua State
 			//
 			{
+				OUTPUT_NOTE( "lua_close - lua_State 제거." );
+
+				std::cout << r2cm::linefeed;
+
 				PROCESS_MAIN( lua_close( lua_state_obj ) );
 			}
 
