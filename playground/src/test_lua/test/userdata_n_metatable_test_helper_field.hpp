@@ -44,7 +44,7 @@ struct Sprite_4_Field_Test
 	{
 		Sprite_4_Field_Test* s = (Sprite_4_Field_Test*)lua_touserdata( l, 1 );
 
-		const char* index_string = lua_tostring( l, -1 );
+		const char* index_string = lua_tostring( l, 2 );
 
 		if( 0 == std::strcmp( "x", index_string ) )
 		{
