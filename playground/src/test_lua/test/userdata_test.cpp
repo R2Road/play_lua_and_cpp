@@ -1,5 +1,5 @@
 ﻿#include "userdata_test.h"
-#include "userdata_n_metatable_test_helper_field_01.hpp"
+#include "userdata_n_metatable_test_helper_field_get.hpp"
 #include "userdata_n_metatable_test_helper_field_02.hpp"
 #include "userdata_n_metatable_test_helper_oop.hpp"
 #include "userdata_test_helper_constructor.hpp"
@@ -356,14 +356,14 @@ namespace userdata_test
 
 
 
-	r2cm::iItem::TitleFunctionT Field_1::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Field_Get::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "User Data : Field 1";
+			return "User Data : Field Get";
 		};
 	}
-	r2cm::iItem::DoFunctionT Field_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT Field_Get::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -377,7 +377,7 @@ namespace userdata_test
 
 				std::cout << r2cm::linefeed;
 
-				SHOW_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_field_01.hpp" );
+				SHOW_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_field_get.hpp" );
 
 				std::cout << r2cm::linefeed;
 
@@ -388,31 +388,31 @@ namespace userdata_test
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_Field_Test_01::Create ) );
+				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_Field_Get_Test::Create ) );
 				PROCESS_MAIN( lua_setfield( L, -2, "Create" ) );
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_Field_Test_01::Move ) );
+				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_Field_Get_Test::Move ) );
 				PROCESS_MAIN( lua_setfield( L, -2, "Move" ) );
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_Field_Test_01::Draw ) );
+				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_Field_Get_Test::Draw ) );
 				PROCESS_MAIN( lua_setfield( L, -2, "Draw" ) );
 
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( luaL_newmetatable( L, "SpriteMetaTable" ) );
 				PROCESS_MAIN( lua_pushstring( L, "__index" ) );
-				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_Field_Test_01::__index ) );
+				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_Field_Get_Test::__index ) );
 				PROCESS_MAIN( lua_settable( L, -3 ) );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				const char* lua_file_path = "resources/userdata_n_metatable_test_field_01.lua";
+				const char* lua_file_path = "resources/userdata_n_metatable_test_field_get_01.lua";
 
 				SHOW_FILE( lua_file_path );
 

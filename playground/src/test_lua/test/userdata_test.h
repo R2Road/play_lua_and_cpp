@@ -40,7 +40,7 @@ namespace userdata_test
 		DoFunctionT GetDoFunction() override;
 	};
 
-	class Field_1 : public r2cm::iItem, public r2cm::SingleTon<Field_1>
+	class Field_Get : public r2cm::iItem, public r2cm::SingleTon<Field_Get>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
