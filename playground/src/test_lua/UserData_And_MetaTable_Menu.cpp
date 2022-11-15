@@ -33,6 +33,7 @@ r2cm::MenuUp UserDataMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'e', userdata_test::Field_Get::GetInstance() );
 		ret->AddItem( 'r', userdata_test::Field_Set::GetInstance() );
 		ret->AddItem( 't', userdata_test::Index_And_NewIndex::GetInstance() );
+		ret->AddItem( 'y', userdata_test::Field_AddFromLua::GetInstance() );
 
 
 

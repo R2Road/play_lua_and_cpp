@@ -60,4 +60,11 @@ namespace userdata_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class Field_AddFromLua : public r2cm::iItem, public r2cm::SingleTon<Field_AddFromLua>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }

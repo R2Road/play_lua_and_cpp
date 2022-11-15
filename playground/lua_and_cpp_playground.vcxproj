@@ -83,6 +83,7 @@
     <ClInclude Include="src\test_lua\test\metatable_test_helper.hpp" />
     <ClInclude Include="src\test_lua\test\stack_test.h" />
     <ClInclude Include="src\test_lua\test\table_test.h" />
+    <ClInclude Include="src\test_lua\test\userdata_n_metatable_test_helper_field_add_from_lua.hpp" />
     <ClInclude Include="src\test_lua\test\userdata_n_metatable_test_helper_field_get.hpp" />
     <ClInclude Include="src\test_lua\test\userdata_n_metatable_test_helper_field_set.hpp" />
     <ClInclude Include="src\test_lua\test\userdata_n_metatable_test_helper_index_and_newindex.hpp" />
