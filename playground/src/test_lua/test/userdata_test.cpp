@@ -1,8 +1,8 @@
 ﻿#include "userdata_test.h"
+#include "userdata_n_metatable_test_helper_oop.hpp"
 #include "userdata_test_helper_constructor.hpp"
 #include "userdata_test_helper_destructor.hpp"
 #include "userdata_test_helper_new.hpp"
-#include "userdata_n_metatable_test_helper_oop.hpp"
 
 #include <conio.h>
 
