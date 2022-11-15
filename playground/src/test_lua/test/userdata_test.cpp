@@ -1,5 +1,5 @@
 ﻿#include "userdata_test.h"
-#include "userdata_n_metatable_test_helper_field.hpp"
+#include "userdata_n_metatable_test_helper_field_01.hpp"
 #include "userdata_n_metatable_test_helper_field_02.hpp"
 #include "userdata_n_metatable_test_helper_oop.hpp"
 #include "userdata_test_helper_constructor.hpp"
@@ -377,7 +377,7 @@ namespace userdata_test
 
 				std::cout << r2cm::linefeed;
 
-				SHOW_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_field.hpp" );
+				SHOW_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_field_01.hpp" );
 
 				std::cout << r2cm::linefeed;
 
@@ -388,24 +388,24 @@ namespace userdata_test
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_Field_Test::Create ) );
+				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_Field_Test_01::Create ) );
 				PROCESS_MAIN( lua_setfield( L, -2, "Create" ) );
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_Field_Test::Move ) );
+				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_Field_Test_01::Move ) );
 				PROCESS_MAIN( lua_setfield( L, -2, "Move" ) );
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_Field_Test::Draw ) );
+				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_Field_Test_01::Draw ) );
 				PROCESS_MAIN( lua_setfield( L, -2, "Draw" ) );
 
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( luaL_newmetatable( L, "SpriteMetaTable" ) );
 				PROCESS_MAIN( lua_pushstring( L, "__index" ) );
-				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_Field_Test::__index ) );
+				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_Field_Test_01::__index ) );
 				PROCESS_MAIN( lua_settable( L, -3 ) );
 			}
 
