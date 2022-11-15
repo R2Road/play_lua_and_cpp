@@ -256,11 +256,13 @@ namespace userdata_test
 			std::cout << r2cm::split;
 
 			{
-				SHOW_FILE( "resources/userdata_n_metatable_test_oop_01.lua" );
+				const char* lua_file_path = "resources/userdata_n_metatable_test_oop_01.lua";
+
+				SHOW_FILE( lua_file_path );
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( test_lua_helper::DoFile_Silent( L, "resources/userdata_n_metatable_test_oop_01.lua" ) );
+				PROCESS_MAIN( test_lua_helper::DoFile_Silent( L, lua_file_path ) );
 			}
 
 			std::cout << r2cm::split;
@@ -329,11 +331,13 @@ namespace userdata_test
 			std::cout << r2cm::split;
 
 			{
-				SHOW_FILE( "resources/userdata_n_metatable_test_oop_02.lua" );
+				const char* lua_file_path = "resources/userdata_n_metatable_test_oop_02.lua";
+
+				SHOW_FILE( lua_file_path );
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( test_lua_helper::DoFile_Silent( L, "resources/userdata_n_metatable_test_oop_02.lua" ) );
+				PROCESS_MAIN( test_lua_helper::DoFile_Silent( L, lua_file_path ) );
 			}
 
 			std::cout << r2cm::split;
