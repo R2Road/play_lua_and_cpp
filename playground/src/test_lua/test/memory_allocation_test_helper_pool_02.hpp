@@ -1,4 +1,5 @@
 #include "r2cm/r2cm_ostream.h"
+#include "r2/r2_Assert.h"
 
 struct LuaMemoryPool_02
 {
@@ -12,14 +13,28 @@ struct LuaMemoryPool_02
 		, mCurrent( begin )
 	{}
 
+	void OutputInfo()
+	{
+		std::cout << "+ Memory Pool Info\n";
+		std::cout << "\t> Beg    : " << uint64_t( mBegin ) << "\n";
+		std::cout << "\t> End    : " << uint64_t( mEnd ) << "\n";
+		std::cout << "\t> Cur    : " << uint64_t( mCurrent ) << "\n";
+		std::cout << "\t> Size   : " << uint64_t( mEnd ) - uint64_t( mBegin ) + 1 << "\n";
+		std::cout << "\t> Use    : " << uint64_t( mCurrent ) - uint64_t( mBegin ) << "\n";
+		std::cout << "\t> Remain : " << uint64_t( mEnd ) - uint64_t( mCurrent ) + 1 << "\n";
+	}
+
 	void* Allocate( size_t size )
 	{
+		R2ASSERT( size_t( mCurrent ) + size < size_t( mEnd ), "" );
+
 		void* ptr = mCurrent;
-		mCurrent = (char*)mCurrent  + size;
+		mCurrent = (char*)mCurrent + size;
+
 		return ptr;
 	}
 
-	void Deallocate( void* p )
+	void Deallocate( void* p, size_t size )
 	{
 	}
 
@@ -31,14 +46,19 @@ struct LuaMemoryPool_02
 		return ret;
 	}
 
-	static void *l_alloc( void *ud, void *ptr, size_t osize, size_t nsize ) {
+	static void *l_alloc( void *ud, void *ptr, size_t osize, size_t nsize )
+	{
 		(void)osize;  /* not used */
 
 		LuaMemoryPool_02* pool = static_cast<LuaMemoryPool_02*>( ud );
 		
 		if( nsize == 0 )
 		{
-			pool->Deallocate( ptr );
+			if( nullptr != ptr )
+			{
+				pool->Deallocate( ptr, osize );
+			}
+
 			return NULL;
 		}
 
