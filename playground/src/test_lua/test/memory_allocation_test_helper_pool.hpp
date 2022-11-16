@@ -14,6 +14,8 @@ struct LuaMemoryPool
 
 	void* Allocate( size_t size )
 	{
+		std::cout << "Allocate : " << size << "\n";
+
 		void* ptr = mCurrent;
 		mCurrent = (char*)mCurrent  + size;
 		return ptr;
@@ -21,6 +23,7 @@ struct LuaMemoryPool
 
 	void Deallocate( void* p )
 	{
+		std::cout << "Deallocate : " << "\n";
 	}
 
 	void* Realloc( void* p, size_t osize, size_t nsize )
