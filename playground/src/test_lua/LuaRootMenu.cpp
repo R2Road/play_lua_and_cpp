@@ -50,6 +50,7 @@ r2cm::MenuUp LuaRootMenu::Create( r2cm::Director& director )
 		ret->AddMenu<UserDataMenu>( 's' );
 		ret->AddItem( 'd', memory_allocation_test::Basic::GetInstance() );
 		ret->AddItem( 'f', memory_allocation_test::Custom::GetInstance() );
+		ret->AddItem( 'g', memory_allocation_test::Pool::GetInstance() );
 
 
 

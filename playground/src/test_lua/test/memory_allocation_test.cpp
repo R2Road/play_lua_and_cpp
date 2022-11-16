@@ -1,5 +1,8 @@
 ﻿#include "memory_allocation_test.h"
 #include "memory_allocation_test_helper_custom.hpp"
+#include "memory_allocation_test_helper_pool.hpp"
+
+#include <conio.h>
 
 #include "lua_header_package.h"
 
@@ -72,6 +75,52 @@ namespace memory_allocation_test
 				DECLARATION_MAIN( lua_State* lua_state_obj = lua_newstate( CustomMemoryAllocator::l_alloc, ud ) );
 				PROCESS_MAIN( lua_close( lua_state_obj ) );
 			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Pool::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "memory allocation : Pool";
+		};
+	}
+	r2cm::iItem::DoFunctionT Pool	::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			SHOW_FILE( "src/test_lua/test/memory_allocation_test_helper_pool.hpp" );
+			DECLARATION_MAIN( LuaMemoryPool pool );
+			DECLARATION_MAIN( lua_State* l = lua_newstate( LuaMemoryPool::l_alloc, &pool ) );
+			luaL_openlibs( l );
+
+			std::cout << r2cm::split;
+
+			{
+				SHOW_FILE( "resources/memory_allocation_test_pool_01.lua" );
+
+				std::cout << r2cm::linefeed;
+
+				test_lua_helper::DoFile_Silent( l, "resources/memory_allocation_test_pool_01.lua" );
+
+				_getch();
+			}
+
+			std::cout << r2cm::split;
+
+			PROCESS_MAIN( lua_gc( l, LUA_GCCOLLECT ) );
+
+			std::cout << r2cm::split;
+
+			PROCESS_MAIN( lua_close( l ) );
 
 			std::cout << r2cm::split;
 
