@@ -48,7 +48,7 @@ r2cm::MenuUp LuaRootMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<UserDataMenu>( 's' );
+		ret->AddMenu<UserDataMenu>( 'a' );
 
 
 
