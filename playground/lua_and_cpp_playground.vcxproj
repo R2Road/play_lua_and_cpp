@@ -83,6 +83,7 @@
     <ClInclude Include="src\test_lua\test\memory_allocation_test.h" />
     <ClInclude Include="src\test_lua\test\memory_allocation_test_helper_custom.hpp" />
     <ClInclude Include="src\test_lua\test\memory_allocation_test_helper_pool.hpp" />
+    <ClInclude Include="src\test_lua\test\memory_allocation_test_helper_pool_02.hpp" />
     <ClInclude Include="src\test_lua\test\metatable_test.h" />
     <ClInclude Include="src\test_lua\test\metatable_test_helper.hpp" />
     <ClInclude Include="src\test_lua\test\stack_test.h" />

@@ -267,5 +267,8 @@
     <ClInclude Include="src\test_lua\test\memory_allocation_test_helper_pool.hpp">
       <Filter>test_lua\item</Filter>
     </ClInclude>
+    <ClInclude Include="src\test_lua\test\memory_allocation_test_helper_pool_02.hpp">
+      <Filter>test_lua\item</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
