@@ -38,7 +38,7 @@ struct LuaMemoryPool_02
 	{
 	}
 
-	void* Realloc( void* p, size_t osize, size_t nsize )
+	void* Reallocate( void* p, size_t osize, size_t nsize )
 	{
 		void* ret = Allocate( nsize );
 		memcpy( ret, p, osize );
@@ -67,6 +67,6 @@ struct LuaMemoryPool_02
 			return pool->Allocate( nsize );
 		}
 
-		return pool->Realloc( ptr, osize, nsize );
+		return pool->Reallocate( ptr, osize, nsize );
 	}
 };
