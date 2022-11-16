@@ -57,7 +57,11 @@ struct LuaMemoryPool_01
 		
 		if( nsize == 0 )
 		{
-			pool->Deallocate( ptr, osize );
+			if( nullptr != ptr )
+			{
+				pool->Deallocate( ptr, osize );
+			}
+
 			return NULL;
 		}
 
