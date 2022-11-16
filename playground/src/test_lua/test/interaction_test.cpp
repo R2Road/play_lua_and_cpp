@@ -79,7 +79,7 @@ namespace interaction_test
 			std::cout << r2cm::split;
 
 			{
-				const char* lua_file_path = "resources/userdata_n_metatable_test_field_add_from_lua.lua";
+				const char* lua_file_path = "resources/interaction_test_call_with_closure_01.lua";
 
 				SHOW_FILE( lua_file_path );
 
@@ -99,6 +99,7 @@ namespace interaction_test
 
 			lua_close( L );
 			EXPECT_EQ( 0, manager.mSprites.size() );
+			EXPECT_EQ( 2, manager.mNumberOfMade );
 
 			std::cout << r2cm::split;
 

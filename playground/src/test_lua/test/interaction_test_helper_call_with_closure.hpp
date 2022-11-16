@@ -16,10 +16,12 @@ namespace interaction_test_helper_call_with_closure
 		using MySprite = Sprite;
 
 		std::vector<MySprite*> mSprites;
+		int mNumberOfMade = 0;
 
 		void Look( MySprite* sprite )
 		{
 			mSprites.push_back( sprite );
+			++mNumberOfMade;
 		}
 		void Forget( MySprite* sprite )
 		{
