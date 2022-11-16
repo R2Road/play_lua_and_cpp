@@ -15,12 +15,12 @@ struct LuaMemoryPool_01
 	~LuaMemoryPool_01()
 	{
 		std::cout << "~LuaMemoryPool_01()\n";
-		std::cout << "\t> Beg    : " << reinterpret_cast<size_t>( mBegin ) << "\n";
-		std::cout << "\t> End    : " << reinterpret_cast<size_t>( mEnd ) << "\n";
-		std::cout << "\t> Cur    : " << reinterpret_cast<size_t>( mCurrent ) << "\n";
-		std::cout << "\t> Size   : " << reinterpret_cast<size_t>( mEnd ) - reinterpret_cast<size_t>( mBegin ) + 1 << "\n";
-		std::cout << "\t> Use    : " << reinterpret_cast<size_t>( mCurrent ) - reinterpret_cast<size_t>( mBegin ) << "\n";
-		std::cout << "\t> Remain : " << reinterpret_cast<size_t>( mEnd ) - reinterpret_cast<size_t>( mCurrent ) + 1 << "\n";
+		std::cout << "\t> Beg    : " << uint64_t( mBegin ) << "\n";
+		std::cout << "\t> End    : " << uint64_t( mEnd ) << "\n";
+		std::cout << "\t> Cur    : " << uint64_t( mCurrent ) << "\n";
+		std::cout << "\t> Size   : " << uint64_t( mEnd ) - uint64_t( mBegin ) + 1 << "\n";
+		std::cout << "\t> Use    : " << uint64_t( mCurrent ) - uint64_t( mBegin ) << "\n";
+		std::cout << "\t> Remain : " << uint64_t( mEnd ) - uint64_t( mCurrent ) + 1 << "\n";
 	}
 
 	void* Allocate( size_t size )
