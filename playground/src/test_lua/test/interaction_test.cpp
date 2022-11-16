@@ -26,7 +26,7 @@ namespace interaction_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( SpriteManager manager );
+			DECLARATION_MAIN( interaction_test_helper_call_with_closure::SpriteManager manager );
 
 			{
 				OUTPUT_NOTE( "metatable 의 __newindex 기능을 활용한 멤버 접근." );
@@ -45,17 +45,17 @@ namespace interaction_test
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( lua_pushlightuserdata( L, &manager ) );
-				PROCESS_MAIN( lua_pushcclosure( L, Sprite_4_Call_With_Closure::Create, 1 ) );
+				PROCESS_MAIN( lua_pushcclosure( L, interaction_test_helper_call_with_closure::Sprite::Create, 1 ) );
 				PROCESS_MAIN( lua_setfield( L, -2, "Create" ) );
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_Call_With_Closure::Move ) );
+				PROCESS_MAIN( lua_pushcfunction( L, interaction_test_helper_call_with_closure::Sprite::Move ) );
 				PROCESS_MAIN( lua_setfield( L, -2, "Move" ) );
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_Call_With_Closure::Draw ) );
+				PROCESS_MAIN( lua_pushcfunction( L, interaction_test_helper_call_with_closure::Sprite::Draw ) );
 				PROCESS_MAIN( lua_setfield( L, -2, "Draw" ) );
 
 				std::cout << r2cm::linefeed;
@@ -64,15 +64,15 @@ namespace interaction_test
 
 				PROCESS_MAIN( lua_pushstring( L, "__gc" ) );
 				PROCESS_MAIN( lua_pushlightuserdata( L, &manager ) );
-				PROCESS_MAIN( lua_pushcclosure( L, Sprite_4_Call_With_Closure::__gc, 1 ) );
+				PROCESS_MAIN( lua_pushcclosure( L, interaction_test_helper_call_with_closure::Sprite::__gc, 1 ) );
 				PROCESS_MAIN( lua_settable( L, -3 ) );
 
 				PROCESS_MAIN( lua_pushstring( L, "__index" ) );
-				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_Call_With_Closure::__index ) );
+				PROCESS_MAIN( lua_pushcfunction( L, interaction_test_helper_call_with_closure::Sprite::__index ) );
 				PROCESS_MAIN( lua_settable( L, -3 ) );
 
 				PROCESS_MAIN( lua_pushstring( L, "__newindex" ) );
-				PROCESS_MAIN( lua_pushcfunction( L, Sprite_4_Call_With_Closure::__newindex ) );
+				PROCESS_MAIN( lua_pushcfunction( L, interaction_test_helper_call_with_closure::Sprite::__newindex ) );
 				PROCESS_MAIN( lua_settable( L, -3 ) );
 			}
 
