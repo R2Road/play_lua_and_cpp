@@ -11,4 +11,11 @@ namespace memory_allocation_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class Custom : public r2cm::iItem, public r2cm::SingleTon<Custom>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }
