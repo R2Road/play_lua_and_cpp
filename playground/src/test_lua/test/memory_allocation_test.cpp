@@ -98,7 +98,12 @@ namespace memory_allocation_test
 			std::cout << r2cm::split;
 
 			SHOW_FILE( "src/test_lua/test/memory_allocation_test_helper_pool.hpp" );
-			DECLARATION_MAIN( LuaMemoryPool pool );
+
+			std::cout << r2cm::linefeed;
+
+			DECLARATION_MAIN( constexpr int pool_size = 1024 * 200 );
+			DECLARATION_MAIN( char memory[pool_size] );
+			DECLARATION_MAIN( LuaMemoryPool pool( (void*)memory, (void*)memory[pool_size - 1] ) );
 			DECLARATION_MAIN( lua_State* l = lua_newstate( LuaMemoryPool::l_alloc, &pool ) );
 			luaL_openlibs( l );
 
