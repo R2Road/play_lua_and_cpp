@@ -125,6 +125,9 @@
     <ClCompile Include="src\test_lua\test\memory_allocation_test.cpp">
       <Filter>test_lua\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_lua\MemoryAllocationMenu.cpp">
+      <Filter>test_lua\menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MainMenu.h" />
@@ -269,6 +272,9 @@
     </ClInclude>
     <ClInclude Include="src\test_lua\test\memory_allocation_test_helper_pool_01.hpp">
       <Filter>test_lua\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_lua\MemoryAllocationMenu.h">
+      <Filter>test_lua\menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
