@@ -63,7 +63,7 @@ namespace memory_allocation_test
 
 			OUTPUT_NOTE( "lua_newstate 를 사용하면 메모리 할당자의 설정이 가능하다." );
 			OUTPUT_NOTE( "memory pool 등이 활용될 때 사용하자." );
-			OUTPUT_NOTE( "ud( user data ) 는 추가적임 작업을 위해 무언가를 넘겨 주고 싶을 때 사용하자." );
+			OUTPUT_NOTE( "ud( user data ) 는 추가 작업을 위해 무언가를 넘겨 주고 싶을 때 사용하자." );
 
 			std::cout << r2cm::split;
 
