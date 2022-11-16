@@ -14,7 +14,12 @@ struct LuaMemoryPool_01
 	{}
 	~LuaMemoryPool_01()
 	{
-		std::cout << "~LuaMemoryPool_01()\n";
+		OutputInfo();
+	}
+
+	void OutputInfo()
+	{
+		std::cout << "+ Memory Pool Info\n";
 		std::cout << "\t> Beg    : " << uint64_t( mBegin ) << "\n";
 		std::cout << "\t> End    : " << uint64_t( mEnd ) << "\n";
 		std::cout << "\t> Cur    : " << uint64_t( mCurrent ) << "\n";
