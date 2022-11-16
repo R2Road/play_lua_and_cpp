@@ -20,7 +20,7 @@ struct LuaMemoryPool_02
 		std::cout << "\t> End    : " << uint64_t( mEnd ) << "\n";
 		std::cout << "\t> Cur    : " << uint64_t( mCurrent ) << "\n";
 		std::cout << "\t> Size   : " << uint64_t( mEnd ) - uint64_t( mBegin ) + 1 << "\n";
-		std::cout << "\t> Use    : " << uint64_t( mCurrent ) - uint64_t( mBegin ) << "\n";
+		std::cout << "\t> Use    : " << r2cm::clm( r2cm::eColor::FG_Green ) << uint64_t( mCurrent ) - uint64_t( mBegin ) << r2cm::clm() << "\n";
 		std::cout << "\t> Remain : " << uint64_t( mEnd ) - uint64_t( mCurrent ) + 1 << "\n";
 	}
 
