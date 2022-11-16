@@ -5,12 +5,23 @@ struct LuaMemoryPool_01
 	void* mBegin;
 	void* mEnd;
 	void* mCurrent;
+	size_t mAllocatedSize;
 
 	LuaMemoryPool_01( void* begin, void* end ) :
 		mBegin( begin )
 		, mEnd( end )
 		, mCurrent( begin )
 	{}
+	~LuaMemoryPool_01()
+	{
+		std::cout << "~LuaMemoryPool_01()\n";
+		std::cout << "\t> Beg    : " << reinterpret_cast<size_t>( mBegin ) << "\n";
+		std::cout << "\t> End    : " << reinterpret_cast<size_t>( mEnd ) << "\n";
+		std::cout << "\t> Cur    : " << reinterpret_cast<size_t>( mCurrent ) << "\n";
+		std::cout << "\t> Size   : " << reinterpret_cast<size_t>( mEnd ) - reinterpret_cast<size_t>( mBegin ) + 1 << "\n";
+		std::cout << "\t> Use    : " << reinterpret_cast<size_t>( mCurrent ) - reinterpret_cast<size_t>( mBegin ) << "\n";
+		std::cout << "\t> Remain : " << reinterpret_cast<size_t>( mEnd ) - reinterpret_cast<size_t>( mCurrent ) + 1 << "\n";
+	}
 
 	void* Allocate( size_t size )
 	{
