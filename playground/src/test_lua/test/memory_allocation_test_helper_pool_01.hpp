@@ -37,9 +37,9 @@ struct LuaMemoryPool_01
 		return ptr;
 	}
 
-	void Deallocate( void* p )
+	void Deallocate( void* p, size_t size )
 	{
-		std::cout << "Deallocate : " << "\n";
+		std::cout << "Deallocate : " << size  << "\n";
 	}
 
 	void* Realloc( void* p, size_t osize, size_t nsize )
@@ -57,7 +57,7 @@ struct LuaMemoryPool_01
 		
 		if( nsize == 0 )
 		{
-			pool->Deallocate( ptr );
+			pool->Deallocate( ptr, osize );
 			return NULL;
 		}
 
