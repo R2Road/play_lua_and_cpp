@@ -41,11 +41,13 @@ namespace interaction_test_helper_call_with_closure
 		int x;
 		int y;
 
+		Sprite() : x( 0 ), y( 0 ) {}
+		~Sprite() {}
+
 		static int Create( lua_State* l )
 		{
-			auto s = (Sprite*)( lua_newuserdata( l, sizeof( Sprite ) ) );
-			s->x = 0;
-			s->y = 0;
+			void* sprite = lua_newuserdata( l, sizeof( Sprite ) );
+			new ( sprite ) Sprite();
 
 			luaL_getmetatable( l, "SpriteMetaTable" );
 			lua_setmetatable( l, -2 );
@@ -55,7 +57,7 @@ namespace interaction_test_helper_call_with_closure
 
 			SpriteManager* manager = (SpriteManager*)lua_touserdata( l, lua_upvalueindex( 1 ) );
 			R2ASSERT( nullptr != manager, "" );
-			manager->Look( s );
+			manager->Look( (Sprite*)sprite );
 
 			return 1;
 		};
