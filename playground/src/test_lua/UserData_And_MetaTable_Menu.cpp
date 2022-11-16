@@ -17,10 +17,7 @@ r2cm::MenuUp UserDataMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', userdata_test::New::GetInstance() );
-		ret->AddItem( '2', userdata_test::Constructor::GetInstance() );
-		ret->AddItem( '3', metatable_test::Basic::GetInstance() );
-		ret->AddItem( '4', userdata_test::Destructor::GetInstance() );
+		ret->AddItem( '1', metatable_test::Basic::GetInstance() );
 
 
 
@@ -28,12 +25,22 @@ r2cm::MenuUp UserDataMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'q', userdata_test::OOP_1::GetInstance() );
-		ret->AddItem( 'w', userdata_test::OOP_2::GetInstance() );
-		ret->AddItem( 'e', userdata_test::Field_Get::GetInstance() );
-		ret->AddItem( 'r', userdata_test::Field_Set::GetInstance() );
-		ret->AddItem( 't', userdata_test::Index_And_NewIndex::GetInstance() );
-		ret->AddItem( 'y', userdata_test::Field_AddFromLua::GetInstance() );
+		ret->AddItem( 'q', userdata_test::New::GetInstance() );
+		ret->AddItem( 'w', userdata_test::Constructor::GetInstance() );
+		ret->AddItem( 'e', userdata_test::Destructor::GetInstance() );
+
+
+
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 'a', userdata_test::OOP_1::GetInstance() );
+		ret->AddItem( 's', userdata_test::OOP_2::GetInstance() );
+		ret->AddItem( 'd', userdata_test::Field_Get::GetInstance() );
+		ret->AddItem( 'f', userdata_test::Field_Set::GetInstance() );
+		ret->AddItem( 'g', userdata_test::Index_And_NewIndex::GetInstance() );
+		ret->AddItem( 'h', userdata_test::Field_AddFromLua::GetInstance() );
 
 
 
