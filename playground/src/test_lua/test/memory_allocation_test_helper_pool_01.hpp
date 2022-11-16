@@ -1,12 +1,12 @@
 #include "r2cm/r2cm_ostream.h"
 
-struct LuaMemoryPool
+struct LuaMemoryPool_01
 {
 	void* mBegin;
 	void* mEnd;
 	void* mCurrent;
 
-	LuaMemoryPool( void* begin, void* end ) :
+	LuaMemoryPool_01( void* begin, void* end ) :
 		mBegin( begin )
 		, mEnd( end )
 		, mCurrent( begin )
@@ -37,7 +37,7 @@ struct LuaMemoryPool
 	static void *l_alloc( void *ud, void *ptr, size_t osize, size_t nsize ) {
 		(void)osize;  /* not used */
 
-		LuaMemoryPool* pool = static_cast<LuaMemoryPool*>( ud );
+		LuaMemoryPool_01* pool = static_cast<LuaMemoryPool_01*>( ud );
 		
 		if( nsize == 0 )
 		{

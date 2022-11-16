@@ -19,7 +19,7 @@ namespace memory_allocation_test
 		DoFunctionT GetDoFunction() override;
 	};
 
-	class Pool : public r2cm::iItem, public r2cm::SingleTon<Pool>
+	class Pool_1 : public r2cm::iItem, public r2cm::SingleTon<Pool_1>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
