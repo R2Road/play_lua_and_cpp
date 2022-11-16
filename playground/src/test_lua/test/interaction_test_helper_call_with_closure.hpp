@@ -1,4 +1,7 @@
 #include "lua_header_package.h"
+
+#include <vector>
+
 #include "r2cm/r2cm_Inspector.h"
 #include "test_lua_helper.h"
 
@@ -12,15 +15,24 @@ namespace interaction_test_helper_call_with_closure
 	{
 		using MySprite = Sprite;
 
-		int number_of_sprites = 0;
+		std::vector<MySprite*> mSprites;
 
-		void Look( MySprite* )
+		void Look( MySprite* sprite )
 		{
-			++number_of_sprites;
+			mSprites.push_back( sprite );
 		}
-		void Forget( MySprite* )
+		void Forget( MySprite* sprite )
 		{
-			--number_of_sprites;
+			int i = 0;
+			for( auto& s : mSprites )
+			{
+				if( s == sprite )
+				{
+					mSprites.erase( mSprites.begin() + i );
+					break;
+				}
+				++i;
+			}
 		}
 	};
 

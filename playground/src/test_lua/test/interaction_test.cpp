@@ -98,7 +98,7 @@ namespace interaction_test
 			std::cout << r2cm::split;
 
 			lua_close( L );
-			EXPECT_EQ( 0, manager.number_of_sprites );
+			EXPECT_EQ( 0, manager.mSprites.size() );
 
 			std::cout << r2cm::split;
 
