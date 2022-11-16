@@ -91,7 +91,7 @@ namespace memory_allocation_test
 			return "memory allocation : Pool";
 		};
 	}
-	r2cm::iItem::DoFunctionT Pool	::GetDoFunction()
+	r2cm::iItem::DoFunctionT Pool::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
