@@ -38,6 +38,7 @@
     <ClCompile Include="src\test_lua\test\function_cpp2lua_test.cpp" />
     <ClCompile Include="src\test_lua\test\function_lua2cpp_test.cpp" />
     <ClCompile Include="src\test_lua\test\global_test.cpp" />
+    <ClCompile Include="src\test_lua\test\interaction_test.cpp" />
     <ClCompile Include="src\test_lua\test\luaL_dofile_test.cpp" />
     <ClCompile Include="src\test_lua\test\luaL_dostring_test.cpp" />
     <ClCompile Include="src\test_lua\test\luaL_openlibs_test.cpp" />
@@ -78,6 +79,8 @@
     <ClInclude Include="src\test_lua\test\function_cpp2lua_test.h" />
     <ClInclude Include="src\test_lua\test\function_lua2cpp_test.h" />
     <ClInclude Include="src\test_lua\test\global_test.h" />
+    <ClInclude Include="src\test_lua\test\interaction_test.h" />
+    <ClInclude Include="src\test_lua\test\interaction_test_helper_call_with_closure.hpp" />
     <ClInclude Include="src\test_lua\test\luaL_dofile_test.h" />
     <ClInclude Include="src\test_lua\test\luaL_dostring_test.h" />
     <ClInclude Include="src\test_lua\test\luaL_openlibs_test.h" />

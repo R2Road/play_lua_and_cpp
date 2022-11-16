@@ -3,6 +3,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
+#include "test/interaction_test.h"
 #include "test/metatable_test.h"
 #include "test/userdata_test.h"
 
@@ -41,6 +42,7 @@ r2cm::MenuUp UserDataMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'f', userdata_test::Field_Set::GetInstance() );
 		ret->AddItem( 'g', userdata_test::Index_And_NewIndex::GetInstance() );
 		ret->AddItem( 'h', userdata_test::Field_AddFromLua::GetInstance() );
+		ret->AddItem( 'j', interaction_test::CallWithClosure::GetInstance() );
 
 
 
