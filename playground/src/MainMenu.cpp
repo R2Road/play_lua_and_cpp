@@ -23,7 +23,6 @@ r2cm::MenuUp MainMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
 		director
 		, GetTitle()
-		, "> Add Some One"
 	) );
 
 	{
