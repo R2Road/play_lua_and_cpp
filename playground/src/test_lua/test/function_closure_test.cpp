@@ -25,7 +25,7 @@ namespace function_closure_test
 			return "function_closure_test : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -113,7 +113,7 @@ namespace function_closure_test
 			return "function_closure_test : Update Upvalue";
 		};
 	}
-	r2cm::iItem::DoFunctionT UpdateUpvalue::GetDoFunction()
+	r2cm::iItem::DoFunctionT UpdateUpvalue::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -189,7 +189,7 @@ namespace function_closure_test
 			return "function_closure_test : Argument Test";
 		};
 	}
-	r2cm::iItem::DoFunctionT ArgumentTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT ArgumentTest::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

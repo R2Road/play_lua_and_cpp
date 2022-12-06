@@ -16,7 +16,7 @@ namespace table_test
 			return "Generate";
 		};
 	}
-	r2cm::iItem::DoFunctionT GenerateTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT GenerateTest::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -60,7 +60,7 @@ namespace table_test
 			return "Add 2 Global";
 		};
 	}
-	r2cm::iItem::DoFunctionT Add2GlobalTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT Add2GlobalTest::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -124,7 +124,7 @@ namespace table_test
 			return "Push And Get Value 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT PushAndGetTest_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT PushAndGetTest_1::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -197,7 +197,7 @@ namespace table_test
 			return "Push And Get Value 2";
 		};
 	}
-	r2cm::iItem::DoFunctionT PushAndGetTest_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT PushAndGetTest_2::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -258,7 +258,7 @@ namespace table_test
 			return "Push And Get Value 3 : Invalid Stack Index";
 		};
 	}
-	r2cm::iItem::DoFunctionT PushAndGetTest_3::GetDoFunction()
+	r2cm::iItem::DoFunctionT PushAndGetTest_3::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -320,7 +320,7 @@ namespace table_test
 			return "Push And Get Value 4 : Invalid Key";
 		};
 	}
-	r2cm::iItem::DoFunctionT PushAndGetTest_4::GetDoFunction()
+	r2cm::iItem::DoFunctionT PushAndGetTest_4::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -379,7 +379,7 @@ namespace table_test
 			return "Lua Function + Get Table";
 		};
 	}
-	r2cm::iItem::DoFunctionT LuaFunction_And_GetTable::GetDoFunction()
+	r2cm::iItem::DoFunctionT LuaFunction_And_GetTable::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -462,7 +462,7 @@ namespace table_test
 			return "lua_getfield";
 		};
 	}
-	r2cm::iItem::DoFunctionT GetField::GetDoFunction()
+	r2cm::iItem::DoFunctionT GetField::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -521,7 +521,7 @@ namespace table_test
 			return "lua_setfield";
 		};
 	}
-	r2cm::iItem::DoFunctionT SetField::GetDoFunction()
+	r2cm::iItem::DoFunctionT SetField::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

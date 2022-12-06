@@ -26,7 +26,7 @@ namespace userdata_test
 			return "User Data : lua_newuserdata";
 		};
 	}
-	r2cm::iItem::DoFunctionT New::GetDoFunction()
+	r2cm::iItem::DoFunctionT New::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -40,7 +40,7 @@ namespace userdata_test
 
 				std::cout << r2cm::linefeed;
 
-				SHOW_FILE( "src/test_lua/test/userdata_test_helper_new.hpp" );
+				OUTPUT_FILE( "src/test_lua/test/userdata_test_helper_new.hpp" );
 
 				std::cout << r2cm::linefeed;
 
@@ -53,7 +53,7 @@ namespace userdata_test
 			{
 				const char* lua_file_path = "resources/userdata_test_01.lua";
 
-				SHOW_FILE( lua_file_path );
+				OUTPUT_FILE( lua_file_path );
 
 				std::cout << r2cm::linefeed;
 
@@ -96,7 +96,7 @@ namespace userdata_test
 			return "User Data : Constructor";
 		};
 	}
-	r2cm::iItem::DoFunctionT Constructor::GetDoFunction()
+	r2cm::iItem::DoFunctionT Constructor::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -110,7 +110,7 @@ namespace userdata_test
 
 				std::cout << r2cm::linefeed;
 
-				SHOW_FILE( "src/test_lua/test/userdata_test_helper_constructor.hpp" );
+				OUTPUT_FILE( "src/test_lua/test/userdata_test_helper_constructor.hpp" );
 
 				std::cout << r2cm::linefeed;
 
@@ -123,7 +123,7 @@ namespace userdata_test
 			{
 				const char* lua_file_path = "resources/userdata_test_01.lua";
 
-				SHOW_FILE( lua_file_path );
+				OUTPUT_FILE( lua_file_path );
 
 				std::cout << r2cm::linefeed;
 
@@ -159,7 +159,7 @@ namespace userdata_test
 			return "User Data : Destructor";
 		};
 	}
-	r2cm::iItem::DoFunctionT Destructor::GetDoFunction()
+	r2cm::iItem::DoFunctionT Destructor::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -175,7 +175,7 @@ namespace userdata_test
 
 				std::cout << r2cm::linefeed;
 
-				SHOW_FILE( "src/test_lua/test/userdata_test_helper_destructor.hpp" );
+				OUTPUT_FILE( "src/test_lua/test/userdata_test_helper_destructor.hpp" );
 
 				std::cout << r2cm::linefeed;
 
@@ -195,7 +195,7 @@ namespace userdata_test
 			{
 				const char* lua_file_path = "resources/userdata_n_metatable_test_destructor_01.lua";
 
-				SHOW_FILE( lua_file_path );
+				OUTPUT_FILE( lua_file_path );
 
 				std::cout << r2cm::linefeed;
 
@@ -223,7 +223,7 @@ namespace userdata_test
 			return "User Data : OOP 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT OOP_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT OOP_1::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -233,7 +233,7 @@ namespace userdata_test
 			std::cout << r2cm::split;
 
 			{
-				SHOW_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_oop.hpp" );
+				OUTPUT_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_oop.hpp" );
 
 				std::cout << r2cm::linefeed;
 
@@ -266,7 +266,7 @@ namespace userdata_test
 			{
 				const char* lua_file_path = "resources/userdata_n_metatable_test_oop_01.lua";
 
-				SHOW_FILE( lua_file_path );
+				OUTPUT_FILE( lua_file_path );
 
 				std::cout << r2cm::linefeed;
 
@@ -290,7 +290,7 @@ namespace userdata_test
 			return "User Data : OOP 2";
 		};
 	}
-	r2cm::iItem::DoFunctionT OOP_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT OOP_2::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -304,7 +304,7 @@ namespace userdata_test
 
 				std::cout << r2cm::linefeed;
 
-				SHOW_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_oop.hpp" );
+				OUTPUT_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_oop.hpp" );
 
 				std::cout << r2cm::linefeed;
 
@@ -341,7 +341,7 @@ namespace userdata_test
 			{
 				const char* lua_file_path = "resources/userdata_n_metatable_test_oop_02.lua";
 
-				SHOW_FILE( lua_file_path );
+				OUTPUT_FILE( lua_file_path );
 
 				std::cout << r2cm::linefeed;
 
@@ -365,7 +365,7 @@ namespace userdata_test
 			return "User Data : Field Get";
 		};
 	}
-	r2cm::iItem::DoFunctionT Field_Get::GetDoFunction()
+	r2cm::iItem::DoFunctionT Field_Get::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -379,7 +379,7 @@ namespace userdata_test
 
 				std::cout << r2cm::linefeed;
 
-				SHOW_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_field_get.hpp" );
+				OUTPUT_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_field_get.hpp" );
 
 				std::cout << r2cm::linefeed;
 
@@ -416,7 +416,7 @@ namespace userdata_test
 			{
 				const char* lua_file_path = "resources/userdata_n_metatable_test_field_get_01.lua";
 
-				SHOW_FILE( lua_file_path );
+				OUTPUT_FILE( lua_file_path );
 
 				std::cout << r2cm::linefeed;
 
@@ -447,7 +447,7 @@ namespace userdata_test
 			return "User Data : Field Set";
 		};
 	}
-	r2cm::iItem::DoFunctionT Field_Set::GetDoFunction()
+	r2cm::iItem::DoFunctionT Field_Set::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -461,7 +461,7 @@ namespace userdata_test
 
 				std::cout << r2cm::linefeed;
 
-				SHOW_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_field_set.hpp" );
+				OUTPUT_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_field_set.hpp" );
 
 				std::cout << r2cm::linefeed;
 
@@ -501,7 +501,7 @@ namespace userdata_test
 			{
 				const char* lua_file_path = "resources/userdata_n_metatable_test_field_set.lua";
 
-				SHOW_FILE( lua_file_path );
+				OUTPUT_FILE( lua_file_path );
 
 				std::cout << r2cm::linefeed;
 
@@ -532,7 +532,7 @@ namespace userdata_test
 			return "__index and __newindex";
 		};
 	}
-	r2cm::iItem::DoFunctionT Index_And_NewIndex::GetDoFunction()
+	r2cm::iItem::DoFunctionT Index_And_NewIndex::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -546,7 +546,7 @@ namespace userdata_test
 			std::cout << r2cm::split;
 
 			{
-				SHOW_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_index_and_newindex.hpp" );
+				OUTPUT_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_index_and_newindex.hpp" );
 
 				std::cout << r2cm::linefeed;
 
@@ -581,7 +581,7 @@ namespace userdata_test
 			{
 				const char* lua_file_path = "resources/userdata_n_metatable_test_index_and_newindex.lua";
 
-				SHOW_FILE( lua_file_path );
+				OUTPUT_FILE( lua_file_path );
 
 				std::cout << r2cm::linefeed;
 
@@ -605,7 +605,7 @@ namespace userdata_test
 			return "Field : AddFromLua";
 		};
 	}
-	r2cm::iItem::DoFunctionT Field_AddFromLua::GetDoFunction()
+	r2cm::iItem::DoFunctionT Field_AddFromLua::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -619,7 +619,7 @@ namespace userdata_test
 
 				std::cout << r2cm::linefeed;
 
-				SHOW_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_field_add_from_lua.hpp" );
+				OUTPUT_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_field_add_from_lua.hpp" );
 
 				std::cout << r2cm::linefeed;
 
@@ -659,7 +659,7 @@ namespace userdata_test
 			{
 				const char* lua_file_path = "resources/userdata_n_metatable_test_field_add_from_lua.lua";
 
-				SHOW_FILE( lua_file_path );
+				OUTPUT_FILE( lua_file_path );
 
 				std::cout << r2cm::linefeed;
 

@@ -26,7 +26,7 @@ namespace stack_test
 			return "Push";
 		};
 	}
-	r2cm::iItem::DoFunctionT PushTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT PushTest::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -89,7 +89,7 @@ namespace stack_test
 			return "Type Check : lua_type, lua_isnumber...";
 		};
 	}
-	r2cm::iItem::DoFunctionT TypeCheck::GetDoFunction()
+	r2cm::iItem::DoFunctionT TypeCheck::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -174,7 +174,7 @@ namespace stack_test
 			return "Type Name : lua_typename...";
 		};
 	}
-	r2cm::iItem::DoFunctionT TypeName::GetDoFunction()
+	r2cm::iItem::DoFunctionT TypeName::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -239,7 +239,7 @@ namespace stack_test
 			return "Print All";
 		};
 	}
-	r2cm::iItem::DoFunctionT PrintAll::GetDoFunction()
+	r2cm::iItem::DoFunctionT PrintAll::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -315,7 +315,7 @@ namespace stack_test
 			return "Get 1 : lua_to...";
 		};
 	}
-	r2cm::iItem::DoFunctionT GetTest_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT GetTest_1::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -393,7 +393,7 @@ namespace stack_test
 			return "Get 2 : luaL_check...";
 		};
 	}
-	r2cm::iItem::DoFunctionT GetTest_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT GetTest_2::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -468,7 +468,7 @@ namespace stack_test
 			return "Stack Clear : lua_settop";
 		};
 	}
-	r2cm::iItem::DoFunctionT SetTop::GetDoFunction()
+	r2cm::iItem::DoFunctionT SetTop::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -531,7 +531,7 @@ namespace stack_test
 			return "Stack Clear : lua_pop";
 		};
 	}
-	r2cm::iItem::DoFunctionT Pop::GetDoFunction()
+	r2cm::iItem::DoFunctionT Pop::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -608,7 +608,7 @@ namespace stack_test
 			return "lua_pushvalue";
 		};
 	}
-	r2cm::iItem::DoFunctionT PushValueTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT PushValueTest::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -681,7 +681,7 @@ namespace stack_test
 			return "lua_copy";
 		};
 	}
-	r2cm::iItem::DoFunctionT CopyTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT CopyTest::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -751,7 +751,7 @@ namespace stack_test
 			return "lua_rotate";
 		};
 	}
-	r2cm::iItem::DoFunctionT RotateTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT RotateTest::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

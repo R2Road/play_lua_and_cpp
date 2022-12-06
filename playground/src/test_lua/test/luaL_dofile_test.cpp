@@ -16,7 +16,7 @@ namespace luaL_dofile_test
 			return "luaL_dofile";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -50,7 +50,7 @@ namespace luaL_dofile_test
 				std::cout << r2cm::tab << "+ Test 1 : Script 에러" << r2cm::linefeed2;
 
 				const std::filesystem::path p( "resources/luaL_dofile_test_01.lua");
-				SHOW_FILE( p.string().c_str() );
+				OUTPUT_FILE( p.string().c_str() );
 
 				std::cout << r2cm::linefeed;
 
@@ -70,7 +70,7 @@ namespace luaL_dofile_test
 				std::cout << r2cm::tab << "+ Test 2" << r2cm::linefeed2;
 
 				const std::filesystem::path p( "resources/luaL_dofile_test_02.lua" );
-				SHOW_FILE( p.string().c_str() );
+				OUTPUT_FILE( p.string().c_str() );
 
 				std::cout << r2cm::linefeed;
 

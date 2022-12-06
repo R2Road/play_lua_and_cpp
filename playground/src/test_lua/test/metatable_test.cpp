@@ -17,7 +17,7 @@ namespace metatable_test
 			return "MetaTable : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -31,7 +31,7 @@ namespace metatable_test
 
 				std::cout << r2cm::linefeed;
 
-				SHOW_FILE( "src/test_lua/test/metatable_test_helper.hpp" );
+				OUTPUT_FILE( "src/test_lua/test/metatable_test_helper.hpp" );
 
 				std::cout << r2cm::linefeed;
 
@@ -49,7 +49,7 @@ namespace metatable_test
 			std::cout << r2cm::split;
 
 			{
-				SHOW_FILE( "resources/metatable_test_basic_01.lua" );
+				OUTPUT_FILE( "resources/metatable_test_basic_01.lua" );
 
 				std::cout << r2cm::linefeed;
 

@@ -16,25 +16,25 @@ r2cm::MenuUp TableMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', table_test::GenerateTest::GetInstance() );
-		ret->AddItem( '2', table_test::Add2GlobalTest::GetInstance() );
-		ret->AddItem( '3', table_test::PushAndGetTest_1::GetInstance() );
-		ret->AddItem( '4', table_test::PushAndGetTest_2::GetInstance() );
-		ret->AddItem( '5', table_test::PushAndGetTest_3::GetInstance() );
-		ret->AddItem( '6', table_test::PushAndGetTest_4::GetInstance() );
+		ret->AddItem( '1', table_test::GenerateTest() );
+		ret->AddItem( '2', table_test::Add2GlobalTest() );
+		ret->AddItem( '3', table_test::PushAndGetTest_1() );
+		ret->AddItem( '4', table_test::PushAndGetTest_2() );
+		ret->AddItem( '5', table_test::PushAndGetTest_3() );
+		ret->AddItem( '6', table_test::PushAndGetTest_4() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'q', table_test::LuaFunction_And_GetTable::GetInstance() );
+		ret->AddItem( 'q', table_test::LuaFunction_And_GetTable() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'a', table_test::GetField::GetInstance() );
-		ret->AddItem( 's', table_test::SetField::GetInstance() );
+		ret->AddItem( 'a', table_test::GetField() );
+		ret->AddItem( 's', table_test::SetField() );
 
 
 		ret->AddSplit();

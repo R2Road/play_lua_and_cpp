@@ -14,10 +14,10 @@ r2cm::MenuUp MemoryAllocationMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', memory_allocation_test::Basic::GetInstance() );
-		ret->AddItem( '2', memory_allocation_test::Custom::GetInstance() );
-		ret->AddItem( '3', memory_allocation_test::Pool_1::GetInstance() );
-		ret->AddItem( '4', memory_allocation_test::Pool_2::GetInstance() );
+		ret->AddItem( '1', memory_allocation_test::Basic() );
+		ret->AddItem( '2', memory_allocation_test::Custom() );
+		ret->AddItem( '3', memory_allocation_test::Pool_1() );
+		ret->AddItem( '4', memory_allocation_test::Pool_2() );
 
 
 

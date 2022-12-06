@@ -21,7 +21,7 @@ namespace memory_allocation_test
 			return "memory allocation : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -32,7 +32,7 @@ namespace memory_allocation_test
 			std::cout << r2cm::split;
 
 			{
-				SHOW_FILE( "resources/lua_l_alloc.txt" );
+				OUTPUT_FILE( "resources/lua_l_alloc.txt" );
 
 				std::cout << r2cm::linefeed;
 
@@ -55,7 +55,7 @@ namespace memory_allocation_test
 			return "memory allocation : Custom";
 		};
 	}
-	r2cm::iItem::DoFunctionT Custom::GetDoFunction()
+	r2cm::iItem::DoFunctionT Custom::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -68,7 +68,7 @@ namespace memory_allocation_test
 			std::cout << r2cm::split;
 
 			{
-				SHOW_FILE( "src/test_lua/test/memory_allocation_test_helper_custom.hpp" );
+				OUTPUT_FILE( "src/test_lua/test/memory_allocation_test_helper_custom.hpp" );
 
 				std::cout << r2cm::linefeed;
 
@@ -92,13 +92,13 @@ namespace memory_allocation_test
 			return "memory allocation : Pool 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT Pool_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT Pool_1::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << r2cm::split;
 
-			SHOW_FILE( "src/test_lua/test/memory_allocation_test_helper_pool_01.hpp" );
+			OUTPUT_FILE( "src/test_lua/test/memory_allocation_test_helper_pool_01.hpp" );
 
 			std::cout << r2cm::linefeed;
 
@@ -124,13 +124,13 @@ namespace memory_allocation_test
 			return "memory allocation : Pool 2";
 		};
 	}
-	r2cm::iItem::DoFunctionT Pool_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT Pool_2::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << r2cm::split;
 
-			SHOW_FILE( "src/test_lua/test/memory_allocation_test_helper_pool_02.hpp" );
+			OUTPUT_FILE( "src/test_lua/test/memory_allocation_test_helper_pool_02.hpp" );
 
 			std::cout << r2cm::linefeed;
 
@@ -150,7 +150,7 @@ namespace memory_allocation_test
 			std::cout << r2cm::split;
 
 			{
-				SHOW_FILE( "resources/memory_allocation_test_pool_01.lua" );
+				OUTPUT_FILE( "resources/memory_allocation_test_pool_01.lua" );
 
 				std::cout << r2cm::linefeed;
 

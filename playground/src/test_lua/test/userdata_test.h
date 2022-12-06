@@ -1,70 +1,69 @@
 ﻿#pragma once
 
 #include "r2cm/r2cm_iItem.h"
-#include "r2cm/r2cm_Singleton.h"
 
 namespace userdata_test
 {
-	class New : public r2cm::iItem, public r2cm::SingleTon<New>
+	class New : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Constructor : public r2cm::iItem, public r2cm::SingleTon<Constructor>
+	class Constructor : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Destructor : public r2cm::iItem, public r2cm::SingleTon<Destructor>
+	class Destructor : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class OOP_1 : public r2cm::iItem, public r2cm::SingleTon<OOP_1>
+	class OOP_1 : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class OOP_2 : public r2cm::iItem, public r2cm::SingleTon<OOP_2>
+	class OOP_2 : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Field_Get : public r2cm::iItem, public r2cm::SingleTon<Field_Get>
+	class Field_Get : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Field_Set : public r2cm::iItem, public r2cm::SingleTon<Field_Set>
+	class Field_Set : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Index_And_NewIndex : public r2cm::iItem, public r2cm::SingleTon<Index_And_NewIndex>
+	class Index_And_NewIndex : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class Field_AddFromLua : public r2cm::iItem, public r2cm::SingleTon<Field_AddFromLua>
+	class Field_AddFromLua : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 }

@@ -15,12 +15,12 @@ r2cm::MenuUp R2LuaRootMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', r2lua_test::ValueTest_1::GetInstance() );
-		ret->AddItem( '2', r2lua_test::ValueTest_2::GetInstance() );
-		ret->AddItem( '3', r2lua_test::PushTest::GetInstance() );
-		ret->AddItem( '4', r2lua_test::GetValueFromStackTest::GetInstance() );
-		ret->AddItem( '5', r2lua_test::GetValuesFromStackTest::GetInstance() );
-		ret->AddItem( '6', r2lua_test::CallTest::GetInstance() );
+		ret->AddItem( '1', r2lua_test::ValueTest_1() );
+		ret->AddItem( '2', r2lua_test::ValueTest_2() );
+		ret->AddItem( '3', r2lua_test::PushTest() );
+		ret->AddItem( '4', r2lua_test::GetValueFromStackTest() );
+		ret->AddItem( '5', r2lua_test::GetValuesFromStackTest() );
+		ret->AddItem( '6', r2lua_test::CallTest() );
 		
 
 

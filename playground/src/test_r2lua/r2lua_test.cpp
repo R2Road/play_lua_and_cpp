@@ -21,7 +21,7 @@ namespace r2lua_test
 			return "r2lua::Value 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT ValueTest_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT ValueTest_1::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -91,7 +91,7 @@ namespace r2lua_test
 			return "r2lua::Value 2";
 		};
 	}
-	r2cm::iItem::DoFunctionT ValueTest_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT ValueTest_2::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -177,7 +177,7 @@ namespace r2lua_test
 			return "r2lua::Push, r2lua::PushArgs";
 		};
 	}
-	r2cm::iItem::DoFunctionT PushTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT PushTest::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -225,7 +225,7 @@ namespace r2lua_test
 			return "r2lua::GetValueFromStack";
 		};
 	}
-	r2cm::iItem::DoFunctionT GetValueFromStackTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT GetValueFromStackTest::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -315,7 +315,7 @@ namespace r2lua_test
 			return "r2lua::GetValuesFromStack";
 		};
 	}
-	r2cm::iItem::DoFunctionT GetValuesFromStackTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT GetValuesFromStackTest::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -396,7 +396,7 @@ namespace r2lua_test
 			return "r2lua::Call";
 		};
 	}
-	r2cm::iItem::DoFunctionT CallTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT CallTest::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

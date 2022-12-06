@@ -16,20 +16,20 @@ r2cm::MenuUp StackMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', stack_test::PushTest::GetInstance() );
-		ret->AddItem( '2', stack_test::TypeCheck::GetInstance() );
-		ret->AddItem( '3', stack_test::TypeName::GetInstance() );
-		ret->AddItem( '4', stack_test::PrintAll::GetInstance() );
-		ret->AddItem( '5', stack_test::GetTest_1::GetInstance() );
-		ret->AddItem( '6', stack_test::GetTest_2::GetInstance() );
-		ret->AddItem( '7', stack_test::SetTop::GetInstance() );
-		ret->AddItem( '8', stack_test::Pop::GetInstance() );
+		ret->AddItem( '1', stack_test::PushTest() );
+		ret->AddItem( '2', stack_test::TypeCheck() );
+		ret->AddItem( '3', stack_test::TypeName() );
+		ret->AddItem( '4', stack_test::PrintAll() );
+		ret->AddItem( '5', stack_test::GetTest_1() );
+		ret->AddItem( '6', stack_test::GetTest_2() );
+		ret->AddItem( '7', stack_test::SetTop() );
+		ret->AddItem( '8', stack_test::Pop() );
 
 		ret->AddLineFeed();
 
-		ret->AddItem( 'q', stack_test::PushValueTest::GetInstance() );
-		ret->AddItem( 'w', stack_test::CopyTest::GetInstance() );
-		ret->AddItem( 'e', stack_test::RotateTest::GetInstance() );
+		ret->AddItem( 'q', stack_test::PushValueTest() );
+		ret->AddItem( 'w', stack_test::CopyTest() );
+		ret->AddItem( 'e', stack_test::RotateTest() );
 
 
 		ret->AddSplit();

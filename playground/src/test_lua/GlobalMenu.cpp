@@ -16,8 +16,8 @@ r2cm::MenuUp GlobalMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', global_test::Basic_1::GetInstance() );
-		ret->AddItem( '2', global_test::Basic_2::GetInstance() );
+		ret->AddItem( '1', global_test::Basic_1() );
+		ret->AddItem( '2', global_test::Basic_2() );
 
 
 		ret->AddSplit();

@@ -19,10 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="external\r2cm\r2cm_BinaryPrint.cpp" />
     <ClCompile Include="external\r2cm\r2cm_Director.cpp" />
-    <ClCompile Include="external\r2cm\r2cm_Inspector.cpp" />
     <ClCompile Include="external\r2cm\r2cm_Menu.cpp" />
+    <ClCompile Include="external\r2cm\r2cm_PrintBinary.cpp" />
+    <ClCompile Include="external\r2cm\r2cm_PrintFile.cpp" />
     <ClCompile Include="external\r2cm\r2cm_StopWatch.cpp" />
     <ClCompile Include="external\r2cm\r2cm_WindowUtility.cpp" />
     <ClCompile Include="external\r2\r2_FrameManager.cpp" />
@@ -55,13 +55,13 @@
     <ClCompile Include="src\test_r2lua\R2LuaRootMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="external\r2cm\r2cm_BinaryPrint.h" />
     <ClInclude Include="external\r2cm\r2cm_Director.h" />
     <ClInclude Include="external\r2cm\r2cm_iItem.h" />
     <ClInclude Include="external\r2cm\r2cm_Inspector.h" />
     <ClInclude Include="external\r2cm\r2cm_Menu.h" />
     <ClInclude Include="external\r2cm\r2cm_ostream.h" />
-    <ClInclude Include="external\r2cm\r2cm_Singleton.h" />
+    <ClInclude Include="external\r2cm\r2cm_PrintBinary.h" />
+    <ClInclude Include="external\r2cm\r2cm_PrintFile.h" />
     <ClInclude Include="external\r2cm\r2cm_StopWatch.h" />
     <ClInclude Include="external\r2cm\r2cm_VersionInfo.h" />
     <ClInclude Include="external\r2cm\r2cm_WindowUtility.h" />

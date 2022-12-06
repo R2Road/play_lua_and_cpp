@@ -17,24 +17,24 @@ r2cm::MenuUp FunctionMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', function_cpp2lua_test::Basic::GetInstance() );
-		ret->AddItem( '2', function_cpp2lua_test::Argument::GetInstance() );
+		ret->AddItem( '1', function_cpp2lua_test::Basic() );
+		ret->AddItem( '2', function_cpp2lua_test::Argument() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'q', function_lua2cpp_test::Register_And_PCall::GetInstance() );
-		ret->AddItem( 'w', function_lua2cpp_test::Argument::GetInstance() );
-		ret->AddItem( 'e', function_lua2cpp_test::Lambda::GetInstance() );
+		ret->AddItem( 'q', function_lua2cpp_test::Register_And_PCall() );
+		ret->AddItem( 'w', function_lua2cpp_test::Argument() );
+		ret->AddItem( 'e', function_lua2cpp_test::Lambda() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'a', function_closure_test::Basic::GetInstance() );
-		ret->AddItem( 's', function_closure_test::UpdateUpvalue::GetInstance() );
-		ret->AddItem( 'd', function_closure_test::ArgumentTest::GetInstance() );
+		ret->AddItem( 'a', function_closure_test::Basic() );
+		ret->AddItem( 's', function_closure_test::UpdateUpvalue() );
+		ret->AddItem( 'd', function_closure_test::ArgumentTest() );
 
 
 		ret->AddSplit();

@@ -1,49 +1,48 @@
 ﻿#pragma once
 
 #include "r2cm/r2cm_iItem.h"
-#include "r2cm/r2cm_Singleton.h"
 
 namespace r2lua_test
 {
-	class ValueTest_1 : public r2cm::iItem, public r2cm::SingleTon<ValueTest_1>
+	class ValueTest_1 : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class ValueTest_2 : public r2cm::iItem, public r2cm::SingleTon<ValueTest_2>
+	class ValueTest_2 : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class PushTest : public r2cm::iItem, public r2cm::SingleTon<PushTest>
+	class PushTest : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class GetValueFromStackTest : public r2cm::iItem, public r2cm::SingleTon<GetValueFromStackTest>
+	class GetValueFromStackTest : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class GetValuesFromStackTest : public r2cm::iItem, public r2cm::SingleTon<GetValuesFromStackTest>
+	class GetValuesFromStackTest : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class CallTest : public r2cm::iItem, public r2cm::SingleTon<CallTest>
+	class CallTest : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 }

@@ -17,7 +17,7 @@ namespace interaction_test
 			return "Interaction : Call with Closure";
 		};
 	}
-	r2cm::iItem::DoFunctionT CallWithClosure::GetDoFunction()
+	r2cm::iItem::DoFunctionT CallWithClosure::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -33,7 +33,7 @@ namespace interaction_test
 
 				std::cout << r2cm::linefeed;
 
-				SHOW_FILE( "src/test_lua/test/interaction_test_helper_call_with_closure.hpp" );
+				OUTPUT_FILE( "src/test_lua/test/interaction_test_helper_call_with_closure.hpp" );
 
 				std::cout << r2cm::linefeed;
 
@@ -81,7 +81,7 @@ namespace interaction_test
 			{
 				const char* lua_file_path = "resources/interaction_test_call_with_closure_01.lua";
 
-				SHOW_FILE( lua_file_path );
+				OUTPUT_FILE( lua_file_path );
 
 				std::cout << r2cm::linefeed;
 

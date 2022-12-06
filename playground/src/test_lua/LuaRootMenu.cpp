@@ -25,12 +25,12 @@ r2cm::MenuUp LuaRootMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', lua_state_test::Basic::GetInstance() );
+		ret->AddItem( '1', lua_state_test::Basic() );
 		ret->AddMenu<StackMenu>( '2' );
 		ret->AddMenu<GlobalMenu>( '3' );
-		ret->AddItem( '4', luaL_dostring_test::Basic::GetInstance() );
-		ret->AddItem( '5', luaL_dofile_test::Basic::GetInstance() );
-		ret->AddItem( '6', luaL_openlibs_test::Basic::GetInstance() );
+		ret->AddItem( '4', luaL_dostring_test::Basic() );
+		ret->AddItem( '5', luaL_dofile_test::Basic() );
+		ret->AddItem( '6', luaL_openlibs_test::Basic() );
 
 
 

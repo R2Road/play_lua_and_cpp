@@ -52,7 +52,7 @@ namespace function_lua2cpp_test
 			return "function_lua2cpp_test : Register And PCall";
 		};
 	}
-	r2cm::iItem::DoFunctionT Register_And_PCall::GetDoFunction()
+	r2cm::iItem::DoFunctionT Register_And_PCall::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -69,7 +69,7 @@ namespace function_lua2cpp_test
 			std::cout << r2cm::split;
 
 			{
-				SHOW_FILE( "resources/function_lua2cpp_test_register_n_pcall_01.lua" );
+				OUTPUT_FILE( "resources/function_lua2cpp_test_register_n_pcall_01.lua" );
 				PROCESS_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/function_lua2cpp_test_register_n_pcall_01.lua" ) );
 			}
 
@@ -114,7 +114,7 @@ namespace function_lua2cpp_test
 			return "function_lua2cpp_test : Argument";
 		};
 	}
-	r2cm::iItem::DoFunctionT Argument::GetDoFunction()
+	r2cm::iItem::DoFunctionT Argument::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -184,7 +184,7 @@ namespace function_lua2cpp_test
 			return "function_lua2cpp_test : Lambda";
 		};
 	}
-	r2cm::iItem::DoFunctionT Lambda::GetDoFunction()
+	r2cm::iItem::DoFunctionT Lambda::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -194,7 +194,7 @@ namespace function_lua2cpp_test
 			std::cout << r2cm::split;
 
 			{
-				SHOW_FILE( "resources/function_lua2cpp_test_lambda_01.lua" );
+				OUTPUT_FILE( "resources/function_lua2cpp_test_lambda_01.lua" );
 				PROCESS_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/function_lua2cpp_test_lambda_01.lua" ) );
 			}
 

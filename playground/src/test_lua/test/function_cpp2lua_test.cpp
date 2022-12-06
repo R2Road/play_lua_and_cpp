@@ -16,7 +16,7 @@ namespace function_cpp2lua_test
 			return "function cpp2lua : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -29,7 +29,7 @@ namespace function_cpp2lua_test
 
 			std::cout << r2cm::tab << "+ Add Function : Test()" << r2cm::linefeed2;
 
-			SHOW_FILE( "resources/function_cpp2lua_test_basic_01.lua" );
+			OUTPUT_FILE( "resources/function_cpp2lua_test_basic_01.lua" );
 
 			std::cout << r2cm::linefeed;
 
@@ -79,7 +79,7 @@ namespace function_cpp2lua_test
 			return "function cpp2lua : Argument";
 		};
 	}
-	r2cm::iItem::DoFunctionT Argument::GetDoFunction()
+	r2cm::iItem::DoFunctionT Argument::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

@@ -16,7 +16,7 @@ namespace global_test
 			return "Basic 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic_1::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -96,7 +96,7 @@ namespace global_test
 			return "Basic 2";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic_2::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
