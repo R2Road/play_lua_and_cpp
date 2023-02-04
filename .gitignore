@@ -31,7 +31,7 @@
 *.out
 *.app
 
-playground/Debug/*
-playground/.vs/*
-playground/Release/*
-playground/x64/*
+play/Debug/*
+play/.vs/*
+play/Release/*
+play/x64/*

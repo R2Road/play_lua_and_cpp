@@ -32,7 +32,7 @@ int main()
 	//
 	// Environment : Title
 	//
-	r2cm::WindowUtility::ChangeTitle( "lua_and_cpp_playground" );
+	r2cm::WindowUtility::ChangeTitle( "play_lua_and_cpp" );
 
 	//
 	// Environment : Size
