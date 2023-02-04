@@ -1,4 +1,4 @@
-# lua_and_cpp_playground
+# play_lua_and_cpp
 
 ## 개괄 | Overview
 - CPP 프로젝트에서 Lua 사용. | Lua with C++
