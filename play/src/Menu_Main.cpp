@@ -1,4 +1,4 @@
-#include "MainMenu.h"
+#include "Menu_Main.hpp"
 
 #include <string>
 
@@ -10,7 +10,7 @@
 #include "play/lua/LuaRootMenu.h"
 #include "play/r2lua/R2LuaRootMenu.h"
 
-r2tm::TitleFunctionT MainMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_Main::GetTitleFunction() const
 {
 	return []()->const char*
 	{
@@ -21,11 +21,11 @@ r2tm::TitleFunctionT MainMenu::GetTitleFunction() const
 		return ret.c_str();
 	};
 }
-r2tm::DescriptionFunctionT MainMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_Main::GetDescriptionFunction() const
 {
 	return []()->const char* { return ""; };
 }
-r2tm::WriteFunctionT MainMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_Main::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{

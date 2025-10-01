@@ -35,6 +35,6 @@ r2tm::WriteFunctionT R2LuaRootMenu::GetWriteFunction() const
 
 
 
-		mp->AddMenu( 27, MainMenu() );
+		mp->AddMenu( 27, Menu_Main() );
 	};
 }

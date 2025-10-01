@@ -33,7 +33,7 @@
     <ClCompile Include="external\r2tm\r2tm_windows_utility.cpp" />
     <ClCompile Include="external\r2\r2_FrameManager.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\MainMenu.cpp" />
+    <ClCompile Include="src\Menu_Main.cpp" />
     <ClCompile Include="src\play\lua\FunctionMenu.cpp" />
     <ClCompile Include="src\play\lua\function_closure_test.cpp" />
     <ClCompile Include="src\play\lua\function_cpp2lua_test.cpp" />
@@ -83,7 +83,7 @@
     <ClInclude Include="external\r2tm\r2tm_windows_utility.hpp" />
     <ClInclude Include="external\r2\r2_Assert.h" />
     <ClInclude Include="external\r2\r2_FrameManager.h" />
-    <ClInclude Include="src\MainMenu.h" />
+    <ClInclude Include="src\Menu_Main.hpp" />
     <ClInclude Include="src\lua_header_package.h" />
     <ClInclude Include="src\play\lua\FunctionMenu.h" />
     <ClInclude Include="src\play\lua\function_closure_test.h" />
