@@ -25,7 +25,7 @@
 #include "r2tm/r2tm_director.hpp"
 #include "r2tm/r2tm_windows_utility.hpp"
 
-#include "MainMenu.h"
+#include "menu_main.hpp"
 
 int main()
 {

@@ -10,7 +10,7 @@
 
 #include "FunctionMenu.h"
 #include "GlobalMenu.h"
-#include "MainMenu.h"
+#include "menu_main.hpp"
 #include "MemoryAllocationMenu.h"
 #include "StackMenu.h"
 #include "TableMenu.h"

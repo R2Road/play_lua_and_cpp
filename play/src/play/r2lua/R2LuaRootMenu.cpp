@@ -5,7 +5,7 @@
 
 #include "r2lua_test.h"
 
-#include "MainMenu.h"
+#include "menu_main.hpp"
 
 r2tm::TitleFunctionT R2LuaRootMenu::GetTitleFunction() const
 {
