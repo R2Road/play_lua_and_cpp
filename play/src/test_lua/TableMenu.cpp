@@ -1,47 +1,51 @@
 #include "TableMenu.h"
 
-#include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_director.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 #include "test/table_test.h"
 
 #include "LuaRootMenu.h"
 
-r2cm::MenuUp TableMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT TableMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
-		director
-		, GetTitle()
-		, "> Add Some One"
-	) );
-
+	return []()->const char*
 	{
-		ret->AddItem( '1', table_test::GenerateTest() );
-		ret->AddItem( '2', table_test::Add2GlobalTest() );
-		ret->AddItem( '3', table_test::PushAndGetTest_1() );
-		ret->AddItem( '4', table_test::PushAndGetTest_2() );
-		ret->AddItem( '5', table_test::PushAndGetTest_3() );
-		ret->AddItem( '6', table_test::PushAndGetTest_4() );
+		return "Table";
+	};
+}
+r2tm::DescriptionFunctionT TableMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return "> Add Some One"; };
+}
+r2tm::WriteFunctionT TableMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* mp )
+	{
+		mp->AddItem( '1', table_test::GenerateTest() );
+		mp->AddItem( '2', table_test::Add2GlobalTest() );
+		mp->AddItem( '3', table_test::PushAndGetTest_1() );
+		mp->AddItem( '4', table_test::PushAndGetTest_2() );
+		mp->AddItem( '5', table_test::PushAndGetTest_3() );
+		mp->AddItem( '6', table_test::PushAndGetTest_4() );
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'q', table_test::LuaFunction_And_GetTable() );
+		mp->AddItem( 'q', table_test::LuaFunction_And_GetTable() );
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'a', table_test::GetField() );
-		ret->AddItem( 's', table_test::SetField() );
+		mp->AddItem( 'a', table_test::GetField() );
+		mp->AddItem( 's', table_test::SetField() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu<LuaRootMenu>( 27 );
-	}
-
-	return ret;
+		mp->AddMenu( 27, LuaRootMenu() );
+	};
 }

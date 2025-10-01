@@ -1,20 +1,20 @@
 ﻿#pragma once
 
-#include "r2cm/r2cm_iItem.h"
+#include "r2tm/r2tm_interface_item.hpp"
 
 namespace global_test
 {
-	class Basic_1 : public r2cm::iItem
+	class Basic_1 : public r2tm::iItem
 	{
 	public:
-		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() const override;
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class Basic_2 : public r2cm::iItem
+	class Basic_2 : public r2tm::iItem
 	{
 	public:
-		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() const override;
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 }

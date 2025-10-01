@@ -1,12 +1,12 @@
 #include "lua_header_package.h"
-#include "r2cm/r2cm_Inspector.h"
+#include "r2tm/r2tm_inspector.hpp"
 #include "test_lua_helper.h"
 
 struct Vector2_4_DestructorTest
 {
 	~Vector2_4_DestructorTest()
 	{
-		OUTPUT_COMMENT( "~Data_4_Destructor()" );
+		OUT_COMMENT( "~Data_4_Destructor()" );
 	}
 	int x;
 	int y;

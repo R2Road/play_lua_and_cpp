@@ -2,60 +2,60 @@
 
 #include "lua_header_package.h"
 
-#include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace luaL_dostring_test
 {
-	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
+	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "luaL_dostring";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
+	r2tm::DoFunctionT Basic::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			DECLARATION_SUB( lua_State* lua_state_obj = luaL_newstate() );
+			DECL_SUB( lua_State* lua_state_obj = luaL_newstate() );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				DECLARATION_MAIN( const char* command = "a = 7 + 11" );
+				DECL_MAIN( const char* command = "a = 7 + 11" );
 
-				std::cout << r2cm::linefeed2;
+				std::cout << r2tm::linefeed2;
 
-				DECLARATION_MAIN( const int lua_result = luaL_dostring( lua_state_obj, command ) );
+				DECL_MAIN( const int lua_result = luaL_dostring( lua_state_obj, command ) );
 				EXPECT_TRUE( LUA_OK == lua_result );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				DECLARATION_MAIN( const char* command = "a = 7 + " );
+				DECL_MAIN( const char* command = "a = 7 + " );
 
-				std::cout << r2cm::linefeed2;
+				std::cout << r2tm::linefeed2;
 
-				DECLARATION_MAIN( const int lua_result = luaL_dostring( lua_state_obj, command ) );
+				DECL_MAIN( const int lua_result = luaL_dostring( lua_state_obj, command ) );
 				EXPECT_FALSE( LUA_OK == lua_result );
 
-				std::cout << r2cm::linefeed2;
+				std::cout << r2tm::linefeed2;
 
-				DECLARATION_MAIN( const auto error_message = lua_tostring( lua_state_obj, -1 ) );
-				std::cout << r2cm::tab << "error message : " << error_message << r2cm::linefeed;
+				DECL_MAIN( const auto error_message = lua_tostring( lua_state_obj, -1 ) );
+				std::cout << r2tm::tab << "error message : " << error_message << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			PROCESS_SUB( lua_close( lua_state_obj ) );
+			PROC_SUB( lua_close( lua_state_obj ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

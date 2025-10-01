@@ -1,32 +1,37 @@
 #include "MemoryAllocationMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_director.hpp"
 
 #include "test/memory_allocation_test.h"
 
 #include "LuaRootMenu.h"
 
-r2cm::MenuUp MemoryAllocationMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT MemoryAllocationMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
-		director
-		, GetTitle()
-	) );
-
+	return []()->const char*
 	{
-		ret->AddItem( '1', memory_allocation_test::Basic() );
-		ret->AddItem( '2', memory_allocation_test::Custom() );
-		ret->AddItem( '3', memory_allocation_test::Pool_1() );
-		ret->AddItem( '4', memory_allocation_test::Pool_2() );
+		return "Memory Allocation";
+	};
+}
+r2tm::DescriptionFunctionT MemoryAllocationMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return "> Add Some One"; };
+}
+r2tm::WriteFunctionT MemoryAllocationMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* mp )
+	{
+		mp->AddItem( '1', memory_allocation_test::Basic() );
+		mp->AddItem( '2', memory_allocation_test::Custom() );
+		mp->AddItem( '3', memory_allocation_test::Pool_1() );
+		mp->AddItem( '4', memory_allocation_test::Pool_2() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu<LuaRootMenu>( 27 );
-	}
-
-	return ret;
+		mp->AddMenu( 27, LuaRootMenu() );
+	};
 }

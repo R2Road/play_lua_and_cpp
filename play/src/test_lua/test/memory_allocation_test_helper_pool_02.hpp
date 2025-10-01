@@ -1,4 +1,6 @@
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_color_modifier.hpp"
+
 #include "r2/r2_Assert.h"
 
 struct LuaMemoryPool_02
@@ -20,7 +22,7 @@ struct LuaMemoryPool_02
 		std::cout << "\t> End    : " << uint64_t( mEnd ) << "\n";
 		std::cout << "\t> Cur    : " << uint64_t( mCurrent ) << "\n";
 		std::cout << "\t> Size   : " << uint64_t( mEnd ) - uint64_t( mBegin ) + 1 << "\n";
-		std::cout << "\t> Use    : " << r2cm::clm( r2cm::eColor::FG_Green ) << uint64_t( mCurrent ) - uint64_t( mBegin ) << r2cm::clm() << "\n";
+		std::cout << "\t> Use    : " << clm( r2tm::eColor::FG_Green ) << uint64_t( mCurrent ) - uint64_t( mBegin ) << clm() << "\n";
 		std::cout << "\t> Remain : " << uint64_t( mEnd ) - uint64_t( mCurrent ) + 1 << "\n";
 	}
 

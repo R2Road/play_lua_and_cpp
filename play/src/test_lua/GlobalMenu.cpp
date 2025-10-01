@@ -1,30 +1,34 @@
 #include "GlobalMenu.h"
 
-#include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_director.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 #include "test/global_test.h"
 
 #include "LuaRootMenu.h"
 
-r2cm::MenuUp GlobalMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT GlobalMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
-		director
-		, GetTitle()
-		, "> Add Some One"
-	) );
-
+	return []()->const char*
 	{
-		ret->AddItem( '1', global_test::Basic_1() );
-		ret->AddItem( '2', global_test::Basic_2() );
+		return "Global";
+	};
+}
+r2tm::DescriptionFunctionT GlobalMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return "> Add Some One"; };
+}
+r2tm::WriteFunctionT GlobalMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* mp )
+	{
+		mp->AddItem( '1', global_test::Basic_1() );
+		mp->AddItem( '2', global_test::Basic_2() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu<LuaRootMenu>( 27 );
-	}
-
-	return ret;
+		mp->AddMenu( 27, LuaRootMenu() );
+	};
 }

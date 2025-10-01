@@ -2,45 +2,42 @@
 
 #include <string>
 
-#include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_ostream.h"
-#include "r2cm/r2cm_VersionInfo.h"
+#include "r2tm/r2tm_director.hpp"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_version_info.hpp"
 
 #include "test_lua_helper.h"
 #include "test_lua/LuaRootMenu.h"
 #include "test_r2lua/R2LuaRootMenu.h"
 
-const char* MainMenu::GetTitle()
+r2tm::TitleFunctionT MainMenu::GetTitleFunction() const
 {
-	static const std::string ret =
-		std::string( "Main Menu" )
-		+ " : <" + r2cm::VersionInfo.String4Version + ">"
-		+ " : <" + "lua version : v" + std::to_string( test_lua_helper::GetVersion() ) + ">";
-	return ret.c_str();
-}
-r2cm::MenuUp MainMenu::Create( r2cm::Director& director )
-{
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
-		director
-		, GetTitle()
-	) );
-
+	return []()->const char*
 	{
-		ret->AddMenu<LuaRootMenu>( '1' );
-		ret->AddMenu<R2LuaRootMenu>( '2' );
+		static const std::string ret =
+			std::string( "Main Menu" )
+			+ " : <" + r2tm::VersionInfo.String4Version + ">"
+			+ " : <" + "lua version : v" + std::to_string( test_lua_helper::GetVersion() ) + ">";
+		return ret.c_str();
+	};
+}
+r2tm::DescriptionFunctionT MainMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2tm::WriteFunctionT MainMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* mp )
+	{
+		mp->AddMenu( '1', LuaRootMenu() );
+		mp->AddMenu( '2', R2LuaRootMenu() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddItem(
-			27
-			, []()->const char* { return "Exit"; }
-			, []()->r2cm::eItemLeaveAction { return r2cm::eItemLeaveAction::Exit; }
-		);
-	}
-
-	return ret;
+		mp->AddExit( 27 );
+	};
 }

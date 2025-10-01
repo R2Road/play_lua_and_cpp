@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include "r2cm/r2cm_Inspector.h"
+#include "r2tm/r2tm_inspector.hpp"
 #include "test_lua_helper.h"
 
 #include "r2/r2_Assert.h"

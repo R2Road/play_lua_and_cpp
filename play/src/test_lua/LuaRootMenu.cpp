@@ -1,7 +1,7 @@
 #include "LuaRootMenu.h"
 
-#include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_director.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 #include "test/lua_state_test.h"
 #include "test/luaL_dofile_test.h"
@@ -16,48 +16,52 @@
 #include "TableMenu.h"
 #include "UserData_And_MetaTable_Menu.h"
 
-r2cm::MenuUp LuaRootMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT LuaRootMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
-		director
-		, GetTitle()
-		, "> Add Some One"
-	) );
-
+	return []()->const char*
 	{
-		ret->AddItem( '1', lua_state_test::Basic() );
-		ret->AddMenu<StackMenu>( '2' );
-		ret->AddMenu<GlobalMenu>( '3' );
-		ret->AddItem( '4', luaL_dostring_test::Basic() );
-		ret->AddItem( '5', luaL_dofile_test::Basic() );
-		ret->AddItem( '6', luaL_openlibs_test::Basic() );
+		return "Lua";
+	};
+}
+r2tm::DescriptionFunctionT LuaRootMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return "> Add Some One"; };
+}
+r2tm::WriteFunctionT LuaRootMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* mp )
+	{
+		mp->AddItem( '1', lua_state_test::Basic() );
+		mp->AddMenu( '2', StackMenu() );
+		mp->AddMenu( '3', GlobalMenu() );
+		mp->AddItem( '4', luaL_dostring_test::Basic() );
+		mp->AddItem( '5', luaL_dofile_test::Basic() );
+		mp->AddItem( '6', luaL_openlibs_test::Basic() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddMenu<FunctionMenu>( 'q' );
-		ret->AddMenu<TableMenu>( 'w' );
-		ret->AddMenu<MemoryAllocationMenu>( 'e' );
+		mp->AddMenu( 'q', FunctionMenu() );
+		mp->AddMenu( 'w', TableMenu() );
+		mp->AddMenu( 'e', MemoryAllocationMenu() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddMenu<UserDataMenu>( 'a' );
+		mp->AddMenu( 'a', UserDataMenu() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu<MainMenu>( 27 );
-	}
-
-	return ret;
+		mp->AddMenu( 27, MainMenu() );
+	};
 }

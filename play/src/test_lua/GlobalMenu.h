@@ -1,19 +1,11 @@
 #pragma once
 
-#include <memory>
+#include "r2tm/r2tm_interface_menu.hpp"
 
-namespace r2cm
+class GlobalMenu : public r2tm::iMenu
 {
-	class Director;
-	using MenuUp = std::unique_ptr<class Menu>;
-}
-
-class GlobalMenu
-{
-private:
-	GlobalMenu() = delete;
-
 public:
-	static const char* GetTitle() { return "Global"; }
-	static r2cm::MenuUp Create( r2cm::Director& director );
+	r2tm::TitleFunctionT GetTitleFunction() const;
+	r2tm::DescriptionFunctionT GetDescriptionFunction() const;
+	r2tm::WriteFunctionT GetWriteFunction() const;
 };

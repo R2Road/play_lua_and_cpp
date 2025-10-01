@@ -1,5 +1,5 @@
 #include "lua_header_package.h"
-#include "r2cm/r2cm_Inspector.h"
+#include "r2tm/r2tm_inspector.hpp"
 #include "test_lua_helper.h"
 
 struct Vector2_4_ConstructorTest
@@ -13,11 +13,11 @@ struct Vector2_4_ConstructorTest
 		void* d = lua_newuserdata( l, sizeof( Vector2_4_ConstructorTest ) );
 
 		test_lua_helper::PrintAllStack( l );
-		OUTPUT_VALUE( ( (Vector2_4_ConstructorTest*)d )->x );
+		OUT_VALUE( ( (Vector2_4_ConstructorTest*)d )->x );
 
 		new ( d ) Vector2_4_ConstructorTest; // <<== Here
 
-		OUTPUT_VALUE( ( (Vector2_4_ConstructorTest*)d )->x );
+		OUT_VALUE( ( (Vector2_4_ConstructorTest*)d )->x );
 
 		return 1;
 	};

@@ -2,7 +2,7 @@
 
 #include "lua_header_package.h"
 
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_ostream.hpp"
 
 
 namespace test_lua_helper
@@ -26,11 +26,11 @@ namespace test_lua_helper
 		const int stack_size = lua_gettop( lua_state_obj );
 		if( 0 == stack_size )
 		{
-			std::cout << "Empty" << r2cm::linefeed;
+			std::cout << "Empty" << r2tm::linefeed;
 		}
 		else
 		{
-			std::cout << stack_size << r2cm::linefeed;
+			std::cout << stack_size << r2tm::linefeed;
 		}
 	}
 	void PrintTypeName( int type )
@@ -38,45 +38,45 @@ namespace test_lua_helper
 		switch( type )
 		{
 		case LUA_TNIL:
-			std::cout << " is nil" << r2cm::linefeed;
+			std::cout << " is nil" << r2tm::linefeed;
 			break;
 		case LUA_TBOOLEAN:
-			std::cout << " is boolean" << r2cm::linefeed;
+			std::cout << " is boolean" << r2tm::linefeed;
 			break;
 		case LUA_TLIGHTUSERDATA:
-			std::cout << " is light userdata" << r2cm::linefeed;
+			std::cout << " is light userdata" << r2tm::linefeed;
 			break;
 		case LUA_TNUMBER:
-			std::cout << " is number" << r2cm::linefeed;
+			std::cout << " is number" << r2tm::linefeed;
 			break;
 		case LUA_TSTRING:
-			std::cout << " is string" << r2cm::linefeed;
+			std::cout << " is string" << r2tm::linefeed;
 			break;
 		case LUA_TTABLE:
-			std::cout << " is table" << r2cm::linefeed;
+			std::cout << " is table" << r2tm::linefeed;
 			break;
 		case LUA_TFUNCTION:
-			std::cout << " is function" << r2cm::linefeed;
+			std::cout << " is function" << r2tm::linefeed;
 			break;
 		case LUA_TUSERDATA:
-			std::cout << " is userdata" << r2cm::linefeed;
+			std::cout << " is userdata" << r2tm::linefeed;
 			break;
 		case LUA_TTHREAD:
-			std::cout << " is thread" << r2cm::linefeed;
+			std::cout << " is thread" << r2tm::linefeed;
 			break;
 		case LUA_NUMTYPES:
-			std::cout << " is numtypes" << r2cm::linefeed;
+			std::cout << " is numtypes" << r2tm::linefeed;
 			break;
 
 		default:
-			std::cout << " is undefined" << r2cm::linefeed;
+			std::cout << " is undefined" << r2tm::linefeed;
 			break;
 		}
 	}
 	void PrintLuaError( lua_State* lua_state_obj )
 	{
 		const auto error_message = lua_tostring( lua_state_obj, -1 );
-		std::cout << "error message : " << error_message << r2cm::linefeed;
+		std::cout << "error message : " << error_message << r2tm::linefeed;
 	}
 
 	bool DoString( lua_State* lua_state_obj, const char* command_string )
@@ -100,13 +100,13 @@ namespace test_lua_helper
 		if( return_code != LUA_OK )
 		{
 			const auto error_message = lua_tostring( lua_state_obj, -1 );
-			std::cout <<"error message : " << error_message << r2cm::linefeed;
+			std::cout <<"error message : " << error_message << r2tm::linefeed;
 
 			return false;
 		}
 		else
 		{
-			std::cout << "Success" << r2cm::linefeed;
+			std::cout << "Success" << r2tm::linefeed;
 
 			return true;
 		}
@@ -116,7 +116,7 @@ namespace test_lua_helper
 		if( return_code != LUA_OK )
 		{
 			const auto error_message = lua_tostring( lua_state_obj, -1 );
-			std::cout << "error message : " << error_message << r2cm::linefeed;
+			std::cout << "error message : " << error_message << r2tm::linefeed;
 
 			return false;
 		}
@@ -128,37 +128,37 @@ namespace test_lua_helper
 	{
 		const int stack_size = lua_gettop( lua_state_obj );
 
-		std::cout << r2cm::tab << "Stack Count : " << stack_size << r2cm::linefeed;
-		std::cout << r2cm::tab << "[" << stack_index << "]" << r2cm::tab << "[" << stack_index - ( stack_size + 1 ) << "]" << r2cm::tab << luaL_typename( lua_state_obj, stack_index ) << r2cm::tab;
+		std::cout << r2tm::tab << "Stack Count : " << stack_size << r2tm::linefeed;
+		std::cout << r2tm::tab << "[" << stack_index << "]" << r2tm::tab << "[" << stack_index - ( stack_size + 1 ) << "]" << r2tm::tab << luaL_typename( lua_state_obj, stack_index ) << r2tm::tab;
 	}
 	void PrintAllStack( lua_State* lua_state_obj )
 	{
 		const int stack_size = lua_gettop( lua_state_obj );
 
-		std::cout << r2cm::tab << "Stack Count : " << stack_size << r2cm::linefeed;
+		std::cout << r2tm::tab << "Stack Count : " << stack_size << r2tm::linefeed;
 
 		if( 0 < stack_size )
 		{
 			for( int i = 1, ri = -stack_size; stack_size >= i; ++i, ++ri )
 			{
-				std::cout << r2cm::tab << "[" << i << "]" << r2cm::tab << "[" << ri << "]" << r2cm::tab << luaL_typename( lua_state_obj, i ) << r2cm::tab;
+				std::cout << r2tm::tab << "[" << i << "]" << r2tm::tab << "[" << ri << "]" << r2tm::tab << luaL_typename( lua_state_obj, i ) << r2tm::tab;
 
 				switch( lua_type( lua_state_obj, i ) )
 				{
 				case LUA_TNUMBER:
-					std::cout << lua_tonumber( lua_state_obj, i ) << r2cm::linefeed;
+					std::cout << lua_tonumber( lua_state_obj, i ) << r2tm::linefeed;
 					break;
 				case LUA_TSTRING:
-					std::cout << lua_tostring( lua_state_obj, i ) << r2cm::linefeed;
+					std::cout << lua_tostring( lua_state_obj, i ) << r2tm::linefeed;
 					break;
 				case LUA_TBOOLEAN:
-					std::cout << ( lua_toboolean( lua_state_obj, i ) ? "true" : "false" ) << r2cm::linefeed;
+					std::cout << ( lua_toboolean( lua_state_obj, i ) ? "true" : "false" ) << r2tm::linefeed;
 					break;
 				case LUA_TNIL:
-					std::cout << "nil" << r2cm::linefeed;
+					std::cout << "nil" << r2tm::linefeed;
 					break;
 				default:
-					std::cout << lua_topointer( lua_state_obj, i ) << r2cm::linefeed;
+					std::cout << lua_topointer( lua_state_obj, i ) << r2tm::linefeed;
 					break;
 				}
 			}

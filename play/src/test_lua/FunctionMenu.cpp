@@ -1,6 +1,6 @@
 #include "FunctionMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_director.hpp"
 
 #include "test/function_closure_test.h"
 #include "test/function_cpp2lua_test.h"
@@ -8,40 +8,44 @@
 
 #include "LuaRootMenu.h"
 
-r2cm::MenuUp FunctionMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT FunctionMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
-		director
-		, GetTitle()
-		, "> Add Some One"
-	) );
-
+	return []()->const char*
 	{
-		ret->AddItem( '1', function_cpp2lua_test::Basic() );
-		ret->AddItem( '2', function_cpp2lua_test::Argument() );
+		return "Function";
+	};
+}
+r2tm::DescriptionFunctionT FunctionMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return "> Add Some One"; };
+}
+r2tm::WriteFunctionT FunctionMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* mp )
+	{
+		mp->AddItem( '1', function_cpp2lua_test::Basic() );
+		mp->AddItem( '2', function_cpp2lua_test::Argument() );
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'q', function_lua2cpp_test::Register_And_PCall() );
-		ret->AddItem( 'w', function_lua2cpp_test::Argument() );
-		ret->AddItem( 'e', function_lua2cpp_test::Lambda() );
+		mp->AddItem( 'q', function_lua2cpp_test::Register_And_PCall() );
+		mp->AddItem( 'w', function_lua2cpp_test::Argument() );
+		mp->AddItem( 'e', function_lua2cpp_test::Lambda() );
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'a', function_closure_test::Basic() );
-		ret->AddItem( 's', function_closure_test::UpdateUpvalue() );
-		ret->AddItem( 'd', function_closure_test::ArgumentTest() );
+		mp->AddItem( 'a', function_closure_test::Basic() );
+		mp->AddItem( 's', function_closure_test::UpdateUpvalue() );
+		mp->AddItem( 'd', function_closure_test::ArgumentTest() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu<LuaRootMenu>( 27 );
-	}
-
-	return ret;
+		mp->AddMenu( 27, LuaRootMenu() );
+	};
 }

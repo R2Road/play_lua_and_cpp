@@ -1,7 +1,7 @@
 ﻿#include "r2lua_test.h"
 
-#include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 #include "r2lua/r2lua.h"
 #include "test_lua_helper.h"
@@ -14,397 +14,397 @@ std::ostream& operator<<( std::ostream& o, const r2lua::eType type )
 
 namespace r2lua_test
 {
-	r2cm::iItem::TitleFunctionT ValueTest_1::GetTitleFunction() const
+	r2tm::TitleFunctionT ValueTest_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "r2lua::Value 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT ValueTest_1::GetDoFunction() const
+	r2tm::DoFunctionT ValueTest_1::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			lua_State* lua_state_obj = luaL_newstate();
 
 
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Bool" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ Bool" << r2tm::linefeed2;
 
-				DECLARATION_SUB( const bool primitive_b = true );
-				DECLARATION_MAIN( r2lua::Bool b = primitive_b );
+				DECL_SUB( const bool primitive_b = true );
+				DECL_MAIN( r2lua::Bool b = primitive_b );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( r2lua::eType::Bool, b.GetType() );
 				EXPECT_EQ( primitive_b, b.GetValue() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Number" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ Number" << r2tm::linefeed2;
 
-				DECLARATION_SUB( const double primitive_d = 3.141592 );
-				DECLARATION_MAIN( r2lua::Number n = primitive_d );
+				DECL_SUB( const double primitive_d = 3.141592 );
+				DECL_MAIN( r2lua::Number n = primitive_d );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( r2lua::eType::Number, n.GetType() );
 				EXPECT_EQ( primitive_d, n.GetValue() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ String" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ String" << r2tm::linefeed2;
 
-				DECLARATION_SUB( const char* primitive_s = "dummy_string" );
-				DECLARATION_MAIN( r2lua::String s = primitive_s );
+				DECL_SUB( const char* primitive_s = "dummy_string" );
+				DECL_MAIN( r2lua::String s = primitive_s );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( r2lua::eType::String, s.GetType() );
 				EXPECT_EQ( primitive_s, s.GetValue() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 
 
 			lua_close( lua_state_obj );
 
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT ValueTest_2::GetTitleFunction() const
+	r2tm::TitleFunctionT ValueTest_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "r2lua::Value 2";
 		};
 	}
-	r2cm::iItem::DoFunctionT ValueTest_2::GetDoFunction() const
+	r2tm::DoFunctionT ValueTest_2::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			lua_State* lua_state_obj = luaL_newstate();
 
 
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			DECLARATION_SUB( r2lua::Bool b = true );
-			DECLARATION_SUB( r2lua::Number n = 3.141592 );
-			DECLARATION_SUB( r2lua::String s = "dummy_string" );
-			DECLARATION_MAIN( r2lua::Value v; );
+			DECL_SUB( r2lua::Bool b = true );
+			DECL_SUB( r2lua::Number n = 3.141592 );
+			DECL_SUB( r2lua::String s = "dummy_string" );
+			DECL_MAIN( r2lua::Value v; );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Value <> Bool" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ Value <> Bool" << r2tm::linefeed2;
 
-				PROCESS_MAIN( v = b );
+				PROC_MAIN( v = b );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( r2lua::eType::Bool, r2lua::GetType( v ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				DECLARATION_MAIN( const auto r2lua_value = r2lua::GetValue<r2lua::Bool>( v ) );
-				std::cout << r2cm::tab << "real_value.GetValue() : " << r2lua_value.GetValue() << r2cm::linefeed2;
+				DECL_MAIN( const auto r2lua_value = r2lua::GetValue<r2lua::Bool>( v ) );
+				std::cout << r2tm::tab << "real_value.GetValue() : " << r2lua_value.GetValue() << r2tm::linefeed2;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Value <> Number" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ Value <> Number" << r2tm::linefeed2;
 
-				PROCESS_MAIN( v = n );
+				PROC_MAIN( v = n );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( r2lua::eType::Number, r2lua::GetType( v ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				DECLARATION_MAIN( const auto r2lua_value = r2lua::GetValue<r2lua::Number>( v ) );
-				std::cout << r2cm::tab << "real_value.GetValue() : " << r2lua_value.GetValue() << r2cm::linefeed2;
+				DECL_MAIN( const auto r2lua_value = r2lua::GetValue<r2lua::Number>( v ) );
+				std::cout << r2tm::tab << "real_value.GetValue() : " << r2lua_value.GetValue() << r2tm::linefeed2;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Value <> String" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ Value <> String" << r2tm::linefeed2;
 
-				PROCESS_MAIN( v = s );
+				PROC_MAIN( v = s );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( r2lua::eType::String, r2lua::GetType( v ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				DECLARATION_MAIN( const auto r2lua_value = r2lua::GetValue<r2lua::String>( v ) );
-				std::cout << r2cm::tab << "real_value.GetValue() : " << r2lua_value.GetValue() << r2cm::linefeed2;
+				DECL_MAIN( const auto r2lua_value = r2lua::GetValue<r2lua::String>( v ) );
+				std::cout << r2tm::tab << "real_value.GetValue() : " << r2lua_value.GetValue() << r2tm::linefeed2;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 
 
 			lua_close( lua_state_obj );
 
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT PushTest::GetTitleFunction() const
+	r2tm::TitleFunctionT PushTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "r2lua::Push, r2lua::PushArgs";
 		};
 	}
-	r2cm::iItem::DoFunctionT PushTest::GetDoFunction() const
+	r2tm::DoFunctionT PushTest::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			lua_State* lua_state_obj = luaL_newstate();
 
 
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				PROCESS_MAIN( r2lua::Push( lua_state_obj, 777 ) );
+				PROC_MAIN( r2lua::Push( lua_state_obj, 777 ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				PROCESS_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
+				PROC_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				PROCESS_MAIN( r2lua::PushArgs( lua_state_obj, 1, 3.141592, "test_string" ) );
+				PROC_MAIN( r2lua::PushArgs( lua_state_obj, 1, 3.141592, "test_string" ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				PROCESS_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
+				PROC_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 
 
 			lua_close( lua_state_obj );
 
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT GetValueFromStackTest::GetTitleFunction() const
+	r2tm::TitleFunctionT GetValueFromStackTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "r2lua::GetValueFromStack";
 		};
 	}
-	r2cm::iItem::DoFunctionT GetValueFromStackTest::GetDoFunction() const
+	r2tm::DoFunctionT GetValueFromStackTest::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			lua_State* lua_state_obj = luaL_newstate();
 
 
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				PROCESS_SUB( r2lua::PushArgs( lua_state_obj, 1, 3.141592, "test_string", true ) );
+				PROC_SUB( r2lua::PushArgs( lua_state_obj, 1, 3.141592, "test_string", true ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Number" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ Number" << r2tm::linefeed2;
 
-				DECLARATION_MAIN( auto variant_value = r2lua::GetValueFromStack( lua_state_obj, 1 ) );
-				DECLARATION_MAIN( auto r2lua_value = std::get<r2lua::Number>( variant_value ) );
+				DECL_MAIN( auto variant_value = r2lua::GetValueFromStack( lua_state_obj, 1 ) );
+				DECL_MAIN( auto r2lua_value = std::get<r2lua::Number>( variant_value ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( r2lua::eType::Number, r2lua::GetType( variant_value ) );
 				EXPECT_EQ( 1, r2lua_value.GetValue() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Number" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ Number" << r2tm::linefeed2;
 
-				DECLARATION_MAIN( auto variant_value = r2lua::GetValueFromStack( lua_state_obj, 2 ) );
-				DECLARATION_MAIN( auto r2lua_value = std::get<r2lua::Number>( variant_value ) );
+				DECL_MAIN( auto variant_value = r2lua::GetValueFromStack( lua_state_obj, 2 ) );
+				DECL_MAIN( auto r2lua_value = std::get<r2lua::Number>( variant_value ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( r2lua::eType::Number, r2lua::GetType( variant_value ) );
 				EXPECT_EQ( 3.141592, r2lua_value.GetValue() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ String" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ String" << r2tm::linefeed2;
 
-				DECLARATION_MAIN( auto variant_value = r2lua::GetValueFromStack( lua_state_obj, 3 ) );
-				DECLARATION_MAIN( auto r2lua_value = std::get<r2lua::String>( variant_value ) );
+				DECL_MAIN( auto variant_value = r2lua::GetValueFromStack( lua_state_obj, 3 ) );
+				DECL_MAIN( auto r2lua_value = std::get<r2lua::String>( variant_value ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( r2lua::eType::String, r2lua::GetType( variant_value ) );
 				EXPECT_EQ( "test_string", r2lua_value.GetValue() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Bool" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ Bool" << r2tm::linefeed2;
 
-				DECLARATION_MAIN( auto variant_value = r2lua::GetValueFromStack( lua_state_obj, 4 ) );
-				DECLARATION_MAIN( auto r2lua_value = std::get<r2lua::Bool>( variant_value ) );
+				DECL_MAIN( auto variant_value = r2lua::GetValueFromStack( lua_state_obj, 4 ) );
+				DECL_MAIN( auto r2lua_value = std::get<r2lua::Bool>( variant_value ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( r2lua::eType::Bool, r2lua::GetType( variant_value ) );
 				EXPECT_EQ( true, r2lua_value.GetValue() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 
 
 			lua_close( lua_state_obj );
 
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
-	r2cm::iItem::TitleFunctionT GetValuesFromStackTest::GetTitleFunction() const
+	r2tm::TitleFunctionT GetValuesFromStackTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "r2lua::GetValuesFromStack";
 		};
 	}
-	r2cm::iItem::DoFunctionT GetValuesFromStackTest::GetDoFunction() const
+	r2tm::DoFunctionT GetValuesFromStackTest::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			lua_State* lua_state_obj = luaL_newstate();
 
 
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				PROCESS_MAIN( r2lua::PushArgs( lua_state_obj, 1, 3.141592, "test_string", false ) );
+				PROC_MAIN( r2lua::PushArgs( lua_state_obj, 1, 3.141592, "test_string", false ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				PROCESS_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
+				PROC_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			DECLARATION_MAIN( const auto values = r2lua::GetValuesFromStack( lua_state_obj ) );
+			DECL_MAIN( const auto values = r2lua::GetValuesFromStack( lua_state_obj ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			int index = 0;
-			OUTPUT_CODE( for( const auto& v : values ) );
-			std::cout << r2cm::linefeed;
+			OUT_CODE( for( const auto& v : values ) );
+			std::cout << r2tm::linefeed;
 			for( const auto& v : values )
 			{
-				std::cout << "index : " << index << r2cm::linefeed;
+				std::cout << "index : " << index << r2tm::linefeed;
 
-				DECLARATION_MAIN( auto value_type = r2lua::GetType( v ) );
-				std::cout << r2cm::tab << "type name : " << r2lua::GetTypeName( value_type ) << r2cm::linefeed;
+				DECL_MAIN( auto value_type = r2lua::GetType( v ) );
+				std::cout << r2tm::tab << "type name : " << r2lua::GetTypeName( value_type ) << r2tm::linefeed;
 				switch( value_type )
 				{
 				case r2lua::eType::Bool:
 				{
-					DECLARATION_MAIN( const auto& b = r2lua::GetValue<r2lua::Bool>( v ) );
-					std::cout << r2cm::tab << "b : " << b.GetValue() << r2cm::linefeed;
+					DECL_MAIN( const auto& b = r2lua::GetValue<r2lua::Bool>( v ) );
+					std::cout << r2tm::tab << "b : " << b.GetValue() << r2tm::linefeed;
 				}
 				break;
 
 				case r2lua::eType::Number:
 				{
-					DECLARATION_MAIN( const auto& num = r2lua::GetValue<r2lua::Number>( v ) );
-					std::cout << r2cm::tab << "num : " << num.GetValue() << r2cm::linefeed;
+					DECL_MAIN( const auto& num = r2lua::GetValue<r2lua::Number>( v ) );
+					std::cout << r2tm::tab << "num : " << num.GetValue() << r2tm::linefeed;
 				}
 				break;
 
 				case r2lua::eType::String:
 				{
-					DECLARATION_MAIN( const auto& str = r2lua::GetValue<r2lua::String>( v ) );
-					std::cout << r2cm::tab << "str : " << str.GetValue() << r2cm::linefeed;
+					DECL_MAIN( const auto& str = r2lua::GetValue<r2lua::String>( v ) );
+					std::cout << r2tm::tab << "str : " << str.GetValue() << r2tm::linefeed;
 				}
 				break;
 				}
 
 				++index;
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 
 
 			lua_close( lua_state_obj );
 
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT CallTest::GetTitleFunction() const
+	r2tm::TitleFunctionT CallTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "r2lua::Call";
 		};
 	}
-	r2cm::iItem::DoFunctionT CallTest::GetDoFunction() const
+	r2tm::DoFunctionT CallTest::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			lua_State* lua_state_obj = luaL_newstate();
 
 			
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				const char* command_4_add_function =
@@ -413,35 +413,35 @@ namespace r2lua_test
 					"\n"		"return arg1 + arg2"
 					"\n"	"end";
 
-				OUTPUT_CODE( "function CallTest( arg1, arg2 )" );
-				OUTPUT_CODE( "	print( '[LUA] Call - CallTest - ' .. arg1 .. ', ' .. arg2 )" );
-				OUTPUT_CODE( "	return arg1 + arg2" );
-				OUTPUT_CODE( "end" );
+				OUT_CODE( "function CallTest( arg1, arg2 )" );
+				OUT_CODE( "	print( '[LUA] Call - CallTest - ' .. arg1 .. ', ' .. arg2 )" );
+				OUT_CODE( "	return arg1 + arg2" );
+				OUT_CODE( "end" );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				PROCESS_MAIN( luaL_openlibs( lua_state_obj ) );
-				PROCESS_MAIN( test_lua_helper::DoString( lua_state_obj, command_4_add_function ) );
+				PROC_MAIN( luaL_openlibs( lua_state_obj ) );
+				PROC_MAIN( test_lua_helper::DoString( lua_state_obj, command_4_add_function ) );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				PROCESS_MAIN( r2lua::Call( lua_state_obj, "CallTest", 3.141592, 7770 ) );
+				PROC_MAIN( r2lua::Call( lua_state_obj, "CallTest", 3.141592, 7770 ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 
 
 			lua_close( lua_state_obj );
 
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

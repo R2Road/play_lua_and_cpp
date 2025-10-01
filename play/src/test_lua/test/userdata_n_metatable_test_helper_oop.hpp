@@ -1,5 +1,5 @@
 #include "lua_header_package.h"
-#include "r2cm/r2cm_Inspector.h"
+#include "r2tm/r2tm_inspector.hpp"
 #include "test_lua_helper.h"
 
 struct Sprite_4_OOP_Test

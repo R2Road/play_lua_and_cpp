@@ -22,8 +22,8 @@
 	#pragma comment( lib, "external/lua/x86/liblua54.a" )
 #endif
 
-#include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_WindowUtility.h"
+#include "r2tm/r2tm_director.hpp"
+#include "r2tm/r2tm_windows_utility.hpp"
 
 #include "MainMenu.h"
 
@@ -32,23 +32,23 @@ int main()
 	//
 	// Environment : Title
 	//
-	r2cm::WindowUtility::ChangeTitle( "play_lua_and_cpp" );
+	r2tm::WindowsUtility::ChangeTitle( "play_lua_and_cpp" );
 
 	//
 	// Environment : Size
 	//
-	r2cm::WindowUtility::Resize( 1024, 960 );
+	r2tm::WindowsUtility::Resize( 1024, 960 );
 
 	//
 	// Environment : Position
 	//
-	r2cm::WindowUtility::Move( 0, 0 );
+	r2tm::WindowsUtility::Move( 0, 0 );
 
 	//
 	// Setup
 	//
-	r2cm::Director director;
-	director.Setup( MainMenu::Create( director ) );
+	r2tm::Director director;
+	director.Setup( MainMenu() );
 
 	//
 	// Process

@@ -1,7 +1,7 @@
 #include "UserData_And_MetaTable_Menu.h"
 
-#include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_director.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 #include "test/interaction_test.h"
 #include "test/metatable_test.h"
@@ -9,49 +9,53 @@
 
 #include "LuaRootMenu.h"
 
-r2cm::MenuUp UserDataMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT UserDataMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
-		director
-		, GetTitle()
-		, "> Add Some One"
-	) );
-
+	return []()->const char*
 	{
-		ret->AddItem( '1', metatable_test::Basic() );
+		return "UserData And MetaTable";
+	};
+}
+r2tm::DescriptionFunctionT UserDataMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return "> Add Some One"; };
+}
+r2tm::WriteFunctionT UserDataMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* mp )
+	{
+		mp->AddItem( '1', metatable_test::Basic() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'q', userdata_test::New() );
-		ret->AddItem( 'w', userdata_test::Constructor() );
-		ret->AddItem( 'e', userdata_test::Destructor() );
+		mp->AddItem( 'q', userdata_test::New() );
+		mp->AddItem( 'w', userdata_test::Constructor() );
+		mp->AddItem( 'e', userdata_test::Destructor() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'a', userdata_test::OOP_1() );
-		ret->AddItem( 's', userdata_test::OOP_2() );
-		ret->AddItem( 'd', userdata_test::Field_Get() );
-		ret->AddItem( 'f', userdata_test::Field_Set() );
-		ret->AddItem( 'g', userdata_test::Index_And_NewIndex() );
-		ret->AddItem( 'h', userdata_test::Field_AddFromLua() );
-		ret->AddItem( 'j', interaction_test::CallWithClosure() );
+		mp->AddItem( 'a', userdata_test::OOP_1() );
+		mp->AddItem( 's', userdata_test::OOP_2() );
+		mp->AddItem( 'd', userdata_test::Field_Get() );
+		mp->AddItem( 'f', userdata_test::Field_Set() );
+		mp->AddItem( 'g', userdata_test::Index_And_NewIndex() );
+		mp->AddItem( 'h', userdata_test::Field_AddFromLua() );
+		mp->AddItem( 'j', interaction_test::CallWithClosure() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu<LuaRootMenu>( 27 );
-	}
-
-	return ret;
+		mp->AddMenu( 27, LuaRootMenu() );
+	};
 }

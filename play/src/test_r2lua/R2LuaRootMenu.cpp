@@ -1,35 +1,40 @@
 #include "R2LuaRootMenu.h"
 
-#include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_director.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 #include "r2lua_test.h"
 
 #include "MainMenu.h"
 
-r2cm::MenuUp R2LuaRootMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT R2LuaRootMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
-		director
-		, GetTitle()
-	) );
-
+	return []()->const char*
 	{
-		ret->AddItem( '1', r2lua_test::ValueTest_1() );
-		ret->AddItem( '2', r2lua_test::ValueTest_2() );
-		ret->AddItem( '3', r2lua_test::PushTest() );
-		ret->AddItem( '4', r2lua_test::GetValueFromStackTest() );
-		ret->AddItem( '5', r2lua_test::GetValuesFromStackTest() );
-		ret->AddItem( '6', r2lua_test::CallTest() );
+		return "R2Lua";
+	};
+}
+r2tm::DescriptionFunctionT R2LuaRootMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return "> Add Some One"; };
+}
+r2tm::WriteFunctionT R2LuaRootMenu::GetWriteFunction() const
+{
+	return[]( r2tm::MenuProcessor* mp )
+	{
+		mp->AddItem( '1', r2lua_test::ValueTest_1() );
+		mp->AddItem( '2', r2lua_test::ValueTest_2() );
+		mp->AddItem( '3', r2lua_test::PushTest() );
+		mp->AddItem( '4', r2lua_test::GetValueFromStackTest() );
+		mp->AddItem( '5', r2lua_test::GetValuesFromStackTest() );
+		mp->AddItem( '6', r2lua_test::CallTest() );
 		
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu<MainMenu>( 27 );
-	}
-
-	return ret;
+		mp->AddMenu( 27, MainMenu() );
+	};
 }
