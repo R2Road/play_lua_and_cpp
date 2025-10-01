@@ -22,6 +22,9 @@
     <Filter Include="play\r2lua">
       <UniqueIdentifier>{e0b628b0-7c7a-4796-9323-ed1a2371bbcb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="play\sol2">
+      <UniqueIdentifier>{159c8784-2ad8-47bc-b298-0419f239c46b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -138,6 +141,12 @@
       <Filter>play\r2lua</Filter>
     </ClCompile>
     <ClCompile Include="src\test_lua_helper.cpp" />
+    <ClCompile Include="src\play\sol2\menu_sol2.cpp">
+      <Filter>play\sol2</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play\sol2\play_sol2.cpp">
+      <Filter>play\sol2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\menu_main.hpp" />
@@ -320,5 +329,11 @@
       <Filter>play\r2lua</Filter>
     </ClInclude>
     <ClInclude Include="src\test_lua_helper.h" />
+    <ClInclude Include="src\play\sol2\menu_sol2.hpp">
+      <Filter>play\sol2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\sol2\play_sol2.hpp">
+      <Filter>play\sol2</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -57,6 +57,8 @@
     <ClCompile Include="src\play\lua\userdata_test.cpp" />
     <ClCompile Include="src\play\r2lua\R2LuaRootMenu.cpp" />
     <ClCompile Include="src\play\r2lua\r2lua_test.cpp" />
+    <ClCompile Include="src\play\sol2\menu_sol2.cpp" />
+    <ClCompile Include="src\play\sol2\play_sol2.cpp" />
     <ClCompile Include="src\r2lua\r2lua.cpp" />
     <ClCompile Include="src\test_lua_helper.cpp" />
   </ItemGroup>
@@ -121,6 +123,8 @@
     <ClInclude Include="src\play\lua\userdata_test_helper_new.hpp" />
     <ClInclude Include="src\play\r2lua\R2LuaRootMenu.h" />
     <ClInclude Include="src\play\r2lua\r2lua_test.h" />
+    <ClInclude Include="src\play\sol2\menu_sol2.hpp" />
+    <ClInclude Include="src\play\sol2\play_sol2.hpp" />
     <ClInclude Include="src\r2lua\r2lua.h" />
     <ClInclude Include="src\test_lua_helper.h" />
   </ItemGroup>

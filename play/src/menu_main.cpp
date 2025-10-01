@@ -9,6 +9,7 @@
 #include "test_lua_helper.h"
 #include "play/lua/LuaRootMenu.h"
 #include "play/r2lua/R2LuaRootMenu.h"
+#include "play/sol2/menu_sol2.hpp"
 
 r2tm::TitleFunctionT Menu_Main::GetTitleFunction() const
 {
@@ -31,6 +32,14 @@ r2tm::WriteFunctionT Menu_Main::GetWriteFunction() const
 	{
 		mp->AddMenu( '1', LuaRootMenu() );
 		mp->AddMenu( '2', R2LuaRootMenu() );
+
+
+
+		mp->AddLineFeed();
+
+
+
+		mp->AddMenu( 'q', Menu_Sol2() );
 
 
 
