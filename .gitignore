@@ -35,3 +35,4 @@ play/Debug/*
 play/.vs/*
 play/Release/*
 play/x64/*
+play/play_lua_and_cpp/*
