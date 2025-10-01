@@ -6,15 +6,15 @@
 #include <stdint.h>
 #include <stdio.h>
 
-namespace r2cm
+namespace r2tm
 {
 	void PrintUint8Binary( const uint8_t value );
 
 	template<typename T>
-	void PrintBinary( const T value );
+	void PrintBinary( const T& value );
 
 	template<typename T>
-	void PrintBinary( const T value )
+	void PrintBinary( const T& value )
 	{
 		const int32_t fixed_size = sizeof( value ) - 1;
 		const uint8_t* up = reinterpret_cast<const uint8_t*>( &value );

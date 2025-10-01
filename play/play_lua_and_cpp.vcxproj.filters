@@ -22,13 +22,13 @@
     <Filter Include="test_r2lua\menu">
       <UniqueIdentifier>{0a044e0a-6499-4b9a-b650-f3abbd02e2fd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="external">
+    <Filter Include="_external">
       <UniqueIdentifier>{955480a9-8970-4fc2-a2db-68e012a01677}</UniqueIdentifier>
     </Filter>
-    <Filter Include="external\r2">
+    <Filter Include="_external\r2">
       <UniqueIdentifier>{908a8d2c-6580-4589-8a28-6c2bd04fdb7d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="external\r2cm">
+    <Filter Include="_external\r2tm">
       <UniqueIdentifier>{5fc1f00d-1c5a-40c7-9542-081fc7ad1a9c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -57,7 +57,7 @@
       <Filter>test_lua\menu</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_FrameManager.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="src\test_lua\test\function_closure_test.cpp">
       <Filter>test_lua\item</Filter>
@@ -113,23 +113,41 @@
     <ClCompile Include="src\test_lua\test\interaction_test.cpp">
       <Filter>test_lua\item</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_Director.cpp">
-      <Filter>external\r2cm</Filter>
+    <ClCompile Include="external\r2tm\r2tm_cache_cleaner.cpp">
+      <Filter>_external\r2tm</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_Menu.cpp">
-      <Filter>external\r2cm</Filter>
+    <ClCompile Include="external\r2tm\r2tm_director.cpp">
+      <Filter>_external\r2tm</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_PrintBinary.cpp">
-      <Filter>external\r2cm</Filter>
+    <ClCompile Include="external\r2tm\r2tm_file.cpp">
+      <Filter>_external\r2tm</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_PrintFile.cpp">
-      <Filter>external\r2cm</Filter>
+    <ClCompile Include="external\r2tm\r2tm_input.cpp">
+      <Filter>_external\r2tm</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_StopWatch.cpp">
-      <Filter>external\r2cm</Filter>
+    <ClCompile Include="external\r2tm\r2tm_menu_processor.cpp">
+      <Filter>_external\r2tm</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_WindowUtility.cpp">
-      <Filter>external\r2cm</Filter>
+    <ClCompile Include="external\r2tm\r2tm_print_binary.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_print_file.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_stop_watch.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_viewer_key.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_viewer_version.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_viewer_window_size.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_windows_utility.cpp">
+      <Filter>_external\r2tm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -156,10 +174,10 @@
       <Filter>test_lua\menu</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Assert.h">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_FrameManager.h">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="src\lua_header_package.h" />
     <ClInclude Include="src\test_lua\test\function_closure_test.h">
@@ -255,35 +273,65 @@
     <ClInclude Include="src\test_lua\test\interaction_test_helper_call_with_closure.hpp">
       <Filter>test_lua\item</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_Director.h">
-      <Filter>external\r2cm</Filter>
+    <ClInclude Include="external\r2tm\r2tm_cache_cleaner.hpp">
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_iItem.h">
-      <Filter>external\r2cm</Filter>
+    <ClInclude Include="external\r2tm\r2tm_color.hpp">
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_Inspector.h">
-      <Filter>external\r2cm</Filter>
+    <ClInclude Include="external\r2tm\r2tm_color_modifier.hpp">
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_Menu.h">
-      <Filter>external\r2cm</Filter>
+    <ClInclude Include="external\r2tm\r2tm_director.hpp">
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_ostream.h">
-      <Filter>external\r2cm</Filter>
+    <ClInclude Include="external\r2tm\r2tm_file.hpp">
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_PrintBinary.h">
-      <Filter>external\r2cm</Filter>
+    <ClInclude Include="external\r2tm\r2tm_input.hpp">
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_PrintFile.h">
-      <Filter>external\r2cm</Filter>
+    <ClInclude Include="external\r2tm\r2tm_inspector.hpp">
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_StopWatch.h">
-      <Filter>external\r2cm</Filter>
+    <ClInclude Include="external\r2tm\r2tm_interface_item.hpp">
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_VersionInfo.h">
-      <Filter>external\r2cm</Filter>
+    <ClInclude Include="external\r2tm\r2tm_interface_menu.hpp">
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_WindowUtility.h">
-      <Filter>external\r2cm</Filter>
+    <ClInclude Include="external\r2tm\r2tm_menu_constant.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_menu_processor.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_ostream.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_print_binary.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_print_file.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_stop_watch.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_version_info.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_viewer_key.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_viewer_version.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_viewer_window_size.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_windows_utility.hpp">
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

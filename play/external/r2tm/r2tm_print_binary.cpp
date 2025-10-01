@@ -1,6 +1,6 @@
-#include "r2cm_PrintBinary.h"
+#include "r2tm_print_binary.hpp"
 
-namespace r2cm
+namespace r2tm
 {
 	void PrintUint8Binary( const uint8_t value )
 	{

@@ -1,12 +1,12 @@
-#include "r2cm_PrintFile.h"
+#include "r2tm_print_file.hpp"
 
 #include <stdio.h>
 
-namespace r2cm
+namespace r2tm
 {
 	const char* GetLine( FILE* fp )
 	{
-		static char buffer[100];
+		static char buffer[400];
 		fgets( buffer, sizeof( buffer ), fp );
 
 		return buffer;
@@ -30,7 +30,14 @@ namespace r2cm
 			printf( "\n" );
 		}
 
-		fclose( fp );
+		if( nullptr != fp )
+		{
+			fclose( fp );
+		}
+		else
+		{
+			__debugbreak();
+		}
 
 		printf( "\x1B[90m" "[/FILE]" "\033[0m" "\n" );
 	}
@@ -66,7 +73,14 @@ namespace r2cm
 			}
 		}
 
-		fclose( fp );
+		if( nullptr != fp )
+		{
+			fclose( fp );
+		}
+		else
+		{
+			__debugbreak();
+		}
 
 		printf( "\x1B[90m" "[/FILE]" "\033[0m" "\n" );
 	}
