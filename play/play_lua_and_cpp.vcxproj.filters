@@ -25,7 +25,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\Menu_Main.cpp" />
+    <ClCompile Include="src\menu_main.cpp" />
     <ClCompile Include="src\r2lua\r2lua.cpp">
       <Filter>r2lua</Filter>
     </ClCompile>
@@ -140,7 +140,7 @@
     <ClCompile Include="src\test_lua_helper.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Menu_Main.hpp" />
+    <ClInclude Include="src\menu_main.hpp" />
     <ClInclude Include="src\r2lua\r2lua.h">
       <Filter>r2lua</Filter>
     </ClInclude>
