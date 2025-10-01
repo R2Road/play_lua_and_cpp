@@ -27,7 +27,7 @@ r2tm::DescriptionFunctionT MainMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT MainMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* mp )
+	return []( r2tm::MenuProcessor* mp )
 	{
 		mp->AddMenu( '1', LuaRootMenu() );
 		mp->AddMenu( '2', R2LuaRootMenu() );

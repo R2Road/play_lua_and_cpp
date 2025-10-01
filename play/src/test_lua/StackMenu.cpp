@@ -20,7 +20,7 @@ r2tm::DescriptionFunctionT StackMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT StackMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* mp )
+	return []( r2tm::MenuProcessor* mp )
 	{
 		mp->AddItem( '1', stack_test::PushTest() );
 		mp->AddItem( '2', stack_test::TypeCheck() );

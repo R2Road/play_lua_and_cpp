@@ -20,7 +20,7 @@ r2tm::DescriptionFunctionT R2LuaRootMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT R2LuaRootMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* mp )
+	return []( r2tm::MenuProcessor* mp )
 	{
 		mp->AddItem( '1', r2lua_test::ValueTest_1() );
 		mp->AddItem( '2', r2lua_test::ValueTest_2() );

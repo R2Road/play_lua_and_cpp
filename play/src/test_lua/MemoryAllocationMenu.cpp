@@ -19,7 +19,7 @@ r2tm::DescriptionFunctionT MemoryAllocationMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT MemoryAllocationMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* mp )
+	return []( r2tm::MenuProcessor* mp )
 	{
 		mp->AddItem( '1', memory_allocation_test::Basic() );
 		mp->AddItem( '2', memory_allocation_test::Custom() );

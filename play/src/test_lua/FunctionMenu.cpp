@@ -21,7 +21,7 @@ r2tm::DescriptionFunctionT FunctionMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT FunctionMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* mp )
+	return []( r2tm::MenuProcessor* mp )
 	{
 		mp->AddItem( '1', function_cpp2lua_test::Basic() );
 		mp->AddItem( '2', function_cpp2lua_test::Argument() );

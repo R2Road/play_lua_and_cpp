@@ -20,7 +20,7 @@ r2tm::DescriptionFunctionT GlobalMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT GlobalMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* mp )
+	return []( r2tm::MenuProcessor* mp )
 	{
 		mp->AddItem( '1', global_test::Basic_1() );
 		mp->AddItem( '2', global_test::Basic_2() );

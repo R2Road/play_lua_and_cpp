@@ -22,7 +22,7 @@ r2tm::DescriptionFunctionT UserDataMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT UserDataMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* mp )
+	return []( r2tm::MenuProcessor* mp )
 	{
 		mp->AddItem( '1', metatable_test::Basic() );
 

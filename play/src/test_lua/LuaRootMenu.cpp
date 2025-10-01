@@ -29,7 +29,7 @@ r2tm::DescriptionFunctionT LuaRootMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT LuaRootMenu::GetWriteFunction() const
 {
-	return[]( r2tm::MenuProcessor* mp )
+	return []( r2tm::MenuProcessor* mp )
 	{
 		mp->AddItem( '1', lua_state_test::Basic() );
 		mp->AddMenu( '2', StackMenu() );
