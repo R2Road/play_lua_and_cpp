@@ -3,9 +3,9 @@
 #include "r2tm/r2tm_director.hpp"
 #include "r2tm/r2tm_ostream.hpp"
 
-#include "test/interaction_test.h"
-#include "test/metatable_test.h"
-#include "test/userdata_test.h"
+#include "interaction_test.h"
+#include "metatable_test.h"
+#include "userdata_test.h"
 
 #include "LuaRootMenu.h"
 

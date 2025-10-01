@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_director.hpp"
 
-#include "test/memory_allocation_test.h"
+#include "memory_allocation_test.h"
 
 #include "LuaRootMenu.h"
 

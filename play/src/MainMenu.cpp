@@ -7,8 +7,8 @@
 #include "r2tm/r2tm_version_info.hpp"
 
 #include "test_lua_helper.h"
-#include "test_lua/LuaRootMenu.h"
-#include "test_r2lua/R2LuaRootMenu.h"
+#include "play/lua/LuaRootMenu.h"
+#include "play/r2lua/R2LuaRootMenu.h"
 
 r2tm::TitleFunctionT MainMenu::GetTitleFunction() const
 {

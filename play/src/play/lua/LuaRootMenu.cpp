@@ -3,10 +3,10 @@
 #include "r2tm/r2tm_director.hpp"
 #include "r2tm/r2tm_ostream.hpp"
 
-#include "test/lua_state_test.h"
-#include "test/luaL_dofile_test.h"
-#include "test/luaL_dostring_test.h"
-#include "test/luaL_openlibs_test.h"
+#include "lua_state_test.h"
+#include "luaL_dofile_test.h"
+#include "luaL_dostring_test.h"
+#include "luaL_openlibs_test.h"
 
 #include "FunctionMenu.h"
 #include "GlobalMenu.h"

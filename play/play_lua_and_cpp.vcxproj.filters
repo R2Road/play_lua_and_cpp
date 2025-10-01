@@ -1,26 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="test_lua">
-      <UniqueIdentifier>{75ee7280-cc66-4ddf-8d31-4001f0c8937b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="test_lua\menu">
-      <UniqueIdentifier>{5404a19b-4605-4e33-8e81-be342b9fff88}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="test_lua\item">
-      <UniqueIdentifier>{bb975c5e-ebe5-41b6-824a-da9b49efb89e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="r2lua">
       <UniqueIdentifier>{26c61446-f236-4da8-92e9-69cf0892f66d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="test_r2lua">
-      <UniqueIdentifier>{e0b628b0-7c7a-4796-9323-ed1a2371bbcb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="test_r2lua\item">
-      <UniqueIdentifier>{908430da-8ab5-4d7f-8d2a-366fd0948590}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="test_r2lua\menu">
-      <UniqueIdentifier>{0a044e0a-6499-4b9a-b650-f3abbd02e2fd}</UniqueIdentifier>
     </Filter>
     <Filter Include="_external">
       <UniqueIdentifier>{955480a9-8970-4fc2-a2db-68e012a01677}</UniqueIdentifier>
@@ -31,6 +13,15 @@
     <Filter Include="_external\r2tm">
       <UniqueIdentifier>{5fc1f00d-1c5a-40c7-9542-081fc7ad1a9c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="play">
+      <UniqueIdentifier>{b3cc229a-8185-4ef4-ae8d-980d9e135478}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="play\lua">
+      <UniqueIdentifier>{75ee7280-cc66-4ddf-8d31-4001f0c8937b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="play\r2lua">
+      <UniqueIdentifier>{e0b628b0-7c7a-4796-9323-ed1a2371bbcb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -38,80 +29,8 @@
     <ClCompile Include="src\r2lua\r2lua.cpp">
       <Filter>r2lua</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_r2lua\r2lua_test.cpp">
-      <Filter>test_r2lua\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua_helper.cpp">
-      <Filter>test_lua</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\StackMenu.cpp">
-      <Filter>test_lua\menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\GlobalMenu.cpp">
-      <Filter>test_lua\menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\TableMenu.cpp">
-      <Filter>test_lua\menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\FunctionMenu.cpp">
-      <Filter>test_lua\menu</Filter>
-    </ClCompile>
     <ClCompile Include="external\r2\r2_FrameManager.cpp">
       <Filter>_external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\test\function_closure_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\test\function_cpp2lua_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\test\function_lua2cpp_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\test\global_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\test\lua_state_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\test\luaL_dofile_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\test\luaL_dostring_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\test\luaL_openlibs_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\test\stack_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\test\table_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\test\userdata_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\test\metatable_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\UserData_And_MetaTable_Menu.cpp">
-      <Filter>test_lua\menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\LuaRootMenu.cpp">
-      <Filter>test_lua\menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_r2lua\R2LuaRootMenu.cpp">
-      <Filter>test_r2lua\menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\test\memory_allocation_test.cpp">
-      <Filter>test_lua\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\MemoryAllocationMenu.cpp">
-      <Filter>test_lua\menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_lua\test\interaction_test.cpp">
-      <Filter>test_lua\item</Filter>
     </ClCompile>
     <ClCompile Include="external\r2tm\r2tm_cache_cleaner.cpp">
       <Filter>_external\r2tm</Filter>
@@ -149,29 +68,81 @@
     <ClCompile Include="external\r2tm\r2tm_windows_utility.cpp">
       <Filter>_external\r2tm</Filter>
     </ClCompile>
+    <ClCompile Include="src\play\lua\function_closure_test.cpp">
+      <Filter>play\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play\lua\function_cpp2lua_test.cpp">
+      <Filter>play\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play\lua\function_lua2cpp_test.cpp">
+      <Filter>play\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play\lua\FunctionMenu.cpp">
+      <Filter>play\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play\lua\global_test.cpp">
+      <Filter>play\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play\lua\GlobalMenu.cpp">
+      <Filter>play\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play\lua\interaction_test.cpp">
+      <Filter>play\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play\lua\lua_state_test.cpp">
+      <Filter>play\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play\lua\luaL_dofile_test.cpp">
+      <Filter>play\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play\lua\luaL_dostring_test.cpp">
+      <Filter>play\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play\lua\luaL_openlibs_test.cpp">
+      <Filter>play\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play\lua\LuaRootMenu.cpp">
+      <Filter>play\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play\lua\memory_allocation_test.cpp">
+      <Filter>play\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play\lua\MemoryAllocationMenu.cpp">
+      <Filter>play\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play\lua\metatable_test.cpp">
+      <Filter>play\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play\lua\stack_test.cpp">
+      <Filter>play\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play\lua\StackMenu.cpp">
+      <Filter>play\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play\lua\table_test.cpp">
+      <Filter>play\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play\lua\TableMenu.cpp">
+      <Filter>play\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play\lua\UserData_And_MetaTable_Menu.cpp">
+      <Filter>play\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play\lua\userdata_test.cpp">
+      <Filter>play\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play\r2lua\r2lua_test.cpp">
+      <Filter>play\r2lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\play\r2lua\R2LuaRootMenu.cpp">
+      <Filter>play\r2lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_lua_helper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MainMenu.h" />
     <ClInclude Include="src\r2lua\r2lua.h">
       <Filter>r2lua</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_r2lua\r2lua_test.h">
-      <Filter>test_r2lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua_helper.h">
-      <Filter>test_lua</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\StackMenu.h">
-      <Filter>test_lua\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\GlobalMenu.h">
-      <Filter>test_lua\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\TableMenu.h">
-      <Filter>test_lua\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\FunctionMenu.h">
-      <Filter>test_lua\menu</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Assert.h">
       <Filter>_external\r2</Filter>
@@ -180,99 +151,6 @@
       <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="src\lua_header_package.h" />
-    <ClInclude Include="src\test_lua\test\function_closure_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\function_cpp2lua_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\function_lua2cpp_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\global_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\lua_state_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\luaL_dofile_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\luaL_dostring_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\luaL_openlibs_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\stack_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\table_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\userdata_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\metatable_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\metatable_test_helper.hpp">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\userdata_test_helper_constructor.hpp">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\userdata_test_helper_destructor.hpp">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\userdata_test_helper_new.hpp">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\UserData_And_MetaTable_Menu.h">
-      <Filter>test_lua\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\LuaRootMenu.h">
-      <Filter>test_lua\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_r2lua\R2LuaRootMenu.h">
-      <Filter>test_r2lua\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\userdata_n_metatable_test_helper_oop.hpp">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\userdata_n_metatable_test_helper_field_get.hpp">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\userdata_n_metatable_test_helper_field_set.hpp">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\userdata_n_metatable_test_helper_index_and_newindex.hpp">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\userdata_n_metatable_test_helper_field_add_from_lua.hpp">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\memory_allocation_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\memory_allocation_test_helper_custom.hpp">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\memory_allocation_test_helper_pool_02.hpp">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\memory_allocation_test_helper_pool_01.hpp">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\MemoryAllocationMenu.h">
-      <Filter>test_lua\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\interaction_test.h">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_lua\test\interaction_test_helper_call_with_closure.hpp">
-      <Filter>test_lua\item</Filter>
-    </ClInclude>
     <ClInclude Include="external\r2tm\r2tm_cache_cleaner.hpp">
       <Filter>_external\r2tm</Filter>
     </ClInclude>
@@ -333,5 +211,114 @@
     <ClInclude Include="external\r2tm\r2tm_windows_utility.hpp">
       <Filter>_external\r2tm</Filter>
     </ClInclude>
+    <ClInclude Include="src\play\lua\function_closure_test.h">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\function_cpp2lua_test.h">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\function_lua2cpp_test.h">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\FunctionMenu.h">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\global_test.h">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\GlobalMenu.h">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\interaction_test.h">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\interaction_test_helper_call_with_closure.hpp">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\lua_state_test.h">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\luaL_dofile_test.h">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\luaL_dostring_test.h">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\luaL_openlibs_test.h">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\LuaRootMenu.h">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\memory_allocation_test.h">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\memory_allocation_test_helper_custom.hpp">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\memory_allocation_test_helper_pool_01.hpp">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\memory_allocation_test_helper_pool_02.hpp">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\MemoryAllocationMenu.h">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\metatable_test.h">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\metatable_test_helper.hpp">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\stack_test.h">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\StackMenu.h">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\table_test.h">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\TableMenu.h">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\UserData_And_MetaTable_Menu.h">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\userdata_n_metatable_test_helper_field_add_from_lua.hpp">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\userdata_n_metatable_test_helper_field_get.hpp">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\userdata_n_metatable_test_helper_field_set.hpp">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\userdata_n_metatable_test_helper_index_and_newindex.hpp">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\userdata_n_metatable_test_helper_oop.hpp">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\userdata_test.h">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\userdata_test_helper_constructor.hpp">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\userdata_test_helper_destructor.hpp">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\lua\userdata_test_helper_new.hpp">
+      <Filter>play\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\r2lua\r2lua_test.h">
+      <Filter>play\r2lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\play\r2lua\R2LuaRootMenu.h">
+      <Filter>play\r2lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_lua_helper.h" />
   </ItemGroup>
 </Project>

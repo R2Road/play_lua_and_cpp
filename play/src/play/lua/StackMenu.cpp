@@ -3,7 +3,7 @@
 #include "r2tm/r2tm_director.hpp"
 #include "r2tm/r2tm_ostream.hpp"
 
-#include "test/stack_test.h"
+#include "stack_test.h"
 
 #include "LuaRootMenu.h"
 

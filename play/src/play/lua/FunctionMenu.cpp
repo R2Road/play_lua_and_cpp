@@ -2,9 +2,9 @@
 
 #include "r2tm/r2tm_director.hpp"
 
-#include "test/function_closure_test.h"
-#include "test/function_cpp2lua_test.h"
-#include "test/function_lua2cpp_test.h"
+#include "function_closure_test.h"
+#include "function_cpp2lua_test.h"
+#include "function_lua2cpp_test.h"
 
 #include "LuaRootMenu.h"
 
