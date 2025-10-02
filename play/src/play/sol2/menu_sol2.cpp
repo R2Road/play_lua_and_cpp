@@ -29,6 +29,7 @@ r2tm::WriteFunctionT Menu_Sol2::GetWriteFunction() const
 	{
 		mp->AddItem( '1', play_sol2::Basic() );
 		mp->AddItem( '2', play_sol2::Bind_Function() );
+		mp->AddItem( '3', play_sol2::Bind_MemberFunction() );
 		
 
 
