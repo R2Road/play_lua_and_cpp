@@ -31,7 +31,7 @@ namespace metatable_test
 
 				std::cout << r2tm::linefeed;
 
-				OUT_FILE( "src/test_lua/test/metatable_test_helper.hpp" );
+				OUT_FILE( "src/play/lua/metatable_test_helper.hpp" );
 
 				std::cout << r2tm::linefeed;
 

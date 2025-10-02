@@ -68,7 +68,7 @@ namespace memory_allocation_test
 			std::cout << r2tm::split;
 
 			{
-				OUT_FILE( "src/test_lua/test/memory_allocation_test_helper_custom.hpp" );
+				OUT_FILE( "src/play/lua/memory_allocation_test_helper_custom.hpp" );
 
 				std::cout << r2tm::linefeed;
 
@@ -98,7 +98,7 @@ namespace memory_allocation_test
 		{
 			std::cout << r2tm::split;
 
-			OUT_FILE( "src/test_lua/test/memory_allocation_test_helper_pool_01.hpp" );
+			OUT_FILE( "src/play/lua/memory_allocation_test_helper_pool_01.hpp" );
 
 			std::cout << r2tm::linefeed;
 
@@ -130,7 +130,7 @@ namespace memory_allocation_test
 		{
 			std::cout << r2tm::split;
 
-			OUT_FILE( "src/test_lua/test/memory_allocation_test_helper_pool_02.hpp" );
+			OUT_FILE( "src/play/lua/memory_allocation_test_helper_pool_02.hpp" );
 
 			std::cout << r2tm::linefeed;
 

@@ -40,7 +40,7 @@ namespace userdata_test
 
 				std::cout << r2tm::linefeed;
 
-				OUT_FILE( "src/test_lua/test/userdata_test_helper_new.hpp" );
+				OUT_FILE( "src/play/lua/userdata_test_helper_new.hpp" );
 
 				std::cout << r2tm::linefeed;
 
@@ -110,7 +110,7 @@ namespace userdata_test
 
 				std::cout << r2tm::linefeed;
 
-				OUT_FILE( "src/test_lua/test/userdata_test_helper_constructor.hpp" );
+				OUT_FILE( "src/play/lua/userdata_test_helper_constructor.hpp" );
 
 				std::cout << r2tm::linefeed;
 
@@ -175,7 +175,7 @@ namespace userdata_test
 
 				std::cout << r2tm::linefeed;
 
-				OUT_FILE( "src/test_lua/test/userdata_test_helper_destructor.hpp" );
+				OUT_FILE( "src/play/lua/userdata_test_helper_destructor.hpp" );
 
 				std::cout << r2tm::linefeed;
 
@@ -233,7 +233,7 @@ namespace userdata_test
 			std::cout << r2tm::split;
 
 			{
-				OUT_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_oop.hpp" );
+				OUT_FILE( "src/play/lua/userdata_n_metatable_test_helper_oop.hpp" );
 
 				std::cout << r2tm::linefeed;
 
@@ -304,7 +304,7 @@ namespace userdata_test
 
 				std::cout << r2tm::linefeed;
 
-				OUT_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_oop.hpp" );
+				OUT_FILE( "src/play/lua/userdata_n_metatable_test_helper_oop.hpp" );
 
 				std::cout << r2tm::linefeed;
 
@@ -379,7 +379,7 @@ namespace userdata_test
 
 				std::cout << r2tm::linefeed;
 
-				OUT_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_field_get.hpp" );
+				OUT_FILE( "src/play/lua/userdata_n_metatable_test_helper_field_get.hpp" );
 
 				std::cout << r2tm::linefeed;
 
@@ -461,7 +461,7 @@ namespace userdata_test
 
 				std::cout << r2tm::linefeed;
 
-				OUT_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_field_set.hpp" );
+				OUT_FILE( "src/play/lua/userdata_n_metatable_test_helper_field_set.hpp" );
 
 				std::cout << r2tm::linefeed;
 
@@ -546,7 +546,7 @@ namespace userdata_test
 			std::cout << r2tm::split;
 
 			{
-				OUT_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_index_and_newindex.hpp" );
+				OUT_FILE( "src/play/lua/userdata_n_metatable_test_helper_index_and_newindex.hpp" );
 
 				std::cout << r2tm::linefeed;
 
@@ -619,7 +619,7 @@ namespace userdata_test
 
 				std::cout << r2tm::linefeed;
 
-				OUT_FILE( "src/test_lua/test/userdata_n_metatable_test_helper_field_add_from_lua.hpp" );
+				OUT_FILE( "src/play/lua/userdata_n_metatable_test_helper_field_add_from_lua.hpp" );
 
 				std::cout << r2tm::linefeed;
 

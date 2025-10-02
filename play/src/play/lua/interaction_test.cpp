@@ -33,7 +33,7 @@ namespace interaction_test
 
 				std::cout << r2tm::linefeed;
 
-				OUT_FILE( "src/test_lua/test/interaction_test_helper_call_with_closure.hpp" );
+				OUT_FILE( "src/play/lua/interaction_test_helper_call_with_closure.hpp" );
 
 				std::cout << r2tm::linefeed;
 
