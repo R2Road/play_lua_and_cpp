@@ -52,7 +52,9 @@ namespace r2lua
 	class String
 	{
 	public:
-		String() : mValue( "Invalid String" ) {}
+		static constexpr const char* InvalidString = "Invalid String";
+
+		String() : mValue( InvalidString ) {}
 		String( const char* const str ) : mValue( str ) {}
 
 		static eType GetType() { return eType::String; }

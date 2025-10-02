@@ -34,13 +34,26 @@ namespace play_r2lua
 
 				LF();
 
-				DECL_SUB( const bool primitive_b = true );
-				DECL_MAIN( r2lua::Bool b = primitive_b );
+				{
+					DECL_MAIN( r2lua::Bool b );
 
-				LF();
+					LF();
 
-				EXPECT_EQ( r2lua::eType::Bool, b.GetType() );
-				EXPECT_EQ( primitive_b, b.GetValue() );
+					EXPECT_EQ( r2lua::eType::Bool, b.GetType() );
+					EXPECT_EQ( false, b.GetValue() );
+				}
+
+				SS();
+
+				{
+					DECL_SUB( constexpr const bool primitive_b = true );
+					DECL_MAIN( r2lua::Bool b = primitive_b );
+
+					LF();
+
+					EXPECT_EQ( r2lua::eType::Bool, b.GetType() );
+					EXPECT_EQ( primitive_b, b.GetValue() );
+				}
 			}
 
 			LS();
@@ -50,13 +63,26 @@ namespace play_r2lua
 
 				LF();
 
-				DECL_SUB( const double primitive_d = 3.141592 );
-				DECL_MAIN( r2lua::Number n = primitive_d );
+				{
+					DECL_MAIN( r2lua::Number n );
 
-				LF();
+					LF();
 
-				EXPECT_EQ( r2lua::eType::Number, n.GetType() );
-				EXPECT_EQ( primitive_d, n.GetValue() );
+					EXPECT_EQ( r2lua::eType::Number, n.GetType() );
+					EXPECT_EQ( -1, n.GetValue() );
+				}
+
+				SS();
+
+				{
+					DECL_SUB( constexpr const double primitive_d = 3.141592 );
+					DECL_MAIN( r2lua::Number n = primitive_d );
+
+					LF();
+
+					EXPECT_EQ( r2lua::eType::Number, n.GetType() );
+					EXPECT_EQ( primitive_d, n.GetValue() );
+				}
 			}
 
 			LS();
@@ -66,13 +92,26 @@ namespace play_r2lua
 
 				LF();
 
-				DECL_SUB( const char* primitive_s = "dummy_string" );
-				DECL_MAIN( r2lua::String s = primitive_s );
+				{
+					DECL_MAIN( r2lua::String s );
 
-				LF();
+					LF();
 
-				EXPECT_EQ( r2lua::eType::String, s.GetType() );
-				EXPECT_EQ( primitive_s, s.GetValue() );
+					EXPECT_EQ( r2lua::eType::String, s.GetType() );
+					EXPECT_EQ( r2lua::String::InvalidString, s.GetValue());
+				}
+
+				SS();
+
+				{
+					DECL_SUB( constexpr const char* primitive_s = "dummy_string" );
+					DECL_MAIN( r2lua::String s = primitive_s );
+
+					LF();
+
+					EXPECT_EQ( r2lua::eType::String, s.GetType() );
+					EXPECT_EQ( primitive_s, s.GetValue() );
+				}
 			}
 
 			LS();
