@@ -4,7 +4,7 @@
 
 namespace play_r2lua
 {
-	class ValueTest_1 : public r2tm::iItem
+	class Type : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;

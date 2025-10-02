@@ -14,14 +14,14 @@ std::ostream& operator<<( std::ostream& o, const r2lua::eType type )
 
 namespace play_r2lua
 {
-	r2tm::TitleFunctionT ValueTest_1::GetTitleFunction() const
+	r2tm::TitleFunctionT Type::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "r2lua::Value 1";
+			return "Type";
 		};
 	}
-	r2tm::DoFunctionT ValueTest_1::GetDoFunction() const
+	r2tm::DoFunctionT Type::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

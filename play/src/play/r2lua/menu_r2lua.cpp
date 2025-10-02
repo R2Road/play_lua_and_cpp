@@ -22,7 +22,7 @@ r2tm::WriteFunctionT Menu_R2Lua::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{
-		mp->AddItem( '1', play_r2lua::ValueTest_1() );
+		mp->AddItem( '1', play_r2lua::Type() );
 		mp->AddItem( '2', play_r2lua::ValueTest_2() );
 		mp->AddItem( '3', play_r2lua::PushTest() );
 		mp->AddItem( '4', play_r2lua::GetValueFromStackTest() );
