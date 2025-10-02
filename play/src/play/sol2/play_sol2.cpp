@@ -51,4 +51,52 @@ namespace play_sol2
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	std::string bind_function( int D_count, std::string original )
+	{
+		// Create a string with the letter 'D' "D_count" times,
+		// append it to 'original'
+		return original + std::string( D_count, 'D' );
+	}
+	r2tm::TitleFunctionT Bind_Function::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Bind Function";
+		};
+	}
+	r2tm::DoFunctionT Bind_Function::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				OUT_SOURCE_READY_N_BEGIN;
+				sol::state lua;
+
+				lua["my_func"] = bind_function;					// way 1
+				lua.set( "my_func", bind_function );			// way 2
+				lua.set_function( "my_func", bind_function );	// way 3
+
+				// This function is now accessible as 'my_func' in
+				// lua scripts / code run on this state:
+				lua.script( "some_str = my_func( 2, 'Da' )" );
+				OUT_SOURCE_END;
+
+				LF();
+
+				// Read out the global variable we stored in 'some_str' in
+				// the quick lua code we just executed
+				DECL_MAIN( std::string some_str = lua["some_str"] );
+				EXPECT_EQ( some_str, "DaDD" );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }
