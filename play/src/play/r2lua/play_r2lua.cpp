@@ -14,14 +14,14 @@ std::ostream& operator<<( std::ostream& o, const r2lua::eType type )
 
 namespace play_r2lua
 {
-	r2tm::TitleFunctionT Type::GetTitleFunction() const
+	r2tm::TitleFunctionT Type_Bool::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Type";
+			return "Type : Bool";
 		};
 	}
-	r2tm::DoFunctionT Type::GetDoFunction() const
+	r2tm::DoFunctionT Type_Bool::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
@@ -30,88 +30,146 @@ namespace play_r2lua
 			LS();
 
 			{
-				OUT_SUBJECT( "Bool" );
+				OUT_SUBJECT( "기본 생성자" );
 
 				LF();
 
-				{
-					DECL_MAIN( r2lua::Bool b );
+				DECL_MAIN( r2lua::Bool b );
 
-					LF();
+				LF();
 
-					EXPECT_EQ( r2lua::eType::Bool, b.GetType() );
-					EXPECT_EQ( false, b.GetValue() );
-				}
+				EXPECT_EQ( r2lua::eType::Bool, b.GetType() );
+				EXPECT_EQ( false, b.GetValue() );
+			}
 
-				SS();
+			SS();
 
-				{
-					DECL_SUB( constexpr const bool primitive_b = true );
-					DECL_MAIN( r2lua::Bool b = primitive_b );
+			{
+				OUT_SUBJECT( "인자를 받는 생성자" );
 
-					LF();
+				LF();
 
-					EXPECT_EQ( r2lua::eType::Bool, b.GetType() );
-					EXPECT_EQ( primitive_b, b.GetValue() );
-				}
+				DECL_SUB( constexpr const bool primitive_b = true );
+				DECL_MAIN( r2lua::Bool b = primitive_b );
+
+				LF();
+
+				EXPECT_EQ( r2lua::eType::Bool, b.GetType() );
+				EXPECT_EQ( primitive_b, b.GetValue() );
 			}
 
 			LS();
 
-			{
-				OUT_SUBJECT( "Number" );
+			lua_close( lua_state_obj );
 
-				LF();
 
-				{
-					DECL_MAIN( r2lua::Number n );
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 
-					LF();
 
-					EXPECT_EQ( r2lua::eType::Number, n.GetType() );
-					EXPECT_EQ( -1, n.GetValue() );
-				}
 
-				SS();
-
-				{
-					DECL_SUB( constexpr const double primitive_d = 3.141592 );
-					DECL_MAIN( r2lua::Number n = primitive_d );
-
-					LF();
-
-					EXPECT_EQ( r2lua::eType::Number, n.GetType() );
-					EXPECT_EQ( primitive_d, n.GetValue() );
-				}
-			}
+	r2tm::TitleFunctionT Type_Number::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Type : Number";
+		};
+	}
+	r2tm::DoFunctionT Type_Number::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			lua_State* lua_state_obj = luaL_newstate();
 
 			LS();
 
 			{
-				OUT_SUBJECT( "String" );
+				OUT_SUBJECT( "기본 생성자" );
 
 				LF();
 
-				{
-					DECL_MAIN( r2lua::String s );
+				DECL_MAIN( r2lua::Number n );
 
-					LF();
+				LF();
 
-					EXPECT_EQ( r2lua::eType::String, s.GetType() );
-					EXPECT_EQ( r2lua::String::InvalidString, s.GetValue());
-				}
+				EXPECT_EQ( r2lua::eType::Number, n.GetType() );
+				EXPECT_EQ( -1, n.GetValue() );
+			}
 
-				SS();
+			SS();
 
-				{
-					DECL_SUB( constexpr const char* primitive_s = "dummy_string" );
-					DECL_MAIN( r2lua::String s = primitive_s );
+			{
+				OUT_SUBJECT( "인자를 받는 생성자" );
 
-					LF();
+				LF();
 
-					EXPECT_EQ( r2lua::eType::String, s.GetType() );
-					EXPECT_EQ( primitive_s, s.GetValue() );
-				}
+				DECL_SUB( constexpr const double primitive_d = 3.141592 );
+				DECL_MAIN( r2lua::Number n = primitive_d );
+
+				LF();
+
+				EXPECT_EQ( r2lua::eType::Number, n.GetType() );
+				EXPECT_EQ( primitive_d, n.GetValue() );
+			}
+
+			LS();
+
+			lua_close( lua_state_obj );
+
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Type_String::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Type : String";
+		};
+	}
+	r2tm::DoFunctionT Type_String::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			lua_State* lua_state_obj = luaL_newstate();
+
+			LS();
+
+			{
+				OUT_SUBJECT( "기본 생성자" );
+
+				LF();
+
+				DECL_MAIN( r2lua::String s );
+
+				LF();
+
+				EXPECT_EQ( r2lua::eType::String, s.GetType() );
+				EXPECT_EQ( r2lua::String::InvalidString, s.GetValue() );
+
+				LF();
+
+				OUT_VALUE( r2lua::String::InvalidString );
+			}
+
+			SS();
+
+			{
+				OUT_SUBJECT( "인자를 받는 생성자" );
+
+				LF();
+
+				DECL_SUB( constexpr const char* primitive_s = "dummy_string" );
+				DECL_MAIN( r2lua::String s = primitive_s );
+
+				LF();
+
+				EXPECT_EQ( r2lua::eType::String, s.GetType() );
+				EXPECT_EQ( primitive_s, s.GetValue() );
 			}
 
 			LS();
