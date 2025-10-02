@@ -25,7 +25,7 @@ r2tm::WriteFunctionT Menu_R2Lua::GetWriteFunction() const
 		mp->AddItem( '1', play_r2lua::Type_Bool() );
 		mp->AddItem( '2', play_r2lua::Type_Number() );
 		mp->AddItem( '3', play_r2lua::Type_String() );
-		mp->AddItem( '4', play_r2lua::ValueTest_2() );
+		mp->AddItem( '4', play_r2lua::Value() );
 
 
 

@@ -183,14 +183,14 @@ namespace play_r2lua
 
 
 
-	r2tm::TitleFunctionT ValueTest_2::GetTitleFunction() const
+	r2tm::TitleFunctionT Value::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "r2lua::Value 2";
 		};
 	}
-	r2tm::DoFunctionT ValueTest_2::GetDoFunction() const
+	r2tm::DoFunctionT Value::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

@@ -25,7 +25,7 @@ namespace play_r2lua
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class ValueTest_2 : public r2tm::iItem
+	class Value : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
