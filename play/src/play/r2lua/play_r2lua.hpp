@@ -25,6 +25,13 @@ namespace play_r2lua
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
+	class Value : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
+
 	class Value_2_Bool : public r2tm::iItem
 	{
 	public:

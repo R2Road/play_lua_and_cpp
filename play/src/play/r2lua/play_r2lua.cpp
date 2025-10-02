@@ -183,6 +183,40 @@ namespace play_r2lua
 
 
 
+	r2tm::TitleFunctionT Value::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Value";
+		};
+	}
+	r2tm::DoFunctionT Value::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			lua_State* lua_state_obj = luaL_newstate();
+
+			LS();
+
+			{
+				DECL_MAIN( r2lua::Value v; );
+
+				LF();
+
+				EXPECT_EQ( r2lua::eType::Bool, r2lua::GetType( v ) );
+			}
+
+			LS();
+
+			lua_close( lua_state_obj );
+
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT Value_2_Bool::GetTitleFunction() const
 	{
 		return []()->const char*

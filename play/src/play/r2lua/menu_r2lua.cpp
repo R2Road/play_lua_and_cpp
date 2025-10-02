@@ -32,9 +32,10 @@ r2tm::WriteFunctionT Menu_R2Lua::GetWriteFunction() const
 
 
 
-		mp->AddItem( 'q', play_r2lua::Value_2_Bool() );
-		mp->AddItem( 'w', play_r2lua::Value_2_Number() );
-		mp->AddItem( 'e', play_r2lua::Value_2_String() );
+		mp->AddItem( 'q', play_r2lua::Value() );
+		mp->AddItem( 'w', play_r2lua::Value_2_Bool() );
+		mp->AddItem( 'e', play_r2lua::Value_2_Number() );
+		mp->AddItem( 'r', play_r2lua::Value_2_String() );
 
 
 
