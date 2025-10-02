@@ -20,11 +20,11 @@ namespace table_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECL_SUB( lua_State* lua_state_obj = luaL_newstate() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Generate Table" << r2tm::linefeed2;
@@ -40,11 +40,11 @@ namespace table_test
 				EXPECT_TRUE( lua_istable( lua_state_obj, 1 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			PROC_SUB( lua_close( lua_state_obj ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 
 			return r2tm::eDoLeaveAction::Pause;
@@ -64,11 +64,11 @@ namespace table_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECL_SUB( lua_State* lua_state_obj = luaL_newstate() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Generate Table" << r2tm::linefeed2;
@@ -80,7 +80,7 @@ namespace table_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Add 2 Global" << r2tm::linefeed2;
@@ -92,7 +92,7 @@ namespace table_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Get Global" << r2tm::linefeed2;
@@ -104,11 +104,11 @@ namespace table_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			PROC_SUB( lua_close( lua_state_obj ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 
 			return r2tm::eDoLeaveAction::Pause;
@@ -128,18 +128,18 @@ namespace table_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECL_SUB( lua_State* lua_state_obj = luaL_newstate() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( lua_newtable( lua_state_obj ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Ready" << r2tm::linefeed2;
@@ -152,7 +152,7 @@ namespace table_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Push" << r2tm::linefeed2;
@@ -164,7 +164,7 @@ namespace table_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Get" << r2tm::linefeed2;
@@ -177,11 +177,11 @@ namespace table_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			PROC_SUB( lua_close( lua_state_obj ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 
 			return r2tm::eDoLeaveAction::Pause;
@@ -205,11 +205,11 @@ namespace table_test
 
 
 
-			std::cout << r2tm::split; 
+			LS(); 
 			
 			std::cout << "Note : table을 1이외의 Index에 배치해보기." << r2tm::linefeed;
 			
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( lua_pushnil( lua_state_obj ) );
@@ -220,7 +220,7 @@ namespace table_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Push" << r2tm::linefeed2;
@@ -229,7 +229,7 @@ namespace table_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Get" << r2tm::linefeed2;
@@ -239,7 +239,7 @@ namespace table_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 
@@ -266,11 +266,11 @@ namespace table_test
 
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "Note : 잘못된 Index에 GetTable 해보기." << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( lua_pushnil( lua_state_obj ) );
@@ -281,7 +281,7 @@ namespace table_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Push" << r2tm::linefeed2;
@@ -290,7 +290,7 @@ namespace table_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Get" << r2tm::linefeed2;
@@ -301,7 +301,7 @@ namespace table_test
 				std::cout << r2tm::tab << "## Not Working : Invalid Index : Boom" << r2tm::linefeed2;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 
@@ -328,11 +328,11 @@ namespace table_test
 
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "Note : 잘못된 Key로 GetTable 해보기." << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( lua_newtable( lua_state_obj ) );
@@ -341,7 +341,7 @@ namespace table_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Push" << r2tm::linefeed2;
@@ -350,7 +350,7 @@ namespace table_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Get" << r2tm::linefeed2;
@@ -360,7 +360,7 @@ namespace table_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 
@@ -388,13 +388,13 @@ namespace table_test
 
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "+ Add Function : GetData( idx )" << r2tm::linefeed2;
 			DECL_MAIN( const int arg_count = 1 );
 			PROC_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/table_test_luafunction_and_gettable_01.lua" ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Call : GetData( 0 )" << r2tm::linefeed2;
@@ -404,7 +404,7 @@ namespace table_test
 				EXPECT_EQ( LUA_OK, lua_pcall( lua_state_obj, arg_count, LUA_MULTRET, 0 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Check" << r2tm::linefeed2;
@@ -417,7 +417,7 @@ namespace table_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Call : GetData( 1 )" << r2tm::linefeed2;
@@ -429,7 +429,7 @@ namespace table_test
 				EXPECT_EQ( LUA_OK, lua_pcall( lua_state_obj, arg_count, LUA_MULTRET, 0 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Check" << r2tm::linefeed2;
@@ -442,7 +442,7 @@ namespace table_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 
@@ -468,21 +468,21 @@ namespace table_test
 		{
 			lua_State* lua_state_obj = luaL_newstate();
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECL_MAIN( const char* lua_script = "t = { name = 'asdf' }" );
 				PROC_MAIN( test_lua_helper::DoString( lua_state_obj, lua_script ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( lua_getglobal( lua_state_obj, "t" ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "lua_getfield 를 활용하여 깔끔하게 테이블 내부 데이터 가져오기." );
@@ -493,7 +493,7 @@ namespace table_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "한 번 더 가져오기." );
@@ -504,7 +504,7 @@ namespace table_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			lua_close( lua_state_obj );
 
@@ -527,21 +527,21 @@ namespace table_test
 		{
 			lua_State* lua_state_obj = luaL_newstate();
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECL_MAIN( const char* lua_script = "t = {}" );
 				PROC_MAIN( test_lua_helper::DoString( lua_state_obj, lua_script ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( lua_getglobal( lua_state_obj, "t" ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "lua_setfield 를 활용하여 테이블에 데이터 넣기." );
@@ -557,14 +557,14 @@ namespace table_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( lua_getfield( lua_state_obj, -1, "name" ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			lua_close( lua_state_obj );
 

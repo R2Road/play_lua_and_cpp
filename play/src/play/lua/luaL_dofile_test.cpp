@@ -22,11 +22,11 @@ namespace luaL_dofile_test
 		{
 			lua_State* lua_state_obj = luaL_newstate();
 
-			std::cout << r2tm::split;
+			LS();
 
 			PROC_MAIN( luaL_openlibs( lua_state_obj ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			//
 			// Test x 0
@@ -41,7 +41,7 @@ namespace luaL_dofile_test
 				OUT_VALUE( lua_tostring( lua_state_obj, -1 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			//
 			// Test x 1
@@ -61,7 +61,7 @@ namespace luaL_dofile_test
 				OUT_VALUE( lua_tostring( lua_state_obj, -1 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			//
 			// Test x 2
@@ -85,7 +85,7 @@ namespace luaL_dofile_test
 				std::cout << "a : " << a << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			lua_close( lua_state_obj );
 

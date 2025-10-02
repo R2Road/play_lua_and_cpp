@@ -25,11 +25,11 @@ namespace memory_allocation_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUT_NOTE( "luaL_newstate 를 사용하면 lauxlib.c 의 기본 메모리 할당자 l_alloc 가 사용된다." );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_FILE( "resources/lua_l_alloc.txt" );
@@ -40,7 +40,7 @@ namespace memory_allocation_test
 				PROC_MAIN( lua_close( lua_state_obj ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -59,13 +59,13 @@ namespace memory_allocation_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUT_NOTE( "lua_newstate 를 사용하면 메모리 할당자의 설정이 가능하다." );
 			OUT_NOTE( "memory pool 등이 활용될 때 사용하자." );
 			OUT_NOTE( "ud( user data ) 는 추가 작업을 위해 무언가를 넘겨 주고 싶을 때 사용하자." );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_FILE( "src/play/lua/memory_allocation_test_helper_custom.hpp" );
@@ -77,7 +77,7 @@ namespace memory_allocation_test
 				PROC_MAIN( lua_close( lua_state_obj ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -96,7 +96,7 @@ namespace memory_allocation_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUT_FILE( "src/play/lua/memory_allocation_test_helper_pool_01.hpp" );
 
@@ -105,11 +105,11 @@ namespace memory_allocation_test
 			DECL_MAIN( LuaMemoryPool_01 pool );
 			DECL_MAIN( lua_State* l = lua_newstate( LuaMemoryPool_01::l_alloc, &pool ) );
 			
-			std::cout << r2tm::split;
+			LS();
 
 			PROC_MAIN( lua_close( l ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -128,7 +128,7 @@ namespace memory_allocation_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUT_FILE( "src/play/lua/memory_allocation_test_helper_pool_02.hpp" );
 
@@ -140,14 +140,14 @@ namespace memory_allocation_test
 			DECL_MAIN( lua_State* l = lua_newstate( LuaMemoryPool_02::l_alloc, &pool ) );
 			pool.OutputInfo();
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( luaL_openlibs( l ) );
 				pool.OutputInfo();
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_FILE( "resources/memory_allocation_test_pool_01.lua" );
@@ -161,11 +161,11 @@ namespace memory_allocation_test
 				pool.OutputInfo();
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			PROC_MAIN( lua_close( l ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

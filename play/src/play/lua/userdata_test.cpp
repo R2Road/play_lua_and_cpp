@@ -33,7 +33,7 @@ namespace userdata_test
 			lua_State* lua_state_obj = luaL_newstate();
 			luaL_openlibs( lua_state_obj );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "lua_newuserdata 를 사용하여 Lua 에서 메모리를 할당한다." );
@@ -48,7 +48,7 @@ namespace userdata_test
 				PROC_MAIN( lua_setglobal( lua_state_obj, "CreateVector2" ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const char* lua_file_path = "resources/userdata_test_01.lua";
@@ -60,7 +60,7 @@ namespace userdata_test
 				PROC_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, lua_file_path ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( lua_getglobal( lua_state_obj, "vec" ) );
@@ -79,7 +79,7 @@ namespace userdata_test
 				OUT_VALUE( v->y );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			lua_close( lua_state_obj );
 
@@ -103,7 +103,7 @@ namespace userdata_test
 			lua_State* lua_state_obj = luaL_newstate();
 			luaL_openlibs( lua_state_obj );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "위치 지정 new 를 활용해서 강제로 생성자를 호출한다." );
@@ -118,7 +118,7 @@ namespace userdata_test
 				PROC_MAIN( lua_setglobal( lua_state_obj, "CreateVector2" ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const char* lua_file_path = "resources/userdata_test_01.lua";
@@ -130,7 +130,7 @@ namespace userdata_test
 				PROC_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, lua_file_path ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( lua_getglobal( lua_state_obj, "vec" ) );
@@ -142,7 +142,7 @@ namespace userdata_test
 				OUT_VALUE( v->x );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			lua_close( lua_state_obj );
 
@@ -163,12 +163,12 @@ namespace userdata_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			lua_State* lua_state_obj = luaL_newstate();
 			luaL_openlibs( lua_state_obj );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "metatable 을 활용하여 강제로 소멸자를 호출한다." );
@@ -190,7 +190,7 @@ namespace userdata_test
 				PROC_MAIN( lua_settable( lua_state_obj, -3 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const char* lua_file_path = "resources/userdata_n_metatable_test_destructor_01.lua";
@@ -206,7 +206,7 @@ namespace userdata_test
 				PROC_MAIN( lua_gc( lua_state_obj, LUA_GCCOLLECT ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			lua_close( lua_state_obj );
 
@@ -230,7 +230,7 @@ namespace userdata_test
 			lua_State* L = luaL_newstate();
 			luaL_openlibs( L );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_FILE( "src/play/lua/userdata_n_metatable_test_helper_oop.hpp" );
@@ -261,7 +261,7 @@ namespace userdata_test
 				PROC_MAIN( luaL_newmetatable( L, "SpriteMetaTable" ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const char* lua_file_path = "resources/userdata_n_metatable_test_oop_01.lua";
@@ -273,7 +273,7 @@ namespace userdata_test
 				PROC_MAIN( test_lua_helper::DoFile_Silent( L, lua_file_path ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			lua_close( L );
 
@@ -297,7 +297,7 @@ namespace userdata_test
 			lua_State* L = luaL_newstate();
 			luaL_openlibs( L );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "metatable 의 __index 기능을 활용한 oop 스러운 코드 작성." );
@@ -336,7 +336,7 @@ namespace userdata_test
 				PROC_MAIN( lua_settable( L, -3 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const char* lua_file_path = "resources/userdata_n_metatable_test_oop_02.lua";
@@ -348,7 +348,7 @@ namespace userdata_test
 				PROC_MAIN( test_lua_helper::DoFile_Silent( L, lua_file_path ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			lua_close( L );
 
@@ -372,7 +372,7 @@ namespace userdata_test
 			lua_State* L = luaL_newstate();
 			luaL_openlibs( L );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "metatable 의 __index 기능을 활용한 oop 스러운 코드 작성." );
@@ -411,7 +411,7 @@ namespace userdata_test
 				PROC_MAIN( lua_settable( L, -3 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const char* lua_file_path = "resources/userdata_n_metatable_test_field_get_01.lua";
@@ -423,14 +423,14 @@ namespace userdata_test
 				PROC_MAIN( test_lua_helper::DoFile_Silent( L, lua_file_path ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( lua_getglobal( L, "temp_x" ) );
 				test_lua_helper::PrintAllStack( L );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			lua_close( L );
 
@@ -454,7 +454,7 @@ namespace userdata_test
 			lua_State* L = luaL_newstate();
 			luaL_openlibs( L );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "metatable 의 __newindex 기능을 활용한 멤버 접근." );
@@ -496,7 +496,7 @@ namespace userdata_test
 				PROC_MAIN( lua_settable( L, -3 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const char* lua_file_path = "resources/userdata_n_metatable_test_field_set.lua";
@@ -508,14 +508,14 @@ namespace userdata_test
 				PROC_MAIN( test_lua_helper::DoFile_Silent( L, lua_file_path ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( lua_getglobal( L, "temp_x" ) );
 				test_lua_helper::PrintAllStack( L );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			lua_close( L );
 
@@ -539,11 +539,11 @@ namespace userdata_test
 			lua_State* L = luaL_newstate();
 			luaL_openlibs( L );
 
-			std::cout << r2tm::split;
+			LS();
 			
 			OUT_NOTE( "__index 와 __newindex 가 작동하는 시점 확인." );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_FILE( "src/play/lua/userdata_n_metatable_test_helper_index_and_newindex.hpp" );
@@ -576,7 +576,7 @@ namespace userdata_test
 				PROC_MAIN( lua_settable( L, -3 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const char* lua_file_path = "resources/userdata_n_metatable_test_index_and_newindex.lua";
@@ -588,7 +588,7 @@ namespace userdata_test
 				PROC_MAIN( test_lua_helper::DoFile_Silent( L, lua_file_path ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			lua_close( L );
 
@@ -612,7 +612,7 @@ namespace userdata_test
 			lua_State* L = luaL_newstate();
 			luaL_openlibs( L );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "metatable 의 __newindex 기능을 활용한 멤버 접근." );
@@ -654,7 +654,7 @@ namespace userdata_test
 				PROC_MAIN( lua_settable( L, -3 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const char* lua_file_path = "resources/userdata_n_metatable_test_field_add_from_lua.lua";
@@ -666,14 +666,14 @@ namespace userdata_test
 				PROC_MAIN( test_lua_helper::DoFile_Silent( L, lua_file_path ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( lua_getglobal( L, "temp_x" ) );
 				test_lua_helper::PrintAllStack( L );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			lua_close( L );
 

@@ -23,11 +23,11 @@ namespace lua_state_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECL_MAIN( lua_State* lua_state_obj = nullptr );
 
-			std::cout << r2tm::split;
+			LS();
 
 			//
 			// Make Lua State
@@ -40,7 +40,7 @@ namespace lua_state_test
 				PROC_MAIN( lua_state_obj = luaL_newstate() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			//
 			// Close Lua State
@@ -53,7 +53,7 @@ namespace lua_state_test
 				PROC_MAIN( lua_close( lua_state_obj ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

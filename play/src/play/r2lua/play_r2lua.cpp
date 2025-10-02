@@ -27,9 +27,7 @@ namespace play_r2lua
 		{
 			lua_State* lua_state_obj = luaL_newstate();
 
-
-
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Bool" << r2tm::linefeed2;
@@ -43,7 +41,7 @@ namespace play_r2lua
 				EXPECT_EQ( primitive_b, b.GetValue() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Number" << r2tm::linefeed2;
@@ -57,7 +55,7 @@ namespace play_r2lua
 				EXPECT_EQ( primitive_d, n.GetValue() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ String" << r2tm::linefeed2;
@@ -71,9 +69,7 @@ namespace play_r2lua
 				EXPECT_EQ( primitive_s, s.GetValue() );
 			}
 
-			std::cout << r2tm::split;
-
-
+			LS();
 
 			lua_close( lua_state_obj );
 
@@ -99,14 +95,14 @@ namespace play_r2lua
 
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECL_SUB( r2lua::Bool b = true );
 			DECL_SUB( r2lua::Number n = 3.141592 );
 			DECL_SUB( r2lua::String s = "dummy_string" );
 			DECL_MAIN( r2lua::Value v; );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Value <> Bool" << r2tm::linefeed2;
@@ -123,7 +119,7 @@ namespace play_r2lua
 				std::cout << r2tm::tab << "real_value.GetValue() : " << r2lua_value.GetValue() << r2tm::linefeed2;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Value <> Number" << r2tm::linefeed2;
@@ -140,7 +136,7 @@ namespace play_r2lua
 				std::cout << r2tm::tab << "real_value.GetValue() : " << r2lua_value.GetValue() << r2tm::linefeed2;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Value <> String" << r2tm::linefeed2;
@@ -157,7 +153,7 @@ namespace play_r2lua
 				std::cout << r2tm::tab << "real_value.GetValue() : " << r2lua_value.GetValue() << r2tm::linefeed2;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 
@@ -185,7 +181,7 @@ namespace play_r2lua
 
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( r2lua::Push( lua_state_obj, 777 ) );
@@ -195,7 +191,7 @@ namespace play_r2lua
 				PROC_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( r2lua::PushArgs( lua_state_obj, 1, 3.141592, "test_string" ) );
@@ -205,7 +201,7 @@ namespace play_r2lua
 				PROC_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 
@@ -233,14 +229,14 @@ namespace play_r2lua
 
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_SUB( r2lua::PushArgs( lua_state_obj, 1, 3.141592, "test_string", true ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Number" << r2tm::linefeed2;
@@ -254,7 +250,7 @@ namespace play_r2lua
 				EXPECT_EQ( 1, r2lua_value.GetValue() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Number" << r2tm::linefeed2;
@@ -268,7 +264,7 @@ namespace play_r2lua
 				EXPECT_EQ( 3.141592, r2lua_value.GetValue() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ String" << r2tm::linefeed2;
@@ -282,7 +278,7 @@ namespace play_r2lua
 				EXPECT_EQ( "test_string", r2lua_value.GetValue() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Bool" << r2tm::linefeed2;
@@ -296,7 +292,7 @@ namespace play_r2lua
 				EXPECT_EQ( true, r2lua_value.GetValue() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 
@@ -323,7 +319,7 @@ namespace play_r2lua
 
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( r2lua::PushArgs( lua_state_obj, 1, 3.141592, "test_string", false ) );
@@ -333,11 +329,11 @@ namespace play_r2lua
 				PROC_MAIN( test_lua_helper::PrintAllStack( lua_state_obj ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECL_MAIN( const auto values = r2lua::GetValuesFromStack( lua_state_obj ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			int index = 0;
 			OUT_CODE( for( const auto& v : values ) );
@@ -376,7 +372,7 @@ namespace play_r2lua
 				std::cout << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 
@@ -404,7 +400,7 @@ namespace play_r2lua
 
 			
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const char* command_4_add_function =
@@ -424,7 +420,7 @@ namespace play_r2lua
 				PROC_MAIN( test_lua_helper::DoString( lua_state_obj, command_4_add_function ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( r2lua::Call( lua_state_obj, "CallTest", 3.141592, 7770 ) );
@@ -434,7 +430,7 @@ namespace play_r2lua
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 

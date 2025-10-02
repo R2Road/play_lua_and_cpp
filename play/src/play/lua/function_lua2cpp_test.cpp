@@ -61,19 +61,19 @@ namespace function_lua2cpp_test
 
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			OUT_NOTE( "cpp 펑션의 반환값 0 = 반환값 없음" );
 			OUT_NOTE( "cpp 펑션의 반환값 n = 반환값의 수, 스택에 값을 넣어두면 반환값으로 처리" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_FILE( "resources/function_lua2cpp_test_register_n_pcall_01.lua" );
 				PROC_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/function_lua2cpp_test_register_n_pcall_01.lua" ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Register Cpp Function" << r2tm::linefeed2;
@@ -81,7 +81,7 @@ namespace function_lua2cpp_test
 				PROC_MAIN( lua_register( lua_state_obj, "CPPFunction_0", CPPFunction_0 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Call Lua Function" << r2tm::linefeed2;
@@ -95,7 +95,7 @@ namespace function_lua2cpp_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 
@@ -123,11 +123,11 @@ namespace function_lua2cpp_test
 
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			PROC_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/function_lua2cpp_test_argument_01.lua" ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "인자 x 1, 반환값 x 2" );
@@ -145,7 +145,7 @@ namespace function_lua2cpp_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "인자 x 2, 반환값 x 3" );
@@ -165,7 +165,7 @@ namespace function_lua2cpp_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 			
 
 
@@ -191,14 +191,14 @@ namespace function_lua2cpp_test
 			lua_State* lua_state_obj = luaL_newstate();
 			luaL_openlibs( lua_state_obj );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_FILE( "resources/function_lua2cpp_test_lambda_01.lua" );
 				PROC_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/function_lua2cpp_test_lambda_01.lua" ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "Lambda 함수 등록" );
@@ -220,7 +220,7 @@ namespace function_lua2cpp_test
 				PROC_MAIN( lua_setglobal( lua_state_obj, "CPPFunction" ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "Call" );
@@ -236,7 +236,7 @@ namespace function_lua2cpp_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			lua_close( lua_state_obj );
 

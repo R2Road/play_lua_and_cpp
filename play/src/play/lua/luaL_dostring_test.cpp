@@ -18,11 +18,11 @@ namespace luaL_dostring_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECL_SUB( lua_State* lua_state_obj = luaL_newstate() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECL_MAIN( const char* command = "a = 7 + 11" );
@@ -33,7 +33,7 @@ namespace luaL_dostring_test
 				EXPECT_TRUE( LUA_OK == lua_result );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECL_MAIN( const char* command = "a = 7 + " );
@@ -49,11 +49,11 @@ namespace luaL_dostring_test
 				std::cout << r2tm::tab << "error message : " << error_message << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			PROC_SUB( lua_close( lua_state_obj ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

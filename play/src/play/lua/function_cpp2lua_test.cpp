@@ -25,7 +25,7 @@ namespace function_cpp2lua_test
 
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "+ Add Function : Test()" << r2tm::linefeed2;
 
@@ -36,7 +36,7 @@ namespace function_cpp2lua_test
 			PROC_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/function_cpp2lua_test_basic_01.lua" ) );
 			DECL_MAIN( const int argument_count = 0 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Ready : lua 전역 공간에서 함수를 가져와 스택에 넣는다." << r2tm::linefeed2;
@@ -49,7 +49,7 @@ namespace function_cpp2lua_test
 				EXPECT_TRUE( lua_isfunction( lua_state_obj, 1 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Call" << r2tm::linefeed2;
@@ -59,7 +59,7 @@ namespace function_cpp2lua_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 
@@ -88,13 +88,13 @@ namespace function_cpp2lua_test
 
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "+ Add Function : Sum( arg1, arg2 )" << r2tm::linefeed2;
 			DECL_MAIN( const int arg_count = 2 );
 			PROC_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/function_cpp2lua_test_argument_01.lua" ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Ready : 인자 1개 부족" << r2tm::linefeed2;
@@ -104,7 +104,7 @@ namespace function_cpp2lua_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Call : 인자 1개 부족" << r2tm::linefeed2;
@@ -120,7 +120,7 @@ namespace function_cpp2lua_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Ready" << r2tm::linefeed2;
@@ -131,7 +131,7 @@ namespace function_cpp2lua_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Call" << r2tm::linefeed2;
@@ -143,7 +143,7 @@ namespace function_cpp2lua_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 

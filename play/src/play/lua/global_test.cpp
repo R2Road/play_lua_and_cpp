@@ -24,12 +24,12 @@ namespace global_test
 
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "Note : lua_setglobal 스택 1에 있는 값을 루아의 전역 공간에 추가한다." << r2tm::linefeed;
 			std::cout << "Note : lua_getglobal 루아의 전역 공간에서 값을 가져와 스택에 넣는다" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Ready" << r2tm::linefeed2;
@@ -41,7 +41,7 @@ namespace global_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ SetGlobal" << r2tm::linefeed2;
@@ -53,7 +53,7 @@ namespace global_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ GetGlobal" << r2tm::linefeed2;
@@ -65,7 +65,7 @@ namespace global_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ GetGlobal 은 타입을 반환한다." << r2tm::linefeed2;
@@ -77,7 +77,7 @@ namespace global_test
 				PROC_MAIN( test_lua_helper::PrintTypeName( type ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 			lua_close( lua_state_obj );
@@ -104,11 +104,11 @@ namespace global_test
 
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "Note : lua_setglobal 로 루아 전역 공간의 값 갱신" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Ready" << r2tm::linefeed2;
@@ -118,7 +118,7 @@ namespace global_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Get" << r2tm::linefeed2;
@@ -130,13 +130,13 @@ namespace global_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( lua_settop( lua_state_obj, 0 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Update" << r2tm::linefeed2;
@@ -146,7 +146,7 @@ namespace global_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Get" << r2tm::linefeed2;
@@ -158,7 +158,7 @@ namespace global_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 

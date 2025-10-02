@@ -30,11 +30,11 @@ namespace stack_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECL_SUB( lua_State* lua_state_obj = luaL_newstate() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "Top" );
@@ -44,7 +44,7 @@ namespace stack_test
 				OUT_VALUE( lua_gettop( lua_state_obj ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "Push( info : lua.h 233 line )" );
@@ -60,7 +60,7 @@ namespace stack_test
 				PROC_MAIN( lua_pushboolean( lua_state_obj, true ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "Top" );
@@ -70,11 +70,11 @@ namespace stack_test
 				OUT_VALUE( lua_gettop( lua_state_obj ) );
 			}
 			
-			std::cout << r2tm::split;
+			LS();
 
 			PROC_SUB( lua_close( lua_state_obj ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -96,7 +96,7 @@ namespace stack_test
 			lua_State* lua_state_obj = luaL_newstate();
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( lua_pushnil( lua_state_obj ) );
@@ -108,7 +108,7 @@ namespace stack_test
 				PROC_MAIN( lua_pushboolean( lua_state_obj, true ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "0 : Type Check In Stack - lua_is..." );
@@ -124,7 +124,7 @@ namespace stack_test
 				EXPECT_TRUE( lua_isboolean( lua_state_obj, 7 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "1 : Type Check In Stack - lua_type" );
@@ -140,7 +140,7 @@ namespace stack_test
 				EXPECT_EQ( LUA_TBOOLEAN, lua_type( lua_state_obj, 7 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "2 : Invalid Stack" );
@@ -156,7 +156,7 @@ namespace stack_test
 				OUT_VALUE( lua_type( lua_state_obj, 8 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 			lua_close( lua_state_obj );
@@ -181,7 +181,7 @@ namespace stack_test
 			lua_State* lua_state_obj = luaL_newstate();
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( lua_pushnil( lua_state_obj ) );
@@ -194,7 +194,7 @@ namespace stack_test
 				OUT_VALUE( lua_gettop( lua_state_obj ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "Type Name" );
@@ -210,7 +210,7 @@ namespace stack_test
 				OUT_VALUE( lua_typename( lua_state_obj, lua_type( lua_state_obj, 7 ) ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "???" );
@@ -221,7 +221,7 @@ namespace stack_test
 				OUT_VALUE( lua_typename( lua_state_obj, lua_type( lua_state_obj, 8 ) ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 			lua_close( lua_state_obj );
@@ -247,7 +247,7 @@ namespace stack_test
 
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "Push( info : lua.h 233 line )" );
@@ -263,7 +263,7 @@ namespace stack_test
 				PROC_MAIN( lua_pushboolean( lua_state_obj, true ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECL_MAIN( const auto stack_count = lua_gettop( lua_state_obj ) );
@@ -296,7 +296,7 @@ namespace stack_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 
@@ -323,14 +323,14 @@ namespace stack_test
 
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( lua_pushstring( lua_state_obj, "dummy_text" ) );
 				PROC_MAIN( lua_pushnumber( lua_state_obj, 777 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "Get" );
@@ -344,7 +344,7 @@ namespace stack_test
 				OUT_VALUE( n );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "Casting?" );
@@ -358,7 +358,7 @@ namespace stack_test
 				OUT_VALUE( s );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "Invalid Index" );
@@ -374,7 +374,7 @@ namespace stack_test
 				EXPECT_EQ( nullptr, lua_tostring( lua_state_obj, 3 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 
@@ -400,14 +400,14 @@ namespace stack_test
 			lua_State* lua_state_obj = luaL_newstate();
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			OUT_NOTE( "Type이 맞지 않으면 프로그램이 강제 종료 된다." );
 			OUT_NOTE( "Type의 확인을 먼저 하고 호출하자." );
 			OUT_NOTE( "빈 Stack을 대상으로 호출해도 강제 종료 된다.( 이게 맞나? )" );
 			OUT_NOTE( "이 상태라면 이 함수들은 쓰지 않는게 맞다고 판단된다." );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( lua_pushinteger( lua_state_obj, 7 ) );
@@ -416,7 +416,7 @@ namespace stack_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "Test : luaL_chec..." );
@@ -433,7 +433,7 @@ namespace stack_test
 				OUT_COMMENT( "위 코드를 수행하면 Type 이 맞지 않아 프로그램이 강제 종료된다." );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "Test : luaL_checkany" );
@@ -450,7 +450,7 @@ namespace stack_test
 				OUT_COMMENT( "위 코드를 수행하면 프로그램이 강제 종료된다." );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 			lua_close( lua_state_obj );
@@ -475,14 +475,14 @@ namespace stack_test
 			lua_State* lua_state_obj = luaL_newstate();
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_SUB( test_lua_helper::FillDummyValue2Stack( lua_state_obj ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( lua_settop( lua_state_obj, 2 ) );
@@ -492,7 +492,7 @@ namespace stack_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( lua_settop( lua_state_obj, 0 ) );
@@ -502,7 +502,7 @@ namespace stack_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( lua_settop( lua_state_obj, 2 ) );
@@ -512,7 +512,7 @@ namespace stack_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 			lua_close( lua_state_obj );
@@ -538,14 +538,14 @@ namespace stack_test
 			lua_State* lua_state_obj = luaL_newstate();
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_SUB( test_lua_helper::FillDummyValue2Stack( lua_state_obj ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( lua_pop( lua_state_obj, 2 ) );
@@ -555,7 +555,7 @@ namespace stack_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( lua_pop( lua_state_obj, lua_gettop( lua_state_obj ) ) );
@@ -565,7 +565,7 @@ namespace stack_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( lua_pop( lua_state_obj, 3 ) );
@@ -576,7 +576,7 @@ namespace stack_test
 				std::cout << r2tm::linefeed << "???????" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( lua_getglobal( lua_state_obj, "a" ) );
@@ -589,7 +589,7 @@ namespace stack_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 			lua_close( lua_state_obj );
@@ -615,13 +615,13 @@ namespace stack_test
 			lua_State* lua_state_obj = luaL_newstate();
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "지정된 index의 값을 복사해서 push 한다." );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Push: 0 ???" << r2tm::linefeed2;
@@ -630,7 +630,7 @@ namespace stack_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Push: 2 ???" << r2tm::linefeed2;
@@ -640,7 +640,7 @@ namespace stack_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_SUB( lua_settop( lua_state_obj, 0 ) );
@@ -649,7 +649,7 @@ namespace stack_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Push: 1, 0" << r2tm::linefeed2;
@@ -663,7 +663,7 @@ namespace stack_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 			lua_close( lua_state_obj );
@@ -688,7 +688,7 @@ namespace stack_test
 			lua_State* lua_state_obj = luaL_newstate();
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Copy : 0 to 1 ????" << r2tm::linefeed2;
@@ -700,7 +700,7 @@ namespace stack_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_SUB( lua_pushstring( lua_state_obj, "dummy_string" ) );
@@ -708,7 +708,7 @@ namespace stack_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Copy : 1 to 2" << r2tm::linefeed2;
@@ -720,7 +720,7 @@ namespace stack_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Copy : 2 to 3 ????" << r2tm::linefeed2;
@@ -732,7 +732,7 @@ namespace stack_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 			lua_close( lua_state_obj );
@@ -758,7 +758,7 @@ namespace stack_test
 			lua_State* lua_state_obj = luaL_newstate();
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				test_lua_helper::FillDummyValue2Stack( lua_state_obj );
@@ -766,7 +766,7 @@ namespace stack_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "Rotate( 1 ~ 4 를 대상으로 1회 회전 )" );
@@ -777,7 +777,7 @@ namespace stack_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "Rotate( 1 ~ 4 를 대상으로 1회 역회전 )" );
@@ -788,7 +788,7 @@ namespace stack_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "Rotate( 2 ~ 4 를 대상으로 2회 회전 )" );
@@ -799,7 +799,7 @@ namespace stack_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUT_NOTE( "Rotate( 4 이후에 값이 없으므로 회전이 되지 않는다. )" );
@@ -810,7 +810,7 @@ namespace stack_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 			lua_close( lua_state_obj );

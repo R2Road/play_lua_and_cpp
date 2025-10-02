@@ -34,18 +34,18 @@ namespace function_closure_test
 
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "Note : cpp 함수와 인자를 묶어 closure 를 만든다." << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECL_MAIN( const char* command = "function CallCPPClosure()    CPPClosure()    end"; )
 				PROC_MAIN( test_lua_helper::DoString( lua_state_obj, command ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Make CPP Closure" << r2tm::linefeed2;
@@ -56,7 +56,7 @@ namespace function_closure_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Register CPP Closure" << r2tm::linefeed2;
@@ -65,7 +65,7 @@ namespace function_closure_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Call Lua Function" << r2tm::linefeed2;
@@ -79,7 +79,7 @@ namespace function_closure_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 
@@ -122,18 +122,18 @@ namespace function_closure_test
 
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "Note : cpp 함수와 묶어놓은 closure의 인자 값을 변경한다." << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECL_MAIN( const char* command = "function CallCPPClosure_UpdateUpvalue()    CPPClosure_UpdateUpvalue()    end"; )
 				PROC_MAIN( test_lua_helper::DoString_Silent( lua_state_obj, command ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Ready" << r2tm::linefeed2;
@@ -144,7 +144,7 @@ namespace function_closure_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Call Lua Function" << r2tm::linefeed;
@@ -158,7 +158,7 @@ namespace function_closure_test
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 
 
@@ -198,18 +198,18 @@ namespace function_closure_test
 
 
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "Note : stack 을 통해 인자를 전달하면 작동할까?" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECL_MAIN( const char* command = "function CallCPPClosure_ArgumentTest()    CPPClosure_ArgumentTest()    end"; )
 				PROC_MAIN( test_lua_helper::DoString_Silent( lua_state_obj, command ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Ready" << r2tm::linefeed2;
@@ -219,7 +219,7 @@ namespace function_closure_test
 				PROC_MAIN( lua_setglobal( lua_state_obj, "CPPClosure_ArgumentTest" ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Call Lua Function" << r2tm::linefeed2;
@@ -233,11 +233,11 @@ namespace function_closure_test
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "Note : 작동 안한다." << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 
 

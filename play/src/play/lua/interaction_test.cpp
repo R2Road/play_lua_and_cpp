@@ -24,7 +24,7 @@ namespace interaction_test
 			lua_State* L = luaL_newstate();
 			luaL_openlibs( L );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECL_MAIN( interaction_test_helper_call_with_closure::SpriteManager manager );
 
@@ -76,7 +76,7 @@ namespace interaction_test
 				PROC_MAIN( lua_settable( L, -3 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const char* lua_file_path = "resources/interaction_test_call_with_closure_01.lua";
@@ -88,20 +88,20 @@ namespace interaction_test
 				PROC_MAIN( test_lua_helper::DoFile_Silent( L, lua_file_path ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROC_MAIN( lua_getglobal( L, "temp_x" ) );
 				test_lua_helper::PrintAllStack( L );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			lua_close( L );
 			EXPECT_EQ( 0, manager.mSprites.size() );
 			EXPECT_EQ( 2, manager.mNumberOfMade );
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
