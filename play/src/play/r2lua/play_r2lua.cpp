@@ -30,7 +30,9 @@ namespace play_r2lua
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Bool" << r2tm::linefeed2;
+				OUT_SUBJECT( "Bool" );
+
+				LF();
 
 				DECL_SUB( const bool primitive_b = true );
 				DECL_MAIN( r2lua::Bool b = primitive_b );
@@ -44,7 +46,9 @@ namespace play_r2lua
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Number" << r2tm::linefeed2;
+				OUT_SUBJECT( "Number" );
+
+				LF();
 
 				DECL_SUB( const double primitive_d = 3.141592 );
 				DECL_MAIN( r2lua::Number n = primitive_d );
@@ -58,7 +62,9 @@ namespace play_r2lua
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ String" << r2tm::linefeed2;
+				OUT_SUBJECT( "String" );
+
+				LF();
 
 				DECL_SUB( const char* primitive_s = "dummy_string" );
 				DECL_MAIN( r2lua::String s = primitive_s );
@@ -105,7 +111,9 @@ namespace play_r2lua
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Value <> Bool" << r2tm::linefeed2;
+				OUT_SUBJECT( "Value > Bool" );
+
+				LF();
 
 				PROC_MAIN( v = b );
 
@@ -116,13 +124,15 @@ namespace play_r2lua
 				LF();
 
 				DECL_MAIN( const auto r2lua_value = r2lua::GetValue<r2lua::Bool>( v ) );
-				std::cout << r2tm::tab << "real_value.GetValue() : " << r2lua_value.GetValue() << r2tm::linefeed2;
+				OUT_VALUE( r2lua_value.GetValue() );
 			}
 
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Value <> Number" << r2tm::linefeed2;
+				OUT_SUBJECT( "Value > Number" );
+
+				LF();
 
 				PROC_MAIN( v = n );
 
@@ -133,13 +143,15 @@ namespace play_r2lua
 				LF();
 
 				DECL_MAIN( const auto r2lua_value = r2lua::GetValue<r2lua::Number>( v ) );
-				std::cout << r2tm::tab << "real_value.GetValue() : " << r2lua_value.GetValue() << r2tm::linefeed2;
+				OUT_VALUE( r2lua_value.GetValue() );
 			}
 
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Value <> String" << r2tm::linefeed2;
+				OUT_SUBJECT( "Value > String" );
+
+				LF();
 
 				PROC_MAIN( v = s );
 
@@ -150,7 +162,7 @@ namespace play_r2lua
 				LF();
 
 				DECL_MAIN( const auto r2lua_value = r2lua::GetValue<r2lua::String>( v ) );
-				std::cout << r2tm::tab << "real_value.GetValue() : " << r2lua_value.GetValue() << r2tm::linefeed2;
+				OUT_VALUE( r2lua_value.GetValue() );
 			}
 
 			LS();
