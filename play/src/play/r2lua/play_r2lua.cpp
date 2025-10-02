@@ -183,26 +183,25 @@ namespace play_r2lua
 
 
 
-	r2tm::TitleFunctionT Value::GetTitleFunction() const
+	r2tm::TitleFunctionT Value_2_Bool::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "r2lua::Value 2";
+			return "Value 2 Bool";
 		};
 	}
-	r2tm::DoFunctionT Value::GetDoFunction() const
+	r2tm::DoFunctionT Value_2_Bool::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
 			lua_State* lua_state_obj = luaL_newstate();
 
-
-
 			LS();
 
 			DECL_SUB( r2lua::Bool b = true );
-			DECL_SUB( r2lua::Number n = 3.141592 );
-			DECL_SUB( r2lua::String s = "dummy_string" );
+
+			SS();
+
 			DECL_MAIN( r2lua::Value v; );
 
 			LS();
@@ -221,8 +220,44 @@ namespace play_r2lua
 				LF();
 
 				DECL_MAIN( const auto r2lua_value = r2lua::GetValue<r2lua::Bool>( v ) );
+				EXPECT_EQ( b.GetValue(), r2lua_value.GetValue() );
+
+				LF();
+
 				OUT_VALUE( r2lua_value.GetValue() );
 			}
+
+			LS();
+
+			lua_close( lua_state_obj );
+
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Value_2_Number::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Value 2 Number";
+		};
+	}
+	r2tm::DoFunctionT Value_2_Number::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			lua_State* lua_state_obj = luaL_newstate();
+
+			LS();
+
+			DECL_SUB( r2lua::Number n = 3.141592 );
+
+			SS();
+
+			DECL_MAIN( r2lua::Value v; );
 
 			LS();
 
@@ -240,8 +275,44 @@ namespace play_r2lua
 				LF();
 
 				DECL_MAIN( const auto r2lua_value = r2lua::GetValue<r2lua::Number>( v ) );
+				EXPECT_EQ( n.GetValue(), r2lua_value.GetValue() );
+
+				LF();
+
 				OUT_VALUE( r2lua_value.GetValue() );
 			}
+
+			LS();
+
+			lua_close( lua_state_obj );
+
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Value_2_String::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Value 2 String";
+		};
+	}
+	r2tm::DoFunctionT Value_2_String::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			lua_State* lua_state_obj = luaL_newstate();
+
+			LS();
+
+			DECL_SUB( r2lua::String s = "dummy_string" );
+
+			SS();
+
+			DECL_MAIN( r2lua::Value v; );
 
 			LS();
 
@@ -259,12 +330,14 @@ namespace play_r2lua
 				LF();
 
 				DECL_MAIN( const auto r2lua_value = r2lua::GetValue<r2lua::String>( v ) );
+				EXPECT_EQ( s.GetValue(), r2lua_value.GetValue() );
+
+				LF();
+
 				OUT_VALUE( r2lua_value.GetValue() );
 			}
 
 			LS();
-
-
 
 			lua_close( lua_state_obj );
 

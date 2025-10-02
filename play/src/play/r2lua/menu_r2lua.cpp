@@ -25,7 +25,6 @@ r2tm::WriteFunctionT Menu_R2Lua::GetWriteFunction() const
 		mp->AddItem( '1', play_r2lua::Type_Bool() );
 		mp->AddItem( '2', play_r2lua::Type_Number() );
 		mp->AddItem( '3', play_r2lua::Type_String() );
-		mp->AddItem( '4', play_r2lua::Value() );
 
 
 
@@ -33,10 +32,20 @@ r2tm::WriteFunctionT Menu_R2Lua::GetWriteFunction() const
 
 
 
-		mp->AddItem( 'q', play_r2lua::PushTest() );
-		mp->AddItem( 'w', play_r2lua::GetValueFromStackTest() );
-		mp->AddItem( 'e', play_r2lua::GetValuesFromStackTest() );
-		mp->AddItem( 'r', play_r2lua::CallTest() );
+		mp->AddItem( 'q', play_r2lua::Value_2_Bool() );
+		mp->AddItem( 'w', play_r2lua::Value_2_Number() );
+		mp->AddItem( 'e', play_r2lua::Value_2_String() );
+
+
+
+		mp->AddLineFeed();
+
+
+
+		mp->AddItem( 'a', play_r2lua::PushTest() );
+		mp->AddItem( 's', play_r2lua::GetValueFromStackTest() );
+		mp->AddItem( 'd', play_r2lua::GetValuesFromStackTest() );
+		mp->AddItem( 'f', play_r2lua::CallTest() );
 		
 
 
