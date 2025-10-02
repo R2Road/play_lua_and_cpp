@@ -38,6 +38,14 @@ namespace play_r2lua
 
 				LF();
 
+				OUT_SIZE( b );
+
+				LF();
+
+				OUT_BINARY( b );
+
+				LF();
+
 				EXPECT_EQ( r2lua::eType::Bool, b.GetType() );
 				EXPECT_EQ( false, b.GetValue() );
 			}
@@ -51,6 +59,14 @@ namespace play_r2lua
 
 				DECL_SUB( constexpr const bool primitive_b = true );
 				DECL_MAIN( r2lua::Bool b = primitive_b );
+
+				LF();
+
+				OUT_SIZE( b );
+
+				LF();
+
+				OUT_BINARY( b );
 
 				LF();
 
@@ -93,6 +109,14 @@ namespace play_r2lua
 
 				LF();
 
+				OUT_SIZE( n );
+
+				LF();
+
+				OUT_BINARY( n );
+
+				LF();
+
 				EXPECT_EQ( r2lua::eType::Number, n.GetType() );
 				EXPECT_EQ( -1, n.GetValue() );
 			}
@@ -106,6 +130,14 @@ namespace play_r2lua
 
 				DECL_SUB( constexpr const double primitive_d = 3.141592 );
 				DECL_MAIN( r2lua::Number n = primitive_d );
+
+				LF();
+
+				OUT_SIZE( n );
+
+				LF();
+
+				OUT_BINARY( n );
 
 				LF();
 
@@ -153,6 +185,14 @@ namespace play_r2lua
 
 				LF();
 
+				OUT_SIZE( s );
+
+				LF();
+
+				OUT_BINARY( s );
+
+				LF();
+
 				OUT_VALUE( r2lua::String::InvalidString );
 			}
 
@@ -165,6 +205,14 @@ namespace play_r2lua
 
 				DECL_SUB( constexpr const char* primitive_s = "dummy_string" );
 				DECL_MAIN( r2lua::String s = primitive_s );
+
+				LF();
+
+				OUT_SIZE( s );
+
+				LF();
+
+				OUT_BINARY( s );
 
 				LF();
 
@@ -201,7 +249,17 @@ namespace play_r2lua
 			{
 				DECL_MAIN( r2lua::Value v; );
 
-				LF();
+				SS();
+
+				{
+					OUT_SIZE( v );
+
+					LF();
+
+					OUT_BINARY( v );
+				}
+
+				SS();
 
 				EXPECT_EQ( r2lua::eType::Bool, r2lua::GetType( v ) );
 			}
@@ -247,7 +305,17 @@ namespace play_r2lua
 
 				PROC_MAIN( v = b );
 
-				LF();
+				SS();
+
+				{
+					OUT_SIZE( v );
+
+					LF();
+
+					OUT_BINARY( v );
+				}
+
+				SS();
 
 				EXPECT_EQ( r2lua::eType::Bool, r2lua::GetType( v ) );
 
@@ -302,7 +370,17 @@ namespace play_r2lua
 
 				PROC_MAIN( v = n );
 
-				LF();
+				SS();
+
+				{
+					OUT_SIZE( v );
+
+					LF();
+
+					OUT_BINARY( v );
+				}
+
+				SS();
 
 				EXPECT_EQ( r2lua::eType::Number, r2lua::GetType( v ) );
 
@@ -357,7 +435,17 @@ namespace play_r2lua
 
 				PROC_MAIN( v = s );
 
-				LF();
+				SS();
+
+				{
+					OUT_SIZE( v );
+
+					LF();
+
+					OUT_BINARY( v );
+				}
+
+				SS();
 
 				EXPECT_EQ( r2lua::eType::String, r2lua::GetType( v ) );
 
