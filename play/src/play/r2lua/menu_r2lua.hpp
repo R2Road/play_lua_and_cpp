@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_interface_menu.hpp"
 
-class R2LuaRootMenu : public r2tm::iMenu
+class Menu_R2Lua : public r2tm::iMenu
 {
 public:
 	r2tm::TitleFunctionT GetTitleFunction() const;

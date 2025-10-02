@@ -1,4 +1,4 @@
-﻿#include "r2lua_test.h"
+﻿#include "play_r2lua.hpp"
 
 #include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_ostream.hpp"
@@ -12,7 +12,7 @@ std::ostream& operator<<( std::ostream& o, const r2lua::eType type )
 	return ( o );
 }
 
-namespace r2lua_test
+namespace play_r2lua
 {
 	r2tm::TitleFunctionT ValueTest_1::GetTitleFunction() const
 	{

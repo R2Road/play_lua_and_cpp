@@ -134,10 +134,10 @@
     <ClCompile Include="src\play\lua\userdata_test.cpp">
       <Filter>play\lua</Filter>
     </ClCompile>
-    <ClCompile Include="src\play\r2lua\r2lua_test.cpp">
+    <ClCompile Include="src\play\r2lua\play_r2lua.cpp">
       <Filter>play\r2lua</Filter>
     </ClCompile>
-    <ClCompile Include="src\play\r2lua\R2LuaRootMenu.cpp">
+    <ClCompile Include="src\play\r2lua\menu_r2lua.cpp">
       <Filter>play\r2lua</Filter>
     </ClCompile>
     <ClCompile Include="src\test_lua_helper.cpp" />
@@ -322,10 +322,10 @@
     <ClInclude Include="src\play\lua\userdata_test_helper_new.hpp">
       <Filter>play\lua</Filter>
     </ClInclude>
-    <ClInclude Include="src\play\r2lua\r2lua_test.h">
+    <ClInclude Include="src\play\r2lua\play_r2lua.hpp">
       <Filter>play\r2lua</Filter>
     </ClInclude>
-    <ClInclude Include="src\play\r2lua\R2LuaRootMenu.h">
+    <ClInclude Include="src\play\r2lua\menu_r2lua.hpp">
       <Filter>play\r2lua</Filter>
     </ClInclude>
     <ClInclude Include="src\test_lua_helper.h" />

@@ -8,7 +8,7 @@
 
 #include "test_lua_helper.h"
 #include "play/lua/LuaRootMenu.h"
-#include "play/r2lua/R2LuaRootMenu.h"
+#include "play/r2lua/menu_r2lua.hpp"
 #include "play/sol2/menu_sol2.hpp"
 
 r2tm::TitleFunctionT Menu_Main::GetTitleFunction() const
@@ -31,7 +31,7 @@ r2tm::WriteFunctionT Menu_Main::GetWriteFunction() const
 	return []( r2tm::MenuProcessor* mp )
 	{
 		mp->AddMenu( '1', LuaRootMenu() );
-		mp->AddMenu( '2', R2LuaRootMenu() );
+		mp->AddMenu( '2', Menu_R2Lua() );
 
 
 

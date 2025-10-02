@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_interface_item.hpp"
 
-namespace r2lua_test
+namespace play_r2lua
 {
 	class ValueTest_1 : public r2tm::iItem
 	{
