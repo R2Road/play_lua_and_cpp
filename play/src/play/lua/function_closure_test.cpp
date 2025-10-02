@@ -73,7 +73,7 @@ namespace function_closure_test
 				PROC_MAIN( lua_getglobal( lua_state_obj, "CallCPPClosure" ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( LUA_OK, lua_pcall( lua_state_obj, 0, 0, 0 ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
@@ -151,7 +151,7 @@ namespace function_closure_test
 
 				for( int i = 0; 3 > i; ++i )
 				{
-					std::cout << r2tm::linefeed;
+					LF();
 
 					PROC_MAIN( lua_getglobal( lua_state_obj, "CallCPPClosure_UpdateUpvalue" ) );
 					EXPECT_EQ( LUA_OK, lua_pcall( lua_state_obj, 0, 0, 0 ) );
@@ -227,7 +227,7 @@ namespace function_closure_test
 				PROC_MAIN( lua_getglobal( lua_state_obj, "CallCPPClosure_ArgumentTest" ) );
 				PROC_MAIN( lua_pushnumber( lua_state_obj, 777 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( LUA_OK, lua_pcall( lua_state_obj, 1, 0, 0 ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );

@@ -59,12 +59,12 @@ namespace luaL_openlibs_test
 
 				PROC_MAIN( test_lua_helper::DoString( lua_state_obj, command ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_getglobal( lua_state_obj, "a" ) );
 				EXPECT_TRUE( lua_isnumber( lua_state_obj, -1 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECL_MAIN( const auto a = lua_tonumber( lua_state_obj, -1 ) );
 				std::cout << "a : " << a << r2tm::linefeed;

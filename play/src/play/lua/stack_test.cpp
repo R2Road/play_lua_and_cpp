@@ -39,7 +39,7 @@ namespace stack_test
 			{
 				OUT_NOTE( "Top" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUT_VALUE( lua_gettop( lua_state_obj ) );
 			}
@@ -49,7 +49,7 @@ namespace stack_test
 			{
 				OUT_NOTE( "Push( info : lua.h 233 line )" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushnil( lua_state_obj ) );
 				PROC_MAIN( lua_pushnumber( lua_state_obj, 12345.12345 ) );
@@ -65,7 +65,7 @@ namespace stack_test
 			{
 				OUT_NOTE( "Top" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUT_VALUE( lua_gettop( lua_state_obj ) );
 			}
@@ -113,7 +113,7 @@ namespace stack_test
 			{
 				OUT_NOTE( "0 : Type Check In Stack - lua_is..." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_TRUE( lua_isnil( lua_state_obj, 1 ) );
 				EXPECT_TRUE( lua_isnumber( lua_state_obj, 2 ) );
@@ -129,7 +129,7 @@ namespace stack_test
 			{
 				OUT_NOTE( "1 : Type Check In Stack - lua_type" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( LUA_TNIL, lua_type( lua_state_obj, 1 ) );
 				EXPECT_EQ( LUA_TNUMBER, lua_type( lua_state_obj, 2 ) );
@@ -145,12 +145,12 @@ namespace stack_test
 			{
 				OUT_NOTE( "2 : Invalid Stack" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( LUA_TNIL, lua_type( lua_state_obj, 0 ) );
 				OUT_VALUE( lua_type( lua_state_obj, 0 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( LUA_TNONE, lua_type( lua_state_obj, 8 ) );
 				OUT_VALUE( lua_type( lua_state_obj, 8 ) );
@@ -199,7 +199,7 @@ namespace stack_test
 			{
 				OUT_NOTE( "Type Name" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUT_VALUE( lua_typename( lua_state_obj, lua_type( lua_state_obj, 1 ) ) );
 				OUT_VALUE( lua_typename( lua_state_obj, lua_type( lua_state_obj, 2 ) ) );
@@ -215,7 +215,7 @@ namespace stack_test
 			{
 				OUT_NOTE( "???" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUT_VALUE( lua_typename( lua_state_obj, lua_type( lua_state_obj, 0 ) ) );
 				OUT_VALUE( lua_typename( lua_state_obj, lua_type( lua_state_obj, 8 ) ) );
@@ -252,7 +252,7 @@ namespace stack_test
 			{
 				OUT_NOTE( "Push( info : lua.h 233 line )" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushnil( lua_state_obj ) );
 				PROC_MAIN( lua_pushnumber( lua_state_obj, 12345.12345 ) );
@@ -269,7 +269,7 @@ namespace stack_test
 				DECL_MAIN( const auto stack_count = lua_gettop( lua_state_obj ) );
 				OUT_VALUE( stack_count );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				for( int i = 1, ri = -stack_count; stack_count >= i; ++i, ++ri )
 				{
@@ -335,7 +335,7 @@ namespace stack_test
 			{
 				OUT_NOTE( "Get" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECL_MAIN( const auto s = lua_tostring( lua_state_obj, 1 ) );
 				OUT_VALUE( s );
@@ -349,7 +349,7 @@ namespace stack_test
 			{
 				OUT_NOTE( "Casting?" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECL_MAIN( const auto n = lua_tonumber( lua_state_obj, 1 ) );
 				OUT_VALUE( n );
@@ -363,12 +363,12 @@ namespace stack_test
 			{
 				OUT_NOTE( "Invalid Index" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUT_VALUE( lua_tonumber( lua_state_obj, 0 ) );
 				EXPECT_EQ( nullptr, lua_tostring( lua_state_obj, 0 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUT_VALUE( lua_tonumber( lua_state_obj, 3 ) );
 				EXPECT_EQ( nullptr, lua_tostring( lua_state_obj, 3 ) );
@@ -421,13 +421,13 @@ namespace stack_test
 			{
 				OUT_NOTE( "Test : luaL_chec..." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( 7, luaL_checkinteger( lua_state_obj, 1 ) );
 				EXPECT_EQ( 123.123, luaL_checknumber( lua_state_obj, 2 ) );
 				EXPECT_EQ( std::string_view( "dummy_text" ), luaL_checkstring( lua_state_obj, 3 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUT_CODE( luaL_checkinteger( lua_state_obj, 3 ) );
 				OUT_COMMENT( "위 코드를 수행하면 Type 이 맞지 않아 프로그램이 강제 종료된다." );
@@ -438,13 +438,13 @@ namespace stack_test
 			{
 				OUT_NOTE( "Test : luaL_checkany" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( luaL_checkany( lua_state_obj, 1 ) );
 				PROC_MAIN( luaL_checkany( lua_state_obj, 2 ) );
 				PROC_MAIN( luaL_checkany( lua_state_obj, 3 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUT_CODE( luaL_checkany( lua_state_obj, 4 ) );
 				OUT_COMMENT( "위 코드를 수행하면 프로그램이 강제 종료된다." );
@@ -487,7 +487,7 @@ namespace stack_test
 			{
 				PROC_MAIN( lua_settop( lua_state_obj, 2 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
@@ -497,7 +497,7 @@ namespace stack_test
 			{
 				PROC_MAIN( lua_settop( lua_state_obj, 0 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
@@ -507,7 +507,7 @@ namespace stack_test
 			{
 				PROC_MAIN( lua_settop( lua_state_obj, 2 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
@@ -550,7 +550,7 @@ namespace stack_test
 			{
 				PROC_MAIN( lua_pop( lua_state_obj, 2 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
@@ -560,7 +560,7 @@ namespace stack_test
 			{
 				PROC_MAIN( lua_pop( lua_state_obj, lua_gettop( lua_state_obj ) ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
@@ -570,7 +570,7 @@ namespace stack_test
 			{
 				PROC_MAIN( lua_pop( lua_state_obj, 3 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				test_lua_helper::PrintAllStack( lua_state_obj );
 				std::cout << r2tm::linefeed << "???????" << r2tm::linefeed;
@@ -581,7 +581,7 @@ namespace stack_test
 			{
 				PROC_MAIN( lua_getglobal( lua_state_obj, "a" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUT_CODE( test_lua_helper::DoString_Silent( lua_state_obj, "a = 15" ) );
 				std::cout << "Boom : Don't Do That" << r2tm::linefeed2;
@@ -657,7 +657,7 @@ namespace stack_test
 				PROC_MAIN( lua_pushvalue( lua_state_obj, 1 ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushvalue( lua_state_obj, 0 ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
@@ -695,7 +695,7 @@ namespace stack_test
 
 				PROC_MAIN( lua_copy( lua_state_obj, 0, 1 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
@@ -715,7 +715,7 @@ namespace stack_test
 
 				PROC_MAIN( lua_copy( lua_state_obj, 1, 2 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
@@ -727,7 +727,7 @@ namespace stack_test
 
 				PROC_MAIN( lua_copy( lua_state_obj, 2, 3 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
@@ -771,7 +771,7 @@ namespace stack_test
 			{
 				OUT_NOTE( "Rotate( 1 ~ 4 를 대상으로 1회 회전 )" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_rotate( lua_state_obj, 1, 1 ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
@@ -782,7 +782,7 @@ namespace stack_test
 			{
 				OUT_NOTE( "Rotate( 1 ~ 4 를 대상으로 1회 역회전 )" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_rotate( lua_state_obj, 1, -1 ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
@@ -793,7 +793,7 @@ namespace stack_test
 			{
 				OUT_NOTE( "Rotate( 2 ~ 4 를 대상으로 2회 회전 )" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_rotate( lua_state_obj, 2, 2 ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
@@ -804,7 +804,7 @@ namespace stack_test
 			{
 				OUT_NOTE( "Rotate( 4 이후에 값이 없으므로 회전이 되지 않는다. )" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_rotate( lua_state_obj, 4, 1 ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );

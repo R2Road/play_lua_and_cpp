@@ -38,11 +38,11 @@ namespace userdata_test
 			{
 				OUT_NOTE( "lua_newuserdata 를 사용하여 Lua 에서 메모리를 할당한다." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUT_FILE( "src/play/lua/userdata_test_helper_new.hpp" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushcfunction( lua_state_obj, Vector2_4_NewTest::Create ) );
 				PROC_MAIN( lua_setglobal( lua_state_obj, "CreateVector2" ) );
@@ -55,7 +55,7 @@ namespace userdata_test
 
 				OUT_FILE( lua_file_path );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, lua_file_path ) );
 			}
@@ -66,13 +66,13 @@ namespace userdata_test
 				PROC_MAIN( lua_getglobal( lua_state_obj, "vec" ) );
 				EXPECT_TRUE( lua_isuserdata( lua_state_obj, -1 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECL_MAIN( Vector2_4_NewTest* v = (Vector2_4_NewTest*)lua_touserdata( lua_state_obj, -1 ) );
 				OUT_VALUE( v->x );
 				OUT_VALUE( v->y );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( v->Move( 2, 3 ) );
 				OUT_VALUE( v->x );
@@ -108,11 +108,11 @@ namespace userdata_test
 			{
 				OUT_NOTE( "위치 지정 new 를 활용해서 강제로 생성자를 호출한다." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUT_FILE( "src/play/lua/userdata_test_helper_constructor.hpp" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushcfunction( lua_state_obj, Vector2_4_ConstructorTest::Create ) );
 				PROC_MAIN( lua_setglobal( lua_state_obj, "CreateVector2" ) );
@@ -125,7 +125,7 @@ namespace userdata_test
 
 				OUT_FILE( lua_file_path );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, lua_file_path ) );
 			}
@@ -136,7 +136,7 @@ namespace userdata_test
 				PROC_MAIN( lua_getglobal( lua_state_obj, "vec" ) );
 				EXPECT_TRUE( lua_isuserdata( lua_state_obj, -1 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECL_MAIN( Vector2_4_ConstructorTest* v = (Vector2_4_ConstructorTest*)lua_touserdata( lua_state_obj, -1 ) );
 				OUT_VALUE( v->x );
@@ -173,16 +173,16 @@ namespace userdata_test
 			{
 				OUT_NOTE( "metatable 을 활용하여 강제로 소멸자를 호출한다." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUT_FILE( "src/play/lua/userdata_test_helper_destructor.hpp" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushcfunction( lua_state_obj, Vector2_4_DestructorTest::Create ) );
 				PROC_MAIN( lua_setglobal( lua_state_obj, "CreateVector2" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( luaL_newmetatable( lua_state_obj, "Vector2MetaTable" ) );
 				PROC_MAIN( lua_pushstring( lua_state_obj, "__gc" ) );
@@ -197,11 +197,11 @@ namespace userdata_test
 
 				OUT_FILE( lua_file_path );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, lua_file_path ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_gc( lua_state_obj, LUA_GCCOLLECT ) );
 			}
@@ -235,28 +235,28 @@ namespace userdata_test
 			{
 				OUT_FILE( "src/play/lua/userdata_n_metatable_test_helper_oop.hpp" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_newtable( L ) );
 				PROC_MAIN( lua_setglobal( L, "Sprite" ) );
 				PROC_MAIN( lua_getglobal( L, "Sprite" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushcfunction( L, Sprite_4_OOP_Test::Create ) );
 				PROC_MAIN( lua_setfield( L, -2, "Create" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushcfunction( L, Sprite_4_OOP_Test::Move ) );
 				PROC_MAIN( lua_setfield( L, -2, "Move" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushcfunction( L, Sprite_4_OOP_Test::Draw ) );
 				PROC_MAIN( lua_setfield( L, -2, "Draw" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( luaL_newmetatable( L, "SpriteMetaTable" ) );
 			}
@@ -268,7 +268,7 @@ namespace userdata_test
 
 				OUT_FILE( lua_file_path );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( test_lua_helper::DoFile_Silent( L, lua_file_path ) );
 			}
@@ -302,33 +302,33 @@ namespace userdata_test
 			{
 				OUT_NOTE( "metatable 의 __index 기능을 활용한 oop 스러운 코드 작성." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUT_FILE( "src/play/lua/userdata_n_metatable_test_helper_oop.hpp" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_newtable( L ) );
 				PROC_MAIN( lua_setglobal( L, "Sprite" ) );
 				PROC_MAIN( lua_getglobal( L, "Sprite" ) );
 				int sprite_table_index = lua_gettop( L );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushcfunction( L, Sprite_4_OOP_Test::Create ) );
 				PROC_MAIN( lua_setfield( L, -2, "Create" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushcfunction( L, Sprite_4_OOP_Test::Move ) );
 				PROC_MAIN( lua_setfield( L, -2, "Move" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushcfunction( L, Sprite_4_OOP_Test::Draw ) );
 				PROC_MAIN( lua_setfield( L, -2, "Draw" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( luaL_newmetatable( L, "SpriteMetaTable" ) );
 				PROC_MAIN( lua_pushstring( L, "__index" ) );
@@ -343,7 +343,7 @@ namespace userdata_test
 
 				OUT_FILE( lua_file_path );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( test_lua_helper::DoFile_Silent( L, lua_file_path ) );
 			}
@@ -377,33 +377,33 @@ namespace userdata_test
 			{
 				OUT_NOTE( "metatable 의 __index 기능을 활용한 oop 스러운 코드 작성." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUT_FILE( "src/play/lua/userdata_n_metatable_test_helper_field_get.hpp" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_newtable( L ) );
 				PROC_MAIN( lua_setglobal( L, "Sprite" ) );
 				PROC_MAIN( lua_getglobal( L, "Sprite" ) );
 				int sprite_table_index = lua_gettop( L );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushcfunction( L, Sprite_4_Field_Get_Test::Create ) );
 				PROC_MAIN( lua_setfield( L, -2, "Create" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushcfunction( L, Sprite_4_Field_Get_Test::Move ) );
 				PROC_MAIN( lua_setfield( L, -2, "Move" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushcfunction( L, Sprite_4_Field_Get_Test::Draw ) );
 				PROC_MAIN( lua_setfield( L, -2, "Draw" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( luaL_newmetatable( L, "SpriteMetaTable" ) );
 				PROC_MAIN( lua_pushstring( L, "__index" ) );
@@ -418,7 +418,7 @@ namespace userdata_test
 
 				OUT_FILE( lua_file_path );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( test_lua_helper::DoFile_Silent( L, lua_file_path ) );
 			}
@@ -459,33 +459,33 @@ namespace userdata_test
 			{
 				OUT_NOTE( "metatable 의 __newindex 기능을 활용한 멤버 접근." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUT_FILE( "src/play/lua/userdata_n_metatable_test_helper_field_set.hpp" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_newtable( L ) );
 				PROC_MAIN( lua_setglobal( L, "Sprite" ) );
 				PROC_MAIN( lua_getglobal( L, "Sprite" ) );
 				int sprite_table_index = lua_gettop( L );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushcfunction( L, Sprite_4_Field_Set_Test::Create ) );
 				PROC_MAIN( lua_setfield( L, -2, "Create" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushcfunction( L, Sprite_4_Field_Set_Test::Move ) );
 				PROC_MAIN( lua_setfield( L, -2, "Move" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushcfunction( L, Sprite_4_Field_Set_Test::Draw ) );
 				PROC_MAIN( lua_setfield( L, -2, "Draw" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( luaL_newmetatable( L, "SpriteMetaTable" ) );
 				PROC_MAIN( lua_pushstring( L, "__index" ) );
@@ -503,7 +503,7 @@ namespace userdata_test
 
 				OUT_FILE( lua_file_path );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( test_lua_helper::DoFile_Silent( L, lua_file_path ) );
 			}
@@ -548,24 +548,24 @@ namespace userdata_test
 			{
 				OUT_FILE( "src/play/lua/userdata_n_metatable_test_helper_index_and_newindex.hpp" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_newtable( L ) );
 				PROC_MAIN( lua_setglobal( L, "Sprite" ) );
 				PROC_MAIN( lua_getglobal( L, "Sprite" ) );
 				int sprite_table_index = lua_gettop( L );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushcfunction( L, Sprite_4_Index_N_NewIndex_Test::Create ) );
 				PROC_MAIN( lua_setfield( L, -2, "Create" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushcfunction( L, Sprite_4_Index_N_NewIndex_Test::Move ) );
 				PROC_MAIN( lua_setfield( L, -2, "Move" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( luaL_newmetatable( L, "SpriteMetaTable" ) );
 				PROC_MAIN( lua_pushstring( L, "__index" ) );
@@ -583,7 +583,7 @@ namespace userdata_test
 
 				OUT_FILE( lua_file_path );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( test_lua_helper::DoFile_Silent( L, lua_file_path ) );
 			}
@@ -617,33 +617,33 @@ namespace userdata_test
 			{
 				OUT_NOTE( "metatable 의 __newindex 기능을 활용한 멤버 접근." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUT_FILE( "src/play/lua/userdata_n_metatable_test_helper_field_add_from_lua.hpp" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_newtable( L ) );
 				PROC_MAIN( lua_setglobal( L, "Sprite" ) );
 				PROC_MAIN( lua_getglobal( L, "Sprite" ) );
 				int sprite_table_index = lua_gettop( L );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushcfunction( L, Sprite_4_Field_Add_From_Lua_Test::Create ) );
 				PROC_MAIN( lua_setfield( L, -2, "Create" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushcfunction( L, Sprite_4_Field_Add_From_Lua_Test::Move ) );
 				PROC_MAIN( lua_setfield( L, -2, "Move" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushcfunction( L, Sprite_4_Field_Add_From_Lua_Test::Draw ) );
 				PROC_MAIN( lua_setfield( L, -2, "Draw" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( luaL_newmetatable( L, "SpriteMetaTable" ) );
 				PROC_MAIN( lua_pushstring( L, "__index" ) );
@@ -661,7 +661,7 @@ namespace userdata_test
 
 				OUT_FILE( lua_file_path );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( test_lua_helper::DoFile_Silent( L, lua_file_path ) );
 			}

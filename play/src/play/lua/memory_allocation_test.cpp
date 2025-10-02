@@ -34,7 +34,7 @@ namespace memory_allocation_test
 			{
 				OUT_FILE( "resources/lua_l_alloc.txt" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECL_MAIN( lua_State* lua_state_obj = luaL_newstate() );
 				PROC_MAIN( lua_close( lua_state_obj ) );
@@ -70,7 +70,7 @@ namespace memory_allocation_test
 			{
 				OUT_FILE( "src/play/lua/memory_allocation_test_helper_custom.hpp" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECL_MAIN( void* ud = nullptr );
 				DECL_MAIN( lua_State* lua_state_obj = lua_newstate( CustomMemoryAllocator::l_alloc, ud ) );
@@ -100,7 +100,7 @@ namespace memory_allocation_test
 
 			OUT_FILE( "src/play/lua/memory_allocation_test_helper_pool_01.hpp" );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			DECL_MAIN( LuaMemoryPool_01 pool );
 			DECL_MAIN( lua_State* l = lua_newstate( LuaMemoryPool_01::l_alloc, &pool ) );
@@ -132,7 +132,7 @@ namespace memory_allocation_test
 
 			OUT_FILE( "src/play/lua/memory_allocation_test_helper_pool_02.hpp" );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			DECL_MAIN( constexpr int pool_size = 1024 * 30 );
 			DECL_MAIN( char memory[pool_size] = {} );
@@ -152,11 +152,11 @@ namespace memory_allocation_test
 			{
 				OUT_FILE( "resources/memory_allocation_test_pool_01.lua" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( test_lua_helper::DoFile_Silent( l, "resources/memory_allocation_test_pool_01.lua" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				pool.OutputInfo();
 			}

@@ -29,16 +29,16 @@ namespace metatable_test
 			{
 				OUT_NOTE( "MetaTable 을 이용하여 table 에 operator 의 할당이 가능하다." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUT_FILE( "src/play/lua/metatable_test_helper.hpp" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushcfunction( lua_state_obj, Vector2_4_MetatableTest::Create ) );
 				PROC_MAIN( lua_setglobal( lua_state_obj, "CreateVector" ) );
 			
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( luaL_newmetatable( lua_state_obj, "VectorMetaTable" ) );
 				PROC_MAIN( lua_pushstring( lua_state_obj, "__add" ) );
@@ -51,7 +51,7 @@ namespace metatable_test
 			{
 				OUT_FILE( "resources/metatable_test_basic_01.lua" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/metatable_test_basic_01.lua" ) );
 			}
@@ -63,7 +63,7 @@ namespace metatable_test
 				PROC_MAIN( lua_getglobal( lua_state_obj, "v3" ) );
 				EXPECT_TRUE( lua_istable( lua_state_obj, -1 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_getfield( lua_state_obj, -1, "x" ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );

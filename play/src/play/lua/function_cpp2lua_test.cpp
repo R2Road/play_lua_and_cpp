@@ -31,7 +31,7 @@ namespace function_cpp2lua_test
 
 			OUT_FILE( "resources/function_cpp2lua_test_basic_01.lua" );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			PROC_MAIN( test_lua_helper::DoFile_Silent( lua_state_obj, "resources/function_cpp2lua_test_basic_01.lua" ) );
 			DECL_MAIN( const int argument_count = 0 );
@@ -44,7 +44,7 @@ namespace function_cpp2lua_test
 				PROC_MAIN( lua_getglobal( lua_state_obj, "Test" ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_TRUE( lua_isfunction( lua_state_obj, 1 ) );
 			}
@@ -111,11 +111,11 @@ namespace function_cpp2lua_test
 
 				EXPECT_EQ( LUA_ERRRUN, lua_pcall( lua_state_obj, arg_count, LUA_MULTRET, 0 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				test_lua_helper::PrintLuaError( lua_state_obj );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
@@ -138,7 +138,7 @@ namespace function_cpp2lua_test
 
 				EXPECT_EQ( LUA_OK, lua_pcall( lua_state_obj, arg_count, LUA_MULTRET, 0 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}

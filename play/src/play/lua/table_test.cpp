@@ -31,11 +31,11 @@ namespace table_test
 
 				PROC_MAIN( lua_newtable( lua_state_obj ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				test_lua_helper::PrintAllStack( lua_state_obj );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_TRUE( lua_istable( lua_state_obj, 1 ) );
 			}
@@ -75,7 +75,7 @@ namespace table_test
 
 				PROC_MAIN( lua_newtable( lua_state_obj ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
@@ -87,7 +87,7 @@ namespace table_test
 
 				PROC_MAIN( lua_setglobal( lua_state_obj, "dummy_table" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
@@ -99,7 +99,7 @@ namespace table_test
 
 				PROC_MAIN( lua_getglobal( lua_state_obj, "dummy_table" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
@@ -147,7 +147,7 @@ namespace table_test
 				PROC_MAIN( lua_pushstring( lua_state_obj, "dummy_int" ) );
 				PROC_MAIN( lua_pushnumber( lua_state_obj, 777 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
@@ -159,7 +159,7 @@ namespace table_test
 
 				PROC_MAIN( lua_settable( lua_state_obj, 1 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
@@ -172,7 +172,7 @@ namespace table_test
 				PROC_MAIN( lua_pushstring( lua_state_obj, "dummy_int" ) );
 				PROC_MAIN( lua_gettable( lua_state_obj, 1 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
@@ -487,7 +487,7 @@ namespace table_test
 			{
 				OUT_NOTE( "lua_getfield 를 활용하여 깔끔하게 테이블 내부 데이터 가져오기." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_getfield( lua_state_obj, -1, "name" ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
@@ -498,7 +498,7 @@ namespace table_test
 			{
 				OUT_NOTE( "한 번 더 가져오기." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_getfield( lua_state_obj, -2, "name" ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
@@ -546,12 +546,12 @@ namespace table_test
 			{
 				OUT_NOTE( "lua_setfield 를 활용하여 테이블에 데이터 넣기." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushstring( lua_state_obj, "asdf" ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_setfield( lua_state_obj, -2, "name" ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );

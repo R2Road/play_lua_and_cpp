@@ -36,7 +36,7 @@ namespace global_test
 
 				PROC_MAIN( lua_pushstring( lua_state_obj, "dummy_string" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
@@ -48,7 +48,7 @@ namespace global_test
 
 				PROC_MAIN( lua_setglobal( lua_state_obj, "ds" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
@@ -60,7 +60,7 @@ namespace global_test
 
 				PROC_MAIN( lua_getglobal( lua_state_obj, "ds" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
@@ -72,7 +72,7 @@ namespace global_test
 
 				DECL_MAIN( const int type = lua_getglobal( lua_state_obj, "ds" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( test_lua_helper::PrintTypeName( type ) );
 			}
@@ -125,7 +125,7 @@ namespace global_test
 
 				PROC_MAIN( lua_getglobal( lua_state_obj, "ds" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}
@@ -153,7 +153,7 @@ namespace global_test
 
 				PROC_MAIN( lua_getglobal( lua_state_obj, "ds" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				test_lua_helper::PrintAllStack( lua_state_obj );
 			}

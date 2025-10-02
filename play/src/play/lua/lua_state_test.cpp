@@ -35,7 +35,7 @@ namespace lua_state_test
 			{
 				OUT_NOTE( "luaL_newstate - lua_State 생성." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_state_obj = luaL_newstate() );
 			}
@@ -48,7 +48,7 @@ namespace lua_state_test
 			{
 				OUT_NOTE( "lua_close - lua_State 제거." );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_close( lua_state_obj ) );
 			}

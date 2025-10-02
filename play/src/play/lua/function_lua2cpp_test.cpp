@@ -89,7 +89,7 @@ namespace function_lua2cpp_test
 				PROC_MAIN( lua_getglobal( lua_state_obj, "LUAFunction_0" ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( LUA_OK, lua_pcall( lua_state_obj, 0, 0, 0 ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
@@ -132,14 +132,14 @@ namespace function_lua2cpp_test
 			{
 				OUT_NOTE( "인자 x 1, 반환값 x 2" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_register( lua_state_obj, "CPPFunction_1", CPPFunction_1 ) );
 				PROC_MAIN( lua_getglobal( lua_state_obj, "LUAFunction_1" ) );
 				PROC_MAIN( lua_pushnumber( lua_state_obj, 123 ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pcall( lua_state_obj, 1, LUA_MULTRET, 0 ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
@@ -150,7 +150,7 @@ namespace function_lua2cpp_test
 			{
 				OUT_NOTE( "인자 x 2, 반환값 x 3" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_settop( lua_state_obj, 0 ) );
 				PROC_MAIN( lua_register( lua_state_obj, "CPPFunction_2", CPPFunction_2 ) );
@@ -159,7 +159,7 @@ namespace function_lua2cpp_test
 				PROC_MAIN( lua_pushnumber( lua_state_obj, 567 ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pcall( lua_state_obj, 2, LUA_MULTRET, 0 ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
@@ -203,7 +203,7 @@ namespace function_lua2cpp_test
 			{
 				OUT_NOTE( "Lambda 함수 등록" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECL_MAIN( auto cpp_func = []( lua_State* l )->int
 				{
@@ -214,7 +214,7 @@ namespace function_lua2cpp_test
 					return 1;
 				} );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pushcfunction( lua_state_obj, cpp_func ) );
 				PROC_MAIN( lua_setglobal( lua_state_obj, "CPPFunction" ) );
@@ -225,12 +225,12 @@ namespace function_lua2cpp_test
 			{
 				OUT_NOTE( "Call" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_getglobal( lua_state_obj, "LUAFunction" ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_pcall( lua_state_obj, 0, LUA_MULTRET, 0 ) );
 				test_lua_helper::PrintAllStack( lua_state_obj );

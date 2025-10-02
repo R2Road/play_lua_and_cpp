@@ -36,7 +36,7 @@ namespace luaL_dofile_test
 
 				EXPECT_NE( LUA_OK, luaL_dofile( lua_state_obj, "resources/luaL_dofile_test_00.lua" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUT_VALUE( lua_tostring( lua_state_obj, -1 ) );
 			}
@@ -52,11 +52,11 @@ namespace luaL_dofile_test
 				const std::filesystem::path p( "resources/luaL_dofile_test_01.lua");
 				OUT_FILE( p.string().c_str() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_NE( LUA_OK, luaL_dofile( lua_state_obj, p.string().c_str() ) );
 				
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUT_VALUE( lua_tostring( lua_state_obj, -1 ) );
 			}
@@ -72,11 +72,11 @@ namespace luaL_dofile_test
 				const std::filesystem::path p( "resources/luaL_dofile_test_02.lua" );
 				OUT_FILE( p.string().c_str() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( LUA_OK, luaL_dofile( lua_state_obj, p.string().c_str() ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROC_MAIN( lua_getglobal( lua_state_obj, "a" ) );
 				EXPECT_TRUE( lua_isnumber( lua_state_obj, -1 ) );
