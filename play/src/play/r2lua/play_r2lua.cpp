@@ -36,21 +36,23 @@ namespace play_r2lua
 
 				DECL_MAIN( r2lua::Bool b );
 
-				LF();
+				SS();
 
-				OUT_SIZE( b );
+				{
+					OUT_SIZE( b );
 
-				LF();
+					LF();
 
-				OUT_BINARY( b );
+					OUT_BINARY( b );
+				}
 
-				LF();
+				SS();
 
 				EXPECT_EQ( r2lua::eType::Bool, b.GetType() );
 				EXPECT_EQ( false, b.GetValue() );
 			}
 
-			SS();
+			LS();
 
 			{
 				OUT_SUBJECT( "인자를 받는 생성자" );
@@ -60,15 +62,17 @@ namespace play_r2lua
 				DECL_SUB( constexpr const bool primitive_b = true );
 				DECL_MAIN( r2lua::Bool b = primitive_b );
 
-				LF();
+				SS();
 
-				OUT_SIZE( b );
+				{
+					OUT_SIZE( b );
 
-				LF();
+					LF();
 
-				OUT_BINARY( b );
+					OUT_BINARY( b );
+				}
 
-				LF();
+				SS();
 
 				EXPECT_EQ( r2lua::eType::Bool, b.GetType() );
 				EXPECT_EQ( primitive_b, b.GetValue() );
@@ -107,21 +111,23 @@ namespace play_r2lua
 
 				DECL_MAIN( r2lua::Number n );
 
-				LF();
+				SS();
+				
+				{
+					OUT_SIZE( n );
 
-				OUT_SIZE( n );
+					LF();
 
-				LF();
+					OUT_BINARY( n );
+				}
 
-				OUT_BINARY( n );
-
-				LF();
+				SS();
 
 				EXPECT_EQ( r2lua::eType::Number, n.GetType() );
 				EXPECT_EQ( -1, n.GetValue() );
 			}
 
-			SS();
+			LS();
 
 			{
 				OUT_SUBJECT( "인자를 받는 생성자" );
@@ -131,15 +137,17 @@ namespace play_r2lua
 				DECL_SUB( constexpr const double primitive_d = 3.141592 );
 				DECL_MAIN( r2lua::Number n = primitive_d );
 
-				LF();
+				SS();
 
-				OUT_SIZE( n );
+				{
+					OUT_SIZE( n );
 
-				LF();
+					LF();
 
-				OUT_BINARY( n );
+					OUT_BINARY( n );
+				}
 
-				LF();
+				SS();
 
 				EXPECT_EQ( r2lua::eType::Number, n.GetType() );
 				EXPECT_EQ( primitive_d, n.GetValue() );
@@ -183,20 +191,22 @@ namespace play_r2lua
 				EXPECT_EQ( r2lua::eType::String, s.GetType() );
 				EXPECT_EQ( r2lua::String::InvalidString, s.GetValue() );
 
-				LF();
+				SS();
 
-				OUT_SIZE( s );
+				{
+					OUT_SIZE( s );
 
-				LF();
+					LF();
 
-				OUT_BINARY( s );
+					OUT_BINARY( s );
+				}
 
-				LF();
+				SS();
 
 				OUT_VALUE( r2lua::String::InvalidString );
 			}
 
-			SS();
+			LS();
 
 			{
 				OUT_SUBJECT( "인자를 받는 생성자" );
@@ -206,15 +216,17 @@ namespace play_r2lua
 				DECL_SUB( constexpr const char* primitive_s = "dummy_string" );
 				DECL_MAIN( r2lua::String s = primitive_s );
 
-				LF();
+				SS();
 
-				OUT_SIZE( s );
+				{
+					OUT_SIZE( s );
 
-				LF();
+					LF();
 
-				OUT_BINARY( s );
+					OUT_BINARY( s );
+				}
 
-				LF();
+				SS();
 
 				EXPECT_EQ( r2lua::eType::String, s.GetType() );
 				EXPECT_EQ( primitive_s, s.GetValue() );
